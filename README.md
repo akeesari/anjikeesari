@@ -19,13 +19,69 @@ git clone https://github.com/akeesari/anjikeesari.git
 cd anjikeesari
 ```
 
-4. **Install dependencies:** Install the required dependencies by running:
+4. **Run Initial Setup** 
+
+create new mkdocs project
 
 ```
+mkdocs new .
+```
+output in index.md
+```
+# Welcome to MkDocs
+
+For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+
+## Commands
+
+* `mkdocs new [dir-name]` - Create a new project.
+* `mkdocs serve` - Start the live-reloading docs server.
+* `mkdocs build` - Build the documentation site.
+* `mkdocs -h` - Print help message and exit.
+
+## Project layout
+
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files.
+
+```
+check the mkdocs installation 
+```
+pip list
+```
+
+
+create `init_setup.sh` with following 
+
+``` bash
+echo [$(date)]: "START"
+export _VERSION_=3.8
+echo [$(date)]: "creating environment with python ${_VERSION_}"
+conda create --prefix ./env python=${_VERSION_} -y
+echo [$(date)]: "activate environment"
+source activate ./env
+echo [$(date)]: "install requirements"
 pip install -r requirements.txt
+echo [$(date)]: "END"
+
 ```
 
-5. **Start the local server:** Launch the development server with the command:
+create `requirements.txt` with following contents
+```
+mkdocs-material
+mkdocs-glightbox
+mkdocs-pdf-export-plugin
+```
+
+Open Git bash in VS code and run the following command to setup the project:
+
+```
+bash init_setup.sh
+```
+
+1. **Start the local server:** Launch the development server with the command:
 
 ```
 mkdocs serve
