@@ -24,8 +24,6 @@ Hello! I'm Anji Keesari, a passionate instructor and Cloud Architect and develop
 - **SQL Fundamentals:** Gain a solid foundation in SQL and relational databases, covering topics like querying data, database design, and data manipulation using Microsoft SQL Server.
 - **SQL Server Administration:** Learn the essentials of SQL Server administration, including installation, configuration, security, performance tuning, and backup and recovery strategies.
 
-
-
 ## Learning Approach
 
 My approach to teaching the Microsoft technology stack is focused on practical, hands-on learning. I believe that real-world examples and interactive exercises are key to understanding and mastering these technologies. Each course and tutorial provides clear explanations, code samples, and step-by-step instructions to help you grasp the concepts and apply them in real-world scenarios.
