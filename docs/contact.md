@@ -1,4 +1,6 @@
-If you have any question, suggestion or want to request a topic, feel free to drop me a message and we’ll get in touch when I can with my busy schedule.
+# Contact Us
+
+Thank you for your interest in reaching out! If you have any questions, suggestions, or simply want to connect, we'd love to hear from you. Please feel free to use any of the following methods to get in touch:
 
 - Email: <anjkeesari@gmail.com>
-- Website: [https://akeesari.github.io/micros-k8s/](https://akeesari.github.io/micros-k8s/)
+- Website: [https://anjikeesari.com](https://anjikeesari.com)

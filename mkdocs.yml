@@ -153,4 +153,6 @@ nav:
   - About:
     - About: about.md
   - Contact:
-    - Contact: contact.md
+    - Contact Us: contact.md
+  - Blogs:
+    - Blogs: blogs.md
