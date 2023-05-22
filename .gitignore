@@ -1,0 +1,21 @@
+# MkDocs build directory
+/site/
+
+# Python virtual environment
+/venv/
+
+# Compiled Python files
+*.pyc
+
+# Cache and temporary files
+__pycache__/
+.cache/
+.tmp/
+
+# Editor and IDE files
+.idea/
+.vscode/
+
+# Build and deployment files
+dist/
+*.egg-info/
