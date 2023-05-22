@@ -5,6 +5,7 @@ Welcome to our blog page! Here, you'll find a collection of informative and insi
 ## Latest Blog Posts
 
 Below are our most recent blog posts:
+
 <!-- 
 - [Title of Blog Post 1](blog-post-1.md): A brief description or introduction to the topic covered in the post.
 - [Title of Blog Post 2](blog-post-2.md): A brief description or introduction to the topic covered in the post.
