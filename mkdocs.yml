@@ -156,3 +156,29 @@ nav:
     - Contact Us: contact.md
   - Blogs:
     - Blogs: blogs.md
+  - Developer Tools:
+      - Download & Install software:
+        - Developer Workstation Configuration: developertools/software/workstation.md    
+        - Windows OS: developertools/software/windows.md
+        - Mac OS: developertools/software/mac.md
+      - Cheat Sheets:
+        - Git Cheat Sheet: developertools/cheatsheets/git-cheat-sheet.md
+        - Docker Cheat Sheet: developertools/cheatsheets/docker-cheat-sheet.md
+        - az acr Cheat Sheet: developertools/cheatsheets/az-acr-cheat-sheet.md
+        - Kubectl Cheat Sheet: developertools/cheatsheets/kubectl-cheat-sheet.md
+        - ArgoCD Cheat Sheet: developertools/cheatsheets/argocd-cheat-sheet.md
+        - Helm Cheat Sheet: developertools/cheatsheets/helm-cheat-sheet.md
+      - Technology Stack:
+        - Technology Stack: developertools/techstack/tech-stack.md    
+        - C# : developertools/techstack/c-sharp.md
+        - .NET Core Web API : developertools/techstack/net-core-web-api.md
+        - React JS : developertools/techstack/react-js.md
+        - Azure DevOps : developertools/techstack/azure-devops.md
+        - Azure Cloud : developertools/techstack/azure-cloud.md
+        - Kubernetes : developertools/techstack/kubernetes.md
+        - Argo CD : developertools/techstack/argocd.md
+        - Helm : developertools/techstack/helm.md
+        - Terraform : developertools/techstack/terraform.md
+        - Blazor : developertools/techstack/blazor.md
+        - Node JS : developertools/techstack/node-js.md
+        - QA Automation : developertools/techstack/testing.md
