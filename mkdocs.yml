@@ -151,11 +151,12 @@ nav:
   - Home:
     - Home: index.md      
   - About:
-    - About: about.md
+    - About: about/about.md
+    - Profile : about/profile.md
   - Contact:
     - Contact Us: contact.md
-  - Blogs:
-    - Blogs: blogs.md
+  # - Blogs:
+  #   - Blogs: blogs.md
   - Developer Tools:
       - Download & Install software:
         - Developer Workstation Configuration: developertools/software/workstation.md    
@@ -182,3 +183,7 @@ nav:
         - Blazor : developertools/techstack/blazor.md
         - Node JS : developertools/techstack/node-js.md
         - QA Automation : developertools/techstack/testing.md
+  - Resources:
+      - YouTube Videos:
+        - .NET Core Web API : resources/dotnet-core-webapi.md
+        - Azure Cloud : resources/azure-cloud.md
