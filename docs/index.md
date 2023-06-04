@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Hello! I'm Anji Keesari, a passionate instructor and Cloud Architect and developer specializing in the Microsoft technology stack. On this website, I provide comprehensive learning resources, tutorials, and insights to help you master Microsoft technologies and empower your software development skills.
+Hello! I'm Anji Keesari, a passionate instructor and Cloud Architect and full stack developer specializing in the Microsoft technology stack. On this website, I provide comprehensive learning resources, tutorials, and insights to help you master Microsoft technologies and empower your software development skills.
 
 
 ## Courses and Tutorials
