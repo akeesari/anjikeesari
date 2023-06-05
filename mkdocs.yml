@@ -149,12 +149,7 @@ copyright: |
 # Page tree
 nav:
   - Home:
-    - Home: index.md      
-  - About:
-    - About: about/about.md
-    - Profile : about/profile.md
-  - Contact:
-    - Contact Us: contact.md
+    - Home: index.md        
   # - Blogs:
   #   - Blogs: blogs.md
   - Developer Tools:
@@ -184,6 +179,13 @@ nav:
         - Node JS : developertools/techstack/node-js.md
         - QA Automation : developertools/techstack/testing.md
   - Resources:
+      - Books:
+        - Microservices on Kubernetes : resources/books/k8s.md        
       - YouTube Videos:
-        - .NET Core Web API : resources/dotnet-core-webapi.md
+        - .NET Core Web API : resources/webapi.md
         - Azure Cloud : resources/azure-cloud.md
+  - About:
+      - About: about/about.md
+      - Profile : about/profile.md
+  - Contact:
+      - Contact Us: contact.md

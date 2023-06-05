@@ -4,7 +4,7 @@
 ![image.jpg](images/anji-pic.jpg){ align=right width=250 height=250 border-radius=50%}
 
 
-**Anji Keesari** is a software engineer and **cloud architect** with over **20 years** of experience in the technology industry. He has worked on numerous projects involving cloud computing, **microservices** architecture, and **Kubernetes**, **Terraform**, and containers.
+**Anji Keesari** is a software engineer and **Cloud Architect** with over **20 years** of experience in the technology industry. He has worked on numerous projects involving cloud computing, **Microservices** architecture, and **Kubernetes**, **Terraform**, and containers.
 
 
 Anji has experience deploying and managing Kubernetes clusters in production environments. He is also an expert in **ArgoCD** and **Helmcharts** and has used these tools to deploy microservices applications on Kubernetes. 
@@ -20,9 +20,3 @@ Anji has recently been involved in developing **multi-tenant** applications whil
 Throughout my career, I have worked with various companies in different domains such as Banking, Healthcare, and Finance, across countries like India, UK, and US. I am passionate about making a significant impact at my workplace and helping others along the way.
 
 During his free time, Anji finds joy in various activities such as playing soccer, going hiking, exploring new places, and most importantly, spending quality time with his loved ones.
-
-If you have any question, suggestion or want to request a topic, feel free to drop me a message and we’ll get in touch when I can with my busy schedule.
-
-- Email: <anjkeesari@gmail.com>
-- Phone: **+1 707-742-9606**
-- Website: [https://anjikeesari.com](https://anjikeesari.com)
