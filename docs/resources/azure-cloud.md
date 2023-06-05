@@ -2,14 +2,9 @@
 
 ## Introduction
 
-- Welcome to **Azure Reference Architecture** Step by Step Practical Guide, in this course you will learn how to build a complete Azure architecture which will be used in any of small and medium scale organizations even this can be extended for enterprise.
-- As part of these Labs we're going to Deploy a website and it's Microservices in Azure vis Azure DevOps CI & CD Pipelines
-- The system is built using Blazor frontend and .NET Core Web API is used for backend Microservices but you don't have to be familiar with these languages, you just better have some development knowledge.
-- As part of this step by step practical guide we will start from the very basics and go to the most advanced concepts.
-- We will strongly recommend you to take this Labs in sequence as listed below so that you will be able to understand the concepts clearly apply in your projects.
-- Uur aim is to save your time if you are looking for similar design in your organization.
-- By the end of this course you'll be familiar with the major services in Azure, and also get real live project experience and you'll be able to work with Azure and design and build modern cloud apps, utilizing the most up-to-date cloud services.
-- Completing this course will give you all the knowledge required for designing modern, robust, secure and reliable cloud systems.
+Welcome to **`Step-by-Step Practical Guide on Azure Reference Architecture**. In this course, you will learn how to build a comprehensive Azure architecture suitable for small, medium, and even enterprise-scale organizations. Throughout the labs, I'll guide you in deploying a website and its microservices in Azure using Azure DevOps CI & CD Pipelines. 
+We strongly recommend following the labs in the listed sequence to ensure a clear understanding of the concepts that can be directly applied to your own projects.
+Our goal is to save your time by providing a similar design solution for your organization. By the end of this course, you will become familiar with the major services offered by Azure and gain real-life project experience. 
 
 ## YouTube videos
 
@@ -27,13 +22,14 @@
 | **Lab-9:**          | [Azure Resource Naming & Tagging Conventions](https://www.youtube.com/watch?v=PhdKztaKjHs) |
 | **Lab-10:**         | [ARM Template Project setup & Create Resource Group](https://www.youtube.com/watch?v=UW2X_FUuzFk) |
 | **Lab-11:**         | [Azure Virtual Network Concepts & Create Virtual Network](https://www.youtube.com/watch?v=PuZ20cIdh50) |
-| **Lab-12:**         | [Create ASE from Azure Portal](https://www.youtube.com/watch?v=XwZ3DcryRX4) |
-| **Lab-12.1:**       | [Create ASE using ARM template](https://www.youtube.com/watch?v=LmoYmjLGDEs) |
+| **Lab-12:**         | [Create Azure AppService Environment from Azure Portal](https://www.youtube.com/watch?v=XwZ3DcryRX4) |
+| **Lab-12.1:**       | [Create Azure AppService Environment using ARM template](https://www.youtube.com/watch?v=LmoYmjLGDEs) |
 | **Lab-12.2:**       | [Create Tags in ASE using ARM templates](https://www.youtube.com/watch?v=lI2K_2VO03c) |
-| **Lab-13:**         | [Create Plan from Azure Portal](https://www.youtube.com/watch?v=ByMYKoKE0rM&t=8s) |
-| **Lab-13.1:**       | [Create Plan and App Services using ARM Template](https://www.youtube.com/watch?v=ByMYKoKE0rM&t=8s)|
+| **Lab-13:**         | [Create Azure App Service Plan from Azure Portal](https://www.youtube.com/watch?v=ByMYKoKE0rM&t=8s) |
+| **Lab-13.1:**       | [Create Azure App Service Plan and App Services using ARM Template](https://www.youtube.com/watch?v=ByMYKoKE0rM&t=8s)|
 | **Lab-14:**         | [Deploying ARM Templates using Azure DevOps Pipelines](https://www.youtube.com/watch?v=a2CHApotJNY&t=1089s) |
-| **Lab-15:**         | [Deploy a website to Azure with Azure App Service](https://www.youtube.com/watch?v=XqHOmSZM35U&t=315s)|
+| **Lab-15:**         | [ Deploy a website or APIs to Azure with Azure App Service](https://www.youtube.com/watch?v=XqHOmSZM35U&t=315s)|
+| **Lab-16:**         | [ Create Azure Application Gateway ](https://www.youtube.com/watch?v=p3AN1Oh7HeE&t=2391s)|
 
 ## Source code
 
