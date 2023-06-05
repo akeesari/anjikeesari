@@ -1,6 +1,6 @@
 # Developer Workstation Configuration
 
-Here are some general recommendations for a developer workstation; However, you can build on your own workstation if you are expert on computer hardware:
+Here are some general recommendations for a developer workstation. However, if you are an expert in computer hardware, you can customize and build your own workstation according to your specific needs:
 
 - A fast processor with multiple cores (e.g. Intel Core i7 or AMD Ryzen)
 - At least 8GB of RAM (16GB or more is recommended for larger projects)
