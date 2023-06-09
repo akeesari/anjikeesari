@@ -1,4 +1,4 @@
-In this article, I am going to present a comprehensive cheat sheet of commonly used Git commands. 
+In this article, I am going to present a comprehensive cheat sheet of commonly used Git commands with examples. 
 
 ## Installing git
 
@@ -6,7 +6,6 @@ Here are the commands to install Git on different operating systems:
 
 ```sh
 # Ubuntu/Debian:
-
 sudo apt-get install git
 
 # MacOS (using Homebrew):
