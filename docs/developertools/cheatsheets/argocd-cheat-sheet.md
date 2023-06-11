@@ -1,12 +1,9 @@
-# ArgoCD Cheat Sheet
-
 ## Introduction
 
+In this article, I am going to present a comprehensive cheat sheet of commonly used **ArgoCD  ** commands with examples.
+
+
 `ArgoCD` is a popular tool for managing Kubernetes applications and deploying them in a declarative manner. ArgoCD provides a web UI, but it also has a command-line interface (CLI) that can be used to manage applications, repositories, and other resources.
-
-This page contains a list of commonly used `argocd` commands.
-
-Note: make sure that you login into azure, select the azure subscription & connect k8s cluster before running any `argocd` commands.
 
 ## Prerequisites
 
@@ -16,6 +13,25 @@ Note: make sure that you login into azure, select the azure subscription & conne
 - Connect to k8s Cluster
 
 
+
+## Installing ArgoCD
+
+Use the following commands to install ArgoCD CLI in MacOS and Windows.
+
+```sh
+# MacOS (using Homebrew):
+brew install argocd
+
+# Windows OS (using Choco)
+choco install argocd-cli
+
+#  verify the installation by running 
+argocd version
+```
+
+## Connection to Kubernetes cluster
+
+Note: Make sure that you login into azure, select the azure subscription & connect k8s cluster before running any `argocd` commands.
 
 ``` sh
 # Azure login
@@ -38,7 +54,7 @@ kubectl get no
 kubectl get namespace -A
 ```
 
-## commands with description
+## ArgoCD Commands & description
 
 Here are some common ArgoCD CLI commands and their purposes:
 
@@ -68,17 +84,19 @@ Here are some common ArgoCD CLI commands and their purposes:
 
 
 
-## argocd help
-use the following command to get the argocd help
+## ArgoCD help
 
-```
+This command provides general help and usage information about ArgoCD. It gives an overview of available commands and their usage.
+
+
+```sh
 argocd help
 or 
 argocd --help
 ```
 output
 
-```
+```sh
 Available Commands:
   account     Manage account settings
   admin       Contains a set of commands useful for Argo CD administrators and requires direct Kubernetes access
@@ -98,15 +116,15 @@ Available Commands:
   version     Print version information
 ```
 
-## argocd commands help
+## ArgoCD commands help
 
-use the following commands to get the `argocd commands` help
+This command provides detailed help and usage information about individual ArgoCD commands. It can be used to get specific information about any command's usage, options, and arguments.
 
-```
+```sh
 argocd help app
 ```
 output
-```
+```sh
 Manage applications
 
 Usage:
@@ -146,11 +164,11 @@ Available Commands:
   wait            Wait for an application to reach a synced and healthy state
 ```
 
-```
+```sh
 argocd help repo
 ```
 output
-```
+```sh
 Manage repository connection parameters
 
 Usage:
@@ -165,11 +183,11 @@ Available Commands:
 ```
 
 
-```
+```sh
 argocd help account
 ```
 output
-```
+```sh
 Manage account settings
 
 Usage:
@@ -199,7 +217,7 @@ argocd login <ARGOCD_SERVER> [--insecure] [--username <USERNAME>] [--password <P
 
 examples:
 
-```
+```sh
 # localhost argocd login
 argocd login localhost:8080 - need to test this
 
@@ -210,18 +228,18 @@ argocd login 20.241.96.132
 ```
 Note: By default, the Argo CD API server is not exposed with an external IP. To access the API server, Change the argocd-server service type to **LoadBalancer**:
 
-``` bash
+``` sh
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 ```
 If your ArgoCD server is using a self-signed SSL certificate, you may need to use the **--insecure** flag to bypass SSL verification.
 
 Enter ArgoCD credentials
-```
+```sh
 admin
 xxxxx - in bash you may need to right click the mouse instead of key board copy paste to make it work
 ```
 output
-```
+```sh
 WARNING: server is not configured with TLS. Proceed (y/n)? y
 Username: admin
 Password: 
@@ -230,7 +248,7 @@ Context '20.241.96.132' updated
 ```
 
 in case if you use the yourdomainname.com URL, you will see output like this.
-```
+```sh
 time="2022-11-20T09:44:31-08:00" level=warning msg="Failed to invoke grpc call. Use flag --grpc-web in grpc calls. To avoid this warning message, 
 use flag --grpc-web."
 Username: admin
@@ -242,13 +260,15 @@ Context 'yourdomainname.com' updated
 Once you have logged in successfully, ArgoCD will save a session token locally so that you don't have to log in again for subsequent commands.
 
 
-## cluster list
+## Cluster list
 
-```
+This command lists the clusters connected to the ArgoCD server. It displays information about each cluster, such as name, server URL, and current context.
+
+```sh
 argocd cluster list
 ```
 output
-```
+```sh
 time="2022-11-20T09:48:31-08:00" level=warning msg="Failed to invoke grpc call. Use flag --grpc-web in grpc calls. To avoid this warning message, 
 use flag --grpc-web."
 SERVER                          NAME        VERSION  STATUS      MESSAGE  PROJECT
@@ -259,15 +279,16 @@ https://kubernetes.default.svc  in-cluster  1.22     Successful
 
 ## Add cluster
 
-Use the following command to register an external AKS Cluster with Argo CD
+This command is used to add a new external Kubernetes cluster to the ArgoCD server. It requires specifying the cluster's context name, server URL, and authentication credentials.
 
-```
+
+```sh
 argocd cluster add aks-cluster2-dev
 ```
 
 output - It will look like this:
 
-```
+```sh
 WARNING: This will create a service account `argocd-manager` on the cluster referenced by context `aks-cluster2-dev` with full cluster level privileges. Do you want to continue [y/N]? y
 
 .
@@ -278,36 +299,42 @@ Cluster 'https://cluster2-dns-89d81b75.hcp.northcentralus.azmk8s.io:443' added
 ```
 ## Repository List
 
-```
+This command lists the repositories configured in the ArgoCD server. It provides information about each repository, such as name, URL, and connection status.
+
+```sh
 argocd repo list
 ```
 output
 
-```
+```sh
 TYPE  NAME  REPO                                                  INSECURE  OCI    LFS    CREDS  STATUS      MESSAGE  PROJECT
 git         https://github.com/argoproj/argocd-example-apps.git   false     false  false  false  Successful           default
 ```
 
 ## Application List
 
-```
+This command lists all applications managed by ArgoCD. It displays information about each application, including its name, project, health status, and synchronization status.
+
+```sh
 argocd app list
 ```
 output
 
-```
+```sh
 NAME        CLUSTER                         NAMESPACE  PROJECT  STATUS     HEALTH       SYNCPOLICY  CONDITIONS  REPO                                                  PATH         TARGET
 guestbook   https://kubernetes.default.svc  default    default  Synced     Healthy      <none>      <none>      https://github.com/argoproj/argocd-example-apps.git   guestbook    HEAD 
 ```
 
 ## App Resources
 
-```
+This command shows the Kubernetes resources associated with a specific application. It provides a detailed list of resources deployed by the application, including their types, names, and current status.
+
+```sh
 argocd app resources aspnetcore-webapp
 ```
 output
 
-```
+```sh
 time="2022-11-20T09:53:32-08:00" level=warning msg="Failed to invoke grpc call. Use flag --grpc-web in grpc calls. To avoid this warning message, 
 use flag --grpc-web."
 GROUP  KIND        NAMESPACE     NAME               ORPHANED
@@ -317,11 +344,13 @@ apps   Deployment  sample  aspnetcore-webapp  No
 
 ## Application Details
 
-```
+This command displays detailed information about a specific application. It shows information such as the application's project, repository, target revision, and synchronization status.
+
+```sh
 argocd app get aspnetcore-webapp
 ```
 output
-```
+```sh
 time="2022-11-20T09:54:28-08:00" level=warning msg="Failed to invoke grpc call. Use flag --grpc-web in grpc calls. To avoid this warning message, 
 use flag --grpc-web."
 time="2022-11-20T09:54:28-08:00" level=warning msg="Failed to invoke grpc call. Use flag --grpc-web in grpc calls. To avoid this warning message, 
@@ -350,31 +379,39 @@ apps   Deployment  sample  aspnetcore-webapp  Unknown  Healthy        deployment
 
 ## Application Delete
 
-```
+ This command is used to delete a specific application managed by ArgoCD. It removes the application and all associated resources from the Kubernetes cluster.
+
+```sh
 argocd app delete guestbook
 ```
 
 ## Application sync
 
-```
+This command triggers a synchronization of a specific application with its target state. It ensures that the application's deployed resources match the desired state defined in the repository.
+
+```sh
 argocd app sync guestbook
 ```
 
 ## Project List
 
-```
+This command lists the projects defined in ArgoCD. It provides information about each project, such as name, description, and application count.
+
+```sh
 argocd proj list
 ```
 output
 
-```
+```sh
 NAME                DESCRIPTION                                       DESTINATIONS    SOURCES  CLUSTER-RESOURCE-WHITELIST  NAMESPACE-RESOURCE-BLACKLIST  SIGNATURE-KEYS  ORPHANED-RESOURCES
 default                                                               *,*             *        */*                         <none>                        <none>          disabled
 ```
 
 ## Create Project
 
-```
+This command is used to create a new project in ArgoCD. It requires specifying the project name, optionally providing a description, and setting other project-specific configurations.
+
+```sh
 argocd proj create myproj
 ```
 
@@ -383,17 +420,19 @@ argocd proj create myproj
 
 When you run argocd logout, ArgoCD will remove the session token that was saved when you logged in, so you will need to log in again with argocd login the next time you want to run any ArgoCD commands.
 
-```
+```sh
 argocd logout 52.159.112.67
 ```
 output
 
-```
+```sh
 Logged out from '52.159.112.67'
 ```
 
+These commands allow you to interact with ArgoCD, manage clusters, repositories, applications, projects, and perform various administrative tasks related to continuous deployment and GitOps workflows.
 
-# Reference
+
+<!-- # Reference
 
 - <https://argo-cd.readthedocs.io/en/release-1.8/user-guide/commands/argocd/>
-
+ -->
