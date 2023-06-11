@@ -358,7 +358,7 @@ kubectl get pods -n sample --no-headers=true | ForEach-Object { kubectl logs $_.
 kubectl get pods -n sample --no-headers=true | ForEach-Object { kubectl logs --since=5h $_.Split()[0] -n sample }
 
 # show log output if any word "exception" in it
-kubectl get pods -n sample --no-headers=true | ForEach-Object { kubectl logs --since=5m $_.Split()[0] -n tenant1 } | Select-String "exception"
+kubectl get pods -n sample --no-headers=true | ForEach-Object { kubectl logs --since=5m $_.Split()[0] -n sample } | Select-String "exception"
 ```
 
 ## Port-forward
