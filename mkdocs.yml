@@ -159,11 +159,12 @@ nav:
         - Mac OS: developertools/software/mac.md
       - Cheat Sheets:
         - Git Cheat Sheet: developertools/cheatsheets/git-cheat-sheet.md
-        - Docker Cheat Sheet: developertools/cheatsheets/docker-cheat-sheet.md
-        - az acr Cheat Sheet: developertools/cheatsheets/az-acr-cheat-sheet.md
+        - Docker Cheat Sheet: developertools/cheatsheets/docker-cheat-sheet.md        
         - Kubectl Cheat Sheet: developertools/cheatsheets/kubectl-cheat-sheet.md
         - ArgoCD Cheat Sheet: developertools/cheatsheets/argocd-cheat-sheet.md
         - Helm Cheat Sheet: developertools/cheatsheets/helm-cheat-sheet.md
+        - Azure CLI Cheat Sheet: developertools/cheatsheets/az-cli-cheat-sheet.md
+        - AZ ACR Cheat Sheet: developertools/cheatsheets/az-acr-cheat-sheet.md
       - Technology Stack:
         - Technology Stack: developertools/techstack/tech-stack.md    
         - C# : developertools/techstack/c-sharp.md
