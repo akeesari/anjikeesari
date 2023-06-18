@@ -187,5 +187,6 @@ nav:
   - About:
       - About: about/about.md
       - Profile : about/profile.md
+      - Accomplishments : about/accomplishments.md
   - Contact:
       - Contact Us: contact.md
