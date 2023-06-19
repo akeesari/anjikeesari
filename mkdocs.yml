@@ -165,6 +165,7 @@ nav:
         - Helm Cheat Sheet: developertools/cheatsheets/helm-cheat-sheet.md
         - Azure CLI Cheat Sheet: developertools/cheatsheets/az-cli-cheat-sheet.md
         - AZ ACR Cheat Sheet: developertools/cheatsheets/az-acr-cheat-sheet.md
+        - Terraform Cheat Sheet: developertools/cheatsheets/terraform-cheat-sheet.md
       - Technology Stack:
         - Technology Stack: developertools/techstack/tech-stack.md    
         - C# : developertools/techstack/c-sharp.md

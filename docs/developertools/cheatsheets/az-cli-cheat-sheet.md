@@ -1,7 +1,8 @@
 
+# Azure CLI Commands
 ## Introduction
 
-In this article, I am going to present a comprehensive cheat sheet of commonly used few **azure cli** commands with examples.
+In this article, I am going to present a comprehensive cheat sheet of commonly used **azure cli** commands with examples.
 
 The Azure command-line interface (Azure CLI) is a set of commands used to create and manage Azure resources. 
 
