@@ -13,15 +13,15 @@ We highly recommend following this series in sequence to ensure a clear understa
 
 | **Labs**            | **Title YouTube Link**                                                                              |
 | --------------------| --------------------------------------------------------------------------------------------------- |
-| **Lab-1:**          | [Clean Architecture Fundamentals (Theory)](https://www.youtube.com/watch?v=TEeb0Hba8jI)              |
-| **Lab-2:**          | [Clean Architecture Project Structure](https://www.youtube.com/watch?v=es-nbJsDp-g)                  |
-| **Lab-3:**          | [ASP.NET Core Web API Basic Configuration ](https://www.youtube.com/watch?v=X5c9eN99n5M)             |
-| **Lab-4:**          | [Azure Key Vault configuration & Health Checks in ASP.NET Core REST API ](https://www.youtube.com/watch?v=DskTR7SKT7E) |
-| **Lab-5:**          | [CRUD Operations In ASP.NET Core Web API with Entity Framework Core ](https://www.youtube.com/watch?v=SIOpdKb48qo) |
-| **Lab-6:**          | [ How to deploy .NET Core Web API to Azure from locally <br /> How to deploy .NET Core Web API to Azure using DevOps pipeline <br /> Create CI/CD Pipeline for ASP.NET Core Web API <br /> Automate Build and Deployment of Azure SQL Database ](https://www.youtube.com/watch?v=vT4_FwUeOJg) |
-| **Lab-7:**          | [REST API Best Practices ](https://www.youtube.com/watch?v=bk05z8bdvYQ)                              |
-| **Lab-8:**          | [Unit Testing in ASP.NET Core Web API ](https://www.youtube.com/watch?v=YxXf9Tc-Kj4)                 |
-| **Lab-9:**          | Fluent Validation in .NET Core Web API - (future topic ...)                 |
+| **Lab-1:**          | <a href="https://www.youtube.com/watch?v=TEeb0Hba8jI" target="_blank">Clean Architecture Fundamentals (Theory)</a>              |
+| **Lab-2:**          | <a href="https://www.youtube.com/watch?v=es-nbJsDp-g" target="_blank">Clean Architecture Project Structure</a>              |
+| **Lab-3:**          | <a href="https://www.youtube.com/watch?v=X5c9eN99n5M" target="_blank">ASP.NET Core Web API Basic Configuration</a>              |
+| **Lab-4:**          | <a href="https://www.youtube.com/watch?v=DskTR7SKT7E" target="_blank">Azure Key Vault configuration & Health Checks in ASP.NET Core REST API</a>              |
+| **Lab-5:**          | <a href="https://www.youtube.com/watch?v=SIOpdKb48qo" target="_blank">CRUD Operations In ASP.NET Core Web API with Entity Framework Core</a>              |
+| **Lab-6:**          | <a href="https://www.youtube.com/watch?v=vT4_FwUeOJg" target="_blank">How to deploy .NET Core Web API to Azure from locally <br /> How to deploy .NET Core Web API to Azure using DevOps pipeline <br /> Create CI/CD Pipeline for ASP.NET Core Web API <br /> Automate Build and Deployment of Azure SQL Database</a>              |
+| **Lab-7:**          | <a href="https://www.youtube.com/watch?v=bk05z8bdvYQ" target="_blank">REST API Best Practices </a>              |
+| **Lab-8:**          | <a href="https://www.youtube.com/watch?v=YxXf9Tc-Kj4" target="_blank">Unit Testing in ASP.NET Core Web API </a>              |
+<!-- | **Lab-9:**          | Fluent Validation in .NET Core Web API - (future topic ...)                 |
 | **Lab-10:**          | How To Use Nswag With ASP.NET Core t Web API And Generate Client Code With Nswag Studio - (future topic ...)                 |
 | **Lab-11:**          | Call an external WCF webservice from within a .NET Core 5 Web API - (future topic ...)                 |
 | **Lab-12:**          | Consume RESTFull API in .NET Core 5 Web API using HttpClient - (future topic ...)                 |
@@ -36,10 +36,11 @@ We highly recommend following this series in sequence to ensure a clear understa
 | **Lab-21:**          | ASP.NET Core Web API Authorization Using JWT Token - (future topic ...)                 |
 | **Lab-22:**          | How to use Azure Blob storage in ASP.NET Core 5 Web API - (future topic ...)                 |
 | **Lab-23:**          | Unit Testing and Code Coverage for ASP.NET Web API - (future topic ...)                 |
-| **Lab-24:**          | Configure Code quality rules in .NET Core Web API - (future topic ...)                 |
+| **Lab-24:**          | Configure Code quality rules in .NET Core Web API - (future topic ...)                 | -->
 
 ## Source code
 
-Work in progress...
+You can access the source code on GitHub by using the following link. This will take you to the repository where all the code for our project is stored. 
 
-<!-- | **Lab-6:**          | [How to deploy .NET Core Web API to Azure from locally ](https://www.youtube.com/watch?v=SIOpdKb48qo)| -->
+<a href="https://github.com/akeesari/feedbackservice/" target="_blank">GitHub Source Code Repository</a>
+<a href="https://github.com" target="_blank">GitHub</a>
