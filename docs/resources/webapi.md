@@ -43,4 +43,3 @@ We highly recommend following this series in sequence to ensure a clear understa
 You can access the source code on GitHub by using the following link. This will take you to the repository where all the code for our project is stored. 
 
 <a href="https://github.com/akeesari/feedbackservice/" target="_blank">GitHub Source Code Repository</a>
-<a href="https://github.com" target="_blank">GitHub</a>
