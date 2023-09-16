@@ -40,13 +40,35 @@ Use the following link, click on the search button, and start typing the require
 
 It is the most commonly used IDE, It is widely used for programming and supports various languages with extensive customization options.
 
-```
+```sh
 choco install vscode
 ```
 
 verify the installation
-```
+```sh
 code --help
+```
+
+## VS Code Extensions
+
+After install VS code, install the following extensions in vs code as per the need:
+
+```sh
+Azure CLI Tools
+Azure Account
+Azure Kubernetes Services
+Kubernetes
+Azure Terraform
+C#
+Bridge to Kubernetes
+Dev Containers
+Remote Development
+Docker
+Dotnet
+Helm Intelligence
+vscode-helm
+Kubernetes – very helpful for debugging services in AKS 
+PostgreSQL - get this from Microsoft 
 ```
 
 ## Install SQL server
@@ -103,7 +125,7 @@ docker --version
 
 Azure CLI is a command-line interface for managing and interacting with Microsoft Azure cloud services. It provides a convenient way to automate and control your Azure resources.
 
-```
+```sh
 choco install azure-cli
 ```
 
@@ -115,7 +137,7 @@ az --version
 
 Terraform is an infrastructure-as-code tool used for provisioning and managing cloud resources. It allows you to define your infrastructure in code and automates the deployment and management of resources across different cloud providers.
 
-```
+```sh
 choco install terraform
 ```
 
@@ -123,11 +145,11 @@ choco install terraform
 terraform --version
 ```
 
-## Install Kubernetes CLI or kubectl CLI
+## Install kubectl
 
 kubectl is a command-line tool used to interact with Kubernetes clusters. It enables you to deploy, manage, and monitor applications running on Kubernetes.
 
-```
+```sh
 choco install kubernetes-cli
 ```
 For more information, please refer to the following link: - <https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/>
@@ -148,11 +170,19 @@ kubectl cluster-info
 
 ```
 
+## Install Lens
+
+Lens is a popular Kubernetes platform that serves as a robust and advanced development and management environment for Kubernetes clusters. It provides a comprehensive graphical user interface (GUI) that simplifies the management, monitoring, and interaction with Kubernetes resources and clusters.
+
+```sh
+choco install lens
+```
+
 ## Install azure kubelogin
 
 Azure Kubelogin is a tool that enables seamless authentication and access to Azure Kubernetes Service (AKS) clusters using your Azure credentials.
 
-```
+```sh
 choco install azure-kubelogin
 ```
 
@@ -160,7 +190,7 @@ choco install azure-kubelogin
 
 Helm is a package manager for Kubernetes that simplifies the deployment and management of applications on Kubernetes clusters. It allows you to define and install applications using charts, which are packages of pre-configured Kubernetes resources.
 
-```
+```sh
 choco install kubernetes-helm
 ```
 
@@ -168,8 +198,40 @@ choco install kubernetes-helm
 
 pgAdmin is a graphical administration and development platform for PostgreSQL, a popular open-source relational database management system. It provides a user-friendly interface for managing databases, running queries, and monitoring server activity.
 
-```
+```sh
 choco install pgadmin4
+```
+
+## Install argocd
+
+Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
+
+```sh
+choco install argocd
+```
+
+## Install Azure Data Studio
+
+Azure Data Studio is a cross-platform database tool for data professionals using the Microsoft family of on-premises and cloud data platforms on Windows, MacOS, and Linux.
+
+```sh
+choco install azure-data-studio
+```
+
+## Azure Storage Explorer
+
+Azure Storage Explorer is a standalone application provided by Microsoft that allows users to interact Azure storage account services and making it easier to work with Azure Blob Storage, Azure Queue Storage, Azure Table Storage, and Azure Cosmos DB.
+
+```sh
+choco install microsoftazurestorageexplorer
+```
+
+## Install RDCMan
+
+RDCMan, short for Remote Desktop Connection Manager, is a free Microsoft Windows utility used to manage multiple remote desktop connections from a single application. It is particularly useful to connect and manage multiple remote servers, workstations, or virtual machines.
+
+```sh
+choco install rdcman
 ```
 
 ## Install Python
@@ -214,7 +276,7 @@ choco install jq
 
 Postman is a popular API development and testing tool. It allows you to make HTTP requests, test APIs, and automate API workflows, making it easier to develop and debug APIs.
 
-```
+```sh
 choco install postman
 ```
 
@@ -223,26 +285,10 @@ choco install postman
 
 Allows us to access multiple command-line tools and shells in one customizable interface. It is an open-source project developed and maintained by Microsoft.
 
-```
+```sh
 choco install microsoft-windows-terminal
 ``` 
 
-After install VS code, install the following extensions in vs code as per the need:
-
-- Azure CLI Tools
-- Azure Account
-- Azure Kubernetes Services
-- Azure Terraform
-- C#
-- Bridge to Kubernetes
-- Dev Containers
-- Docker
-- Dotnet
-- Helm Intelligence
-- Kubernetes – very helpful for debugging services in AKS 
-- PostgreSQL - get this from Microsoft 
-- Remote development 
-- Terraform 
 
 After the installation quickly check to see the status of these installation by running version commands in PowerShell script or VS code terminal
 
