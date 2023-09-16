@@ -8,8 +8,38 @@ To view the website locally and make changes, you'll need to set up the developm
 
 1. **Installation:** Install MkDocs by following the [official installation guide](https://www.mkdocs.org/#installation).
 
-2. **Clone the repository:** Clone this repository to your local machine using the command:
+**Local setup on Mac OS**
+
+install brew
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+Install python3
+
+
+```sh
+brew install python3
+python3 --version
+```
+
+Upgrade pip
+
+```sh
+pip3 install --upgrade pip
+
+```
+Install mkdocs
+
+```sh
+pip3 install mkdocs
+pip3 install mkdocs-material
+pip3 install mkdocs-material-extensions
+```
+
+2. **Clone the repository:** Clone this repository to your local machine using the command:
+```sh
 git clone https://github.com/akeesari/anjikeesari.git
 ```
 
@@ -94,3 +124,6 @@ If you find any issues with my website or would like to suggest improvements, fe
 
 ## License
 This project is licensed under the MIT License.
+
+## References
+https://suedbroecker.net/2021/01/25/how-to-install-mkdocs-on-mac-and-setup-the-integration-to-github-pages/
