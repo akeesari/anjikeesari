@@ -69,6 +69,7 @@ Helm Intelligence
 vscode-helm
 Kubernetes – very helpful for debugging services in AKS 
 PostgreSQL - get this from Microsoft 
+PowerShell Extension- https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell
 ```
 
 ## Install SQL server
