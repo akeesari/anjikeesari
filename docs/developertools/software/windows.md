@@ -349,3 +349,4 @@ You may need these additional software to perform daily activities.
 - [Azure storage-explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/)
 - RDC - <https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman>
 - base64encode - <https://www.base64encode.org/>
+- LightShot (prntscr) - https://app.prntscr.com/en/
