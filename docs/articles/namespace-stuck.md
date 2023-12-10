@@ -127,8 +127,14 @@ To resolve this issue, you'll need to identify and manually delete  a Terminatin
     kubectl get namespaces
     ```
 
-    <!-- ## Reference:
-    - <https://www.ibm.com/docs/en/cloud-private/3.2.0?topic=console-namespace-is-stuck-in-terminating-state>
-    - <https://linuxhelp4u.blogspot.com/2019/01/kubernetes-remove-namespace-stuck-in.html> 
-    - 
-    -->
+## **Conclusion**
+
+By following these steps, you should be able to successfully resolve the issue of Kubernetes namespace stuck in the terminating state and delete namespace.
+
+<!-- 
+## Reference:
+- <https://www.ibm.com/docs/en/cloud-private/3.2.0?topic=console-namespace-is-stuck-in-terminating-state>
+- <https://linuxhelp4u.blogspot.com/2019/01/kubernetes-remove-namespace-stuck-in.html>  
+-->
+     
+    
