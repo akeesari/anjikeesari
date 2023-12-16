@@ -2,7 +2,7 @@
 
 ## e-Book
 
-Welcome to my eBook, `Build & Deploy Microservices on Kubernetes using ArgoCD & Helm`. In this book, I'm going to share my knowledge about creating and managing microservices applications in Kubernetes, using the latest tools like ArgoCD and Helm.  I will also share insights and practical knowledge on using the latest tools like ArgoCD and Helm.
+Welcome to my eBook, `Build & Deploy Microservices on Kubernetes using ArgoCD & Helm`. In this book, I'm going to share my practical knowledge about creating and managing microservices applications in Kubernetes using the latest tools like ArgoCD and Helm.
 
 
 !!! note
