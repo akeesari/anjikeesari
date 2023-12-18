@@ -1,6 +1,8 @@
 # Download & install Software in Windows OS
 
-Here is a list of essential tools and software commonly needed by developers in the IT industry. If you are using Window operating system, you can download and install the following software as per your requirements. It is recommended to use the choco tool for installation, but if you encounter any issues, you can also perform a direct install.
+## Introduction
+
+In this article, I am going to present a comprehensive list of essential tools and software commonly needed by developers in the IT industry. If you are using Window operating system, you can download and install the following software as per your requirements. It is recommended to use the choco tool for installation, but if you encounter any issues, you can also perform a direct install.
 
 Note: - Restart your computer when prompted or needed.
 
