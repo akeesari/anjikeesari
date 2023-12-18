@@ -1,7 +1,7 @@
 # ArgoCD Commands
 ## Introduction
 
-In this article, I am going to present a comprehensive cheat sheet of commonly used **ArgoCD  ** commands with examples.
+In this article, I am going to present a comprehensive cheat sheet of commonly used **ArgoCD** commands with examples.
 
 
 `ArgoCD` is a popular tool for managing Kubernetes applications and deploying them in a declarative manner. ArgoCD provides a web UI, but it also has a command-line interface (CLI) that can be used to manage applications, repositories, and other resources.

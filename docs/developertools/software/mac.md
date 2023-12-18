@@ -1,8 +1,8 @@
 # Download & install Software in Mac OS
 
-Here is a list of essential tools and software commonly needed by developers in the IT industry, if you are a Mac developer, you can download and install following software as per the need.
+## Introduction
 
-Open the terminal and install software using Homebrew command.
+In this article, I am going to present a comprehensive list of essential tools and software commonly needed by developers in the IT industry. If you are using Mac operating system, you can download and install the following software as per your requirements. It is recommended to use the `brew` tool for installation, but if you encounter any issues, you can also perform a direct manual install.
 
 
 ## What is Homebrew?

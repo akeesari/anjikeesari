@@ -1,5 +1,9 @@
 # Welcome to my personal website!
 
+## Introduction
+
+Hello! I'm **Anji Keesari**, an passionate instructor, Cloud Architect, and a full stack developer with expertise in the Microsoft technology stack. This website is designed to provide you with easy-to-follow learning materials, tutorials, and valuable insights. My goal is to help you in various technologies such as C#, .NET, React JS, Azure Cloud, Microservices, Kubernetes, ArgoCD, Helmcharts, Azure DevOps, and more.
+
 ## e-Book
 
 Welcome to my eBook, `Build & Deploy Microservices on Kubernetes using ArgoCD & Helm`. In this book, I'm going to share my practical knowledge about creating and managing microservices applications in Kubernetes using the latest tools like ArgoCD and Helm.
@@ -12,9 +16,6 @@ Welcome to my eBook, `Build & Deploy Microservices on Kubernetes using ArgoCD & 
     <img src="images/book-cover.png" alt="Build & Deploy Microservices on Kubernetes using ArgoCD & Helm" />
 </a>
 
-## Introduction
-
-Hello! I'm **Anji Keesari**, an enthusiastic instructor, Cloud Architect, and full stack developer with expertise in the Microsoft technology stack. This website is dedicated to providing you with extensive learning materials, tutorials, and valuable insights. My goal is to help you excel in various technologies such as C#, .NET, React JS, Azure Cloud, Microservices, Kubernetes, ArgoCD, Helmcharts, Azure DevOps, and more. By leveraging these resources, you can enhance your software development skills and become empowered in your programming journey.
 
 ## Learning Approach
 
