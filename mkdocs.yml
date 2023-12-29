@@ -169,6 +169,7 @@ nav:
         - Azure CLI Cheat Sheet: developertools/cheatsheets/az-cli-cheat-sheet.md
         - AZ ACR Cheat Sheet: developertools/cheatsheets/az-acr-cheat-sheet.md
         - Terraform Cheat Sheet: developertools/cheatsheets/terraform-cheat-sheet.md
+        - Dig Cheat Sheet: developertools/cheatsheets/dig-cheat-sheet.md
       - Technology Stack:
         - Technology Stack: developertools/techstack/tech-stack.md    
         - C# : developertools/techstack/c-sharp.md
