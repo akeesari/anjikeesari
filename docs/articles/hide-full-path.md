@@ -1,4 +1,4 @@
-# Hiding the full file path in VSCode Terminal
+# **Hiding the full file path in VSCode Terminal**
 
 In this guide, we'll walk through the steps to hide the full file path and only show the current folder name in your PowerShell prompt.
 

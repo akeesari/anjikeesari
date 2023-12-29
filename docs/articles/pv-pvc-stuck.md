@@ -1,4 +1,4 @@
-# Delete PV(Persistent Volume) and PVC(Persistent Volume Claim) stuck in terminating state
+# **Delete PV(Persistent Volume) and PVC(Persistent Volume Claim) stuck in terminating state**
 
 If you are experiencing issues with deleting `Persistent Volume` or `Persistent Volume Claim` in Kubernetes (AKS). When we execute the `kubectl delete pv` or `kubectl delete pvc` command, it becomes unresponsive and gets stuck in the terminating state. Even if we try to abort the operation, it remains stuck in this state indefinitely.
 

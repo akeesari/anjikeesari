@@ -1,4 +1,4 @@
-# Interacting with Azure App Service using a publishing profile
+# **Interacting with Azure App Service using a publishing profile**
 
 ## **Introduction**
 
