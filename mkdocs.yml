@@ -195,6 +195,7 @@ nav:
       - Undoing changes with git reset: articles/git-reset.md
       - Hiding the Full path in VSCode Terminal:  articles/hide-full-path.md
       - Interacting with Azure App Service:  articles/app-service-publishing-profile.md
+      - Single Sign-On - Introduction:  articles/single-sign-on.md
   - About:
       - About: about/about.md
       # - Profile : about/profile.md
