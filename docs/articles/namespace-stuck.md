@@ -1,4 +1,4 @@
-# A Kubernetes Namespace Stuck in the Terminating State
+# **A Kubernetes Namespace Stuck in the Terminating State**
 
 ## **Symptom**
 

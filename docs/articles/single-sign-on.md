@@ -1,3 +1,5 @@
+# **Single Sign-On - Introduction**
+
 ## **What is Single Sign-On?**
 
 `Single Sign-On (SSO)` is a user authentication process that enables a user to access multiple applications with a single set of login credentials. Instead of requiring users to remember separate usernames and passwords for each application, SSO streamlines the login process by authenticating the user once and granting access to multiple services.

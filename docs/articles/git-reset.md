@@ -1,4 +1,4 @@
-# Reset a branch to a specific tag in Git
+# **Reset a branch to a specific tag in Git**
 
 ## **Introduction**
 
