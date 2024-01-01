@@ -61,6 +61,9 @@ Explanation of the steps:
 
 10. **Return Protected Resource (Resource Server to Client):** The resource server returns the requested protected resource.
 
+**sequence diagram example:** 
+
+[![Alt text](images/image-3.1.png)](images/image-3.1.png){:target="_blank"}
 
 ## **Implicit Flow (Implicit Grant)**
 
@@ -167,6 +170,10 @@ Explanation of parameters:
 !!!note
     The actual endpoints and parameters may vary based on your AD FS configuration and the OpenID Connect implementation.
 
+**sequence diagram example:** 
+
+[![Alt text](images/image-4.1.png)](images/image-4.1.png){:target="_blank"}
+
 ## **Resource Owner Password Credentials Flow**
 
    - **Use Case:** Suitable for trusted clients that can directly request and obtain the user's credentials.
@@ -210,6 +217,9 @@ Explanation of the steps:
 
 6. **Return Protected Resource (Resource Server to Client):** The resource server returns the requested protected resource.
 
+**sequence diagram example:** 
+
+[![Alt text](images/image-5.1.png)](images/image-5.1.png){:target="_blank"}
 
 ## **Client Credentials Flow**
 
@@ -244,6 +254,10 @@ Explanation of the steps:
 
 4. **Return Protected Resource (Resource Server to Client):** The resource server returns the requested protected resource.
 
+**sequence diagram example:** 
+
+
+[![Alt text](images/image-6.1.png)](images/image-6.1.png){:target="_blank"}
 
 ## **Conclusion**
 
