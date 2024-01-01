@@ -1,5 +1,15 @@
 # **Single Sign-On - Introduction**
 
+## **Introduction**
+
+
+If you're involved in implementing Single Sign-On (SSO) in your project, it's crucial to understand the fundamental concepts that will help you to implement the authentication mechanism. 
+
+In this article, we'll explain the foundational elements of Single Sign-On. By looking into these core concepts, you'll gain a clear understanding that will help to implement Single Sign-On in your own application.
+
+Whether you're new to SSO or seeking a refresher, this exploration will help you with the essential knowledge needed to review the complexities of Single Sign-On and make informed decisions during the implementation process. 
+
+
 ## **What is Single Sign-On?**
 
 `Single Sign-On (SSO)` is a user authentication process that enables a user to access multiple applications with a single set of login credentials. Instead of requiring users to remember separate usernames and passwords for each application, SSO streamlines the login process by authenticating the user once and granting access to multiple services.
@@ -37,19 +47,16 @@ Single Sign-On (SSO) works by allowing users to authenticate once and gain acces
 5. **Token Exchange (Optional):**
     - In some cases, depending on the SSO protocol used (such as OAuth 2.0 or SAML), the authentication token may be exchanged for an access token or a service-specific token.
 
-6. **Access to Other Services:**
-    - Armed with the authentication token, the user is granted access to the initial application or service. Additionally, the authentication token can be presented to other applications within the SSO ecosystem without requiring the user to log in again.
-
-7. **SSO Session Management:**
+6. **SSO Session Management:**
     - The SSO system manages the user's session, keeping track of the user's authenticated state. This session information is used to facilitate access to other services without additional authentication.
 
-8. **User Accesses Another Service:**
+7. **User Accesses Another Service:**
     - If the user decides to access another application or service within the SSO environment, the SSO system recognizes the user's existing session and provides access without requesting credentials again.
 
-9. **Logout Handling (Optional):**
+8. **Logout Handling (Optional):**
     - When the user logs out, the SSO system can handle the logout process by terminating the user's session across all connected services. This ensures a complete logout experience.
 
-10. **Token Expiry and Refresh (Optional):**
+9. **Token Expiry and Refresh (Optional):**
     - Authentication tokens may have a limited validity period. If needed, the SSO system can handle token expiration by either requiring re-authentication or using mechanisms like token refresh to obtain a new token without requiring the user's credentials.
 
 
@@ -107,24 +114,36 @@ The Single Sign-On (SSO) process involves several roles or components working to
 
 Let's explore the two types of tokens, `identity tokens`, and `access tokens`, delivered by the Authorization Server, both of which are commonly presented in the form of JSON Web Tokens (JWTs):
 
-**Identity Tokens:**
 
-- **Description:** Identity tokens carry information about the authenticated user, providing details about their identity and possibly additional attributes.
-- **Contents:** Typically include user identifiers, such as a unique user ID, and may contain additional claims like name, email, or roles.
-- **Use Case:** Identity tokens are used to convey the user's identity information to the client application, allowing it to recognize and personalize the user experience without querying the user directory.
+**ID Tokens:**
+
+   - **Purpose:** ID tokens are primarily used in the context of OpenID Connect. They are meant to carry information about the authentication of the user.
+   - **Content:** An ID token contains claims about the identity of the authenticated user, such as their user ID, username, and possibly other information like email or profile information.
+   - **Usage:** ID tokens are typically used by the client application to obtain information about the authenticated user. They are not used to access protected resources but rather to identify the user.
+   - **Example Scenario:** After a user logs in through an OpenID Connect provider, the provider issues an ID token, which the client application can use to get information about the authenticated user.
+
+**Access Tokens:**
+
+   - **Purpose:** Access tokens are used to access protected resources on behalf of a user.
+   - **Content:** An access token represents the authorization granted to a client application to access specific resources on behalf of the user. It may contain information about the scope of access, expiration time, and other details.
+   - **Usage:** Access tokens are presented by the client to the resource server to gain access to protected resources. They are used in API calls to demonstrate that the client has been authorized to access the requested resources.
+   - **Example Scenario:** A user logs in and grants permission to a third-party application to access their profile information on a social media platform. The application receives an access token that it can then use to make API requests to retrieve the user's profile data.
+
 
 Example Identity Token (JWT):
 ```json
 {
-    "sub": "1234567890",
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "roles": ["user", "admin"],
-    "iss": "https://authorization-server.com",
-    "aud": "client-application",
-    "exp": 1640995200,
-    "iat": 1640918800
+  "iss": "https://openid-provider.com",
+  "sub": "1234567890",
+  "aud": "your-client-id",
+  "exp": 1632969781,
+  "iat": 1632966181,
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "picture": "https://example.com/john-doe.jpg",
+  "nonce": "nonce-value"
 }
+
 ```
 
 Token data details:
@@ -144,13 +163,27 @@ Token data details:
 Example Access Token (JWT):
 ```json
 {
-    "sub": "1234567890",
-    "scope": "read write",
-    "aud": "resource-server",
-    "exp": 1640995200,
-    "iat": 1640918800
+  "iss": "https://authorization-server.com",
+  "sub": "1234567890",
+  "aud": ["https://api.example.com", "https://resources.example.com"],
+  "exp": 1632969781,
+  "iat": 1632966181,
+  "scope": "read write",
+  "jti": "a1b2c3d4e5f6"
 }
 ```
+simplified example of what an access token might look like:
+
+```json
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "token_type": "Bearer",
+  "expires_in": 3600,
+  "scope": "read write",
+  "refresh_token": "rT_5f9d2a96-7ae3-4eae-b64d-6375942b9c2a"
+}
+```
+
 
 **Refresh Tokens:**
 
@@ -159,7 +192,6 @@ In Single Sign-On (SSO) systems, refresh tokens play a crucial role in extending
 Access tokens, which grant access to resources, typically have a limited lifespan for security reasons. Once an access token expires, the user would need to re-authenticate to obtain a new one.
 
 When a user initially authenticates and obtains an access token, the Identity Provider or Authorization Server may also issue a refresh token along with the access token.
-
 
 
 These tokens play a crucial role in the OAuth 2.0 and OpenID Connect protocols, providing a secure and standardized way to convey identity and authorization information in a distributed and interoperable manner.
@@ -192,6 +224,48 @@ The main OAuth 2.0 flows include:
 - **Description:** Involves the resource owner (user) providing their username and password directly to the client. The client then uses these credentials to obtain an access token from the authorization server.
 
 These flows provide flexibility and cater to different types of applications and security requirements. The choice of a specific flow depends on the characteristics of the client application, the level of trust, and the security considerations of the overall system architecture.
+
+## JSON Web Token (JWT)
+
+JWTs are often used for authentication and authorization purposes in web applications and APIs. They can be sent between parties, and since they are self-contained, the recipient can verify the information within the token without needing to contact the issuer. JWTs are widely used in various protocols and frameworks, including OAuth 2.0 and OpenID Connect.
+
+JWTs are defined by the RFC 7519 standard and consist of three parts:
+
+**1. Header:** The header typically consists of two parts: the type of the token (JWT) and the signing algorithm being used, such as HMAC SHA256 or RSA.
+
+   Example:
+   ```json
+   {
+     "alg": "HS256",
+     "typ": "JWT"
+   }
+   ```
+
+**2. Payload:** The payload contains the claims. Claims are statements about an entity (typically, the user) and additional data.
+
+   Example:
+   ```json
+   {
+     "sub": "1234567890",
+     "name": "John Doe",
+     "iat": 1516239022
+   }
+   ```
+
+**3. Signature:** To create the signature part, you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that.
+
+Example (using HMAC SHA256):
+```
+HMACSHA256(
+    base64UrlEncode(header) + "." +
+    base64UrlEncode(payload),
+    secret)
+```
+
+The resulting JWT looks like this:
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwMCIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTUxNjIzOTAyMn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+```
 
 
 ## **Conclusion**
