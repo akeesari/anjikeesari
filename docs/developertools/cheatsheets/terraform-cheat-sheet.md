@@ -26,15 +26,26 @@ brew install hashicorp/tap/terraform
 # Windows OS (using choco)
 choco install terraform
 
-#  verify the installation by running 
-terraform --version
 
-# update to the latest version of Terraform
-brew update
-brew upgrade hashicorp/tap/terraform
 ```
 For more information, refer to the official documentation:  - [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
+
+## Upgrade Terraform
+
+Use the following commands to upgrade Terraform in Windows
+
+```sh
+#  verify the installation by running 
+terraform --version
+
+# update to the latest version of Terraform in Mac OS
+brew update
+brew upgrade hashicorp/tap/terraform
+
+# update to the latest version of Terraform in Windows OS
+choco upgrade terraform
+```
 
 ## terraform help
 
