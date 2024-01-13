@@ -198,6 +198,7 @@ nav:
       - Interacting with Azure App Service:  articles/app-service-publishing-profile.md
       - Single Sign-On - Introduction:  articles/single-sign-on.md
       - Single Sign-On - OAuth 2.0 flows:  articles/oatuh2.0-flows.md
+      - Getting Started with Keycloak:  articles/keycloak.md
   - About:
       - About: about/about.md
       # - Profile : about/profile.md
