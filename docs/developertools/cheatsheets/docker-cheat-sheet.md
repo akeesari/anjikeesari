@@ -144,6 +144,33 @@ docker search <image_name>
 docker pull <image_name>
 ```
 
+## Clean up resources
+
+you can use the `docker system prune` command to clean up all dangling or unused resources, including images, containers, volumes, and networks that are not tagged or connected to a running container. This command is helpful for freeing up disk space and removing unnecessary resources.
+
+```sh
+# before cleaning up Docker, first check all the available resources using the following commands:
+
+docker  container ls
+docker  image ls
+docker  volume ls
+docker  network ls
+docker  info
+
+docker system prune
+
+```
+
+If you need to clean up all containers and images locally in Docker Desktop, you can use the following commands:
+
+```sh
+# To delete all containers including its volumes use,
+docker rm -vf $(docker ps -aq)
+
+# To delete all the images,
+docker rmi -f $(docker images -aq)
+```
+
 ## Docker Compose Commands
 
 Below are some commonly used Docker Compose commands:
@@ -273,6 +300,14 @@ Scales a service to the specified number of instances.
 ```bash
 docker-compose events
 ```
+### docker compose config
+
+Parse, resolve and render compose file in canonical forma
+
+```bash
+docker-compose config
+```
+
 Streams real-time events from your services.
 
 
@@ -301,7 +336,12 @@ Streams real-time events from your services.
 - `docker save [image]`: Save an image to a tar archive
 - `docker load`: Load an image from a tar archive
 
+## References
 
-<!-- # Reference
+- [Overview of docker compose CLI](https://docs.docker.com/compose/reference/){:target="_blank"}
 
-- <https://docs.docker.com/get-started/docker_cheatsheet.pdf> -->
+<!-- 
+
+- <https://docs.docker.com/get-started/docker_cheatsheet.pdf> 
+
+-->
