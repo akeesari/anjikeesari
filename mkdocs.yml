@@ -199,6 +199,7 @@ nav:
       - Single Sign-On - Introduction:  articles/single-sign-on.md
       - Single Sign-On - OAuth 2.0 flows:  articles/oatuh2.0-flows.md
       - Getting Started with Keycloak:  articles/keycloak.md
+      - Getting Started with Drupal:  articles/drupal.md
       - Exploring Docker Fundamentals:  articles/docker-fundamentals.md
       - What are Development Containers?:  articles/dev-containers-introduction.md
   - About:
