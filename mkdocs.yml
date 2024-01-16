@@ -171,18 +171,15 @@ nav:
         - Terraform Cheat Sheet: developertools/cheatsheets/terraform-cheat-sheet.md
         - Dig Cheat Sheet: developertools/cheatsheets/dig-cheat-sheet.md
       - Technology Stack:
+        - Full-Stack - Technology Stack: developertools/techstack/full-stack.md    
         - Technology Stack: developertools/techstack/tech-stack.md    
-        - C# : developertools/techstack/c-sharp.md
         - .NET Core Web API : developertools/techstack/net-core-web-api.md
-        - React JS : developertools/techstack/react-js.md
         - Azure DevOps : developertools/techstack/azure-devops.md
         - Azure Cloud : developertools/techstack/azure-cloud.md
         - Kubernetes : developertools/techstack/kubernetes.md
         - Argo CD : developertools/techstack/argocd.md
         - Helm : developertools/techstack/helm.md
         - Terraform : developertools/techstack/terraform.md
-        - Blazor : developertools/techstack/blazor.md
-        - Node JS : developertools/techstack/node-js.md
         - QA Automation : developertools/techstack/testing.md
   - Resources:
       - Books:
