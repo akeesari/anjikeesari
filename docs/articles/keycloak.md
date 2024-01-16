@@ -151,11 +151,10 @@ Key features and functions of the Keycloak Admin Console include:
 
 ## **References**
 
-Some reliable sources and documentation where you can find information and references related to Keycloak:
 
-- [Keycloak Official Documentation](https://www.keycloak.org/documentation) is a comprehensive resource that covers installation, configuration, and usage of Keycloak.
-- [GitHub repository](https://github.com/keycloak/keycloak) is a valuable source for accessing the latest releases, source code, and issues related to Keycloak.
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/keycloak) often has questions and answers related to Keycloak.
+- [Keycloak Official Documentation](https://www.keycloak.org/documentation){:target="_blank"}
+- [GitHub repository](https://github.com/keycloak/keycloak){:target="_blank"}
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/keycloak){:target="_blank"}
 
 <!-- 
 

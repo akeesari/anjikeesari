@@ -225,7 +225,7 @@ The main OAuth 2.0 flows include:
 
 These flows provide flexibility and cater to different types of applications and security requirements. The choice of a specific flow depends on the characteristics of the client application, the level of trust, and the security considerations of the overall system architecture.
 
-## JSON Web Token (JWT)
+## **JSON Web Token (JWT)**
 
 JWTs are often used for authentication and authorization purposes in web applications and APIs. They can be sent between parties, and since they are self-contained, the recipient can verify the information within the token without needing to contact the issuer. JWTs are widely used in various protocols and frameworks, including OAuth 2.0 and OpenID Connect.
 
@@ -274,6 +274,6 @@ Single Sign-On plays an importent role in the realm of identity and access manag
 
 ## **References**
 
-- [OAuth 2.0 Specification](https://tools.ietf.org/html/rfc6749)
-- [OpenID Connect Specifications](https://openid.net/specs/openid-connect-core-1_0.html)
-- [Security Assertion Markup Language (SAML)](https://www.oasis-open.org/standards#samlv2.0)
+- [OAuth 2.0 Specification](https://tools.ietf.org/html/rfc6749){:target="_blank"}
+- [OpenID Connect Specifications](https://openid.net/specs/openid-connect-core-1_0.html){:target="_blank"}
+- [Security Assertion Markup Language (SAML)](https://www.oasis-open.org/standards#samlv2.0){:target="_blank"}

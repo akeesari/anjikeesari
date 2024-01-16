@@ -345,9 +345,9 @@ Drupal is a open-source content management system (CMS) that helps you to create
 
 ## **References**
 
-- [Drupal Official Website](https://www.drupal.org/)
-- [Drupal Documentation](https://www.drupal.org/docs)
-- [Drupal Community Events](https://events.drupal.org/)
+- [Drupal Official Website](https://www.drupal.org/){:target="_blank"}
+- [Drupal Documentation](https://www.drupal.org/docs){:target="_blank"}
+- [Drupal Community Events](https://events.drupal.org/){:target="_blank"}
 
 
 <!-- 
