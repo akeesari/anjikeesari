@@ -160,6 +160,8 @@ nav:
         - Developer Workstation Configuration: developertools/software/workstation.md    
         - Windows OS: developertools/software/windows.md
         - Mac OS: developertools/software/mac.md
+      - Tools:
+        - Useful Tools: developertools/tools/useful-tools.md
       - Cheat Sheets:
         - Git Cheat Sheet: developertools/cheatsheets/git-cheat-sheet.md
         - Docker Cheat Sheet: developertools/cheatsheets/docker-cheat-sheet.md        
