@@ -1,3 +1,5 @@
+# **Useful Tools**
+
 ## **Network troubleshooting**
 
 Here are some useful tools and links that can be helpful for troubleshooting network-related issues, monitoring network performance, and analyzing network traffic. 
@@ -47,3 +49,10 @@ Here are some useful tools and links for DNS (Domain Name System) troubleshootin
 | [Password Generator](https://www.avast.com/en-us/random-password-generator#pc) | Random Password Generator |
 | [base64encode](https://www.base64encode.org/) | Encode to Base64 format |
 | [JSON Web Tokens](https://jwt.io/) | JSON Web Tokens |
+| [ipchicken](https://www.ipchicken.com/) | identifies the IP address of your system |
+
+## **Azure**
+
+| Tool/Resource                                   | Description                                                                                        |
+|-------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| [Azure Resource Explorer](https://resources.azure.com/) | Azure Resource Explorer |
