@@ -1,20 +1,22 @@
-## Overview
+# **What are Development Containers?**
+
+## **Overview**
 
 Modern software development often involves complex setups, dependencies, and configurations. Ensuring that every team member's development environment matches and keeping it consistent can be challenging. That's where Development Containers come into play.
 
 In this article, we will explore the fundamentals of `Dev Containers`. We'll try to understand what they are, why the `.devcontainer` folder is crucial, how Dev Containers work, and ultimately, we'll learn how to develop applications inside a Dev Container.
 
-## Prerequisites
+## **Prerequisites**
 
 Before look into Development Containers, it's helpful to have a basic understanding of application development, containerization, and version control systems like Git. also, you should have Docker and VS code installed on your local machine, as Development Containers often rely on Docker to create isolated development environments.
 
-## What is Dev Containers?
+## **What is Dev Containers?**
 
 `Development containers`, or `dev containers` also known as `Remote Container`, are a standardized approach to defining and managing development environments within containers. They encapsulate all the necessary tools, libraries, and configurations required for a specific development project. Dev Containers enable developers to work in a consistent environment, regardless of their local setup, operating system, or development machine.
 
 Using Dev Containers can significantly enhance the development experience by eliminating the setup overhead, ensuring consistency, and simplifying collaboration across teams. 
 
-## What is `.devcontainer` folder ?
+## **What is `.devcontainer` folder ?**
 
 The `.devcontainer` folder is a special directory in a project that is often used with the Visual Studio Code (VS Code) Dev Containers extension. This folder contains configuration files that define how the development container should be set up when a developer opens the project in VS Code. The configuration details include settings for the container image, runtime, extensions, environment variables, and more.
 
@@ -35,7 +37,7 @@ The purpose of the `.devcontainer` folder is to encapsulate the development envi
     If your project requires additional services or multiple containers, you can include a docker-compose.yml file to define the multi-container configuration.
 
 
-## How Dev Containers works?
+## **How Dev Containers works?**
 
 Dev Containers, often associated with Visual Studio Code's `Remote - Containers extension`, works by enabling developers to create and use containerized development environments. These environments are defined within a container and provide a consistent, reproducible setup for coding, building, and running applications. 
 
@@ -74,7 +76,7 @@ Here's a step-by-step explanation of how Dev Containers work:
     Developers can run and debug their applications within the container. This allows them to test and iterate in an environment that mirrors production closely.
 
 
-## Benefits of developing applications inside a Dev Container
+## **Benefits of developing applications inside a Dev Container**
 
 
 Setup local development environment that leverages containerization through Microsoft's DevContainer mechanism allows developers to create and run their development environments within containers, providing a consistent and reproducible setup for coding, testing, and debugging. 
@@ -122,11 +124,11 @@ Here are some key benefits of a local development setup using Microsoft's DevCon
 
     Docker Compose may be utilized to define and manage multi-container environments locally. It simplifies the orchestration of multiple containers needed for the complete development setup.
 
-## Conclusion
+## **Conclusion**
 
 In conclusion, Development Containers are adds huge value in modern software development. They bring consistency, portability, isolation, and version control to development environments, making collaboration and project management more efficient. By adopting Dev Containers, development teams can streamline their workflows, reduce setup time, and ensure that everyone is on the same page when it comes to building and testing applications locally.
 
-## References
+## **References**
 
 - [Development Containers](https://containers.dev/){:target="_blank"}
 - [Use a Docker container](https://learn.microsoft.com/en-us/training/modules/use-docker-container-dev-env-vs-code/){:target="_blank"}
