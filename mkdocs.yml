@@ -202,6 +202,8 @@ nav:
       - Exploring Docker Fundamentals:  articles/docker-fundamentals.md
       - What are Development Containers?:  articles/dev-containers-introduction.md
       - Setting up Mac Terminal with Oh-My-Zsh:  articles/mac-terminal-setup.md
+      - Azure Log Alerts Setup:  articles/azure-log-alerts.md
+      # - Alerts Setup in Azure Application Insights:  articles/application-insights-alerts.md
   - About:
       - About: about/about.md
       # - Profile : about/profile.md
