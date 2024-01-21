@@ -102,10 +102,15 @@ omz reload
 
 Your Mac terminal is now set up with Oh-My-Zsh, and you've customized it with your chosen theme and plugins. Enjoy your enhanced terminal experience!
 
+Feel free to explore more themes and plugins to further enhance your productivity and style in the terminal.
+
+If everything is setup properly then your terminal output will look like this.
+
+[![Alt text](images/mac-terminal-setup-1.png)](images/mac-terminal-setup-1.png){:target="_blank"}
+
+
 ## **Resources**
 
 - [Oh-My-Zsh Official Website](https://ohmyz.sh)
 - [Oh-My-Zsh Themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
 
-
-Feel free to explore more themes and plugins to further enhance your productivity and style in the terminal.
