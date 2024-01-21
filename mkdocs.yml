@@ -172,17 +172,20 @@ nav:
         - AZ ACR Cheat Sheet: developertools/cheatsheets/az-acr-cheat-sheet.md
         - Terraform Cheat Sheet: developertools/cheatsheets/terraform-cheat-sheet.md
         - Dig Cheat Sheet: developertools/cheatsheets/dig-cheat-sheet.md
-      - Technology Stack:
-        - Full-Stack - Technology Stack: developertools/techstack/full-stack.md    
-        - Technology Stack: developertools/techstack/tech-stack.md    
-        - .NET Core Web API : developertools/techstack/net-core-web-api.md
-        - Azure DevOps : developertools/techstack/azure-devops.md
-        - Azure Cloud : developertools/techstack/azure-cloud.md
-        - Kubernetes : developertools/techstack/kubernetes.md
-        - Argo CD : developertools/techstack/argocd.md
-        - Helm : developertools/techstack/helm.md
-        - Terraform : developertools/techstack/terraform.md
-        - QA Automation : developertools/techstack/testing.md
+  # - Technology Stack:        
+  #       - Technology Stack: techstack/tech-stack.md    
+  #       - C# : techstack/c-sharp.md
+  #       - .NET Core Web API : techstack/net-core-web-api.md
+  #       - React JS : techstack/react-js.md
+  #       - Azure DevOps : techstack/azure-devops.md
+  #       - Azure Cloud : techstack/azure-cloud.md
+  #       - Kubernetes : techstack/kubernetes.md
+  #       - Argo CD : techstack/argocd.md
+  #       - Helm : techstack/helm.md
+  #       - Terraform : techstack/terraform.md
+  #       - Blazor : techstack/blazor.md
+  #       - Node JS : techstack/node-js.md
+  #       - QA Automation : techstack/testing.md
   - Resources:
       - Books:
         - Microservices on Kubernetes : resources/books/k8s.md        

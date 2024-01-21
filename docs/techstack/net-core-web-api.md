@@ -43,6 +43,15 @@ If you are new to Restful services and want to learn and become a `API developer
 
 ## Books
 
+Here are some recommended books for learning about .NET Core Web API:
+
+1. Pro ASP.NET Core 3
+2. ASP.NET Core in Action
+3. ASP.NET Core 5 and Angular
+4. Building RESTful Web APIs with ASP.NET Core
+5. Pro ASP.NET Core MVC 2
+6. ASP.NET Core Web API
+
 ## References
 
 
