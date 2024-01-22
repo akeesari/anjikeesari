@@ -214,3 +214,9 @@ nav:
   - Contact:
       - Contact Us: contact.md
         # - F1 Visa Processing: f1-visa.md
+  # - Terraform:
+  #     - Table of Contents: terraform/1-toc.md
+  #     - Chapter-1: terraform/chapter-1.md
+  #     - Chapter-2: terraform/chapter-2.md
+  #     - Chapter-3: terraform/chapter-3.md
+        # - F1 Visa Processing: f1-visa.md
