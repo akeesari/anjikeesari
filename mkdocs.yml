@@ -199,6 +199,7 @@ nav:
       - Getting Started with Drupal:  articles/drupal.md
       - Exploring Docker Fundamentals:  articles/docker-fundamentals.md
       - What are Development Containers?:  articles/dev-containers-introduction.md
+      - Developing Applications inside a Dev Containers : articles/dev-containers-local-setup.md
       - Delete PV and PVC stuck in terminating state: articles/pv-pvc-stuck.md
       - Kubernetes Namespace Stuck: articles/namespace-stuck.md
       - Undoing changes with git reset: articles/git-reset.md
