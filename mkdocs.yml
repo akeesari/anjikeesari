@@ -18,7 +18,7 @@ site_description: >-
 # Configuration
 theme:
   name: material # readthedocs
-  custom_dir: overrides
+  custom_dir: docs/overrides
   # nav_style: dark
   shortcuts:
       help: 191    # ?
