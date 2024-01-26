@@ -32,6 +32,12 @@ open ~/.zshrc
 
 Look for the `ZSH_THEME` variable in the configuration file and change it to your desired theme. You can find a list of available themes on the [Oh-My-Zsh Themes GitHub page](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes).
 
+for example:
+
+```sh
+ZSH_THEME="aussiegeek"
+```
+
 Save your changes and exit the text editor. Your terminal will now display the selected theme.
 
 ## **Step 3: Install Plugins**
@@ -83,8 +89,10 @@ To enable the newly installed plugins, open your `~/.zshrc` file once again and 
 ```shell
 plugins=(
   # other plugins
+  git
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-completions
 )
 ```
 
@@ -96,6 +104,7 @@ To apply the changes, close and reopen your terminal, or run the following comma
 
 ```shell
 source ~/.zshrc
+
 # or
 omz reload 
 ```

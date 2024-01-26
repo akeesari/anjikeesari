@@ -32,11 +32,13 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 upgrade brew
 
-``` 
+```sh 
 brew upgrade 
 ```
 ```bash
 brew --version
+# or
+brew doctor
 ```
 Once the installation is finished, you can use the `brew` command to install, upgrade, and manage software packages using Homebrew.
 
@@ -45,6 +47,12 @@ Once the installation is finished, you can use the `brew` command to install, up
 
 ```sh
 brew install --cask google-chrome
+```
+
+verify the installed version #
+
+```sh
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version
 ```
 
 ## Install iTerm2 
@@ -79,27 +87,33 @@ brew install --cask visual-studio-code
 
 Git is a version control system used for tracking changes in software projects. It allows multiple developers to collaborate on a project efficiently and helps manage different versions of the code.
 
-```
-brew install git  
+```sh
+brew install git 
+
+# verify the installation
 git --version    
 ```
 ## Install docker
 
 Docker is a platform that simplifies the process of creating, deploying, and running applications using containers. 
 
-```
+```sh
 brew install docker --cask
+
+# verify the installation
 docker --version
 
-# outpu
+# output
 Docker version 20.10.21, build baeda1f
 ```
 ## Install node
 
 Node.js is a JavaScript runtime that allows you to execute JavaScript code outside of a web browser.
 
-```
+```sh
 brew install node
+
+# verify the installation
 node --version  
 npm version
 ```
@@ -108,21 +122,27 @@ npm version
 
 It provides a runtime environment and libraries for building and running different types of applications, especially those developed using the C# programming language. 
 
-```
+```sh
 brew install --cask dotnet
+
+# verify the installation
+dotnet --version
 ```
 
 ## Install python3
 
 Python is a popular programming language known for its simplicity and versatility. Installing Python 3 refers to setting up the latest version of Python on your system for development purposes.
 
-```
+```sh
 brew install python3
+
+# verify the installation
 python3 --version
 ```
 
 ## Upgrade pip
-```
+
+```sh
 pip3 install --upgrade pip
 
 ```
@@ -136,7 +156,7 @@ pip3 install mkdocs-material-extensions
 
 Azure CLI is a command-line interface for managing and interacting with Microsoft Azure cloud services. It provides a convenient way to automate and control your Azure resources.
 
-```
+```sh
 brew install azure-cli
 ```
 
@@ -148,8 +168,10 @@ For more information, please refer to the following link: - - <https://kubernete
 
 ```sh
 brew install kubectl
+```
+verify the installation
 
-# verify the installation
+```sh
 kubectl version 
 ```
 
@@ -165,11 +187,13 @@ brew install --cask lens
 
 Terraform is an infrastructure-as-code tool used for provisioning and managing cloud resources. It allows you to define your infrastructure in code and automates the deployment and management of resources across different cloud providers.
 
-```
+```sh
 brew install terraform
 ```
 
-```
+verify the installation
+
+```sh
 terraform version
 ```
 
@@ -177,10 +201,13 @@ terraform version
 
 Helm is a package manager for Kubernetes that simplifies the deployment and management of applications on Kubernetes clusters. It allows you to define and install applications using charts, which are packages of pre-configured Kubernetes resources.
 
-```
+```sh
 brew install helm
 ```
-```
+
+verify the installation
+
+```sh
 helm version
 ```
 
@@ -188,10 +215,13 @@ helm version
 
 Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 
-```
+```sh
 brew install argocd
 ```
-```
+
+verify the installation
+
+```sh
 argocd version
 ```
 
@@ -262,12 +292,12 @@ Use the following link for download and install it manually.
 
 <https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-7.0.100-macos-x64-installer?journey=vs-code>
 
-## install-docker
+<!-- ## install-docker
 
 follow the instruction provided in the following links to install docker.
 
 <https://dotnet.microsoft.com/en-us/learn/aspnet/microservice-tutorial/install-docker>
-<https://docs.docker.com/desktop/install/mac-install/>
+<https://docs.docker.com/desktop/install/mac-install/> -->
 
 ## Install github
 
