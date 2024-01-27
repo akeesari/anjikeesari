@@ -16,8 +16,7 @@ Before we begin, make sure you have the following prerequisites in place:
 
 ## **Step 1: Install Windows Terminal**
 
-!!!note 
-    If you haven't already installed Windows Terminal, you can install from choco tool or get it from the Microsoft Store
+If you haven't already installed Windows Terminal, you can install from choco tool or get it from the Microsoft Store
 
 Microsoft Store:
 
@@ -87,7 +86,7 @@ Nerd Fonts are specialized fonts that include a wide range of icons and symbols 
 
 To apply the changes, close and reopen Windows Terminal. 
 
-## **Step 5: Verify the Oh My Posh install**
+## **Step 5: Verify the Oh My Posh Install**
 
 To verify that Oh-My-Posh is correctly installed and configured, open Windows Terminal and ensure that you see your custom prompt with the selected theme. You should see a stylish and informative prompt that includes Git status, time, and other relevant information.
 
