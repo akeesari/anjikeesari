@@ -208,6 +208,7 @@ nav:
       - Single Sign-On - Introduction:  articles/single-sign-on.md
       - Single Sign-On - OAuth 2.0 flows:  articles/oatuh2.0-flows.md
       - Setting up Mac Terminal with Oh-My-Zsh:  articles/mac-terminal-setup.md
+      - Setting up Windows Terminal with Oh-My-Posh:  articles/windows-terminal-setup.md
   - About:
       - About: about/about.md
       # - Profile : about/profile.md
