@@ -17,6 +17,7 @@ site_description: >-
 
 # Configuration
 theme:
+  logo: assets/logo.png
   name: material # readthedocs
   custom_dir: docs/overrides
   # 404 page
