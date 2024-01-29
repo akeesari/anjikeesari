@@ -314,6 +314,7 @@ brew install gh
 ```sh
 brew install jq
 ```
+
 ## Install postman
 
 
@@ -322,6 +323,15 @@ Postman is a popular API development and testing tool. It allows you to make HTT
 ```sh
 brew install --cask postman
 ```
+
+## Install Lightshot
+
+Lightshot is a free program that offers a quick and easy way to capture a screen including basic editing tools. 
+
+I don't see brew commands to install this tool but you can install it manually from here:
+
+ [Lightshot downloads](https://app.prntscr.com/en/download.html){:target="_blank"}
+
 <!-- Here is the list of other software you may need during the development.
 
 ```

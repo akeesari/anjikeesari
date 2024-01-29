@@ -116,11 +116,11 @@ git --version
 
 Docker is a platform that simplifies the process of creating, deploying, and running applications using containers.
 
-```
+```sh
 choco install docker-desktop
 ```
 
-```
+```sh
 docker --version
 ```
 
@@ -132,7 +132,7 @@ Azure CLI is a command-line interface for managing and interacting with Microsof
 choco install azure-cli
 ```
 
-```
+```sh
 az --version
 ```
 
@@ -292,35 +292,16 @@ Allows us to access multiple command-line tools and shells in one customizable i
 choco install microsoft-windows-terminal
 ``` 
 
+## Install Lightshot
 
-After the installation quickly check to see the status of these installation by running version commands in PowerShell script or VS code terminal
+Lightshot is a free program that offers a quick and easy way to capture a screen including basic editing tools. 
 
-For example:
+I don't see brew commands to install this tool but you can install it manually from here:
 
-```
-PS C:\WINDOWS\system32> code --help
-Visual Studio Code 1.71.2
+ [Lightshot downloads](https://app.prntscr.com/en/download.html){:target="_blank"}
 
-PS C:\WINDOWS\system32> node --version
-v14.16.0
+ _____
 
-PS C:\WINDOWS\system32> git --version
-git version 2.29.2.windows.2
-
-PS C:\WINDOWS\system32> docker --version
-Docker version 20.10.17, build 100c701
-
-PS C:\WINDOWS\system32> az --version
-azure-cli                         2.38.0 *
-…
-
-PS C:\WINDOWS\system32> docker version
-Client:
- Cloud integration: v1.0.24
- Version:           20.10.17
-…
-
-```
 
 ## Manual Install
 
