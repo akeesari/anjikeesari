@@ -1,7 +1,7 @@
 
 # **Create a Website Using Material for MkDocs: A Step-by-Step Guide**
 
-## **Table of Contents**
+<!-- ## **Table of Contents**
 
 1. [Introduction to Material for MkDocs](#introduction-to-material-for-mkdocs)
 2. [Prerequisites](#prerequisites)
@@ -12,7 +12,7 @@
 7. [Step 6: Building and Deploying Your Site](#step-6-building-and-deploying-your-site)
 8. [Step 7: Customization Home Page](#step-7-customization-home-page)
 9. [Conclusion](#conclusion)
-10. [References](#references)
+10. [References](#references) -->
 
 
 ## **Introduction to Material for MkDocs,**
