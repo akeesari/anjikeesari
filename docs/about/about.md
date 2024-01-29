@@ -1,7 +1,7 @@
 
 # **About Me**
 
-![image.jpg](images/anji-pic.jpg){ align=right width=250 height=250 border-radius=50%}
+![image.jpg](images/anji-pic2.png){ align=right width=250 height=250 border-radius=50%}
 
 
 **Anji Keesari** is a software engineer and **Cloud Architect** with over **20 years** of experience in the technology industry. He has worked on numerous projects involving cloud computing, **Microservices** architecture, and **Kubernetes**, **Terraform**, and containers.
