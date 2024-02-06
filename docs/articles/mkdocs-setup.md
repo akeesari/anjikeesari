@@ -144,7 +144,7 @@ nav:
 
 Explore the [Material for MkDocs documentation](https://squidfunk.github.io/mkdocs-material/){:target="_blank"} for customization options and add them to your `mkdocs.yml`.
 
-## **Step 6: Building and Deploying Your Site**
+## **Step 5: Building and Deploying Your Site**
 
 **Build Your Site**:
 
@@ -166,7 +166,7 @@ mkdocs gh-deploy
 
 Choose a hosting solution (e.g., GitHub Pages, GitLab Pages or any other hosting solution) and follow their instructions to deploy your MKDocs site.
 
-## **Step 7: Customization Home Page**
+## **Step 6: Customization Home Page**
 
 Your home page is the first thing visitors see. Make it informative and engaging. Edit the `index.md` file in the `docs` folder to add content. 
 

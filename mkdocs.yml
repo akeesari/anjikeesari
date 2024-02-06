@@ -168,6 +168,7 @@ nav:
         - Mac OS: developertools/software/mac.md
       - Tools:
         - Useful Tools: developertools/tools/useful-tools.md
+        # - PostgreSQL Installation: developertools/postgresql-installation.md
       - Cheat Sheets:
         - Git Cheat Sheet: developertools/cheatsheets/git-cheat-sheet.md
         - Docker Cheat Sheet: developertools/cheatsheets/docker-cheat-sheet.md        
@@ -178,6 +179,7 @@ nav:
         - AZ ACR Cheat Sheet: developertools/cheatsheets/az-acr-cheat-sheet.md
         - Terraform Cheat Sheet: developertools/cheatsheets/terraform-cheat-sheet.md
         - Dig Cheat Sheet: developertools/cheatsheets/dig-cheat-sheet.md
+        
   # - Technology Stack:        
   #       - Technology Stack: techstack/tech-stack.md    
   #       - C# : techstack/c-sharp.md
@@ -199,6 +201,7 @@ nav:
         - .NET Core Web API : resources/webapi.md
         - Azure Cloud : resources/azure-cloud.md
   - Articles:
+      - Self-Hosted Azure Pipelines Agent Running in AKS:  articles/build-agent.md
       - Create Website using Material for MkDocs:  articles/mkdocs-setup.md
       - Azure Application Availability Alerts Setup:  articles/app-availability-alert.md
       - Azure Log Alerts Setup:  articles/azure-log-alerts.md
