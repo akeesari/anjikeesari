@@ -205,6 +205,49 @@ pgAdmin is a graphical administration and development platform for PostgreSQL, a
 choco install pgadmin4
 ```
 
+## Install PostgreSQL
+
+To install PostgreSQL, you can use Chocolatey by running the following command from the command line or PowerShell:
+
+
+```sh
+choco install postgresql
+```
+
+Alternatively, you can choose to use the graphical installation wizard for PostgreSQL on Windows.
+
+[Downloading PostgreSQL](https://www.enterprisedb.com/software-downloads-postgres)
+
+Follow the installation wizard instructions to complete the PostgreSQL installation on your Windows system.
+
+!!!note
+    Depending on your requirements, you may want to uncheck the option for `Stack Builder` during the installation process.
+
+**psql - Command-line tools**
+
+By default, the installer does not modify the system path. If you wish to use command-line tools like `psql`, you will need to manually add PostgreSQL to your system's  path after installation.
+
+**Update Environment Variables**
+
+To update the system path and include PostgreSQL in it, add the following directory to your PATH variable:
+
+```sh
+C:\Program Files\PostgreSQL\16\bin
+```
+Make sure to replace 16 with your specific PostgreSQL version if it differs.
+
+!!!note
+    System restart is needed after the isntallation
+
+verify the psql installation
+
+
+```sh
+psql --version
+
+#output
+psql (PostgreSQL) 16.1
+```
 ## Install argocd
 
 Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
@@ -212,6 +255,21 @@ Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 ```sh
 choco install argocd
 ```
+
+```sh
+argocd version
+
+# output
+argocd: v2.4.7+81630e6
+  BuildDate: 2022-07-18T21:49:23Z
+  GitCommit: 81630e6d5075ac53ac60457b51343c2a09a666f4
+  GitTreeState: clean
+  GoVersion: go1.18.3
+  Compiler: gc
+  Platform: windows/amd64
+argocd-server: v2.5.2+148d8da
+```
+
 
 ## Install Azure Data Studio
 
