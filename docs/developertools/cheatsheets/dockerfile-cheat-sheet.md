@@ -3,6 +3,10 @@
 ## Introduction
 In this article, I am going to present a comprehensive cheat sheet of commonly used `Dockerfile` commands
 
+## Dockerfile
+
+A Dockerfile is a text document that contains instructions for building a Docker image. Docker can automatically build images by interpreting instructions from a Dockerfile. This page outlines the commands available for use within a Dockerfile."
+
 ## 1. **FROM**
 Specifies the base image for your Docker image.
 ```Dockerfile
