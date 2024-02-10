@@ -171,6 +171,7 @@ nav:
         # - PostgreSQL Installation: developertools/postgresql-installation.md
       - Cheat Sheets:
         - Git Cheat Sheet: developertools/cheatsheets/git-cheat-sheet.md
+        - Dockerfile Cheat Sheet: developertools/cheatsheets/dockerfile-cheat-sheet.md        
         - Docker Cheat Sheet: developertools/cheatsheets/docker-cheat-sheet.md        
         - Kubectl Cheat Sheet: developertools/cheatsheets/kubectl-cheat-sheet.md
         - ArgoCD Cheat Sheet: developertools/cheatsheets/argocd-cheat-sheet.md
