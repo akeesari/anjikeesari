@@ -158,6 +158,8 @@ docker  network ls
 docker  info
 
 docker system prune
+# or
+docker system prune -a
 
 ```
 
@@ -166,6 +168,9 @@ If you need to clean up all containers and images locally in Docker Desktop, you
 ```sh
 # To delete all containers including its volumes use,
 docker rm -vf $(docker ps -aq)
+
+# To delete all volumes use,
+docker volume rm $(docker volume ls -q)
 
 # To delete all the images,
 docker rmi -f $(docker images -aq)
