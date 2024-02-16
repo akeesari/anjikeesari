@@ -144,6 +144,15 @@ docker search <image_name>
 docker pull <image_name>
 ```
 
+
+## Docker network
+
+This command creates a new bridge network named "network1" that containers can connect to for networked communication.
+
+```sh
+docker network create -d bridge network1
+```
+
 ## Clean up resources
 
 you can use the `docker system prune` command to clean up all dangling or unused resources, including images, containers, volumes, and networks that are not tagged or connected to a running container. This command is helpful for freeing up disk space and removing unnecessary resources.
