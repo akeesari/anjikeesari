@@ -8,7 +8,7 @@ In this article, I am going to present a comprehensive cheat sheet of commonly u
 
 ## Prerequisites
 
-- Install Argocd CLI [Install Argocd CLI](../devops/argocd/install-argocd-cli.md)
+- Install Argocd CLI
 - Azure login
 - Select the subscription
 - Connect to k8s Cluster

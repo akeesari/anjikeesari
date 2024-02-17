@@ -4,7 +4,7 @@
 site_name: Anji Keesari
 site_url: https://akeesari.github.io/anjikeesari/
 
-edit_uri: edit/main/docs/
+# edit_uri: edit/main/docs/
 
 # Author details
 site_author: Anji Keesari
@@ -152,7 +152,7 @@ hide:
 
 # copyright   
 copyright: |
-  Copyright &copy; 2024 <a href="akeesari.github.io/anjikeesari"  target="_blank" rel="noopener">Anji Keesari</a>
+  Copyright &copy; 2024 <a href="https://anjikeesari.com/"  target="_blank" rel="noopener">Anji Keesari</a>
 
 
 # Page tree
