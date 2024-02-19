@@ -198,6 +198,7 @@ nav:
   - Resources:
       - Books:
         - Microservices on Kubernetes : resources/books/k8s.md        
+        - Building Microservices with Containers : resources/books/micros.md
       - Videos:
         - .NET Core Web API : resources/webapi.md
         - Azure Cloud : resources/azure-cloud.md
