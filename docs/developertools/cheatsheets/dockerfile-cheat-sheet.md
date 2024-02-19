@@ -7,7 +7,7 @@ In this article, I am going to present a comprehensive cheat sheet of commonly u
 
 A Dockerfile is a text document that contains instructions for building a Docker image. Docker can automatically build images by interpreting instructions from a Dockerfile. This page outlines the commands available for use within a Dockerfile."
 
-## 1. **FROM**
+## 1. FROM
 Specifies the base image for your Docker image.
 ```Dockerfile
 FROM <image>[:<tag>] [AS <name>]
@@ -17,7 +17,7 @@ Example:
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 ```
 
-## 2. **RUN**
+## 2. RUN
 Executes commands in the shell of the container.
 ```Dockerfile
 RUN <command>
@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
     git
 ```
 
-## 3. **COPY**
+## 3. COPY
 Copies files or directories from the build context to the container's filesystem.
 ```Dockerfile
 COPY <src> <dest>
@@ -38,7 +38,7 @@ Example:
 COPY . /app
 ```
 
-## 4. **WORKDIR**
+## 4. WORKDIR
 Sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD instructions that follow it.
 ```Dockerfile
 WORKDIR /path/to/directory
@@ -48,7 +48,7 @@ Example:
 WORKDIR /app
 ```
 
-## 5. **CMD**
+## 5. CMD
 Specifies the default command to run when the container starts.
 ```Dockerfile
 CMD ["executable", "param1", "param2"]
@@ -58,7 +58,7 @@ Example:
 CMD ["dotnet", "MyApi.dll"]
 ```
 
-## 6. **ENTRYPOINT**
+## 6. ENTRYPOINT
 Specifies the command to run when the container starts, allowing arguments to be passed.
 ```Dockerfile
 ENTRYPOINT ["executable", "param1", "param2"]
@@ -68,7 +68,7 @@ Example:
 ENTRYPOINT ["dotnet", "MyApi.dll"]
 ```
 
-## 7. **EXPOSE**
+## 7. EXPOSE
 Informs Docker that the container listens on specific network ports at runtime.
 ```Dockerfile
 EXPOSE <port> [<port>/<protocol>...]
@@ -78,7 +78,7 @@ Example:
 EXPOSE 80
 ```
 
-## 8. **ENV**
+## 8. ENV
 Sets environment variables.
 ```Dockerfile
 ENV <key> <value>
@@ -88,7 +88,7 @@ Example:
 ENV ASPNETCORE_ENVIRONMENT=Production
 ```
 
-## 9. **ARG**
+## 9. ARG
 Defines build-time variables.
 ```Dockerfile
 ARG <name>[=<default value>]
@@ -98,7 +98,7 @@ Example:
 ARG CONNECTION_STRING
 ```
 
-## 10. **VOLUME**
+## 10. VOLUME
 Creates a mount point and marks it as holding externally mounted volumes from native host or other containers.
 ```Dockerfile
 VOLUME /path/to/volume
@@ -108,7 +108,7 @@ Example:
 VOLUME /var/log/app
 ```
 
-## 11. **LABEL**
+## 11. LABEL
 Adds metadata to an image.
 ```Dockerfile
 LABEL <key>=<value> <key>=<value> ...
@@ -118,7 +118,7 @@ Example:
 LABEL maintainer="John Doe <john@example.com>"
 ```
 
-## 12. **USER**
+## 12. USER
 Sets the user or UID to use when running the image.
 ```Dockerfile
 USER <username | UID>
@@ -128,7 +128,7 @@ Example:
 USER appuser
 ```
 
-## 13. **HEALTHCHECK**
+## 13. HEALTHCHECK
 Defines a command to periodically check the container's health.
 ```Dockerfile
 HEALTHCHECK [OPTIONS] CMD <command>
@@ -139,7 +139,7 @@ HEALTHCHECK --interval=30s --timeout=3s \
   CMD curl -f http://localhost/health || exit 1
 ```
 
-## 14. **ONBUILD**
+## 14. ONBUILD
 Adds a trigger instruction when the image is used as the base for another build.
 ```Dockerfile
 ONBUILD <INSTRUCTION>
@@ -149,7 +149,7 @@ Example:
 ONBUILD COPY . /app
 ```
 
-## 15. **STOPSIGNAL**
+## 15. STOPSIGNAL
 Sets the system call signal that will be sent to the container to exit.
 ```Dockerfile
 STOPSIGNAL signal
@@ -159,7 +159,7 @@ Example:
 STOPSIGNAL SIGTERM
 ```
 
-## 16. **SHELL**
+## 16. SHELL
 Overrides the default shell used for the shell form of commands.
 ```Dockerfile
 SHELL ["executable", "parameters"]
@@ -169,7 +169,7 @@ Example:
 SHELL ["/bin/bash", "-c"]
 ```
 
-## **CMD vs ENTRYPOINT**
+## CMD vs ENTRYPOINT
 
 
 CMD and ENTRYPOINT are used to specify the default command to run when a container is started. However, they have different behaviors and can be used together in different ways depending on the requirements of your Docker image.
@@ -200,7 +200,7 @@ ENTRYPOINT ["dotnet", "MyApi.dll"]
 
 In this example, `dotnet MyApi.dll` is the main executable, with any additional arguments passed when running the container.
 
-## **COPY vs ADD**
+## COPY vs ADD
 
 
 COPY and ADD are used to copy files and directories from the host machine into the container's filesystem. While they have similar functionalities, there are some differences between them.
