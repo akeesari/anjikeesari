@@ -50,7 +50,7 @@ Terraform provides a range of key features that make it popular among infrastruc
 
 8. **Modularity and Reusability:** Terraform supports the creation of reusable modules, allowing you to abstract and encapsulate infrastructure components. Modules can be shared and reused across projects and teams.
 
-9. **Input Variables and Outputs:** You can use input variables to parameterize your configurations, making them more flexible and reusable. Additionally, Terraform allows you to define outputs, which provide information about the provisioned resources.
+9. **Input Variables and Outputs:** You can use input variables to parameterize your configurations, making them more flexible and reusable. Also, Terraform allows you to define outputs, which provide information about the provisioned resources.
 
 10. **Remote State Storage:** Terraform allows you to store the state file remotely in backend storage (e.g., AWS S3, Azure Blob Storage) for collaboration and to maintain state consistency across teams.
 

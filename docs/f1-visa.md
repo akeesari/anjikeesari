@@ -171,7 +171,7 @@ It's essential to remember that visa processes and requirements can vary by coun
 
 ## Collage Application Dates:
 
-In the United States, the academic year for most universities and colleges is divided into two main semesters: the fall semester and the spring semester. Additionally, some institutions also offer a summer semester. The specific admission dates and deadlines can vary from one institution to another, but here's a general overview of the typical admission cycles for the fall, spring, and summer semesters:
+In the United States, the academic year for most universities and colleges is divided into two main semesters: the fall semester and the spring semester. Also, some institutions also offer a summer semester. The specific admission dates and deadlines can vary from one institution to another, but here's a general overview of the typical admission cycles for the fall, spring, and summer semesters:
 
 1. **Fall Semester:**
     - Application Period: The application period for the fall semester usually opens in the preceding fall or winter, around September to December of the previous year.
@@ -188,7 +188,7 @@ In the United States, the academic year for most universities and colleges is di
     - Application Deadline: Deadlines for summer semester applications can fall anywhere from December to March, depending on the institution and the programs offered.
     - Semester Start: The summer semester typically starts in May or June.
 
-It's important to note that these timeframes are general guidelines, and specific dates can vary between institutions. Additionally, certain programs, especially competitive ones or those with specific admission requirements, might have different deadlines or timelines.
+It's important to note that these timeframes are general guidelines, and specific dates can vary between institutions. Also, certain programs, especially competitive ones or those with specific admission requirements, might have different deadlines or timelines.
 
 Always check the official website of the institution you're interested in for the most up-to-date and accurate information regarding admission dates and deadlines for your intended program. It's also advisable to start your application process well in advance to ensure you have enough time to gather all the required materials and meet the deadlines.
 
