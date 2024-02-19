@@ -86,7 +86,7 @@ git commit -am "(message)"      # Adds all changes to staging and commits them w
 
 ## Git log
 
-To view the commit history of a repository, use the `git log` command. It provides you with an overview of past commits and their respective details. Additionally, you can use `git log -p` to see the commit history along with the changes made to each file.
+To view the commit history of a repository, use the `git log` command. It provides you with an overview of past commits and their respective details. also, you can use `git log -p` to see the commit history along with the changes made to each file.
 
 ``` sh
 #  shows the commit history for the current repository:
@@ -231,7 +231,7 @@ git checkout main
 git merge develop
 ```
 
-After performing the merge, it's a good practice to check the status of your repository using git status to ensure that the merge was successful and there are no conflicts to resolve. Additionally, you can view the commit history using git log to see the merged commits and their details.
+After performing the merge, it's a good practice to check the status of your repository using git status to ensure that the merge was successful and there are no conflicts to resolve. also, you can view the commit history using git log to see the merged commits and their details.
 
 ```sh
 git status

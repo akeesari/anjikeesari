@@ -84,7 +84,7 @@ With IaC, infrastructure resources can be defined, provisioned, and updated usin
 Manual infrastructure configuration is error-prone and lacks consistency. IaC addresses this issue by providing a systematic and reproducible way to define and deploy infrastructure. By codifying infrastructure requirements, you ensure that every deployment is consistent with the code, reducing the risk of human errors and configuration drift. This reliability is a critical factor in maintaining a stable and secure environment.
 
 3. **Version Control and Collaboration**
-IaC treats infrastructure code just like any other software project, allowing organizations to leverage version control systems like Git. This means that changes to infrastructure can be tracked, reviewed, and audited over time. Additionally, it promotes collaboration among team members. Multiple individuals can work on the same infrastructure codebase concurrently, ensuring that everyone is aligned and preventing conflicts.
+IaC treats infrastructure code just like any other software project, allowing organizations to leverage version control systems like Git. This means that changes to infrastructure can be tracked, reviewed, and audited over time. Also, it promotes collaboration among team members. Multiple individuals can work on the same infrastructure codebase concurrently, ensuring that everyone is aligned and preventing conflicts.
 
 4. **Scalability and Flexibility**
 Modern organizations often deal with dynamic workloads that require scalable infrastructure. IaC simplifies scaling by providing tools to easily add or remove resources as needed. Whether you need to handle increased traffic, launch new services, or downscale during quieter periods, IaC enables you to adapt swiftly.

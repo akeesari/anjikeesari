@@ -4,7 +4,7 @@
 
 Welcome to the Step-by-Step Practical Guide on **.NET Core Web API Clean Architecture** YouTube series. In this series, you will learn how to build a RESTful API using the latest version of ASP.NET Core.
 Throughout the course, you will gain a comprehensive understanding of the clean architecture project structure and learn the fundamentals of RESTful Web API development from scratch.
-The course also covers topics such as Azure Key Vault configuration, API Health Checks, API versioning, CRUD operations, deploying to Azure, Unit Testing, and more. The course also covers the usage of Entity Framework Core, which will enable you to connect your project's data models with underlying databases. Additionally,
+The course also covers topics such as Azure Key Vault configuration, API Health Checks, API versioning, CRUD operations, deploying to Azure, Unit Testing, and more. The course also covers the usage of Entity Framework Core, which will enable you to connect your project's data models with underlying databases. Also,
 We highly recommend following this series in sequence to ensure a clear understanding of the concepts, which you can then apply to your own projects
 
 <!-- This course is designed to help you become a proficient .NET Core backend developer in the Microsoft technology stack.  -->
