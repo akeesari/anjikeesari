@@ -202,7 +202,7 @@ nav:
         - .NET Core Web API : resources/webapi.md
         - Azure Cloud : resources/azure-cloud.md
   - Articles:
-      - Self-Hosted Azure Pipelines Agent Running in AKS:  articles/build-agent.md
+      - Running Azure DevOps Private Agents in AKS :  articles/20240218.1-build-agent.md
       - Create Website using Material for MkDocs:  articles/mkdocs-setup.md
       - Azure Application Availability Alerts Setup:  articles/app-availability-alert.md
       - Azure Log Alerts Setup:  articles/azure-log-alerts.md
