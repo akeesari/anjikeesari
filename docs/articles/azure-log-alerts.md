@@ -61,19 +61,19 @@ Here is the list of steps to create action group:
 
 Action Group
 
-[![Alt text](images/azure-log-alerts-1.png)](images/azure-log-alerts-1.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-1.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-1.png){:target="_blank"}
 
 Action Group > Basic
 
-[![Alt text](images/azure-log-alerts-2.png)](images/azure-log-alerts-2.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-2.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-2.png){:target="_blank"}
 
 Action Group > Notification
 
-[![Alt text](images/azure-log-alerts-3.png)](images/azure-log-alerts-3.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-3.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-3.png){:target="_blank"}
 
 Action Group > Tags
 
-[![Alt text](images/azure-log-alerts-4.png)](images/azure-log-alerts-4.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-4.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-4.png){:target="_blank"}
 
 
 ### Step 1.2: Test Action Group
@@ -84,15 +84,15 @@ Action Group > Test
 
 Test Alerts
 
-[![Alt text](images/azure-log-alerts-5.png)](images/azure-log-alerts-5.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-5.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-5.png){:target="_blank"}
 
 Email from mail box
 
-[![Alt text](images/azure-log-alerts-6.png)](images/azure-log-alerts-6.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-6.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-6.png){:target="_blank"}
 
 Email from mail box
 
-[![Alt text](images/azure-log-alerts-7.png)](images/azure-log-alerts-7.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-7.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-7.png){:target="_blank"}
 
 
 ## **Step 2: Create a new alert rule**
@@ -114,17 +114,17 @@ Email from mail box
 
 Monitoring > Alert Rule 
 
-[![Alt text](images/azure-log-alerts-8.png)](images/azure-log-alerts-8.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-8.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-8.png){:target="_blank"}
 
 or 
 
 Web App or Api App > Alert Rule 
 
-[![Alt text](images/azure-log-alerts-9.png)](images/azure-log-alerts-9.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-9.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-9.png){:target="_blank"}
 
 Alert Rule > Condition
 
-[![Alt text](images/azure-log-alerts-10.png)](images/azure-log-alerts-10.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-10.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-10.png){:target="_blank"}
 
 
 ### Step 2.2: Write Log Query
@@ -150,7 +150,7 @@ Adjust the time range and query as per your requirements.
 
 Alert Rule > Log Query
 
-[![Alt text](images/azure-log-alerts-11.png)](images/azure-log-alerts-11.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-11.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-11.png){:target="_blank"}
 
 
 ### Step 2.3: Associate Action Group
@@ -165,24 +165,24 @@ Alert Rule > Log Query
 
 Alert Rule > Action Group
 
-[![Alt text](images/azure-log-alerts-12.png)](images/azure-log-alerts-12.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-12.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-12.png){:target="_blank"}
 
 
 Alert Rule > Details
 
-[![Alt text](images/azure-log-alerts-13.png)](images/azure-log-alerts-13.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-13.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-13.png){:target="_blank"}
 
 Alert Rule > Overvie
 
-[![Alt text](images/azure-log-alerts-14.png)](images/azure-log-alerts-14.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-14.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-14.png){:target="_blank"}
 
 ### Step 2.4: Test Alert Rule
 
 Before finalizing the alert rule, it's essential to test it by creating a simulated exception or by adjusting the log query to match actual exceptions. This ensures that alerts trigger as expected.
 
-[![Alt text](images/azure-log-alerts-15.png)](images/azure-log-alerts-15.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-15.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-15.png){:target="_blank"}
 
-[![Alt text](images/azure-log-alerts-16.png)](images/azure-log-alerts-16.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-16.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-16.png){:target="_blank"}
 
 ## **Conclusion**
 

@@ -96,7 +96,7 @@ Open the project in VS code
 code .
 ```
 
-[![Alt text](images/mkdocs-setup-1.png)](images/mkdocs-setup-1.png){:target="_blank"}
+[![Alt text](images/mkdocs-setup-1.png){:style="border: 1px solid black; border-radius: 10px;"}](images/mkdocs-setup-1.png){:target="_blank"}
 
 ## **Step 3: Run the Project Locally**
 
@@ -105,11 +105,11 @@ MkDocs comes with a `built-in dev-server` that lets you preview your documentati
 ```sh
 mkdocs serve
 ```
-[![Alt text](images/mkdocs-setup-2.png)](images/mkdocs-setup-2.png){:target="_blank"}
+[![Alt text](images/mkdocs-setup-2.png){:style="border: 1px solid black; border-radius: 10px;"}](images/mkdocs-setup-2.png){:target="_blank"}
 
 This command starts a local server. Access your site at <http://127.0.0.1:8000> and see changes in real-time as you edit your documents.
 
-[![Alt text](images/mkdocs-setup-3.png)](images/mkdocs-setup-3.png){:target="_blank"}
+[![Alt text](images/mkdocs-setup-3.png){:style="border: 1px solid black; border-radius: 10px;"}](images/mkdocs-setup-3.png){:target="_blank"}
 
 The server automatically rebuilds your site when you save changes, allowing you to see updates in real-time.
 
@@ -192,7 +192,7 @@ template: home.html
 !!!note
     One important thing that took me a while to realize: you need a newline at the end of your md file. If you don't have one, the content will not display. I guess it's processed as having null content if you don't include the newline.
 
-[![Alt text](images/mkdocs-setup-4.png)](images/mkdocs-setup-4.png){:target="_blank"}
+[![Alt text](images/mkdocs-setup-4.png){:style="border: 1px solid black; border-radius: 10px;"}](images/mkdocs-setup-4.png){:target="_blank"}
 
 
 ## **Conclusion**
