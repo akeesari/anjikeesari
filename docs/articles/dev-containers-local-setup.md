@@ -52,7 +52,7 @@ To work effectively with Dev Containers in Visual Studio Code, you'll need the "
 
 Open Visual Studio Code and navigate to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window (or press `Ctrl+Shift+X`). Search for "Remote - Containers" and install the extension provided by Microsoft.
 
-[![Alt text](images/dev-containers-local-setup-1.png)](images/dev-containers-local-setup-1.png){:target="_blank"}
+[![Alt text](images/dev-containers-local-setup-1.png){:style="border: 1px solid black; border-radius: 10px;"}](images/dev-containers-local-setup-1.png){:target="_blank"}
 
 ## **Step 3: Create a new project**
 
@@ -74,7 +74,7 @@ npx express-generator:
 
 The npx express-generator command initializes the project, creating a structure that includes directories like 'bin' and 'routes'.
 
-[![Alt text](images/dev-containers-local-setup-2.png)](images/dev-containers-local-setup-2.png){:target="_blank"}
+[![Alt text](images/dev-containers-local-setup-2.png){:style="border: 1px solid black; border-radius: 10px;"}](images/dev-containers-local-setup-2.png){:target="_blank"}
 
 npm install:
 
@@ -82,13 +82,13 @@ Ensure you run npm install to set up and configure all required Node.js modules.
 
 This step ensures that your project is equipped with the necessary dependencies, allowing seamless integration with Docker and efficient containerization of your Node.js application.
 
-[![Alt text](images/dev-containers-local-setup-3.png)](images/dev-containers-local-setup-3.png){:target="_blank"}
+[![Alt text](images/dev-containers-local-setup-3.png){:style="border: 1px solid black; border-radius: 10px;"}](images/dev-containers-local-setup-3.png){:target="_blank"}
 
 folder structure
 
 you've established the foundation for your Node.js API project, complete with a standardized directory structure and essential files.
 
-[![Alt text](images/dev-containers-local-setup-4.png)](images/dev-containers-local-setup-4.png){:target="_blank"}
+[![Alt text](images/dev-containers-local-setup-4.png){:style="border: 1px solid black; border-radius: 10px;"}](images/dev-containers-local-setup-4.png){:target="_blank"}
 
 This should have created a number of files in your directory, including bin and routes directories. Make sure to run npm install so that npm can get all of your Node.js modules set up and ready to use.
 

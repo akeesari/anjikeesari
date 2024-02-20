@@ -115,7 +115,7 @@ Feel free to explore more themes and plugins to further enhance your productivit
 
 If everything is setup properly then your terminal output will look like this.
 
-[![Alt text](images/mac-terminal-setup-1.png)](images/mac-terminal-setup-1.png){:target="_blank"}
+[![Alt text](images/mac-terminal-setup-1.png){:style="border: 1px solid black; border-radius: 10px;"}](images/mac-terminal-setup-1.png){:target="_blank"}
 
 
 ## **Resources**

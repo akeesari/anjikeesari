@@ -25,7 +25,7 @@ look into my other article for more details on [Create Action Groups](https://an
 
 Action Group > Overview
 
-[![Alt text](images/azure-log-alerts-5.png)](images/azure-log-alerts-5.png){:target="_blank"}
+[![Alt text](images/azure-log-alerts-5.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-5.png){:target="_blank"}
 
 
 
@@ -65,15 +65,15 @@ here are the steps to "Add Standard Test in Application Insights" under the "Ava
 
 Application Insights > Availability
 
-[![Alt text](images/app-availability-alert-1.png)](images/app-availability-alert-1.png){:target="_blank"}
+[![Alt text](images/app-availability-alert-1.png){:style="border: 1px solid black; border-radius: 10px;"}](images/app-availability-alert-1.png){:target="_blank"}
 
 Availability > Add Standard Test
 
-[![Alt text](images/app-availability-alert-2.png)](images/app-availability-alert-2.png){:target="_blank"}
+[![Alt text](images/app-availability-alert-2.png){:style="border: 1px solid black; border-radius: 10px;"}](images/app-availability-alert-2.png){:target="_blank"}
 
 Add Standard Test > Results
 
-[![Alt text](images/app-availability-alert-3.png)](images/app-availability-alert-3.png){:target="_blank"}
+[![Alt text](images/app-availability-alert-3.png){:style="border: 1px solid black; border-radius: 10px;"}](images/app-availability-alert-3.png){:target="_blank"}
 
 
 ## **Step 3: Create Alert Rule**
@@ -92,15 +92,15 @@ Update Alert Rule details like description, severity, automatically resolve aler
 
 Alert Rule
 
-[![Alt text](images/app-availability-alert-4.png)](images/app-availability-alert-4.png){:target="_blank"}
+[![Alt text](images/app-availability-alert-4.png){:style="border: 1px solid black; border-radius: 10px;"}](images/app-availability-alert-4.png){:target="_blank"}
 
 Alert Rule > Details
 
-[![Alt text](images/app-availability-alert-5.png)](images/app-availability-alert-5.png){:target="_blank"}
+[![Alt text](images/app-availability-alert-5.png){:style="border: 1px solid black; border-radius: 10px;"}](images/app-availability-alert-5.png){:target="_blank"}
 
 Alert Rule > Scope, Action, Condition
 
-[![Alt text](images/app-availability-alert-6.png)](images/app-availability-alert-6.png){:target="_blank"}
+[![Alt text](images/app-availability-alert-6.png){:style="border: 1px solid black; border-radius: 10px;"}](images/app-availability-alert-6.png){:target="_blank"}
 
 
 ## **Conclusion**

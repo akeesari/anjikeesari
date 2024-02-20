@@ -34,7 +34,7 @@ Open your terminal and run the following command:
 choco install oh-my-posh
 ```
 
-[![Alt text](images/oh-my-posh-1.png)](images/oh-my-posh-1.png){:target="_blank"}
+[![Alt text](images/oh-my-posh-1.png){:style="border: 1px solid black; border-radius: 10px;"}](images/oh-my-posh-1.png){:target="_blank"}
 
 
 This command will download and install Oh-My-Posh on your system. 
@@ -64,7 +64,7 @@ Save and close your profile
 
  open a new Windows Terminal instance to see the updated prompt with your chosen theme.
 
-[![Alt text](images/oh-my-posh-2.png)](images/oh-my-posh-2.png){:target="_blank"}
+[![Alt text](images/oh-my-posh-2.png){:style="border: 1px solid black; border-radius: 10px;"}](images/oh-my-posh-2.png){:target="_blank"}
 
 ## **Step 4: Install Nerd Font**
 Nerd Fonts are specialized fonts that include a wide range of icons and symbols commonly used in programming and terminal applications. These fonts are popular among developers and users who want to enhance their terminal experience. Here are the steps to install a Nerd Font on your system:
@@ -75,14 +75,14 @@ Nerd Fonts are specialized fonts that include a wide range of icons and symbols 
 - **Download the Nerd Font**: Visit the following webstie to download your chosen of Nerd Font. <https://www.nerdfonts.com/font-downloads>
 
 - **Install the Nerd Font**: Once you have downloaded the Nerd Font, click on `install` button to install it on your Windows system:
-     [![Alt text](images/oh-my-posh-2.1.png)](images/oh-my-posh-2.1.png){:target="_blank"}
+     [![Alt text](images/oh-my-posh-2.1.png){:style="border: 1px solid black; border-radius: 10px;"}](images/oh-my-posh-2.1.png){:target="_blank"}
 
 
 4. **Configure Windows Terminal to Use the Nerd Font**: To use the Nerd Font in Windows Terminal, you'll need to configure your terminal settings. Here's how to do it:
     
-    [![Alt text](images/oh-my-posh-2.2.png)](images/oh-my-posh-2.2.png){:target="_blank"}
+    [![Alt text](images/oh-my-posh-2.2.png){:style="border: 1px solid black; border-radius: 10px;"}](images/oh-my-posh-2.2.png){:target="_blank"}
     
-    [![Alt text](images/oh-my-posh-2.3.png)](images/oh-my-posh-2.3.png){:target="_blank"}
+    [![Alt text](images/oh-my-posh-2.3.png){:style="border: 1px solid black; border-radius: 10px;"}](images/oh-my-posh-2.3.png){:target="_blank"}
 
 To apply the changes, close and reopen Windows Terminal. 
 
@@ -92,7 +92,7 @@ To verify that Oh-My-Posh is correctly installed and configured, open Windows Te
 
 Now, You've successfully set up Windows Terminal with Oh-My-Posh, enhancing your command-line experience on Windows.
 
-[![Alt text](images/oh-my-posh-3.png)](images/oh-my-posh-3.png){:target="_blank"}
+[![Alt text](images/oh-my-posh-3.png){:style="border: 1px solid black; border-radius: 10px;"}](images/oh-my-posh-3.png){:target="_blank"}
 
 ## Conclusion
 
