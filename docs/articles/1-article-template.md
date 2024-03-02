@@ -1,15 +1,50 @@
-# **How to configure monitoring alerts in Azure Application Insights?**
-Certainly! Here's an article on "How to Configure Monitoring Alerts in Azure Application Insights When Exceptions Occur in Any Web Application" with step-by-step instructions for Azure Cloud Engineers:
+# **Send Alerts When Website is Down**
 
----
+## **Introduction**
 
-# **How to Configure Monitoring Alerts in Azure Application Insights When Exceptions Occur in Any Web Application**
+Website downtime can be a critical issue for companies in industries such as Insurance, Healthcare, Finance, and Banking, especially for applications that are mission critical. It can lead to inconvenience for users and potentially result in significant financial losses. To proactively address this challenge, Azure Application Insights offers a powerful feature called availability tests. These tests enable you to monitor your website's availability and receive timely alerts if the site goes down.
 
-In today's fast-paced world of cloud computing, proactive monitoring and alerting are critical for maintaining the reliability and performance of web applications hosted on Azure. Azure Application Insights provides powerful monitoring and telemetry capabilities, allowing you to gain insights into your application's behavior and health. In this article, we will guide you through the process of configuring monitoring alerts in Azure Application Insights specifically for exceptions that occur in any web application.
+In this article, I will guide you through the steps to set up email, SMS, or voice notifications for your team members using Azure Application Insights.
+
+<!-- 
+Introduction
+Prerequisites
+Technical Scenario
+Objective
+Implementation Details
+Step 1: Deployment in Docker
+Step 2: Deployment in Kubernetes using Helm
+Step 3: Create a new agent pool in Azure DevOps
+Step 4: Create a new Personal Access Token (PAT)
+Step 5: Register the Self-Hosted Agent
+Step 6: Verify the helm deployment
+Step 7: Update Build pipeline with Private Agent
+Step 8: Test the new Private Agent
+Conclusion
+Reference -->
+
+
+## **Technical Scenario**
+
+When you're operating Azure services within a private network that is not accessible via the public internet, and you need connectivity from an Azure DevOps pipeline located in a public network, the solution is to deploy a private build machine within the same virtual network as your private services. This private build machine acts as a bridge, facilitating seamless connections to resources within the private network from Azure DevOps pipelines.
+
+For instance, if you've established a private AKS cluster to run your applications, you'll need a dedicated private self-hosted agent within the same virtual network to facilitate the deployment process. Similarly, consider a scenario where you've configured a PostgreSQL server with a private DNS zone, and your Azure DevOps pipeline resides in a public network. To establish a connection to this database, it is necessary to deploy your own private agent within the virtual network housing the PostgreSQL server. This solution enables secure and efficient communication with your private resources.
+
+## **Objective**
+
+In this exercise, our objective is to accomplish and learn the following tasks:
+
+- **Step-1:** Installing Private Agent Helmchart in Kubernetes
+- **Step-2:** Verify private agent resources in AKS
+- **Step-3:** Create new agent pool in Azure DevOps
+- **Step-4:** Create new Personal Access Token (PAT)
+- **Step-5:** Register the Self-Hosted Agent
+- **Step-6:** Update Build pipeline with Private Agent.
+- **Step-7:** Test the new Private Agent
 
 ## **Prerequisites**
 
-Before you begin, make sure you have the following prerequisites:
+Before proceeding with this lab, make sure you have the following prerequisites in place:
 
 1. An Azure account with an active subscription.
 2. A web application hosted on Azure that is already configured to send telemetry data to Azure Application Insights.

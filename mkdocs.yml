@@ -204,6 +204,8 @@ nav:
         - .NET Core Web API : resources/webapi.md
         - Azure Cloud : resources/azure-cloud.md
   - Articles:
+      # - Article Template :  articles/1-article-template.md
+      - Setup Azure Monitor Alerts for CPU & Memory Spikes :  articles/20240302.1-alerts-cpu-memory.md
       - Running Azure DevOps Private Agents in AKS :  articles/20240218.1-build-agent.md
       - Create Website using Material for MkDocs:  articles/mkdocs-setup.md
       - Azure Application Availability Alerts Setup:  articles/app-availability-alert.md
