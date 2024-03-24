@@ -205,6 +205,7 @@ nav:
         - Azure Cloud : resources/azure-cloud.md
   - Articles:
       # - Article Template :  articles/1-article-template.md
+      - Connecting to Azure Cache for Redis :  articles/20240323.1-redis-connection.md
       - Setup Azure Monitor Alerts for CPU & Memory Spikes :  articles/20240302.1-alerts-cpu-memory.md
       - Running Azure DevOps Private Agents in AKS :  articles/20240218.1-build-agent.md
       - Create Website using Material for MkDocs:  articles/mkdocs-setup.md
