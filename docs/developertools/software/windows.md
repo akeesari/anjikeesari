@@ -295,6 +295,22 @@ RDCMan, short for Remote Desktop Connection Manager, is a free Microsoft Windows
 choco install rdcman
 ```
 
+## Install dotnet
+
+Microsoft .NET 8.0 Runtime 8.0.10
+
+```sh
+choco install dotnet-8.0-runtime
+```
+
+Microsoft .NET 8.0 SDK 8.0.403
+
+```sh
+choco install dotnet-8.0-sdk
+# verify the installation
+dotnet --version
+```
+
 ## Install Python
 
 Python is a popular programming language known for its simplicity and versatility. It is widely used for web development, data analysis, and scripting tasks.
