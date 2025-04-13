@@ -22,7 +22,7 @@ To use Chocolatey, you will need to have Windows PowerShell installed on your sy
 
 This is the first step you need to take before installing anything on the Windows OS.
 
-To install Chocolatey on your Windows system, open a terminal window (such as PowerShell or Command Prompt) and run the following command:
+To install Chocolatey on your Windows system, open a terminal window (such as PowerShell or Command Prompt) and run as Administrator with the following command:
 
 ```
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -42,14 +42,35 @@ Use the following link, click on the search button, and start typing the require
 
 It is the most commonly used IDE, It is widely used for programming and supports various languages with extensive customization options.
 
+Open Command Prompt (cmd) or PowerShell as Administrator and run:
+
 ```sh
 choco install vscode
 ```
 
-verify the installation
+Verify the installation
 ```sh
 code --help
 ```
+
+Verify the version installed
+```sh
+code --version
+```
+
+Check for the latest version (available via choco)
+```sh
+choco info vscode
+```
+
+Upgrade VS Code to the latest version
+
+```sh
+choco upgrade vscode -y
+```
+
+Note: 
+  "Yes to all prompts" or "Automatically accept all confirmations."
 
 ## VS Code Extensions
 
@@ -72,13 +93,14 @@ vscode-helm
 Kubernetes – very helpful for debugging services in AKS 
 PostgreSQL - get this from Microsoft 
 PowerShell Extension- https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell
+MongoDB
 ```
 
 ## Install SQL server
 
 SQL Server is a relational database management system developed by Microsoft. It allows you to store, manage, and retrieve structured data efficiently.
 
-```
+```sh
 choco install sql-server-management-studio
 ```
 
@@ -86,30 +108,55 @@ choco install sql-server-management-studio
 
 Chrome is a popular web browser developed by Google. It provides a fast and secure browsing experience and supports various web technologies.
 
+```sh
+choco install googlechrome  -y
 ```
-choco install googlechrome
+
+Upgrade Google Chrome
+
+```sh
+choco upgrade googlechrome -y
 ```
+
 
 ## Install Node JS
 
 Node.js is a JavaScript runtime that allows you to execute JavaScript code outside of a web browser.
 
+```sh
+choco install nodejs -y
 ```
-choco install nodejs
-```
-```
+
+```sh
 node --version
+# or
+node -v
+npm -v
 ```
+
+Upgrade Node.js
+
+```sh
+choco upgrade nodejs -y
+```
+
 
 ## Install Git
 
 Git is a version control system used for tracking changes in software projects. It allows multiple developers to collaborate on a project efficiently and helps manage different versions of the code.
 
+```sh
+choco install git -y
 ```
-choco install git
-```
-```
+
+```sh
 git --version
+```
+
+Upgrade Git to the Latest Version
+
+```sh
+choco upgrade git -y
 ```
 
 ## Install Docker
@@ -117,11 +164,18 @@ git --version
 Docker is a platform that simplifies the process of creating, deploying, and running applications using containers.
 
 ```sh
-choco install docker-desktop
+choco install docker-desktop -y
 ```
 
 ```sh
 docker --version
+docker compose version
+```
+
+Upgrade Docker Desktop
+
+```sh
+choco upgrade docker-desktop -y
 ```
 
 ## Install Azure CLI
@@ -129,24 +183,52 @@ docker --version
 Azure CLI is a command-line interface for managing and interacting with Microsoft Azure cloud services. It provides a convenient way to automate and control your Azure resources.
 
 ```sh
-choco install azure-cli
+choco install azure-cli -y
 ```
 
 ```sh
 az --version
 ```
 
+Upgrade Azure CLI
+
+
+```sh
+choco upgrade azure-cli -y
+```
+
+Useful Commands
+
+```sh
+az account list --output table
+az account show
+az --help
+```
+
+
 ## Install Terraform
 
 Terraform is an infrastructure-as-code tool used for provisioning and managing cloud resources. It allows you to define your infrastructure in code and automates the deployment and management of resources across different cloud providers.
 
 ```sh
-choco install terraform
+choco install terraform -y
 ```
 
-```
+```sh
 terraform --version
 ```
+
+Upgrade Terraform
+
+```sh
+choco upgrade terraform -y
+```
+
+
+```sh
+terraform -help
+```
+
 
 ## Install kubectl
 
@@ -157,7 +239,7 @@ choco install kubernetes-cli
 ```
 For more information, please refer to the following link: - <https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/>
 
-```
+```sh
 # Test to ensure the version you installed is up-to-date:
 kubectl version
 kubectl version --client
@@ -173,6 +255,12 @@ kubectl cluster-info
 
 ```
 
+Upgrade kubectl
+
+```sh
+choco upgrade kubernetes-cli -y
+```
+
 ## Install Lens
 
 Lens is a popular Kubernetes platform that serves as a robust and advanced development and management environment for Kubernetes clusters. It provides a comprehensive graphical user interface (GUI) that simplifies the management, monitoring, and interaction with Kubernetes resources and clusters.
@@ -180,6 +268,17 @@ Lens is a popular Kubernetes platform that serves as a robust and advanced devel
 ```sh
 choco install lens
 ```
+
+```sh
+lens --version
+```
+
+Upgrade Lens
+
+```sh
+choco upgrade lens -y
+```
+
 
 ## Install azure kubelogin
 
@@ -194,7 +293,15 @@ choco install azure-kubelogin
 Helm is a package manager for Kubernetes that simplifies the deployment and management of applications on Kubernetes clusters. It allows you to define and install applications using charts, which are packages of pre-configured Kubernetes resources.
 
 ```sh
-choco install kubernetes-helm
+choco install kubernetes-helm -y
+```
+
+```sh
+helm version
+```
+
+```sh
+choco upgrade kubernetes-helm -y
 ```
 
 ## Install pgadmin4
@@ -202,16 +309,25 @@ choco install kubernetes-helm
 pgAdmin is a graphical administration and development platform for PostgreSQL, a popular open-source relational database management system. It provides a user-friendly interface for managing databases, running queries, and monitoring server activity.
 
 ```sh
-choco install pgadmin4
+choco install pgadmin4 -y
 ```
 
+```sh
+choco install pgadmin4 -y
+```
+
+Upgrade pgAdmin 4
+
+```sh
+choco upgrade pgadmin4 -y
+```
 ## Install PostgreSQL
 
 To install PostgreSQL, you can use Chocolatey by running the following command from the command line or PowerShell:
 
 
 ```sh
-choco install postgresql
+choco install postgresql -y
 ```
 
 Alternatively, you can choose to use the graphical installation wizard for PostgreSQL on Windows.
@@ -253,7 +369,7 @@ psql (PostgreSQL) 16.1
 Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 
 ```sh
-choco install argocd
+choco install argocd -y
 ```
 
 ```sh
@@ -270,6 +386,11 @@ argocd: v2.4.7+81630e6
 argocd-server: v2.5.2+148d8da
 ```
 
+Upgrade Argo CD
+
+```sh
+choco upgrade argocd -y
+```
 
 ## Install Azure Data Studio
 
@@ -315,7 +436,7 @@ dotnet --version
 
 Python is a popular programming language known for its simplicity and versatility. It is widely used for web development, data analysis, and scripting tasks.
 
-```
+```sh
 choco install python
 ```
 
@@ -323,18 +444,18 @@ choco install python
 
 Pip is a package installer for Python. It allows you to easily install, upgrade, and manage Python packages and dependencies.
 
-```
+```sh
 choco install pip
 ```
 ## Install WSL
 
 Windows Subsystem for Linux (WSL) is a feature of Windows that allows developers to run a Linux environment without the need for a separate virtual machine or dual booting. 
 
-```
+```sh
 choco install wsl
 ```
 
-```
+```sh
 wsl --help
 // or
 wsl --list --verbose
@@ -345,19 +466,37 @@ wsl --list --verbose
 
 JQ is a lightweight and flexible command-line tool for processing JSON data. It provides various features to extract, manipulate, and transform JSON files efficiently.
 
-```
+```sh
 choco install jq
 ```
 
-## Postman
+## Install MongoDB Compass
+
+Install MongoDB Compass using Chocolatey
+```sh
+choco install mongodb-compass -y
+```
+Check MongoDB Version
+
+```sh
+mongod --version
+```
+
+```sh
+choco upgrade mongodb-compass -y
+```
+## Install Postman
 
 Postman is a popular API development and testing tool. It allows you to make HTTP requests, test APIs, and automate API workflows, making it easier to develop and debug APIs.
 
 ```sh
-choco install postman
+choco install postman -y
 ```
 
-
+Upgrade Postman
+```sh
+choco upgrade postman -y
+```
 ## Windows Terminal 
 
 Allows us to access multiple command-line tools and shells in one customizable interface. It is an open-source project developed and maintained by Microsoft.
