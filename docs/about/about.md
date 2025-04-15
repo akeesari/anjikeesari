@@ -3,21 +3,36 @@
 
 ![image.jpg](images/anji-pic2.png){ align=right width=250 height=250 border-radius=50%}
 
+**Anji Keesari** is a accomplished **Cloud Architect** with **over 20 years** of experience in software architecture, full-stack development, and Microsoft Azure Cloud solutions. Skilled at designing and delivering scalable, secure, and cloud-native applications, with expertise in .NET, Azure, Kubernetes, Kafka, Terraform, Helm, and Azure DevOps. Proven track record in leading enterprise transformation initiatives and scaling systems from startup to enterprise level.
 
-**Anji Keesari** is a software engineer and **Cloud Architect** with over **20 years** of experience in the technology industry. He has worked on numerous projects involving cloud computing, **Microservices** architecture, and **Kubernetes**, **Terraform**, and containers.
+**Current Role**: Currently working as a Cloud Architect, leading enterprise cloud transformation initiatives. Actively contributing to one of the major project – an architectural foundation for the company's next generation of digital products. This modern cloud-native platform is designed to become the organizational standard for all future projects, driving consistency, scalability, and innovation across teams.
+
+**Previous Experience**: Spent many years in delivering large-scale software solutions across diverse domains and geographies, including the US, UK, and India (multiple states).
+
+**Certifications**: Microsoft Azure, Microsoft .NET, and  The Open Group Architecture Framework **TOGAF** certified.
+
+**Publications**: Author of two technical books:
+
+*  _Building Microservices with Containers: A Practical Guide_        
+*   _Build and Deploy Microservices on Kubernetes using ArgoCD & Helm_
+        
+**Entrepreneurship**: Founder of [https://anjikeesari.com](https://anjikeesari.com), where I share insights and tutorials on a wide range of technologies, including Azure, Kubernetes, PostgreSQL, MongoDB, Terraform, Helm, Azure DevOps, .NET, React, and more.
+
+**Content Creation**: Regular contributor to **Medium.com**, where I publish articles on emerging cloud-native technologies and best practices.
+    
+**Startup Mindset**: Passionate about startup culture, with a proven ability to scale organizations from early-stage to enterprise level. Leverage deep technical expertise and architectural vision to create scalable, resilient, and future-ready solutions that support rapid growth and innovation.
+    
+**AI Exploration**: Currently exploring the AI ecosystem to identify strategic opportunities for incorporating intelligent systems into scalable architectures, ensuring alignment with business value and emerging technologies.
+
+**Kubernetes Expertise:** Experience in deploying and managing Kubernetes clusters in production environments. Expert in **ArgoCD** and **Helmcharts** and has used these tools to deploy microservices applications on Kubernetes. 
+
+**Infrastructure as Code(IaC) Expertise:** In addition to the experience with Kubernetes and related tools, I also have extensive experience with Terraform and deploy infrastructure on various cloud platforms, including Azure.
 
 
-Anji has experience deploying and managing Kubernetes clusters in production environments. He is also an expert in **ArgoCD** and **Helmcharts** and has used these tools to deploy microservices applications on Kubernetes. 
-
-In addition to his experience with Kubernetes and related tools, Anji has extensive experience with Terraform and has used it to deploy infrastructure on various cloud platforms, including Azure and AWS.
-
-Anji has a passion for teaching and sharing his knowledge with others. He has written numerous articles and tutorials on Kubernetes, ArgoCD, and Helm, and has presented at various industry conferences and events, He has YouTube Chanel for sharing the knowledge on various technical topics.
-
-With his extensive knowledge and experience in Kubernetes, ArgoCD, and Helm, Anji is the perfect author for this book on **Build & Deploy Microservices on a Kubernetes using ArgoCD and Helm**. His passion for teaching and his ability to explain complex concepts in simple terms will make this book a valuable resource for readers of all levels of expertise.
 <!-- 
-Anji has recently been involved in developing **multi-tenant** applications while also focusing on infrastructure automation (**IaC**). He leverages tools like Terraform and Azure DevOps to streamline the process. Anji's goal is to efficiently create new environments, aiming to complete the setup within a remarkable timeframe.  
+Anji has recently been involved in developing **multi-tenant** applications while also focusing on infrastructure automation (**IaC**). He leverages tools like Terraform and Azure DevOps to streamline the process.
 -->
 
-Throughout my career, I have worked with various companies in different domains such as Banking, Healthcare, and Finance, across countries like India, UK, and US. I am passionate about making a significant impact at my workplace and helping others along the way.
+**Professional Experience:** Throughout my career, I have worked with various companies in different domains such as Banking, Healthcare, and Finance, across countries like India, UK, and US. I am passionate about making a significant impact at my workplace and helping others along the way.
 
-During his free time, Anji finds joy in various activities such as playing soccer, going hiking, exploring new places, and most importantly, spending quality time with his loved ones.
+**Personal Interests:** During his free time, Anji finds joy in various activities such as playing soccer, going hiking, exploring new places, and most importantly, spending quality time with his loved ones.

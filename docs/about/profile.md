@@ -1,21 +1,62 @@
-## Summary
+# **Profile Summary**
 
-- With **20 years** of extensive experience in Software Architecture and Full Stack development, specializing in Microsoft **.NET** Technologies and Microsoft **Azure Cloud**, I have my skills in various areas including database design, software development, distributed technology, **Containerized Kubernetes Microservice**, clean Architecture development, as well as the implementation and testing of web-based and Client/Server applications.
+**Accomplished Cloud Architect** with over 20 years of experience in software architecture, full-stack development, and Microsoft Azure Cloud solutions. Skilled at designing and delivering scalable, secure, and cloud-native applications, with expertise in .NET, Azure, Kubernetes, Kafka, Terraform, Helm, and Azure DevOps. Proven track record in leading enterprise transformation initiatives and scaling systems from startup to enterprise level.
 
-- Currently, I am working as a **Solution Architect** (Azure & .NET Core) and also actively involved as a Full Stack Developer.
+*   **Current Role**: Currently employed at **AssetMark** as a Cloud Architect, leading enterprise cloud transformation initiatives. Actively contributing to the eWM 3.0 project – an architectural foundation for the company's next generation of digital products. This modern cloud-native platform is designed to become the organizational standard for all future projects, driving consistency, scalability, and innovation across teams.
+   
+*   **Previous Experience**: Spent 12 years with **Tata Consultancy Services (TCS)**, delivering large-scale software solutions across diverse domains and geographies, including the US, UK, and India (multiple states).
+    
+*   **Certifications**: Microsoft Azure, .NET, and  The Open Group Architecture Framework **TOGAF** certified.
+    
+*   **Publications**: Author of two technical books:
+    *   _Building Microservices with Containers: A Practical Guide_
+        
+    *   _Build and Deploy Microservices on Kubernetes using ArgoCD & Helm_
+        
+*   **Entrepreneurship**: Founder of [https://anjikeesari.com](https://anjikeesari.com), where I share insights and tutorials on a wide range of technologies, including Azure, Kubernetes, PostgreSQL, MongoDB, Terraform, Helm, Azure DevOps, .NET, React, and more.
+    
+*   **Content Creation**: Regular contributor to **Medium.com**, where I publish articles on emerging cloud-native technologies and best practices.
+    
+*   **Startup Mindset**: Passionate about startup culture, with a proven ability to scale organizations from early-stage to enterprise level. Leverage deep technical expertise and architectural vision to create scalable, resilient, and future-ready solutions that support rapid growth and innovation.
+    
+*   **AI Exploration**: Currently exploring the AI ecosystem to identify strategic opportunities for incorporating intelligent systems into scalable architectures, ensuring alignment with business value and emerging technologies.
+    
+*   **Azure Expertise**: Extensive experience provisioning and managing Azure PaaS services (App Services, API Apps, Logic Apps, API Management, Application Gateway, Azure SQL Server, Redis Cache, Azure Traffic Manager, Virtual Networks, and NSGs) using Terraform for fully automated infrastructure deployment. Implemented CI/CD pipelines to ensure continuous integration and delivery of cloud services, optimizing deployment processes.
+    
+*   **CI/CD Expertise**: Proficient in designing and implementing CI/CD pipelines using Azure DevOps, supporting deployment to both on-premises and Azure Cloud for websites, APIs, and database projects.
+    
+*   **Security Focus**: Led the integration of CrowdStrike with Microsoft Azure Cloud to improve threat detection and response. Worked with Microsoft Defender for Cloud to enhance security, manage vulnerabilities, and ensure compliance across hybrid environments.
+    
+* Ability to adapt to new technologies, learn quickly, and understand relevant cloud trends.
 
-- I have had the opportunity to work with diverse clients in **multiple locations**, spanning **various domains**. This has allowed me to gain valuable experience and insight, including the chance to travel to **different countries** such as the UK, US, and India based on project requirements.
 
-- To further strengthen my expertise, I have attained **certifications** from Microsoft in .NET and Azure, along with a certification in the TOGAF (The Open Group Architecture framework) Architect program.
 
-- Beyond my professional roles, I am passionate about knowledge sharing and have served as a **Trainer** and **YouTuber**, focusing on Microservices Clean Architecture using the .NET Core technology stack.
+## **Technical Expertise (current)**
 
-- My special interests lie in **Azure Cloud** and **Microservices**, RESTful Clean Architecture, application layering, architecting .NET-based applications, and addressing OWASP top 10 Security vulnerabilities in .NET applications.
+End-to-end expertise in building and managing microservices-based architectures on the cloud. Experience spans the complete application lifecycle—from infrastructure provisioning to deployment, monitoring, security, and data management for Cloud-Native Applications.
 
-- Ability to adapt to new technologies, learn quickly, and understand relevant cloud trends.
+*   **Infrastructure Provisioning:** Proficient in provisioning **Azure** resources using **Terraform**, enabling automated, repeatable, and scalable infrastructure deployment.
+    
+*   **Containerization:** Skilled in building microservices using **Docker containers**, promoting modular, portable, and isolated service development.
+    
+*   **Kubernetes Configuration:** Experienced in creating Kubernetes manifest objects using **Helm charts**, allowing efficient templating and management of complex application deployments.
+    
+*   **GitOps Deployment:** Deploys microservices to **Kubernetes** clusters using **GitOps** methodologies with tools like **ArgoCD**, ensuring declarative, version-controlled, and automated deployment pipelines.
+    
+*   **CI/CD with Azure DevOps:** Expertise in designing and implementing robust **CI/CD pipelines** using **Azure DevOps**, supporting end-to-end automation for code integration, testing, and deployment across both on-premises and Azure environments. Proficient in managing build and release pipelines, infrastructure as code, and multi-stage deployments.
+    
+*   **Monitoring & Observability:** Implements observability solutions using **OpenTelemetry (OTel) Collector**, providing comprehensive tracing, metrics, and logging for distributed applications.
+    
+*   **Event-Driven Architecture:** Designs and implements event-driven messaging patterns using **Apache Kafka** and **Azure Event Hub**, enabling scalable and decoupled communication between microservices.
+    
+*   **Database Management:** Manages databases such as **PostgreSQL** and **MongoDB**, ensuring data consistency, high availability, and performance across both relational and NoSQL systems.
+    
+*   **Cloud Security:** Strong focus on **cloud-native security best practices**, including role-based access control (RBAC), secrets management, secure API gateways, network policies, and integration with tools like **Microsoft Defender for Cloud** and **CrowdStrike** for threat detection and compliance.
+    
+*   **Architectural Leadership:** Demonstrated leadership in shaping the architectural landscape of organizations by driving cloud adoption, defining best practices, mentoring engineering teams, and leading enterprise-scale modernization and digital transformation initiatives. Passionate about building future-ready platforms that are scalable, resilient, and aligned with business goals.
+    
 
-## Profile
-
+## **Technical Expertise (earlier)**
 
 - Extensive experience in designing and developing **enterprise cloud-based applications** using .NET Core Web APIs with Microservice clean architecture, .NET Framework 4.8, **C#,** **React JS**, jQuery, WCF, Entity Framework Core, and n-Tier and Client Server Architecture.
 
@@ -71,6 +112,5 @@
 
 ## Education
 
-- Master of Computer Science (MSc) – University of Mumbai, Mumbai, India
-
-- Bachelor of Computer Science (BSc) – Osmania University, Hyderabad, India.
+- Master of Science (M.Sc Computer Science) – University of Mumbai, Mumbai, India
+- Bachelor of Science (B.Sc Maths, Physics, Chemestry) – Osmania University, Hyderabad, India.
