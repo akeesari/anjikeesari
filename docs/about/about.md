@@ -28,11 +28,6 @@
 
 **Infrastructure as Code(IaC) Expertise:** In addition to the experience with Kubernetes and related tools, I also have extensive experience with Terraform and deploy infrastructure on various cloud platforms, including Azure.
 
-
-<!-- 
-Anji has recently been involved in developing **multi-tenant** applications while also focusing on infrastructure automation (**IaC**). He leverages tools like Terraform and Azure DevOps to streamline the process.
--->
-
 **Professional Experience:** Throughout my career, I have worked with various companies in different domains such as Banking, Healthcare, and Finance, across countries like India, UK, and US. I am passionate about making a significant impact at my workplace and helping others along the way.
 
-**Personal Interests:** During his free time, Anji finds joy in various activities such as playing soccer, going hiking, exploring new places, and most importantly, spending quality time with his loved ones.
+**Personal Interests:** During free time, I finds joy in various activities such as playing soccer, going hiking, exploring new places, and most importantly, spending quality time with his loved ones.
