@@ -1,4 +1,4 @@
-# **Profile Summary**
+# Profile Summary
 
 **Accomplished Cloud Architect** with over 20 years of experience in software architecture, full-stack development, and Microsoft Azure Cloud solutions. Skilled at designing and delivering scalable, secure, and cloud-native applications, with expertise in .NET, Azure, Kubernetes, Kafka, Terraform, Helm, and Azure DevOps. Proven track record in leading enterprise transformation initiatives and scaling systems from startup to enterprise level.
 
@@ -31,7 +31,7 @@
 
 
 
-## **Technical Expertise (current)**
+## Technical Expertise (current)
 
 End-to-end expertise in building and managing microservices-based architectures on the cloud. Experience spans the complete application lifecycle—from infrastructure provisioning to deployment, monitoring, security, and data management for Cloud-Native Applications.
 
@@ -56,7 +56,7 @@ End-to-end expertise in building and managing microservices-based architectures 
 *   **Architectural Leadership:** Demonstrated leadership in shaping the architectural landscape of organizations by driving cloud adoption, defining best practices, mentoring engineering teams, and leading enterprise-scale modernization and digital transformation initiatives. Passionate about building future-ready platforms that are scalable, resilient, and aligned with business goals.
     
 
-## **Technical Expertise (earlier)**
+## Technical Expertise (earlier)
 
 - Extensive experience in designing and developing **enterprise cloud-based applications** using .NET Core Web APIs with Microservice clean architecture, .NET Framework 4.8, **C#,** **React JS**, jQuery, WCF, Entity Framework Core, and n-Tier and Client Server Architecture.
 

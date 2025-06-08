@@ -1,7 +1,7 @@
 
-# **Create a Website Using Material for MkDocs: A Step-by-Step Guide**
+# Create a Website Using Material for MkDocs: A Step-by-Step Guide
 
-<!-- ## **Table of Contents**
+<!-- ## Table of Contents
 
 1. [Introduction to Material for MkDocs](#introduction-to-material-for-mkdocs)
 2. [Prerequisites](#prerequisites)
@@ -15,19 +15,19 @@
 10. [References](#references) -->
 
 
-## **Introduction to Material for MkDocs,**
+## Introduction to Material for MkDocs,
 
 Material for MkDocs, a static site generator written in Python, simplifies the process of creating project documentation. it helps for IT professionals, developers, and writers for creating a website. Static websites are fast, secure, and easy to maintain, making them an ideal choice for documentation, blogs, and personal websites. 
 
 In this article, I will guide you through the steps by step instructions on how to create a static website or documentation site using Material for MkDocs, an extension of the MKDocs project that brings a modern look and additional features to your site.
 
 
-## **Prerequisites**
+## Prerequisites
 
 - Basic knowledge of Python and Markdown.
 - Access to a command-line interface.
 
-## **Step 1: Installation**
+## Step 1: Installation
 
 **Install Homebrew** (macOS users):
 
@@ -67,7 +67,7 @@ pip3 install mkdocs-material-extensions
 
 These commands install MKDocs, the Material theme, and additional extensions.
 
-## **Step 2: Creating Your Project**
+## Step 2: Creating Your Project
 
 Initialize Your MKDocs Project:
 
@@ -98,7 +98,7 @@ code .
 
 [![Alt text](images/mkdocs-setup-1.png){:style="border: 1px solid black; border-radius: 10px;"}](images/mkdocs-setup-1.png){:target="_blank"}
 
-## **Step 3: Run the Project Locally**
+## Step 3: Run the Project Locally
 
 MkDocs comes with a `built-in dev-server` that lets you preview your documentation as you work on it. Make sure you're in the same directory as the `mkdocs.yml` configuration file, and then start the server by running the `mkdocs serve` command:
 
@@ -113,7 +113,7 @@ This command starts a local server. Access your site at <http://127.0.0.1:8000> 
 
 The server automatically rebuilds your site when you save changes, allowing you to see updates in real-time.
 
-## **Step 4: Add Content & Configure the Website**
+## Step 4: Add Content & Configure the Website
 
 MKDocs organizes content using Markdown files in the `docs` directory. The `index.md` file is the homepage of your website.
 
@@ -144,7 +144,7 @@ nav:
 
 Explore the [Material for MkDocs documentation](https://squidfunk.github.io/mkdocs-material/){:target="_blank"} for customization options and add them to your `mkdocs.yml`.
 
-## **Step 5: Building and Deploying Your Site**
+## Step 5: Building and Deploying Your Site
 
 **Build Your Site**:
 
@@ -166,7 +166,7 @@ mkdocs gh-deploy
 
 Choose a hosting solution (e.g., GitHub Pages, GitLab Pages or any other hosting solution) and follow their instructions to deploy your MKDocs site.
 
-## **Step 6: Customization Home Page**
+## Step 6: Customization Home Page
 
 Your home page is the first thing visitors see. Make it informative and engaging. Edit the `index.md` file in the `docs` folder to add content. 
 
@@ -195,11 +195,11 @@ template: home.html
 [![Alt text](images/mkdocs-setup-4.png){:style="border: 1px solid black; border-radius: 10px;"}](images/mkdocs-setup-4.png){:target="_blank"}
 
 
-## **Conclusion**
+## Conclusion
 
 Material for MkDocs is an excellent tool for IT professionals and tech writers to create and maintain documentation websites. With its easy-to-use features and extensive customization options, it's an ideal choice for documenting software project documentation, writing online e-Book, and more.
 
-## **References**
+## References
 
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/){:target="_blank"}
 - [MkDocs ](https://www.mkdocs.org/#installation){:target="_blank"}

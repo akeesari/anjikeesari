@@ -1,7 +1,7 @@
 
-# **Technical Accomplishments** 
+# Technical Accomplishments
 
-## **Technical Delivery Highlights**
+## Technical Delivery Highlights
 
 
 ### Cloud Infrastructure & Provisioning (Azure + Terraform)
@@ -149,7 +149,7 @@
 - Implemented **Architectural Improvements** that enhanced scalability, performance, or security. -->
 
  
-## **Project Delivery Highlights**
+## Project Delivery Highlights
 
 
 *   Successfully **developed and delivered high-quality software solutions**, meeting business requirements and exceeding performance expectations.

@@ -1,6 +1,6 @@
-# **Send Alerts When Website is Down**
+# Send Alerts When Website is Down
 
-## **Introduction**
+## Introduction
 
 Website downtime can be a critical issue for companies in industries such as Insurance, Healthcare, Finance, and Banking, especially for applications that are mission critical. It can lead to inconvenience for users and potentially result in significant financial losses. To proactively address this challenge, Azure Application Insights offers a powerful feature called availability tests. These tests enable you to monitor your website's availability and receive timely alerts if the site goes down.
 
@@ -24,13 +24,13 @@ Conclusion
 Reference -->
 
 
-## **Technical Scenario**
+## Technical Scenario
 
 When you're operating Azure services within a private network that is not accessible via the public internet, and you need connectivity from an Azure DevOps pipeline located in a public network, the solution is to deploy a private build machine within the same virtual network as your private services. This private build machine acts as a bridge, facilitating seamless connections to resources within the private network from Azure DevOps pipelines.
 
 For instance, if you've established a private AKS cluster to run your applications, you'll need a dedicated private self-hosted agent within the same virtual network to facilitate the deployment process. Similarly, consider a scenario where you've configured a PostgreSQL server with a private DNS zone, and your Azure DevOps pipeline resides in a public network. To establish a connection to this database, it is necessary to deploy your own private agent within the virtual network housing the PostgreSQL server. This solution enables secure and efficient communication with your private resources.
 
-## **Objective**
+## Objective
 
 In this exercise, our objective is to accomplish and learn the following tasks:
 
@@ -42,14 +42,14 @@ In this exercise, our objective is to accomplish and learn the following tasks:
 - **Step-6:** Update Build pipeline with Private Agent.
 - **Step-7:** Test the new Private Agent
 
-## **Prerequisites**
+## Prerequisites
 
 Before proceeding with this lab, make sure you have the following prerequisites in place:
 
 1. An Azure account with an active subscription.
 2. A web application hosted on Azure that is already configured to send telemetry data to Azure Application Insights.
 
-## **Step 1: Access Azure Application Insights**
+## Step 1: Access Azure Application Insights
 
 1. Log in to the Azure Portal (https://portal.azure.com/).
 
@@ -57,13 +57,13 @@ Before proceeding with this lab, make sure you have the following prerequisites 
 
 3. Click on your Application Insights resource to open its overview.
 
-## **Step 2: Create a New Alert Rule**
+## Step 2: Create a New Alert Rule
 
 1. In the Application Insights overview page, select the "Alerts" section from the left menu.
 
 2. Click the "+ New alert rule" button to create a new alert rule.
 
-## **Step 3: Configure Alert Rule Details**
+## Step 3: Configure Alert Rule Details
 
 1. In the "Basics" tab of the alert rule creation wizard, provide a **Name** and **Description** for your alert rule.
 
@@ -90,7 +90,7 @@ Before proceeding with this lab, make sure you have the following prerequisites 
 
 9. Click "Done" to save the condition.
 
-## **Step 4: Configure Action Groups**
+## Step 4: Configure Action Groups
 
 1. In the "Action groups" section, click the "Select action groups" dropdown, and then click on "+ New action group" to create a new action group.
 
@@ -102,7 +102,7 @@ Before proceeding with this lab, make sure you have the following prerequisites 
 
 5. Click "OK" to save the action group.
 
-## **Step 5: Define Alert Details**
+## Step 5: Define Alert Details
 
 1. In the "Alert details" section, specify a **Name** for your alert instance.
 
@@ -110,24 +110,24 @@ Before proceeding with this lab, make sure you have the following prerequisites 
 
 3. Configure the **Action group** by selecting the action group you created earlier.
 
-## **Step 6: Review and Create**
+## Step 6: Review and Create
 
 1. Review all the configurations to ensure they are accurate.
 
 2. Click "Create alert rule" to create the alert rule.
 
-## **Step 7: Testing and Validation**
+## Step 7: Testing and Validation
 
 It's essential to test your alert rule to ensure it triggers as expected. To do this, you can deliberately introduce exceptions into your web application and monitor the Azure Application Insights interface for alerts.
 
-## **Conclusion**
+## Conclusion
 
 Configuring monitoring alerts in Azure Application Insights for exceptions in web applications is a crucial step in ensuring the reliability and performance of your applications. By following the steps outlined in this article, Azure Cloud Engineers can proactively detect and respond to exceptions, minimizing downtime and enhancing the user experience.
 
 Remember to regularly review and adjust your alert rules as your application evolves and usage patterns change, ensuring that your monitoring and alerting strategy remains effective in the long run.
 
 
-## **References**
+## References
 
 - [OAuth 2.0 Specification](https://tools.ietf.org/html/rfc6749){:target="_blank"}
 - [OpenID Connect Specifications](https://openid.net/specs/openid-connect-core-1_0.html){:target="_blank"}

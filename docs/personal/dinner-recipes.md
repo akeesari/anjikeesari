@@ -1,7 +1,7 @@
-# **Dinner Recipes**
+# Dinner Recipes
 
 
-## **Dosa Recipe**
+## Dosa Recipe
 
 [![image-1.jpg](images/image-5.jpg){ align=right width=400 height=350;}](images/image-5.jpg){:target="_blank"}
 
@@ -21,7 +21,7 @@ Dosa is a traditional South Indian crepe/pancake made from fermented rice and da
 
 <hr />
 
-## **Idli Recipe**
+## Idli Recipe
 
 [![image-1.jpg](images/image-10.jpg){ align=right width=400 height=350;}](images/image-10.jpg){:target="_blank"}
 

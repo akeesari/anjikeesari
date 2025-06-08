@@ -1,14 +1,14 @@
-# **Getting Started with Drupal: A Beginner's Guide**
+# Getting Started with Drupal: A Beginner's Guide
 
 Drupal is a free open-source powerful and flexible content management system (CMS) that allows you to create and manage websites. Whether you're a beginner or an experienced web developer, Drupal can be an excellent choice for building websites, from personal blogs to large enterprise-level applications. 
 
 In this article, we'll walk you through the basics of getting started with Drupal. exploring what it is, its key features, and why it's essential to consider using it for your website development.
 
-## **What is Drupal?**
+## What is Drupal?
 
 Drupal is a free open-source content management system (CMS) written in PHP and supported by global community of developers. Drupal offers a robust platform for creating dynamic and feature-rich websites. Drupal is suitable for a wide range of web projects, from personal blogs to enterprise-level websites and applications. Drupal allows you to create, organize, and manage content, making it a flexible tool for a wide range of web projects.
 
-## **Why Choose Drupal?**
+## Why Choose Drupal?
 
 Here are some reasons why Drupal is a good choice for web development:
 
@@ -23,7 +23,7 @@ Here are some reasons why Drupal is a good choice for web development:
 5. **Multilingual Support**: Drupal provides multilingual capabilities out of the box, making it accessible for global audiences.
 
 
-## **Uses cases of Drupal**
+## Uses cases of Drupal
 
 Drupal is a flexible content management system (CMS) with a wide range of applications across various industries. Its flexibility and scalability make it suitable for different use cases. 
 
@@ -43,7 +43,7 @@ Here are some common uses for Drupal:
 
 10. **Healthcare**: The healthcare industry uses Drupal to create websites for medical practices, hospitals, and health information portals. Drupal's privacy features ensure compliance with healthcare data regulations.
 
-## **Key Features**
+## Key Features
 
 Here are some of the key features of Drupal:
 
@@ -69,7 +69,7 @@ Here are some of the key features of Drupal:
 
 
 
-## **Drupal's Versioning**
+## Drupal's Versioning
 
 Understanding Drupal's versioning is importent for users and developers to know which version of Drupal they are using and what to expect in terms of features, support, and compatibility.
 
@@ -107,7 +107,7 @@ To keep your Drupal website secure and up-to-date, it's important to plan for ve
 
 For example, Drupal 7 users were encouraged to migrate to Drupal 9 once Drupal 7 reached end of life. Drupal provides tools and documentation to facilitate the migration process.
 
-## **Drupal's high-level components**
+## Drupal's high-level components
 
 Drupal's high-level architecture consists of several key components that work together to deliver its functionality. Here are the high-level architecture components of Drupal:
 
@@ -141,7 +141,7 @@ Drupal's high-level architecture consists of several key components that work to
 
 15. **Content Workflow**: Drupal offers content workflow management features, allowing users to create, review, and publish content through defined workflows. Content moderation, revision tracking, and approval processes can be configured.
 
-## **PHP Role in Drupal**	
+## PHP Role in Drupal
 
 Understanding PHP role in Drupal is importent for anyone looking to work with Drupal. Let's explore the PHP relationship with Drupal.
 
@@ -165,7 +165,7 @@ Drupal is built using PHP. Here's how PHP is used in Drupal:
 8. **Dynamic Content**: PHP is helpful in rendering dynamic content on Drupal websites. It allows for the generation of content based on user interactions and data from various sources.
 ich websites and web applications using this flexible CMS.
 
-## **Understanding Databases and Drupal**
+## Understanding Databases and Drupal
 
 
 Databases play a fundamental role in how Drupal manages, stores, and retrieves content, configuration, and user data. Understanding the relationship between databases and Drupal is key for  site builders, developers, and administrators to effectively working with the CMS.
@@ -193,7 +193,7 @@ Key components of Drupal's database architecture include:
 - **Configuration Settings**: Drupal's configuration settings are stored in the database, enabling site administrators to customize the CMS without code changes.
 
 
-## **Understanding Drush**
+## Understanding Drush
 
 [Drush](https://www.drush.org/) (short for "Drupal Shell") is a command-line tool that enhances Drupal development, administration, and site management. It's a powerful utility that simplifies many tasks, making Drupal development more efficient and convenient. 
 
@@ -242,7 +242,7 @@ Drush's scripting capabilities allow developers to automate repetitive tasks and
 Drush has a robust and active community that regularly contributes to its development. You can find extensive documentation, tutorials, and community support to help you make the most of Drush's capabilities.
 
 
-## **Understanding Multi-tenant Architecture with Drupal**
+## Understanding Multi-tenant Architecture with Drupal
 
 Multi-tenant architecture is a design approach that allows multiple independent clients, often referred to as "tenants," to share a common software application while maintaining their isolation and customization. This architectural concept is particularly valuable for software platforms like Drupal when serving multiple clients, organizations, or websites from a single codebase and infrastructure. 
 
@@ -301,7 +301,7 @@ When implementing multi-tenant architecture in Drupal, consider these important 
 - **Governance**: Define governance policies and procedures to manage tenant onboarding, customization, and support efficiently.
 
 
-## **Drupal vs Sitecore**
+## Drupal vs Sitecore
 
 Drupal and Sitecore are both content management systems (CMS), but they have significant differences in terms of their target audience, features, licensing, and use cases. 
 
@@ -339,11 +339,11 @@ Here's a comparison of Drupal and Sitecore:
 
 In summary, Drupal is a flexible and open-source CMS suitable for a wide range of users and projects, while Sitecore is an enterprise-level CMS with a focus on advanced digital marketing and personalization features. The choice between Drupal and Sitecore depends on your organization's specific requirements, budget, and expertise in managing and customizing these platforms.
 
-## **Conclusion**
+## Conclusion
 
 Drupal is a open-source content management system (CMS) that helps you to create websites that stand out in functionality and design. Whether you're a beginner or an experienced developer, Drupal's flexibility and community support make it an excellent choice for building dynamic and engaging websites. 
 
-## **References**
+## References
 
 - [Drupal Official Website](https://www.drupal.org/){:target="_blank"}
 - [Drupal Documentation](https://www.drupal.org/docs){:target="_blank"}

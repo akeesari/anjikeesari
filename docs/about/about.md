@@ -1,5 +1,5 @@
 
-# **About Me**
+# About Me
 
 ![image.jpg](images/anji-pic2.png){ align=right width=250 height=250 border-radius=50%}
 

@@ -1,7 +1,7 @@
-# **Breakfast Recipes**
+# Breakfast Recipes
 
 
-## **Upma Recipe**
+## Upma Recipe
 
 [![image-1.jpg](images/image-3.png){ align=right width=400 height=350;}](images/image-3.png){:target="_blank"}
 
@@ -28,7 +28,7 @@ Upma! Basic and popular South Indian Breakfast Recipe which is loved by everyone
 
 <hr />
 
-## **Poha Recipe**
+## Poha Recipe
 
 [![image-1.jpg](images/image-2.png){ align=right width=400 height=350;}](images/image-2.png){:target="_blank"}
 
@@ -54,7 +54,7 @@ Poha is a most popular breakfast or snack recipe made with flattened rice (poha)
 
 <hr />
 
-## **Uttapam Recipe**
+## Uttapam Recipe
 
 [![image-1.jpg](images/image-4.png){ align=right width=400 height=350;}](images/image-4.png){:target="_blank"}
 
@@ -84,7 +84,7 @@ vegetable uttapam recipe | veg uttapam | mixed veggie uttapa
 
 <hr />
 
-## **Mooli Paratha**
+## Mooli Paratha
 
 [![image-1.jpg](images/image-1.png){ align=right width=400 height=350;}](images/image-1.png){:target="_blank"}
 

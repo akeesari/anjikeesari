@@ -1,6 +1,6 @@
 
 
-# **Terraform: A Beginners Guide for Azure Infrastructure As Code**
+# Terraform: A Beginners Guide for Azure Infrastructure As Code
 
 What you'll learn
 

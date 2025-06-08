@@ -1,11 +1,11 @@
-# **How to Configure Alerts in Azure Application Insights?**
+# How to Configure Alerts in Azure Application Insights?
 
 
 Proactive monitoring and alerting are critical for maintaining the reliability and performance of web applications hosted on Azure. Azure Application Insights provides monitoring and alerting capabilities, allowing you to gain insights into your application's behavior and health. 
 
 In this article, I will provide step by step instructions for configuring monitoring alerts in Azure Application Insights specifically for exceptions that occur in any web application.
 
-## **Prerequisites**
+## Prerequisites
 
 Before you begin, make sure you have the following prerequisites:
 
@@ -15,7 +15,7 @@ Before you begin, make sure you have the following prerequisites:
 - A web application configured to send logs data to Azure Application Insights.
 
 
-## **Step 1: Create action groups**
+## Step 1: Create action groups
 
 Action Group allows you to define a set of notification and automated actions that can be triggered by alerts from various Azure services.
 
@@ -35,13 +35,13 @@ Azure will begin creating the action group. Once the creation process is complet
 
 This action group can be associated with alert rules from various Azure services to trigger notifications and automated responses based on specific conditions.
 
-## **Step 2: Create a new alert rule**
+## Step 2: Create a new alert rule
 
 1. Application Insights > Alerts
 
 2. Open the + Create menu, and select Alert rule.
 
-## **Step 3: Configure Alert Rule Details**
+## Step 3: Configure Alert Rule Details
 
 1. In the "Basics" tab of the alert rule creation wizard, provide a **Name** and **Description** for your alert rule.
 
@@ -69,7 +69,7 @@ This action group can be associated with alert rules from various Azure services
 9. Click "Done" to save the condition.
 
 
-## **Step 5: Define Alert Details**
+## Step 5: Define Alert Details
 
 1. In the "Alert details" section, specify a **Name** for your alert instance.
 
@@ -77,20 +77,20 @@ This action group can be associated with alert rules from various Azure services
 
 3. Configure the **Action group** by selecting the action group you created earlier.
 
-## **Step 6: Review and Create**
+## Step 6: Review and Create
 
 1. Review all the configurations to ensure they are accurate.
 
 2. Click "Create alert rule" to create the alert rule.
 
-## **Step 7: Testing and Validation**
+## Step 7: Testing and Validation
 
 Test your alert rule ensure it triggers as expected. To do this, you can deliberately introduce exceptions into your web application and monitor the Azure Application Insights interface for alerts.
 
-## **Conclusion**
+## Conclusion
 
 Configuring monitoring alerts in Azure Application Insights for exceptions in web applications is a critical to ensure the reliability and performance of your applications. 
 
-## **References**
+## References
 
 - [Create or edit a metric alert rule](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-metric-alert-rule){:target="_blank"}

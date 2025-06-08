@@ -1,12 +1,12 @@
-# **Single Sign-On - OAuth 2.0 flows**
+# Single Sign-On - OAuth 2.0 flows
 
-## **Introduction**
+## Introduction
 
 OAuth 2.0 defines several authorization flows, also known as `grant types`, to enable different use cases for securing access to resources. The choice of which OAuth 2.0 flow to use depends on the specific requirements and characteristics of the client application and the desired level of security. Here are the main OAuth 2.0 flows:
 
 In this article, I will explain the four distinct OAuth 2.0 grant types, providing a detailed exploration complete with sequence diagrams and interactive examples.  we'll also look into the interactions between the various entities involved and understanding of each grant type in details. 
 
-## **Authorization Code Flow (Authorization Code Grant)**
+## Authorization Code Flow (Authorization Code Grant)
 
    - **Use Case:** Suitable for web applications running on a server.
    - **Flow:**
@@ -65,7 +65,7 @@ Explanation of the steps:
 
 [![Alt text](images/image-3.1.png)](images/image-3.1.png){:target="_blank"} -->
 
-## **Implicit Flow (Implicit Grant)**
+## Implicit Flow (Implicit Grant)
 
    - **Use Case:** Designed for user-agent-based clients (e.g., single-page applications) that cannot keep a client secret confidential.
    - **Flow:**
@@ -174,7 +174,7 @@ Explanation of parameters:
 
 [![Alt text](images/image-4.1.png)](images/image-4.1.png){:target="_blank"} -->
 
-## **Resource Owner Password Credentials Flow**
+## Resource Owner Password Credentials Flow
 
    - **Use Case:** Suitable for trusted clients that can directly request and obtain the user's credentials.
    - **Flow:**
@@ -221,7 +221,7 @@ Explanation of the steps:
 
 [![Alt text](images/image-5.1.png)](images/image-5.1.png){:target="_blank"} -->
 
-## **Client Credentials Flow**
+## Client Credentials Flow
 
    - **Use Case:** Used when the client is the resource owner and wants to access its own resources.
    - **Flow:**
@@ -258,11 +258,11 @@ Explanation of the steps:
 
 [![Alt text](images/image-6.1.png)](images/image-6.1.png){:target="_blank"} -->
 
-## **Conclusion**
+## Conclusion
 
  OAuth 2.0 plays a crucial role in enabling Single Sign-On and secure authorization across various applications and services. The choice of the appropriate flow depends on the specific requirements of the client application, the level of security needed, and the characteristics of the user interaction. Continuous attention to security best practices is essential for maintaining a robust and trustworthy authentication and authorization system.
 
-## **References**
+## References
 
 - [AD FS OpenID Connect/OAuth flows and Application Scenarios](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios)
 - [OAuth 2.0 Specification](https://tools.ietf.org/html/rfc6749)

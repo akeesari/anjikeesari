@@ -1,6 +1,6 @@
-# **Chapter 3: Install and Setup Terraform Locally**
+# Chapter 3: Install and Setup Terraform Locally
 
-<!-- # **Chapter 3: Install and setup terraform to create your first Azure resource** -->
+<!-- # Chapter 3: Install and setup terraform to create your first Azure resource -->
 
 
 In the previous chapter, we introduced you to Terraform and explored its fundamental concepts. Now, it's time to roll up our sleeves and get our hands on Terraform by setting it up on your local development environment. In this chapter, we will walk you through the installation and configuration process, ensuring that you have everything you need to start provisioning Azure resources using Terraform.
@@ -67,7 +67,7 @@ Creating your first Azure resource using Terraform can be a great way to get sta
 - Terraform Installed: Make sure that terraform is installed in your system. 
 
 
-### **Step 1: Authenticate using the Azure CLI**
+### Step 1: Authenticate using the Azure CLI
 
 1. Open a terminal or command prompt on your computer.
 
@@ -78,7 +78,7 @@ Creating your first Azure resource using Terraform can be a great way to get sta
    This command will open a web page where you can enter your Azure credentials. Follow the prompts to complete the login process.
 
 
-### **Step 2: Create a Directory for Your terraform project**
+### Step 2: Create a Directory for Your terraform project
 
 Create a new directory for your Terraform project. You can do this with the following command:
 
@@ -87,7 +87,7 @@ mkdir my-terraform-project
 cd my-terraform-project
 ```
 
-### **Step 3: Create a Service Principal**
+### Step 3: Create a Service Principal
 
 1. A Service Principal is required to allow Terraform to interact with Azure resources securely. You can create one using the Azure CLI.
 
@@ -102,7 +102,7 @@ cd my-terraform-project
       - `password` (Client Secret)
       - `tenant` (Tenant ID)
 
-### **Step 4: Set your environment variables**
+### Step 4: Set your environment variables
 
 1. In your terminal or command prompt, set the following environment variables using the values from the Service Principal you created. Replace the placeholders with your actual values:
    ```sh
@@ -114,7 +114,7 @@ cd my-terraform-project
 
    Alternatively, you can add these environment variables to a `.env` file in your Terraform project directory.
 
-### **Step 4: Write Terraform configuration for Azure resource group**
+### Step 4: Write Terraform configuration for Azure resource group
 
 1. Inside your project directory, create a file named `main.tf` using a text editor of your choice.
 
@@ -189,7 +189,7 @@ Let me explain the key components of a Terraform configuration file:
    }
    ```
 
-### **Step 5: Initialize your Terraform configuration**
+### Step 5: Initialize your Terraform configuration
 
 1. In your terminal or command prompt, navigate to the directory containing `main.tf`.
 
@@ -198,7 +198,7 @@ Let me explain the key components of a Terraform configuration file:
 terraform init
 ```
 
-### **Step 6: Format and validate the configuration**
+### Step 6: Format and validate the configuration
 
 1. To ensure consistent formatting of your Terraform configuration, run the following command:
 ```sh
@@ -210,7 +210,7 @@ terraform fmt
 terraform validate
 ```
 
-### **Step 7: Apply your Terraform Configuration**
+### Step 7: Apply your Terraform Configuration
 
 1. To preview the changes defined in your Terraform configuration, run:
 ```sh
@@ -226,7 +226,7 @@ terraform apply
 
 4. Confirm the action by entering "yes" when prompted.
 
-### **Step 8: Inspect your state**
+### Step 8: Inspect your state
 
 1. Terraform maintains a state file that tracks the state of your infrastructure. To view the current state, run:
 ```sh
@@ -244,7 +244,7 @@ terraform state show azurerm_resource_group.example
 ```
 
 
-### **Step 9: Clean Up (Optional)**
+### Step 9: Clean Up (Optional)
 
 If you want to delete the resource group and all the resources created by Terraform, you can run:
 

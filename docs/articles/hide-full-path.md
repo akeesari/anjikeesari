@@ -1,14 +1,14 @@
-# **Hiding the full file path in VSCode Terminal**
+# Hiding the full file path in VSCode Terminal
 
 In this guide, we'll walk through the steps to hide the full file path and only show the current folder name in your PowerShell prompt.
 
 The customization involves modifying the PowerShell profile.
 
-## **Step 1: Open the PowerShell Terminal in VSCode**
+## Step 1: Open the PowerShell Terminal in VSCode
 
 Launch Visual Studio Code and open the integrated terminal by selecting  `Terminal`
 
-## **Step 2: Open the PowerShell Profile**
+## Step 2: Open the PowerShell Profile
 
 Type the following command into the terminal and press Enter:
 
@@ -24,7 +24,7 @@ you can open the profile in `Notepad` by using the following command:
 notepad $PROFILE
 ```
 
-## **Step 3: Add Custom Prompt Function**
+## Step 3: Add Custom Prompt Function
 
 
 ```powershell
@@ -42,11 +42,11 @@ function prompt {
 
 This modification ensures that only the current folder name is displayed in the PowerShell prompt.
 
-## **Step 4: Save the Profile**
+## Step 4: Save the Profile
 
 Save the changes to the profile file and close the editor.
 
-## **Step 5: Restart PowerShell**
+## Step 5: Restart PowerShell
 
 To apply the changes, restart your PowerShell session.
 
@@ -60,7 +60,7 @@ after
 
 ![Alt text](images\image-1.png)
 
-## **Conclusion**
+## Conclusion
 
 Customizing the PowerShell prompt in Visual Studio Code allows you to hide the full file path and displaying only the current folder name.
 <!-- 

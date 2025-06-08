@@ -1,4 +1,4 @@
-# **Chapter-1: Infrastructure as code (IaC)**
+# Chapter-1: Infrastructure as code (IaC)
 
 ## Introduction to Infrastructure as Code
 

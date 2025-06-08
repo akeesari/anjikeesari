@@ -1,13 +1,13 @@
-# **Local Development Setup with Dev Containers**
+# Local Development Setup with Dev Containers
 
-## **Overview**
+## Overview
 
 In this lab, I will walk you through the process of setting up a local development environment using Dev Containers. `Dev Containers` provide a consistent and isolated environment for your development projects, ensuring a seamless and uniform experience across team members.
 
 If you're new to Dev Containers and want to learn more about the concept, please visit our website to explore - [What are Development Containers](https://anjikeesari.com/articles/dev-containers-introduction/){:target='_blank'} 
 
 
-## **Objective**
+## Objective
 
 In this exercise, our objective is to accomplish and learn the following tasks:
 
@@ -18,7 +18,7 @@ In this exercise, our objective is to accomplish and learn the following tasks:
 5. [Step 5: Running a project in a dev container](#step-5-running-a-project-in-a-dev-container)
 6. [Step 6: Verify the Setup](#step-6-verify-the-setup)
 
-## **Prerequisites**
+## Prerequisites
 
 Before we begin, ensure that you have the following prerequisites installed on your machine:
 
@@ -27,7 +27,7 @@ Before we begin, ensure that you have the following prerequisites installed on y
 - (Optional) Git client tool
 - Docker (If not installed, refer to "Step 1: Install Docker" below)
 
-## **Step 1: Install Docker**
+## Step 1: Install Docker
 
 If Docker is not already installed on your machine, follow these steps:
 
@@ -46,7 +46,7 @@ docker -v
 ```
 
 
-## **Step 2: Install the remote containers extension**
+## Step 2: Install the remote containers extension
 
 To work effectively with Dev Containers in Visual Studio Code, you'll need the "Remote - Containers" extension:
 
@@ -54,7 +54,7 @@ Open Visual Studio Code and navigate to the Extensions view by clicking on the E
 
 [![Alt text](images/dev-containers-local-setup-1.png){:style="border: 1px solid black; border-radius: 10px;"}](images/dev-containers-local-setup-1.png){:target="_blank"}
 
-## **Step 3: Create a new project**
+## Step 3: Create a new project
 
 Now, you can start working on your project. You have the option to create a new project or open an existing one in Visual Studio Code.
 
@@ -93,7 +93,7 @@ you've established the foundation for your Node.js API project, complete with a 
 This should have created a number of files in your directory, including bin and routes directories. Make sure to run npm install so that npm can get all of your Node.js modules set up and ready to use.
 
 
-## **Step 4: Add Dev Container configuration to a project**
+## Step 4: Add Dev Container configuration to a project
 
 In the root of your project, create a folder named `.devcontainer` if it doesn't already exist. Inside this folder, create a file named `devcontainer.json`. This file will contain the configuration for your Dev Container.
 
@@ -183,7 +183,7 @@ Explanation:
 - Dependencies are specified using the `depends_on` key, ensuring that services wait for others to start before launching.
 
 
-## **Step 5: Running a project in a dev container**
+## Step 5: Running a project in a dev container
 
 Reopen a project in a container
 
@@ -192,22 +192,22 @@ When you choose to "Reopen in Container" in Visual Studio Code, it triggers the 
 Open the Command Palette (`Ctrl+Shift+P`), type "Reopen in Container," and select the option to rebuild the project inside the Dev Container.
 
 
-## **Step 6: Verify the Setup**
+## Step 6: Verify the Setup
 
 Once the container is built and the project is reopened, verify that your development environment is running smoothly inside the Dev Container.
 
 Now that your local development environment is containerized, you can start coding with the confidence that everyone on your team will have a consistent setup.
 
 
-## **Docker compose commands**
+## Docker compose commands
 
 For more comprehensive details on Docker commands and some commonly used Docker Compose commands, please refer to the [Docker Commands Cheat Sheet](https://anjikeesari.com/developertools/cheatsheets/docker-cheat-sheet/){:target='_blank'} on our website.
 
-## **Conclusion**
+## Conclusion
 
 Developing applications inside a Dev Container offers a consistent, isolated, and reproducible development environment, streamlining your development workflow. With Docker and VS Code's Remote - Containers extension, you can quickly set up and manage Dev Containers, ensuring that your team works in agreement with the same development environment. This approach simplifies onboarding, enhances collaboration, and minimizes environment-related issues, allowing you to focus on building application development.
 
-## **References**
+## References
 
 - [Development Containers](https://containers.dev/){:target="_blank"}
 - [Use a Docker container](https://learn.microsoft.com/en-us/training/modules/use-docker-container-dev-env-vs-code/){:target="_blank"}

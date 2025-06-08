@@ -1,6 +1,6 @@
-# **Single Sign-On - Introduction**
+# Single Sign-On - Introduction
 
-## **Introduction**
+## Introduction
 
 
 If you're involved in implementing Single Sign-On (SSO) in your project, it's crucial to understand the fundamental concepts that will help you to implement the authentication mechanism. 
@@ -10,11 +10,11 @@ In this article, we'll explain the foundational elements of Single Sign-On. By l
 Whether you're new to SSO or seeking a refresher, this exploration will help you with the essential knowledge needed to review the complexities of Single Sign-On and make informed decisions during the implementation process. 
 
 
-## **What is Single Sign-On?**
+## What is Single Sign-On?
 
 `Single Sign-On (SSO)` is a user authentication process that enables a user to access multiple applications with a single set of login credentials. Instead of requiring users to remember separate usernames and passwords for each application, SSO streamlines the login process by authenticating the user once and granting access to multiple services.
 
-## **Waht are the benefits of SSO?**
+## Waht are the benefits of SSO?
 
 Single Sign-On (SSO) offers several benefits for both users and organizations. Here are some key advantages of implementing SSO:
 
@@ -28,7 +28,7 @@ Single Sign-On (SSO) offers several benefits for both users and organizations. H
 
 - **Enhanced Security:** SSO can enhance security by enforcing consistent authentication policies. Users are less likely to resort to insecure practices, such as writing down passwords, when dealing with multiple credentials.
 
-## **How Single Sign-On works?**
+## How Single Sign-On works?
 
 Single Sign-On (SSO) works by allowing users to authenticate once and gain access to multiple applications or services without the need to re-enter credentials for each one. The fundamental idea is to streamline the authentication process and provide a seamless user experience across various systems. Here's a high-level overview of how SSO works:
 
@@ -60,7 +60,7 @@ Single Sign-On (SSO) works by allowing users to authenticate once and gain acces
     - Authentication tokens may have a limited validity period. If needed, the SSO system can handle token expiration by either requiring re-authentication or using mechanisms like token refresh to obtain a new token without requiring the user's credentials.
 
 
-## **What are the different types of SSO?**
+## What are the different types of SSO?
 
 Single Sign-On (SSO) comes in various types, depends on different use cases. Here are some common types of SSO:
 
@@ -70,7 +70,7 @@ Single Sign-On (SSO) comes in various types, depends on different use cases. Her
 
 - **Federated SSO:** Federated SSO enables users to access resources across multiple organizations or domains. It relies on trust relationships between identity providers, allowing for seamless authentication in a distributed environment.
 
-## **Popular SSO Protocols**
+## Popular SSO Protocols
 
 Several popular Single Sign-On (SSO) protocols are widely used to implement SSO across various applications and services. Here are some of the most common SSO protocols:
 
@@ -84,7 +84,7 @@ OpenID Connect is an identity layer built on top of OAuth 2.0. It extends OAuth 
 SAML is an XML-based standard for exchanging authentication and authorization data between parties, particularly in a web browser environment. It allows for the secure transfer of user identity information between an identity provider (IdP) and a service provider (SP), facilitating SSO.
 
 
-## **Roles of Single Sign-On**
+## Roles of Single Sign-On
 
 The Single Sign-On (SSO) process involves several roles or components working together in a coordinated fashion to provide a secure, seamless, and efficient Single Sign-On experience for users across multiple applications and services. The main roles or components include:
 
@@ -110,7 +110,7 @@ The Single Sign-On (SSO) process involves several roles or components working to
 - **Interaction:** Issues access tokens after authenticating the user and obtaining their consent. The client application uses these tokens to access protected resources.
 
 
-## **Tokens used in SSO**
+## Tokens used in SSO
 
 Let's explore the two types of tokens, `identity tokens`, and `access tokens`, delivered by the Authorization Server, both of which are commonly presented in the form of JSON Web Tokens (JWTs):
 
@@ -197,7 +197,7 @@ When a user initially authenticates and obtains an access token, the Identity Pr
 These tokens play a crucial role in the OAuth 2.0 and OpenID Connect protocols, providing a secure and standardized way to convey identity and authorization information in a distributed and interoperable manner.
 
 
-## **OAuth 2.0 flows**
+## OAuth 2.0 flows
 
 OAuth 2.0 flows, also known as OAuth 2.0 grant types, define the mechanism through which applications obtain authorization and access tokens to interact with protected resources on behalf of a user. Each flow is designed for specific use cases and scenarios, providing a standardized way for clients (applications) to request and obtain access to resources.
 
@@ -225,7 +225,7 @@ The main OAuth 2.0 flows include:
 
 These flows provide flexibility and cater to different types of applications and security requirements. The choice of a specific flow depends on the characteristics of the client application, the level of trust, and the security considerations of the overall system architecture.
 
-## **JSON Web Token (JWT)**
+## JSON Web Token (JWT)
 
 JWTs are often used for authentication and authorization purposes in web applications and APIs. They can be sent between parties, and since they are self-contained, the recipient can verify the information within the token without needing to contact the issuer. JWTs are widely used in various protocols and frameworks, including OAuth 2.0 and OpenID Connect.
 
@@ -268,11 +268,11 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwMCIsIm5hbWUiOiJKb2h
 ```
 
 
-## **Conclusion**
+## Conclusion
 
 Single Sign-On plays an importent role in the realm of identity and access management, providing a user-centric and secure approach to accessing multiple applications seamlessly. With benefits ranging from enhanced user experience to improved security and streamlined administration, SSO continues to play a vital role in shaping the future of digital identity.
 
-## **References**
+## References
 
 - [OAuth 2.0 Specification](https://tools.ietf.org/html/rfc6749){:target="_blank"}
 - [OpenID Connect Specifications](https://openid.net/specs/openid-connect-core-1_0.html){:target="_blank"}

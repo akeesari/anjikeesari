@@ -1,6 +1,6 @@
-# **Lunch Recipes**
+# Lunch Recipes
 
-## **Hyderabad Bawarchi Style Mutton Dum Biryani**
+## Hyderabad Bawarchi Style Mutton Dum Biryani
 
 [![image](images/image-6.jpg){ align=right width=400 height=350;}](images/image-6.jpg){:target="_blank"}
 
@@ -40,7 +40,7 @@ The Special Hyderabadi Mutton Dum Biryani
 <hr />
 
 
-## **Hyderabad Chicken Dum Biryani**
+## Hyderabad Chicken Dum Biryani
 
 [![image](images/image-7.jpg){ align=right width=400 height=350;}](images/image-7.jpg){:target="_blank"}
 
@@ -87,7 +87,7 @@ The Special Hyderabadi Mutton Dum Biryani
 <hr />
 
 
-## **Chicken Curry**
+## Chicken Curry
 
 [![image](images/image-8.jpg){ align=right width=400 height=350;}](images/image-8.jpg){:target="_blank"}
 
@@ -125,7 +125,7 @@ The Special Hyderabadi Chicken curry recipe
 <hr />
 
 
-## **Chicken 65**
+## Chicken 65
 
 [![image](images/image-9.jpg){ align=right width=400 height=350;}](images/image-9.jpg){:target="_blank"}
 

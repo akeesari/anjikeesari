@@ -1,12 +1,12 @@
-# **Send Alerts When Website is Down - Azure Application Insights Availability Test**
+# Send Alerts When Website is Down - Azure Application Insights Availability Test
 
-## **Introduction**
+## Introduction
 
 Website downtime can be a critical issue for companies in industries such as Insurance, Healthcare, Finance, and Banking, especially for applications that are mission critical. It can lead to inconvenience for users and potentially result in significant financial losses. To proactively address this challenge, Azure Application Insights offers a powerful feature called availability tests. These tests enable you to monitor your website's availability and receive timely alerts if the site goes down.
 
 In this article, I will guide you through the steps to set up email, SMS, or voice notifications for your team members using Azure Application Insights.
 
-## **Prerequisites**
+## Prerequisites
 
 Before we look into the steps, make sure you have the following prerequisites are in place:
 
@@ -16,7 +16,7 @@ Before we look into the steps, make sure you have the following prerequisites ar
 
 Now, let's get started!
 
-## **Step 1: Create Action Groups**
+## Step 1: Create Action Groups
 
 Action Group allows you to define a set of notification and automated actions that can be triggered by alerts from various Azure services.
 
@@ -29,7 +29,7 @@ Action Group > Overview
 
 
 
-## **Step 2: Add Standard Test in Application Insights**
+## Step 2: Add Standard Test in Application Insights
 
 here are the steps to "Add Standard Test in Application Insights" under the "Availability" left navigation:
 
@@ -76,7 +76,7 @@ Add Standard Test > Results
 [![Alt text](images/app-availability-alert-3.png){:style="border: 1px solid black; border-radius: 10px;"}](images/app-availability-alert-3.png){:target="_blank"}
 
 
-## **Step 3: Create Alert Rule**
+## Step 3: Create Alert Rule
 
 Now that your availability test is set up, it's time to create an alert rule to trigger notifications when issues arise. by default it already creates a Rule for this.
 
@@ -103,13 +103,13 @@ Alert Rule > Scope, Action, Condition
 [![Alt text](images/app-availability-alert-6.png){:style="border: 1px solid black; border-radius: 10px;"}](images/app-availability-alert-6.png){:target="_blank"}
 
 
-## **Conclusion**
+## Conclusion
 
 By following these steps, you can set up proactive monitoring and alerting for your website using Azure Application Insights availability tests. This ensures that your team members added in action groups are immediately notified when your website is downtime, allowing for quicker response times and minimizing user disruption.
 
 
 
-## **References**
+## References
 
 Here are some helpful references for further information:
 
