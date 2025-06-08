@@ -1,6 +1,6 @@
-# **Useful Tools**
+# Useful Tools
 
-## **Network troubleshooting**
+## Network troubleshooting
 
 Here are some useful tools and links that can be helpful for troubleshooting network-related issues, monitoring network performance, and analyzing network traffic. 
 
@@ -22,7 +22,7 @@ Here are some useful tools and links that can be helpful for troubleshooting net
 | [Speedtest.net](https://www.speedtest.net/)          | Speedtest.net allows you to test your internet connection's speed and latency to various servers. |
 | [WhatIsMyIP.com](https://www.whatismyip.com/)        | WhatIsMyIP.com provides information about your public IP address and geolocation. |
 
-## **DNS troubleshooting**
+## DNS troubleshooting
 
 Here are some useful tools and links for DNS (Domain Name System) troubleshooting:
 
@@ -42,7 +42,7 @@ Here are some useful tools and links for DNS (Domain Name System) troubleshootin
 | [Quad9 DNS](https://www.quad9.net/)               | Quad9 provides a secure and privacy-aware DNS service that blocks malicious domains.              |
 | [OpenDNS](https://www.opendns.com/)               | OpenDNS offers DNS resolution with security features and content filtering capabilities.          |
 
-## **Other Tools**
+## Other Tools
 
 | Tool/Resource                                   | Description                                                                                        |
 |-------------------------------------------------|----------------------------------------------------------------------------------------------------|
@@ -51,7 +51,7 @@ Here are some useful tools and links for DNS (Domain Name System) troubleshootin
 | [JSON Web Tokens](https://jwt.io/) | JSON Web Tokens |
 | [ipchicken](https://www.ipchicken.com/) | identifies the IP address of your system |
 
-## **Azure**
+## Azure
 
 | Tool/Resource                                   | Description                                                                                        |
 |-------------------------------------------------|----------------------------------------------------------------------------------------------------|

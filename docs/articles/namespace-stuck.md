@@ -1,18 +1,18 @@
-# **A Kubernetes Namespace Stuck in the Terminating State**
+# A Kubernetes Namespace Stuck in the Terminating State
 
-## **Symptom**
+## Symptom
 
 If you are experiencing issues with deleting namespaces in Kubernetes (AKS). When we execute the `kubectl delete ns` command, it becomes unresponsive and gets stuck in the terminating state. Even if we try to abort the operation, it remains stuck in this state indefinitely.
 
 Symptom is - A Kubernetes namespace is stuck in the Terminating state.
 
-## **Root Cause**
+## Root Cause
 
 `Finalizer Issue`
 
  Finalizers are mechanisms that allow resources to perform cleanup actions before they're deleted. If a resource has a finalizer that fails to complete its task, it can block the deletion of the entire namespace.
 
-## **Resolving the Problem**
+## Resolving the Problem
 
 To resolve this issue, you'll need to identify and manually delete  a Terminating Namespace from finalizers.
 
@@ -127,7 +127,7 @@ To resolve this issue, you'll need to identify and manually delete  a Terminatin
     kubectl get namespaces
     ```
 
-## **Conclusion**
+## Conclusion
 
 By following these steps, you should be able to successfully resolve the issue of Kubernetes namespace stuck in the terminating state and delete namespace.
 

@@ -1,11 +1,11 @@
-# **Setup Azure Logs Alerts & Notifications for Application Exceptions**
-## **Introduction**
+# Setup Azure Logs Alerts & Notifications for Application Exceptions
+## Introduction
 
 Monitoring and detecting application exceptions is crucial for maintaining the reliability and performance of your applications hosted on Azure. Azure Log Analytics and Azure Monitor provide powerful tools to help you achieve this. 
 
 In this article, I will provide step by step instructions for setting up Azure Logs Alerts and Notifications specifically for application exceptions.
 
-## **Prerequisites**
+## Prerequisites
 
 Before you begin, ensure you have the following prerequisites:
 
@@ -16,7 +16,7 @@ Before you begin, ensure you have the following prerequisites:
 - An Azure Log Analytics workspace set up to collect logs from your application.
 - Diagnostics Settings configured for your application's logs to send exceptions to the Log Analytics workspace.
 
-## **Step 1: Create Action Groups**
+## Step 1: Create Action Groups
 
 Action Group allows you to define a set of notification and automated actions that can be triggered by alerts from various Azure services.
 
@@ -95,7 +95,7 @@ Email from mail box
 [![Alt text](images/azure-log-alerts-7.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-7.png){:target="_blank"}
 
 
-## **Step 2: Create a new alert rule**
+## Step 2: Create a new alert rule
 
 1. In the Azure Portal, under "Monitor," click on "Alert rules."
 
@@ -184,11 +184,11 @@ Before finalizing the alert rule, it's essential to test it by creating a simula
 
 [![Alt text](images/azure-log-alerts-16.png){:style="border: 1px solid black; border-radius: 10px;"}](images/azure-log-alerts-16.png){:target="_blank"}
 
-## **Conclusion**
+## Conclusion
 
 Setting up Azure Logs Alerts & Notifications for Application Exceptions is a proactive approach to identifying and addressing issues in your applications. By following the steps outlined in this guide, you can ensure that relevant teams are promptly notified when exceptions occur, allowing for timely troubleshooting and maintenance.
 
-## **References**
+## References
 
 - [Azure Monitor Documentation](https://docs.microsoft.com/en-us/azure/azure-monitor/){:target="_blank"}
 - [Azure Log Analytics Documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview){:target="_blank"}

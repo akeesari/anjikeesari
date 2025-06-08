@@ -1,5 +1,5 @@
 
-# **Building Microservices with Containers: A Practical Guide**
+# Building Microservices with Containers: A Practical Guide
 
 
 Welcome to my e-Book, `Building Microservices with Containers (A Practical Guide)`. In this book, I'm going to share my practical knowledge about creating  microservices with docker.

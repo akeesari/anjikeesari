@@ -1,10 +1,10 @@
-# **Setting up Windows Terminal with Oh-My-Posh**
+# Setting up Windows Terminal with Oh-My-Posh
 
 In this tutorial, I'll guide you through the process of customizing your Windows terminal using Oh-My-Posh. 
 
 `Oh My Posh` is a highly customizable prompt engine designed to elevate your command-line experience. With full support for colors, it allow users to create visually appealing and informative prompts in various shell environments.
 
-## **Prerequisites**
+## Prerequisites
 
 Before we begin, make sure you have the following prerequisites in place:
 
@@ -14,7 +14,7 @@ Before we begin, make sure you have the following prerequisites in place:
 - A [Windows Terminal](../developertools/software/windows.md#windows-terminal){:target="_blank"}
 
 
-## **Step 1: Install Windows Terminal**
+## Step 1: Install Windows Terminal
 
 If you haven't already installed Windows Terminal, you can install from choco tool or get it from the Microsoft Store
 
@@ -26,7 +26,7 @@ Microsoft Store:
 
 Once Windows Terminal is installed, you can open it by searching for "Windows Terminal" in the Windows Start menu.
 
-## **Step 2: Install Oh-My-Posh**
+## Step 2: Install Oh-My-Posh
 
 Open your terminal and run the following command:
 
@@ -40,7 +40,7 @@ choco install oh-my-posh
 This command will download and install Oh-My-Posh on your system. 
 
 
-## **Step 3: Configure Oh My Posh**
+## Step 3: Configure Oh My Posh
 
 Once Oh-My-Posh is installed, you can configure your PowerShell prompt to use a custom theme. To configure your prompt, follow these steps:
 
@@ -66,7 +66,7 @@ Save and close your profile
 
 [![Alt text](images/oh-my-posh-2.png){:style="border: 1px solid black; border-radius: 10px;"}](images/oh-my-posh-2.png){:target="_blank"}
 
-## **Step 4: Install Nerd Font**
+## Step 4: Install Nerd Font
 Nerd Fonts are specialized fonts that include a wide range of icons and symbols commonly used in programming and terminal applications. These fonts are popular among developers and users who want to enhance their terminal experience. Here are the steps to install a Nerd Font on your system:
 
 
@@ -86,7 +86,7 @@ Nerd Fonts are specialized fonts that include a wide range of icons and symbols 
 
 To apply the changes, close and reopen Windows Terminal. 
 
-## **Step 5: Verify the Oh My Posh Install**
+## Step 5: Verify the Oh My Posh Install
 
 To verify that Oh-My-Posh is correctly installed and configured, open Windows Terminal and ensure that you see your custom prompt with the selected theme. You should see a stylish and informative prompt that includes Git status, time, and other relevant information.
 
@@ -100,7 +100,7 @@ By following these steps, you've successfully set up Windows Terminal with Oh-My
 
 Feel free to explore different Oh-My-Posh themes and Nerd Font variants to personalize your terminal even further.
 
-## **Resources**
+## Resources
 
 - [Oh My Posh - Official Website](https://ohmyposh.dev/){:target="_blank"}
 - [Nerd Fonts](https://www.nerdfonts.com/){:target="_blank"}

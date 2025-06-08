@@ -1,16 +1,16 @@
-# **Setting up Mac Terminal with Oh-My-Zsh**
+# Setting up Mac Terminal with Oh-My-Zsh
 
 In this tutorial, I'll guide you through the process of customizing your Mac terminal using Oh-My-Zsh. 
 `Oh-My-Zsh` is a popular open-source framework for managing Zsh configurations, and it comes with a variety of themes and plugins to enhance your terminal experience.
 
-## **Prerequisites**
+## Prerequisites
 
 Before we begin, make sure you have the following prerequisites in place:
 
 - A Mac computer running macOS.
 - A terminal emulator. or iTerm2
 
-## **Step 1: Install Oh-My-Zsh**
+## Step 1: Install Oh-My-Zsh
 
 The first step is to install Oh-My-Zsh. Open your terminal and run the following command:
 
@@ -20,7 +20,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 This command will download and install Oh-My-Zsh on your system. Follow the on-screen prompts to complete the installation.
 
-## **Step 2: Customize the Theme**
+## Step 2: Customize the Theme
 
 Oh-My-Zsh comes with a variety of themes to choose from. To customize your terminal's appearance, open the Zsh configuration file in a text editor. You can use nano, vim, or any text editor you prefer. Here's an example using nano:
 
@@ -40,11 +40,11 @@ ZSH_THEME="aussiegeek"
 
 Save your changes and exit the text editor. Your terminal will now display the selected theme.
 
-## **Step 3: Install Plugins**
+## Step 3: Install Plugins
 
 Plugins enhance the functionality of your terminal. Oh-My-Zsh has a plugin system that allows you to easily add new features. Let's install two popular plugins: autocomplete and auto-highlighting.
 
-### **Autocomplete Plugin**
+### Autocomplete Plugin
 
 To install the autocomplete plugin, open your terminal and run:
 
@@ -63,7 +63,7 @@ plugins=(
 
 Save your changes and exit.
 
-### **Auto-Highlighting Plugin**
+### Auto-Highlighting Plugin
 
 To install the auto-highlighting plugin, open your terminal and run:
 
@@ -82,7 +82,7 @@ plugins=(
 
 Save and exit the file.
 
-## **Step 4: Enable the Plugins**
+## Step 4: Enable the Plugins
 
 To enable the newly installed plugins, open your `~/.zshrc` file once again and make sure the `plugins` section looks like the following:
 
@@ -98,7 +98,7 @@ plugins=(
 
 Save your changes and exit the file.
 
-## **Step 5: Restart Your Terminal**
+## Step 5: Restart Your Terminal
 
 To apply the changes, close and reopen your terminal, or run the following command:
 
@@ -118,7 +118,7 @@ If everything is setup properly then your terminal output will look like this.
 [![Alt text](images/mac-terminal-setup-1.png){:style="border: 1px solid black; border-radius: 10px;"}](images/mac-terminal-setup-1.png){:target="_blank"}
 
 
-## **Resources**
+## Resources
 
 - [Oh-My-Zsh Official Website](https://ohmyz.sh)
 - [Oh-My-Zsh Themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)

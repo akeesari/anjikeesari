@@ -1,10 +1,10 @@
-# **Delete PV(Persistent Volume) and PVC(Persistent Volume Claim) stuck in terminating state**
+# Delete PV(Persistent Volume) and PVC(Persistent Volume Claim) stuck in terminating state
 
 If you are experiencing issues with deleting `Persistent Volume` or `Persistent Volume Claim` in Kubernetes (AKS). When we execute the `kubectl delete pv` or `kubectl delete pvc` command, it becomes unresponsive and gets stuck in the terminating state. Even if we try to abort the operation, it remains stuck in this state indefinitely.
 
  In this article, we will explore the symptoms, root cause, and the proper resolution to overcome this challenge.
 
-## **Symptom**
+## Symptom
 
 
 Symptom is - A Kubernetes Persistent Volume or Persistent Volume Claim is stuck in the Terminating state because of not following the order during the deletion.
@@ -17,18 +17,18 @@ The deletion of PV(Persistent Volume) and PVC(Persistent Volume claim) needs to 
 !!! Note
     You should never delete PV(Persistent Volume) without deleting its PVC(Persistent Volume Claim))
 
-## **Root Cause**
+## Root Cause
 
 `Finalizer Issue`
 
 Each Kubernetes resource running in the cluster has Finalizers associated with it. Finalizers prevent accidental deletion of resources(Persistent Volume, Persistent Volume Claim), If you accidentally issue kubectl delete command on Kubernetes resource and if there is a finalizer associated with that resource then it is going to put the resource in `Read-Only` mode and prevent it from deletion.
 
-## **Resolving the Problem**
+## Resolving the Problem
 
 
 If you find your Kubernetes resources, such as Persistent Volumes (PVs) or Persistent Volume Claims (PVCs), stuck in the terminating state, resolving the issue involves removing the associated `Finalizer`. Follow these steps to successfully resolve the problem:
 
-## **Step-1: Retrieve information about resources**
+## Step-1: Retrieve information about resources
 
 Use the following commands to retrieve information about your PVs and PVCs:
 
@@ -40,7 +40,7 @@ kubectl get pvc -n namespace1
 kubectl get pv -n namespace1
 ```
 
-## **Step-2: Remove the Finalizer**
+## Step-2: Remove the Finalizer
 
 Execute the following commands to remove the Finalizer from both the Persistent Volume and Persistent Volume Claim:
 
@@ -52,7 +52,7 @@ kubectl patch pv sample-app-pv -p '{"metadata":{"finalizers":null}}' -n namespac
 kubectl patch pvc sample-app-pvc -p '{"metadata":{"finalizers":null}}' -n namespace1
 ```
 
-## **Step-3: Delete Resources**
+## Step-3: Delete Resources
 
 Now that the Finalizer has been removed, proceed to delete the resources in the correct order:
 
@@ -86,7 +86,7 @@ kubectl delete pvc --grace-period=0 --force --namespace namespace1 sample-app-pv
 kubectl delete pv --grace-period=0 --force --namespace namespace1 sample-app-pv
 ```
 
-## **Conclusion**
+## Conclusion
 
 By following these steps, you should be able to successfully resolve the issue of Kubernetes resources stuck in the terminating state and delete both Persistent Volumes and Persistent Volume Claims.
 

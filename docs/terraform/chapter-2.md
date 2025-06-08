@@ -1,4 +1,4 @@
-# **Chapter 2: Introduction to Terraform**
+# Chapter 2: Introduction to Terraform
 
 ## Introduction
 

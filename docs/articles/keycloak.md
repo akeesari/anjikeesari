@@ -1,19 +1,19 @@
-# **Getting Started with Keycloak: A Beginner’s Guide**
+# Getting Started with Keycloak: A Beginner’s Guide
 
-## **Introduction**
+## Introduction
 
 In a microservices architecture, ensuring the security of applications and services (APIs) is importent. Unauthorized access to protected data can potentially cost millions of dollars in banking and financial IT companies. User authentication, authorization, and identity management are critical aspects of securing web and mobile applications for these companies. This is where Keycloak comes into play.
 
 
 This in this article I will walk you through the fundamentals of Keycloak, what is keycloak is, Key features, why do we need to use it, where do we use it, By the end of this guide, you'll have a solid understanding of how to leverage Keycloak to enhance the security and usability of your microservices applications.
 
-## **What is Keycloak?**
+## What is Keycloak?
 
 `Keycloak` is an open-source identity and access management (IAM) solution developed by `Red Hat`. It offers a robust and flexible framework for securing your applications and services with modern authentication and authorization mechanisms, particularly beneficial in microservices architecture.
 
 Keycloak simplifies the process of managing user identities, ensuring only authorized users can access your resources. Whether you're developing a single-page web application, a mobile app, or a complex microservices architecture, Keycloak offers a centralized and highly customizable solution for handling authentication and access control.
 
-## **Key Features**
+## Key Features
 
 Here are the Keycloak's main features in the context of modern web and mobile applications and microservices architectures.
 
@@ -34,7 +34,7 @@ Here are the Keycloak's main features in the context of modern web and mobile ap
 
 8. **Scalability and high availability**: Keycloak can be deployed in a scalable and highly available configuration, making it suitable for enterprise-level applications.
 
-## **Installing Keycloak** 
+## Installing Keycloak
 
 Setting up Keycloak can be done in various ways depending on your specific requirements and preferences. Here are some different methods and deployment options for setting up Keycloak:
 
@@ -49,7 +49,7 @@ Setting up Keycloak can be done in various ways depending on your specific requi
 3. **Installing and running Keycloak locally**:
    Keycloak provides a standalone server distribution that's easy for developers to set up on their local development machines. This is useful for testing and development purposes.
 
-## **When to use and when not to use Keycloak?**
+## When to use and when not to use Keycloak?
 
 Keycloak is a powerful identity and access management (IAM) solution, but it may not be the best fit for every situation. Here's when you should consider using Keycloak and when you might want to explore other options:
 
@@ -77,7 +77,7 @@ Keycloak is a powerful identity and access management (IAM) solution, but it may
 
 3. **Legacy systems**: In situations where integrating modern IAM solutions is challenging due to legacy systems or complex infrastructure, you may need to consider alternatives that can work more seamlessly with your existing setup.
 
-## **High-level architecture of Keycloak** 
+## High-level architecture of Keycloak*
 
 
 Here are the key architectural components of Keycloak:
@@ -114,7 +114,7 @@ Here are the key architectural components of Keycloak:
 
 
 
-## **What is Keycloak Admin Console?**
+## What is Keycloak Admin Console?
 
 The Keycloak Admin Console is a web-based administrative interface provided by Keycloak for managing and configuring the identity and access management (IAM) system. It serves as the primary graphical user interface (GUI) for administrators, allowing them to perform various tasks related to the setup and maintenance of Keycloak realms, clients, users, roles, authentication flows, and other IAM components for securing applications and services.
 
@@ -149,7 +149,7 @@ Key features and functions of the Keycloak Admin Console include:
 
 
 
-## **References**
+## References
 
 
 - [Keycloak Official Documentation](https://www.keycloak.org/documentation){:target="_blank"}
