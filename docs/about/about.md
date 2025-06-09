@@ -14,7 +14,7 @@
 **Publications**: Author of two technical books:
 
 *  _Building Microservices with Containers: A Practical Guide_        
-*   _Build and Deploy Microservices on Kubernetes using ArgoCD & Helm_
+*  _Building Scalable Kubernetes Infrastructure for Microservices_
         
 **Entrepreneurship**: Founder of [https://anjikeesari.com](https://anjikeesari.com), where I share insights and tutorials on a wide range of technologies, including Azure, Kubernetes, PostgreSQL, MongoDB, Terraform, Helm, Azure DevOps, .NET, React, and more.
 
