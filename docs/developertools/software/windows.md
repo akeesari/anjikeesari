@@ -4,7 +4,8 @@
 
 In this article, I am going to present a comprehensive list of essential tools and software commonly needed by developers in the IT industry. If you are using Window operating system, you can download and install the following software as per your requirements. It is recommended to use the choco tool for installation, but if you encounter any issues, you can also perform a direct install.
 
-Note: - Restart your computer when prompted or needed.
+!!! note
+    Restart your computer when prompted or needed and also restart your terminal for every install before validate it.
 
 ## Install Chocolatey
 
@@ -22,21 +23,20 @@ To use Chocolatey, you will need to have Windows PowerShell installed on your sy
 
 This is the first step you need to take before installing anything on the Windows OS.
 
-To install Chocolatey on your Windows system, open a terminal window (such as PowerShell or Command Prompt) and run as Administrator with the following command:
+To install Chocolatey on your Windows system, open a terminal window (such as PowerShell or Command Prompt) and run as **Administrator** with the following command:
 
+```sh
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-```
-reference - [https://docs.chocolatey.org/en-us/choco/setup](https://docs.chocolatey.org/en-us/choco/setup){:target="_blank"}
+Reference - [https://docs.chocolatey.org/en-us/choco/setup](https://docs.chocolatey.org/en-us/choco/setup)
 
 Once the installation is finished, you can use the `choco` command to install, upgrade, and manage software packages using Chocolatey.
 
-**Search choco commands** 
-
-Use the following link, click on the search button, and start typing the required software. Copy the command provided into the clipboard, then open a PowerShell window in administrator mode to execute the commands.
-
- [https://community.chocolatey.org/](https://community.chocolatey.org/){:target="_blank"}
+Verify the version installed
+```sh
+choco --version
+```
 
 ## Install VS code
 
@@ -49,17 +49,17 @@ choco install vscode
 ```
 
 Verify the installation
+
 ```sh
 code --help
-```
 
-Verify the version installed
-```sh
+# or
+
 code --version
-```
 
-Check for the latest version (available via choco)
-```sh
+
+# Check for the latest version (available via choco)
+
 choco info vscode
 ```
 
@@ -96,12 +96,54 @@ PowerShell Extension- https://marketplace.visualstudio.com/items?itemName=ms-vsc
 MongoDB
 ```
 
-## Install SQL server
-
-SQL Server is a relational database management system developed by Microsoft. It allows you to store, manage, and retrieve structured data efficiently.
+You can install directly using the VS Code CLI:
 
 ```sh
-choco install sql-server-management-studio
+code --install-extension ms-vscode.azurecli
+# or
+code --install-extension ms-vscode.azurecli --force
+
+code --install-extension ms-vscode.azure-account
+code --install-extension ms-kubernetes-tools.vscode-aks-tools
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension hashicorp.terraform
+code --install-extension ms-dotnettools.csharp
+code --install-extension microsoft.k8s-bridge-to-kubernetes
+code --install-extension ms-vscode-remote.remote-containers
+code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension formulahendry.dotnet
+code --install-extension tht13.helm-intellisense
+code --install-extension tim-koehler.vscode-helm
+code --install-extension ms-vscode.mssql
+code --install-extension ms-vscode.powershell
+code --install-extension mongodb.mongodb-vscode
+
+```
+
+List All Installed Extensions
+
+```sh
+code --list-extensions
+```
+
+
+## Install Git
+
+Git is a version control system used for tracking changes in software projects. It allows multiple developers to collaborate on a project efficiently and helps manage different versions of the code.
+
+```sh
+choco install git -y
+```
+
+```sh
+git --version
+```
+
+Upgrade Git to the Latest Version
+
+```sh
+choco upgrade git -y
 ```
 
 ## Install Chrome
@@ -138,25 +180,6 @@ Upgrade Node.js
 
 ```sh
 choco upgrade nodejs -y
-```
-
-
-## Install Git
-
-Git is a version control system used for tracking changes in software projects. It allows multiple developers to collaborate on a project efficiently and helps manage different versions of the code.
-
-```sh
-choco install git -y
-```
-
-```sh
-git --version
-```
-
-Upgrade Git to the Latest Version
-
-```sh
-choco upgrade git -y
 ```
 
 ## Install Docker
@@ -312,10 +335,6 @@ pgAdmin is a graphical administration and development platform for PostgreSQL, a
 choco install pgadmin4 -y
 ```
 
-```sh
-choco install pgadmin4 -y
-```
-
 Upgrade pgAdmin 4
 
 ```sh
@@ -392,6 +411,14 @@ Upgrade Argo CD
 choco upgrade argocd -y
 ```
 
+## Install SQL server
+
+SQL Server is a relational database management system developed by Microsoft. It allows you to store, manage, and retrieve structured data efficiently.
+
+```sh
+choco install sql-server-management-studio
+```
+
 ## Install Azure Data Studio
 
 Azure Data Studio is a cross-platform database tool for data professionals using the Microsoft family of on-premises and cloud data platforms on Windows, MacOS, and Linux.
@@ -440,13 +467,12 @@ Python is a popular programming language known for its simplicity and versatilit
 choco install python
 ```
 
-## Install Pip
-
-Pip is a package installer for Python. It allows you to easily install, upgrade, and manage Python packages and dependencies.
+## verify Pip installation
 
 ```sh
-choco install pip
+pip --version
 ```
+
 ## Install WSL
 
 Windows Subsystem for Linux (WSL) is a feature of Windows that allows developers to run a Linux environment without the need for a separate virtual machine or dual booting. 
@@ -497,6 +523,17 @@ Upgrade Postman
 ```sh
 choco upgrade postman -y
 ```
+
+## Install Notepad++
+
+```sh
+choco install notepadplusplus -y
+```
+Verify Installation:
+```sh
+notepad++
+```
+
 ## Windows Terminal 
 
 Allows us to access multiple command-line tools and shells in one customizable interface. It is an open-source project developed and maintained by Microsoft.
