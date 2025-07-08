@@ -439,10 +439,55 @@ choco install microsoftazurestorageexplorer
 
 RDCMan, short for Remote Desktop Connection Manager, is a free Microsoft Windows utility used to manage multiple remote desktop connections from a single application. It is particularly useful to connect and manage multiple remote servers, workstations, or virtual machines.
 
+**Key Features**
+
+*   Group RDP sessions for easy organization    
+*   Save credentials per group or server    
+*   Automatically reconnect dropped sessions    
+*   Session-wide actions like log off, disconnect, or reconnect    
+*   Custom display resolution and settings for individual servers
+
+Option 1: Install via Chocolatey 
+
 ```sh
-choco install rdcman
+choco install remote-desktop-connection-manager
+
+# To upgrade:
+choco upgrade remote-desktop-connection-manager
 ```
 
+ Option 2: Manual Installation
+
+**Download RDCMan** from the official Microsoft site or trusted repository:
+*   [Microsoft RDCMan Download Page](https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman)
+
+
+## mRemoteNG
+
+**mRemoteNG** (multi-Remote Next Generation) is an open-source. It supports multiple remote connection protocols, making it a powerful alternative to RDCMan with broader capabilities.   
+
+**Key Features**
+
+*   Tabbed interface for managing multiple sessions    
+*   Support for a wide range of protocols - RDP, VNC, SSH, Telnet, ICA, HTTP/HTTPS, RLogin, Raw Socket   
+*   Credential inheritance and secure storage    
+*   Connection tree and grouping for organization    
+*   Import/Export of configuration files
+    
+
+Option 1: Install via Chocolatey (Recommended)
+
+```sh
+choco install mremoteng
+    
+# To upgrade
+choco upgrade mremoteng
+```    
+Option 2: Manual Installation
+
+**Download Installer** from the official site:
+    *   [https://mremoteng.org/download](https://mremoteng.org/download)
+        
 ## Install dotnet
 
 Microsoft .NET 8.0 Runtime 8.0.10
