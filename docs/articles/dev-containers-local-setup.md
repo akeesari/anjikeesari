@@ -13,7 +13,7 @@ In this exercise, our objective is to accomplish and learn the following tasks:
 
 1. [Step 1: Install Docker](#step-1-install-docker)
 2. [Step 2: Install the remote - containers extension](#step-2-install-the-remote-containers-extension)
-3. [Step 3: Create a new project or open an existing one](#step-3-create-a-new-project-or-open-an-existing-one)
+3. [Step 3: Create a new project](#step-3-create-a-new-project)
 4. [Step 4: Add Dev Container configuration to a project](#step-4-add-dev-container-configuration-to-a-project)
 5. [Step 5: Running a project in a dev container](#step-5-running-a-project-in-a-dev-container)
 6. [Step 6: Verify the Setup](#step-6-verify-the-setup)

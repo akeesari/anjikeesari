@@ -210,6 +210,7 @@ nav:
         - Azure Cloud : resources/azure-cloud.md
   - Articles:
       # - Article Template :  articles/1-article-template.md
+      - Articles :  articles/1-article-collection.md
       - Kubernetes CronJob :  articles/20240325.1-cronjob.md
       - Connecting to Azure Cache for Redis :  articles/20240323.1-redis-connection.md
       - Setup Azure Monitor Alerts for CPU & Memory Spikes :  articles/20240302.1-alerts-cpu-memory.md

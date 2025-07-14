@@ -623,8 +623,8 @@ You may need these additional software to perform daily activities.
 - JSON viewer online - <https://codebeautify.org/jsonviewer>
 - regexr validator - <https://regexr.com/>
 - SAML Tracer [Browser extention](https://chrome.google.com/webstore/detail/saml-tracer/mpdajninpobndbfcldcmbpnnbhibjmch?hl=en)
-- WSL - https://learn.microsoft.com/en-us/windows/wsl/install>
+- WSL - <https://learn.microsoft.com/en-us/windows/wsl/install>
 - [Azure storage-explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/)
 - RDC - <https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman>
 - base64encode - <https://www.base64encode.org/>
-- LightShot (prntscr) - https://app.prntscr.com/en/
+- LightShot (prntscr) - <https://app.prntscr.com/en/>
