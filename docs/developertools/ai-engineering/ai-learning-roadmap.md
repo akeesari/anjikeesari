@@ -12,12 +12,28 @@
 
 ---
 
-**2. Essential Math for AI**
+**2. Mathematics for AI**
 
-* 2.1 Linear Algebra - Vectors, Matrices, Dot Product, Matrix Multiplication
-* 2.2 Calculus (Derivatives, Gradients)
-* 2.3 Probability & Statistics (Distributions, Bayes’ Theorem, Variance, Expectation)
-* 2.4 Optimization Techniques (Gradient Descent, Cost Functions)
+* 2.1 Linear Algebra
+    * Vectors
+    * Matrices
+    * Eigenvalues and eigenvectors
+    * Matrix operations
+* 2.2 Calculus
+    * Limits
+    * Differentiation
+    * Integration
+    * Multivariable calculus
+    * Vector calculus
+* 2.3 Probability and Statistics
+    * Probability theory
+    * Random variables
+    * Probability distributions
+    * Statistical inference
+    * Bayesian statistics
+* 2.4 Optimization Techniques 
+    * Gradient Descent
+    * Cost Functions
 
 Resources:
 
@@ -35,11 +51,19 @@ Mathematics is essential to understand how AI models learn and optimize themselv
 
 **3. Programming for AI**
 
-* 3.1 Python Programming Basics – Syntax, Variables, Loops, Data Types  
-* 3.2 Object-Oriented Programming
-* 3.3 Working with NumPy and Pandas
-* 3.4 Data Visualization (Matplotlib, Seaborn)
-* 3.5 Jupyter Notebooks & Google Colab
+* 3.1 Python
+    * Basic syntax & Variables
+    * Data structures
+    * Control structures
+    * Functions and modules
+    * Object-oriented programming
+* 3.1 AI-related libraries
+    * NumPy
+    * Pandas
+    * Data Visualization (Matplotlib, Seaborn)
+    * TensorFlow
+    * PyTorch
+    * Jupyter Notebooks & Google Colab
 
 Resources:
 
@@ -55,12 +79,28 @@ Python is the most widely used programming language in AI. You need it to implem
 
 **4. Machine Learning (ML)**
 
-* 4.1 Supervised Learning (Linear Regression, Logistic Regression, Decision Trees)
-* 4.2 Unsupervised Learning (Clustering, Dimensionality Reduction)
-* 4.3 Ensemble Methods (Random Forests, Gradient Boosting)
-* 4.4 Model Evaluation (Confusion Matrix, Receiver Operating Characteristic Curve(ROC), F1 Score)
-* 4.5 Cross-validation & Hyperparameter Tuning
-* 4.6 Feature Engineering & Selection
+* 4.1 Supervised Learning 
+    * Linear Regression
+    * Logistic Regression
+    * Support vector machines
+    * Decision Trees
+    * Random forests
+    * Gradient boosting machines
+* 4.2 Unsupervised Learning 
+    * Clustering (K-means, DBSCAN)
+    * Dimensionality reduction (PCA, t-SNE)
+    * Anomaly detection
+* 4.3 Reinforcement learning
+    * Markov decision processes
+    * Q-learning
+    * Deep Q-networks
+    * Policy gradients
+    * Actor-critic methods
+* 4.2 Evaluation and validation
+    * Training, validation, and test sets
+    * Cross-validation
+    * Model selection and hyperparameter tuning
+    * Performance metrics
 
 Why learn this?
 
@@ -89,13 +129,23 @@ Projects:
 
 **5. Deep Learning(DL)**
 
-* 5.1 Neural Networks Basics (Perceptron, MLP)
-* 5.2 Activation Functions
-* 5.3 Backpropagation and Gradient Descent
-* 5.4 Convolutional Neural Networks (CNNs)
-* 5.5 Recurrent Neural Networks (RNNs, LSTMs)
-* 5.6 Transformers and Attention Mechanism
-* 5.7 Generative Models (GANs, VAEs)
+* 5.1 Neural networks
+    * Multilayer perceptrons
+    * Activation functions
+    * Backpropagation
+    * Optimization algorithms
+* 5.2 Convolutional neural networks
+    * Convolutional layers
+    * Pooling layers
+    * Architectures (LeNet, AlexNet, VGG, ResNet)
+* 5.3 Recurrent neural networks (RNNs)
+    * Long short-term memory (LSTM)
+    * Gated recurrent units (GRU)
+    * Sequence-to-sequence models
+* 5.4 Generative models
+    * Variational autoencoders (VAE)
+    * Generative adversarial networks (GAN)
+    * Transformer models (BERT, GPT-2, T5)
 
 Resources:
 
@@ -113,11 +163,23 @@ Projects:
 
 **6. Natural Language Processing (NLP)**
 
-* 6.1 Text Preprocessing (Tokenization, Lemmatization)
-* 6.2 Word Embeddings (Word2Vec, GloVe, FastText)
-* 6.3 Sequence Modeling (RNNs, LSTMs)
-* 6.4 Transformers (BERT, GPT, T5)
-* 6.5 Text Classification, Named Entity Recognition (NER)
+* 6.1 Text preprocessing
+    * Tokenization
+    * Stemming and lemmatization
+    * Stopword removal
+    * Part-of-speech tagging
+* 6.2 Feature extraction
+    * Bag of words
+    * TF-IDF
+    * Word embeddings (Word2Vec, GloVe,FastText)
+* 6.3 Text classification
+    * Sentiment analysis
+    * Topic modeling
+* 6.4 Sequence Modeling (RNNs, LSTMs)
+    * Named entity recognition
+    * Text summarization
+    * Machine translation
+* 6.5 Transformers (BERT, GPT, T5)
 * 6.6 Chatbots and Language Generation
 
 Tools:
@@ -135,10 +197,21 @@ Projects:
 **7. Computer Vision**
 
 * 7.1 Image Preprocessing Techniques
+    * Filtering techniques
+    * Edge detection
+    * Feature extraction
 * 7.2 CNN Architectures (VGG, ResNet, EfficientNet)
 * 7.3 Object Detection (YOLO, SSD, Faster R-CNN)
+    * Sliding window approach
+    * Region-based CNN (R-CNN)
+    * YOLO (You Only Look Once)
 * 7.4 Image Segmentation (U-Net, Mask R-CNN)
+    * Semantic segmentation
+    * Instance segmentation
 * 7.5 Face Recognition, OCR
+* 7.6 Pose estimation
+    * 2D pose estimation
+    * 3D pose estimation
 
 Tools:
 
@@ -223,5 +296,36 @@ Platforms to Practice:
 *   [Google Colab](https://colab.research.google.com/)    
 *   [Hugging Face Datasets](https://huggingface.co/datasets)    
 *   [PapersWithCode](https://paperswithcode.com/)
+
+---
+
+**13. AI Books**
+
+* 13.1 [AI Engineering](https://amzn.to/3QBg0Z4) - by Chip Huyen
+    * [AI Engineering - Gitgub](https://github.com/chiphuyen/aie-book)
+* 13.2 [Build a Large Language Model](https://amzn.to/4kgv4cg) -  From Scratch - by Sebastian Raschka
+    * [Build a Large Language Model - Github](https://github.com/rasbt/LLMs-from-scratch)
+* 13.3 [LLM Engineer's Handbook](https://amzn.to/3D3jZun) -  by Paul Iusztin, Maxime Labonne
+    * [LLM Engineer's Handbook - Github](https://github.com/PacktPublishing/LLM-Engineers-Handbook)
+    * [SylphAI-Inc - LLM-engineer-handbook - Github](https://github.com/SylphAI-Inc/LLM-engineer-handbook)
+* 13.4 Artificial Intelligence with Python by Prateek Joshi
+* 13.5 Hands-On Machine Learning with Scikit-Learn and TensorFlow by Aurélien Géron
+* 13.6 Deep Learning with Python by François Chollet
+* 13.7 Machine Learning Yearning by Andrew Ng
+* 13.8 Artificial Intelligence: A Modern Approach by Stuart Russell and Peter Norvig
+
+**14. Courses**
+
+* 14.1 Machine Learning by Andrew Ng on Coursera
+* 14.2 Deep Learning Specialization by Andrew Ng on Coursera
+* 14.3 Applied Data Science with Python Specialization on Coursera
+* 14.4 Introduction to Artificial Intelligence with Python on edX
+
+**15. Articles**
+
+* 15.1 [A Beginner's Guide to AI/ML by Analytics Vidhya](https://www.analyticsvidhya.com/blog/2021/09/introduction-to-artificial-intelligence-for-beginners/)
+* 15.2 [What is Artificial Intelligence? A Beginner’s Guide by Builtin](https://builtin.com/artificial-intelligence)
+
+---
 
 By completing this roadmap, you will not only understand how artificial intelligence works — but also build, deploy, and scale real-world AI applications confidently.
