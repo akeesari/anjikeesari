@@ -13,7 +13,7 @@ We will be using Chocolatey commands to install all the required software and de
 
 **What is Chocolatey?**
 
-Chocolatey is a package manager for Windows that enables you to install, upgrade, and manage software packages from the command line. It functions similarly to package managers on Linux systems, such as apt or yum, and it can be utilized to install a wide range of software applications and libraries on Windows.
+Chocolatey is a package manager for Windows that enables you to install, upgrade, and manage software packages from the command line.
 
 It is strongly recommended to use choco commands for searching and installing the required software instead of attempting manual installations using the provided links.
 
@@ -31,13 +31,15 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 Reference - [https://docs.chocolatey.org/en-us/choco/setup](https://docs.chocolatey.org/en-us/choco/setup)
 
-Once the installation is finished, you can use the `choco` command to install, upgrade, and manage software packages using Chocolatey.
-
 Verify the version installed
 ```sh
 choco --version
 ```
 
+Upgrading Chocolatey
+```sh
+choco upgrade chocolatey
+```
 ## Install VS code
 
 It is the most commonly used IDE, It is widely used for programming and supports various languages with extensive customization options.
@@ -532,6 +534,62 @@ wsl --help
 wsl --list --verbose
 ```
 
+Update WSL
+
+```sh
+wsl --update
+```
+
+## Install Ubunto
+
+Ubuntu on Windows via WSL (Windows Subsystem for Linux) is incredibly useful — it gives you the power of Linux without leaving Windows.
+
+install Ubuntu
+
+```sh
+wsl --install -d Ubuntu
+```
+
+Check WSL Version
+
+```sh
+wsl --list --verbose
+
+```
+
+## Install Ansible
+
+Ansible is an open-source automation tool used for configuring systems, deploying software, and orchestrating IT infrastructure. It uses simple, human-readable YAML files (called playbooks) and requires no agents on managed machines.
+
+install Ansible easily on Ubuntu (on WSL or native Linux)
+
+
+
+```sh
+# Step 1: Update your package list
+sudo apt update
+# Step 2: Install required dependencies
+sudo apt install -y software-properties-common
+# Step 3: Add the official Ansible PPA (Personal Package Archive)
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+# Step 4: Install Ansible
+sudo apt install -y ansible
+# Step 5: Verify the installation
+ansible --version
+```
+
+Test Ansible with a Simple Command
+
+```sh
+ansible localhost -m ping
+
+# If it's working, you’ll see:
+localhost | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+
+```
 
 ## Install JQ
 
