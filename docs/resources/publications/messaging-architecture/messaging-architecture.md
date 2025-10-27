@@ -1,4 +1,4 @@
-# High-Throughput Cloud-Native Messaging Architectures: Performance Analysis of Pub Sub Microservices with Kubernetes and Azure Event Hub
+# High-Throughput Cloud-Native Messaging Architectures: Design and Performance Analysis of Pub/Sub Microservices with Kubernetes and Azure Event Hub
 
 ---
 
@@ -312,7 +312,7 @@ This section validates that the architecture achieves **enterprise-grade scalabi
 
 ---
 
-### **Section 6: Implementation Insights and Recommendations (Reviewed and Refined)**
+### **6: Implementation Insights and Recommendations**
 
 #### **6.1 Translating Evaluation Findings into Practice**
 
@@ -566,7 +566,7 @@ Certainly! Based on the content and focus of your paper **“High-Throughput Clo
 
 ---
 
-## 6. Conclusion
+### Conclusion
 
 This study presented a comprehensive evaluation of high-throughput cloud-native messaging architectures, with a focus on **Pub/Sub microservices deployed on Kubernetes** and integrated with **Azure Event Hub**. Through an in-depth analysis of architecture design, implementation strategies, and performance metrics, we demonstrated the capabilities and limitations of cloud-native messaging systems in handling large-scale, real-time workloads.
 
