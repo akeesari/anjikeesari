@@ -18,134 +18,141 @@ By bridging the gap between theoretical models and practical implementation, thi
 
 ### **1. Introduction**
 
-In the modern enterprise landscape, real-time data processing has become an essential requirement across industries such as finance, e-commerce, and telecommunications. Organizations increasingly depend on instantaneous data exchange between distributed systems to ensure operational efficiency, customer responsiveness, and regulatory compliance. In particular, financial transaction platforms—handling millions of payment authorizations, trade settlements, and fraud detection events per day—demand architectures that can ingest, process, and distribute data with high throughput, low latency, and guaranteed reliability.
+Real-time data processing has become a critical requirement for modern enterprises across sectors such as finance, e-commerce, and telecommunications. Organizations increasingly depend on instantaneous data exchange between distributed systems to ensure operational efficiency, customer responsiveness, and regulatory compliance. For example, financial transaction platforms must process millions of payment authorizations, trade settlements, and fraud detection events per day—demanding architectures that deliver high throughput, low latency, and robust reliability.
 
-Traditional monolithic and request–response architectures often fail to meet these demands due to limited scalability, tight coupling between components, and single points of failure. As a result, enterprises have adopted **event-driven microservice architectures** to decouple systems and achieve asynchronous, fault-tolerant communication. These architectures rely heavily on **publish-subscribe (pub/sub)** messaging patterns, allowing independent services to produce and consume messages at their own pace while maintaining system coherence and resilience.
+Traditional monolithic and request–response architectures often struggle to meet these demands due to limited scalability, tight coupling between components, and single points of failure. In response, enterprises are adopting event-driven microservice architectures to decouple systems and enable asynchronous, fault-tolerant communication. The publish-subscribe (pub/sub) messaging pattern is central to this approach, allowing independent services to produce and consume messages at their own pace while maintaining system coherence and resilience.
 
-The evolution of **cloud-native platforms** has further accelerated this transformation. Cloud-native systems leverage containerization, orchestration, and managed services to achieve elasticity, automation, and scalability. Within this paradigm, **Kubernetes** has become the de facto standard for orchestrating containerized microservices, enabling automated scaling, fault recovery, and rolling updates. Similarly, **Azure Event Hub** provides a highly scalable, distributed event streaming platform that supports real-time data ingestion and event-driven communication across thousands of concurrent producers and consumers.
+The emergence of cloud-native platforms has further accelerated this transformation. Cloud-native systems leverage containerization, orchestration, and managed services to achieve elasticity, automation, and scalability. Kubernetes has become the de facto standard for orchestrating containerized microservices, providing automated scaling, fault recovery, and rolling updates. Azure Event Hub offers a highly scalable, distributed event streaming platform that supports real-time data ingestion and event-driven communication across thousands of concurrent producers and consumers.
 
-In the architecture presented in this paper, Kubernetes serves as the **orchestration backbone**, managing a dynamic set of publisher and subscriber microservices that interact asynchronously through Azure Event Hub. Each publisher pod emits domain events—such as payment authorization requests or trade updates—while multiple subscriber pods consume and process these events concurrently. **PostgreSQL** acts as the persistence layer, ensuring transactional integrity and long-term data durability for processed events.
+In this work, we present a reference architecture in which Kubernetes serves as the orchestration backbone, managing a dynamic set of publisher and subscriber microservices that interact asynchronously through Azure Event Hub. Each publisher pod emits domain events—such as payment authorization requests or trade updates—while multiple subscriber pods consume and process these events concurrently. PostgreSQL acts as the persistence layer, ensuring transactional integrity and long-term data durability for processed events.
 
-This study explores the performance characteristics of this architecture under varying workloads to determine its capacity to handle high-throughput, enterprise-scale transaction processing. By evaluating throughput, latency, and resource utilization metrics, the paper provides insights into the effectiveness of cloud-native patterns in optimizing event-driven systems. The goal is to derive best practices for designing **scalable, resilient, and high-performance pub/sub microservices** that meet the demands of mission-critical financial systems while remaining extensible for broader industry applications.
+While prior research has explored event-driven paradigms and distributed message brokers, there remains limited empirical evaluation of cloud-native pub/sub microservices deployed on Azure Kubernetes Service (AKS) with Azure Event Hub. This study addresses this gap by systematically evaluating the performance characteristics of such an architecture under varying workloads, focusing on throughput, latency, and resource utilization. Our goal is to derive best practices for designing scalable, resilient, and high-performance pub/sub microservices suitable for mission-critical enterprise applications.
+
+The remainder of this paper is organized as follows: Section 2 reviews related work, Section 3 details the architecture, Section 4 describes the implementation, Section 5 presents evaluation results, and Section 6 discusses recommendations and future research directions.
 
 ---
 
+
 ### **2. Background and Related Work**
 
-The transition from monolithic architectures to distributed microservices has redefined how enterprise applications are built, deployed, and scaled. The microservices paradigm, popularized by organizations such as Netflix and Amazon, emphasizes **modularity, scalability, and independent deployability**. However, as microservices multiply within complex systems, the need for efficient, asynchronous communication mechanisms becomes critical. To address this, **event-driven architectures (EDA)** have emerged as a dominant design pattern, enabling systems to react to events in real time without introducing tight coupling between components.
+The evolution from monolithic architectures to distributed microservices has fundamentally changed how enterprise applications are designed, deployed, and scaled. The microservices paradigm, championed by organizations such as Netflix and Amazon, emphasizes modularity, scalability, and independent deployability. However, as microservices proliferate within complex systems, the need for efficient, asynchronous communication becomes paramount. Event-driven architectures (EDA) have thus emerged as a dominant design pattern, enabling systems to react to events in real time while minimizing tight coupling between components.
 
 #### **2.1 Event-Driven and Pub/Sub Paradigms**
 
-The **publish-subscribe (pub/sub)** model lies at the heart of event-driven design. In this model, producers (publishers) send messages to an intermediary broker, and consumers (subscribers) receive only the messages they are interested in. This pattern enhances decoupling, fault isolation, and system scalability. As early as the 1990s, pub/sub frameworks such as CORBA Event Service and Java Message Service (JMS) demonstrated the value of asynchronous message delivery. However, these early implementations struggled to scale under modern high-volume workloads.
+At the core of event-driven design is the publish-subscribe (pub/sub) model, in which producers (publishers) send messages to an intermediary broker and consumers (subscribers) receive only the messages relevant to them. This pattern enhances decoupling, fault isolation, and system scalability. Early pub/sub frameworks, such as CORBA Event Service and Java Message Service (JMS), demonstrated the value of asynchronous message delivery, but struggled to scale for modern high-volume workloads.
 
-With the advent of **distributed streaming platforms** like **Apache Kafka**, **RabbitMQ**, and **Azure Event Hub**, event-driven communication gained renewed attention. These systems introduced partitioned, distributed log-based messaging with built-in replication and persistence, allowing organizations to process millions of messages per second. In particular, Kafka’s architecture demonstrated how **partitioning and horizontal scalability** could achieve high throughput, while Azure Event Hub extended similar principles as a **cloud-managed, multi-tenant event streaming service**. Studies such as Kreps et al. (LinkedIn, 2011) highlighted the scalability and fault-tolerance benefits of partitioned logs, forming the foundation for modern cloud-native messaging infrastructures.
+The advent of distributed streaming platforms—including Apache Kafka, RabbitMQ, and Azure Event Hub—has revitalized event-driven communication. These systems introduced partitioned, distributed log-based messaging with built-in replication and persistence, enabling organizations to process millions of messages per second. Kafka’s architecture, for example, demonstrated how partitioning and horizontal scalability can achieve high throughput, while Azure Event Hub extends similar principles as a cloud-managed, multi-tenant event streaming service. Studies such as Kreps et al. [1] highlighted the scalability and fault-tolerance benefits of partitioned logs, forming the foundation for modern cloud-native messaging infrastructures.
 
 #### **2.2 Cloud-Native Computing and Kubernetes**
 
-The **Cloud Native Computing Foundation (CNCF)** defines cloud-native technologies as those that empower organizations to build and run scalable applications in dynamic environments, such as public, private, and hybrid clouds. **Kubernetes**, as the leading orchestration platform, automates container scheduling, scaling, and recovery. Academic and industrial studies alike have explored Kubernetes’ ability to maintain **desired state and workload balance** through declarative configurations and Horizontal Pod Autoscaler (HPA) mechanisms.
+The Cloud Native Computing Foundation (CNCF) defines cloud-native technologies as those that empower organizations to build and run scalable applications in dynamic environments, including public, private, and hybrid clouds. Kubernetes, as the leading orchestration platform, automates container scheduling, scaling, and recovery. Both academic and industrial studies have explored Kubernetes’ ability to maintain desired state and workload balance through declarative configurations and Horizontal Pod Autoscaler (HPA) mechanisms.
 
-Research by Burns et al. (Google, 2016) emphasized Kubernetes’ declarative model as a foundation for system resiliency, while more recent works (e.g., Gupta et al., IEEE Cloud 2022) have focused on **auto-scaling optimization** and **resource elasticity** in microservice deployments. These contributions collectively establish Kubernetes as a reliable substrate for large-scale, event-driven workloads.
+Research by Burns et al. [2] emphasized Kubernetes’ declarative model as a foundation for system resiliency, while more recent works (e.g., Gupta et al. [3]) have focused on auto-scaling optimization and resource elasticity in microservice deployments. Collectively, these contributions establish Kubernetes as a reliable substrate for large-scale, event-driven workloads.
 
 #### **2.3 Messaging Architectures in Cloud-Native Systems**
 
-Several comparative studies have examined the performance of cloud-based messaging systems.
+Several comparative studies have examined the performance of cloud-based messaging systems. For example, Li et al. [4] analyzed throughput and latency trade-offs between Kafka and cloud-managed services such as Amazon Kinesis and Azure Event Hub, noting that managed platforms simplify scalability and fault-tolerance, albeit with some constraints on low-level configuration. Ramasamy and Jain [5] explored resiliency models in event-driven microservices, demonstrating that cloud-native environments can achieve 99.99% availability using distributed brokers and stateless consumers. Zhou et al. [6] evaluated Kubernetes-based pub/sub architectures, emphasizing the importance of partition alignment and asynchronous consumption in achieving consistent message throughput under bursty workloads.
 
-* **Li et al. (ACM SoCC 2020)** analyzed throughput and latency trade-offs between Kafka and cloud-managed services such as Amazon Kinesis and Azure Event Hub, noting that managed platforms simplify scalability and fault-tolerance while slightly constraining low-level configuration.
-* **Ramasamy and Jain (IEEE IC2E 2021)** explored **resiliency models** in event-driven microservices, demonstrating that cloud-native environments can achieve 99.99% availability using distributed brokers and stateless consumers.
-* **Zhou et al. (Future Internet, 2022)** evaluated **Kubernetes-based pub/sub architectures**, emphasizing the importance of partition alignment and asynchronous consumption in achieving consistent message throughput under bursty workloads.
-
-The convergence of these studies suggests that **combining Kubernetes orchestration with distributed event brokers** provides an optimal balance between scalability, manageability, and resilience. However, most existing literature focuses on open-source platforms like Kafka and RabbitMQ. Fewer studies systematically evaluate **Azure Event Hub’s performance characteristics** in microservice-driven architectures, particularly when combined with Kubernetes auto-scaling and PostgreSQL persistence layers.
+The convergence of these studies suggests that combining Kubernetes orchestration with distributed event brokers provides a strong balance between scalability, manageability, and resilience. However, most existing literature focuses on open-source platforms like Kafka and RabbitMQ. There is a relative lack of systematic evaluation of Azure Event Hub’s performance characteristics in microservice-driven architectures, particularly when combined with Kubernetes auto-scaling and PostgreSQL persistence layers.
 
 #### **2.4 Research Gap and Contribution**
 
-While prior research extensively addresses event-driven paradigms and distributed message brokers, there remains limited empirical evaluation of **cloud-native pub/sub microservices** deployed on **Azure Kubernetes Service (AKS)** leveraging **Azure Event Hub** for high-throughput communication. This paper contributes by:
+While prior research has extensively addressed event-driven paradigms and distributed message brokers, there remains limited empirical evaluation of cloud-native pub/sub microservices deployed on Azure Kubernetes Service (AKS) leveraging Azure Event Hub for high-throughput communication. Unlike previous studies that primarily focus on open-source solutions, this paper presents a reference architecture and systematic performance analysis of AKS and Event Hub integration. Our work bridges the gap between theoretical models and practical implementation within managed cloud-native infrastructures by:
 
-1. Presenting a **reference architecture** for building high-throughput event-driven microservices using AKS and Event Hub.
-2. Conducting **performance analysis** under controlled load scenarios to measure throughput, latency, and scalability.
-3. Deriving **design insights and best practices** for optimizing event-driven communication in cloud-native environments.
+1. Presenting a reference architecture for building high-throughput event-driven microservices using AKS and Event Hub.
+2. Conducting performance analysis under controlled load scenarios to measure throughput, latency, and scalability.
+3. Deriving design insights and best practices for optimizing event-driven communication in cloud-native environments.
 
-This study thereby bridges the gap between theoretical models of event-driven communication and their practical realization within **managed cloud-native infrastructures**.
+In summary, this study advances the state of the art by providing actionable guidance and empirical evidence for practitioners and researchers seeking to design scalable, resilient, and high-performance messaging architectures in the cloud.
 
 **logical architecture diagram**
 ![alt text](image-1.png)
 
 ---
 
+
 ### **3. Architecture Design**
 
-This section presents the design of a **cloud-native, event-driven messaging architecture** built on **Azure Kubernetes Service (AKS)** using the **publish-subscribe (pub/sub)** communication model. The architecture was designed to address high-throughput, low-latency requirements typical of financial transaction systems and other real-time enterprise applications. It combines containerized microservices, managed event streaming, and persistent storage to achieve scalability, resilience, and operational efficiency.
+This section details the proposed cloud-native, event-driven messaging architecture, designed to meet the high-throughput and low-latency requirements of modern enterprise applications. Leveraging Azure Kubernetes Service (AKS), Azure Event Hub, and PostgreSQL, the architecture delivers scalable, resilient, and observable microservices. The following subsections describe the system’s layered structure, component responsibilities, data flow, design principles, key trade-offs, and security considerations. Figures 1 and 2 illustrate the overall architecture and workflow.
+
 
 #### **3.1 Design Overview**
 
-At a high level, the system consists of four major layers:
+The system is organized into four primary layers:
 
-1. **Publisher Microservices** – generating and publishing events.
-2. **Azure Event Hub** – acting as a distributed, scalable messaging backbone.
-3. **Subscriber Microservices** – consuming and processing events.
-4. **PostgreSQL Database** – providing persistent and transactional storage.
+1. **Publisher Microservices:** Generate and publish domain events.
+2. **Azure Event Hub:** Serves as a distributed, scalable messaging backbone.
+3. **Subscriber Microservices:** Consume and process events in parallel.
+4. **PostgreSQL Database:** Provides persistent, transactional storage.
 
-All components run within the **Kubernetes orchestration framework**, which automates deployment, scaling, and self-healing. Monitoring and observability are integrated through **Azure Monitor**, **Prometheus**, and **Grafana** for continuous visibility into performance metrics.
+All components operate within the Kubernetes orchestration framework, which automates deployment, scaling, and self-healing. Monitoring and observability are achieved through Azure Monitor, Prometheus, and Grafana, providing continuous visibility into system performance. Figure 1 presents the conceptual architecture, while Figure 2 details the workflow and data flow among system components.
 
-Figure 1 (conceptual diagram) and Figure 2 (detailed workflow diagram) illustrate the overall architecture, the logical component relationships, and data flow between publishers, Event Hub, subscribers, and PostgreSQL.
 
 #### **3.2 Component Architecture**
 
-**Publisher Pods:**
-Each publisher microservice is responsible for producing event messages that represent real-time business actions, such as transaction initiation or authorization events. These services are containerized and deployed as **pods** within an AKS namespace, typically under a logical grouping (e.g., `pubsub-system`). Each pod serializes domain events (e.g., in JSON or Avro format) and transmits them asynchronously to Azure Event Hub. Multiple publisher instances (`txn-publisher-1`, `txn-publisher-2`, etc.) run concurrently to increase throughput and provide redundancy.
+**Publisher Microservices:**
+Containerized publisher pods generate event messages representing real-time business actions (e.g., transaction initiation, authorization). Deployed within AKS namespaces, each pod serializes domain events (in JSON or Avro) and transmits them asynchronously to Azure Event Hub. Multiple publisher instances run concurrently to maximize throughput and redundancy.
 
 **Azure Event Hub:**
-Azure Event Hub serves as the **central event streaming platform**, designed to handle millions of events per second. Events are distributed across multiple **partitions**, enabling parallel consumption by subscriber pods. Each partition is consumed by a distinct **consumer group**, ensuring that scaling subscriber instances does not result in message duplication. The Event Hub offers at-least-once delivery guarantees and supports dynamic throughput scaling by adjusting the number of throughput units.
+Event Hub acts as the central event streaming platform, capable of handling millions of events per second. Events are distributed across multiple partitions, enabling parallel consumption by subscriber pods. Each partition is mapped to a consumer group, ensuring that scaling subscriber instances does not result in message duplication. Event Hub provides at-least-once delivery guarantees and supports dynamic throughput scaling by adjusting throughput units.
 
-**Subscriber Pods:**
-Subscriber microservices listen to specific topics or consumer groups, retrieving events in near real time. Each subscriber pod independently processes, validates, and applies business logic to the event payloads. After processing, results are stored in PostgreSQL for durability and analytics. Kubernetes **Horizontal Pod Autoscaler (HPA)** monitors CPU, memory, and Event Hub queue metrics to dynamically adjust the number of subscriber pods based on load intensity.
+**Subscriber Microservices:**
+Subscriber pods listen to specific topics or consumer groups, retrieving events in near real time. Each pod independently processes, validates, and applies business logic to event payloads, then writes results to PostgreSQL. The Kubernetes Horizontal Pod Autoscaler (HPA) monitors CPU, memory, and Event Hub queue metrics to dynamically adjust the number of subscriber pods based on load intensity, supporting elastic scaling.
 
 **PostgreSQL Database:**
-The PostgreSQL layer ensures persistent storage for processed events and transactional data. The architecture typically includes one **primary node (`pg-primary`)** and one or more **read replicas (`pg-replica`)** for high availability and query offloading. The database schema is designed to optimize ingestion throughput while maintaining ACID properties for financial record integrity.
+PostgreSQL ensures persistent storage for processed events and transactional data. The architecture typically includes a primary node and one or more read replicas for high availability and query offloading. The schema is optimized for high ingestion throughput while maintaining ACID properties for data integrity.
 
 **Monitoring and Observability:**
-The observability stack integrates **Prometheus** for metrics collection, **Grafana** for visualization, and **Azure Monitor** for system-wide telemetry. These tools capture key performance indicators—such as message throughput, average latency, processing time, and scaling events—enabling continuous performance tuning and anomaly detection.
+Prometheus collects metrics, Grafana provides visualization, and Azure Monitor delivers system-wide telemetry. These tools capture key performance indicators—such as message throughput, latency, processing time, and scaling events—enabling continuous performance tuning and anomaly detection.
+
 
 #### **3.3 Data Flow**
 
-1. **Event Publication:** External systems or APIs trigger business events, which are received through an ingress endpoint. Publisher pods process these requests, enrich or transform the data, and publish them to Azure Event Hub.
-2. **Event Distribution:** Event Hub partitions distribute messages evenly across available shards to balance throughput. Each partition is read by one subscriber instance within a consumer group.
-3. **Event Consumption:** Subscriber pods consume messages asynchronously, execute domain-specific business logic (e.g., transaction validation, rule application), and write processed outcomes to PostgreSQL.
+The end-to-end data flow proceeds as follows:
+
+1. **Event Publication:** External systems or APIs trigger business events, which are received via an ingress endpoint. Publisher pods process, enrich, and publish these events to Azure Event Hub.
+2. **Event Distribution:** Event Hub partitions distribute messages evenly to balance throughput. Each partition is read by a subscriber instance within a consumer group, supporting parallelism and high throughput.
+3. **Event Consumption:** Subscriber pods asynchronously consume messages, execute domain-specific logic (e.g., validation, rule application), and write processed outcomes to PostgreSQL.
 4. **Persistence and Analytics:** PostgreSQL stores finalized data, enabling historical analysis and integration with downstream analytics pipelines.
-5. **Monitoring and Scaling:** Prometheus and Azure Monitor track throughput, latency, and system utilization metrics. When message backlogs or CPU thresholds are exceeded, the Horizontal Pod Autoscaler automatically scales the subscriber or publisher deployments to maintain real-time responsiveness.
+5. **Monitoring and Scaling:** Prometheus and Azure Monitor track throughput, latency, and resource utilization. When message backlogs or CPU thresholds are exceeded, the HPA automatically scales subscriber or publisher deployments to maintain responsiveness.
 
-#### 3.4 Design Principles
 
-The architecture for enterprise Kubernetes microservices is guided by several foundational design principles that ensure scalability, reliability, and maintainability:
+#### **3.4 Design Principles**
 
-* **Scalability:** The system is designed to handle increasing workloads dynamically. Kubernetes’ horizontal pod autoscaling, combined with intelligent resource allocation, ensures that both compute and storage can scale in response to demand without requiring architectural redesign.
-* **Resiliency:** Services are architected for fault tolerance. Pod replication, health checks, and automated restart policies ensure minimal downtime. The use of multiple availability zones further enhances system reliability.
-* **Observability:** Real-time monitoring and observability are embedded within the system. Centralized logging, distributed tracing, and metrics collection enable rapid identification of performance bottlenecks and potential failures.
-* **Automation:** Infrastructure as Code (IaC) and GitOps pipelines are employed to automate provisioning, deployment, and configuration updates. This reduces human error and accelerates delivery cycles.
-* **Decoupling:** Services are loosely coupled to facilitate independent deployment, upgrades, and scaling. Event-driven communication patterns, including asynchronous messaging and pub/sub systems, support this modularity.
+The architecture is guided by foundational principles to ensure scalability, reliability, and maintainability:
 
-#### 3.5 Trade-offs
+* **Scalability:** Designed for dynamic workload increases, leveraging Kubernetes’ horizontal pod autoscaling and intelligent resource allocation to scale compute and storage as needed.
+* **Resiliency:** Architected for fault tolerance through pod replication, health checks, automated restarts, and multi-zone deployment.
+* **Observability:** Real-time monitoring, centralized logging, distributed tracing, and metrics collection enable rapid detection and resolution of performance bottlenecks.
+* **Automation:** Infrastructure as Code (IaC) and GitOps pipelines automate provisioning, deployment, and configuration, reducing human error and accelerating delivery.
+* **Decoupling:** Loose coupling of services enables independent deployment, upgrades, and scaling, supported by asynchronous messaging and pub/sub patterns.
 
-In designing this architecture, several trade-offs were carefully considered:
 
-* **Complexity vs. Flexibility:** While microservices provide deployment flexibility and independent scaling, they introduce operational complexity in terms of service discovery, inter-service communication, and monitoring.
-* **Consistency vs. Availability:** Certain services adopt eventual consistency to maintain high availability, particularly in distributed systems where immediate synchronization could compromise uptime.
-* **Resource Utilization vs. Cost:** Proactive resource over-provisioning can guarantee performance but may increase cloud expenditure. Conversely, aggressive autoscaling reduces costs at the potential expense of temporary latency under peak loads.
-* **Security vs. Developer Velocity:** Implementing strict access controls, encryption, and audit policies strengthens security but can slow down development cycles if not properly automated.
+#### **3.5 Trade-offs**
 
-#### 3.6 Security Overview
+Several trade-offs were considered in the architectural design:
 
-Security is embedded at every layer of the Kubernetes infrastructure to protect sensitive data and maintain compliance:
+* **Complexity vs. Flexibility:** Microservices offer deployment flexibility and independent scaling but introduce operational complexity in service discovery, inter-service communication, and monitoring. Automation and observability help mitigate these challenges.
+* **Consistency vs. Availability:** Some services adopt eventual consistency to maximize availability, especially in distributed systems where immediate synchronization could impact uptime.
+* **Resource Utilization vs. Cost:** Over-provisioning resources guarantees performance but increases costs; aggressive autoscaling reduces costs but may introduce cold start latency during peak loads.
+* **Security vs. Developer Velocity:** Strong access controls, encryption, and audit policies enhance security but can slow development if not automated. Integrating security into CI/CD pipelines helps balance these needs.
 
-* **Identity and Access Management (IAM):** Authentication is centralized using Okta, while fine-grained authorization is enforced via Keycloak. Role-based access ensures that only authorized services and users can perform operations.
-* **Network Security:** Kubernetes namespaces, network policies, and service meshes provide isolation and encrypted communication between services. Segmented networking reduces attack surfaces and limits lateral movement.
-* **Data Protection:** All sensitive data is encrypted both at rest and in transit. Azure Key Vault is used to manage secrets, and TLS ensures secure service-to-service communication.
-* **Secrets Management:** Sensitive configuration and credentials are stored centrally in Azure Key Vault, with access controlled through role-based policies and audit logging.
-* **Monitoring and Compliance:** Continuous security monitoring, log aggregation, and alerting mechanisms detect anomalies in real time. Audit trails ensure accountability and regulatory compliance.
+
+#### **3.6 Security Overview**
+
+Security is embedded at every layer of the Kubernetes infrastructure to protect sensitive data and maintain compliance with industry standards (e.g., SOC 2, PCI DSS):
+
+* **Identity and Access Management (IAM):** Centralized authentication (Okta) and fine-grained authorization (Keycloak) ensure only authorized services and users can perform operations.
+* **Network Security:** Namespaces, network policies, and service meshes provide isolation and encrypted communication, reducing attack surfaces and lateral movement.
+* **Data Protection:** All sensitive data is encrypted at rest and in transit. Azure Key Vault manages secrets, and TLS secures service-to-service communication.
+* **Secrets Management:** Centralized storage of sensitive configuration and credentials in Azure Key Vault, with access controlled by role-based policies and audit logging.
+* **Monitoring and Compliance:** Continuous security monitoring, log aggregation, and alerting detect anomalies in real time. Audit trails ensure accountability and regulatory compliance.
+
 
 
 #### **3.7 Summary**
 
-The architecture demonstrates a **robust and extensible design** that balances performance, reliability, and manageability in a cloud-native environment. By combining Kubernetes orchestration, Event Hub’s partition-based streaming, and PostgreSQL’s transactional durability, the system can process high-throughput event streams with predictable performance and minimal operational overhead. The design serves as a reusable blueprint for organizations seeking to implement event-driven microservices for real-time, mission-critical applications.
+This architecture demonstrates a robust and extensible design that balances performance, reliability, and manageability in a cloud-native environment. By integrating Kubernetes orchestration, Event Hub’s partition-based streaming, and PostgreSQL’s transactional durability, the system processes high-throughput event streams with predictable performance and minimal operational overhead. The design advances the state of the art by providing a reusable blueprint for organizations seeking to implement event-driven microservices for real-time, mission-critical applications, directly addressing the research gap identified in Section 2.
 
 ---
 
