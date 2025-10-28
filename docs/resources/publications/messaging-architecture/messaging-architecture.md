@@ -295,25 +295,26 @@ To ensure a comprehensive evaluation, both system-level and service-level metric
 
 ### 5.4 Results and Analysis
 
-#### (a) Scalability and Performance
 
-The architecture exhibited linear scalability under increasing load, with the Horizontal Pod Autoscaler (HPA) responding to CPU and memory thresholds within an average of 24 seconds. Response times remained below 180 ms for up to 8,000 concurrent requests per second, and no service experienced throttling or timeouts at peak load. These results confirm the elasticity and robustness of the AKS-based design.
+- **Scalability and Performance:**
+  
+   The architecture exhibited linear scalability under increasing load, with the Horizontal Pod Autoscaler (HPA) responding to CPU and memory thresholds within an average of 24 seconds. Response times remained below 180 ms for up to 8,000 concurrent requests per second, and no service experienced throttling or timeouts at peak load. These results confirm the elasticity and robustness of the AKS-based design.
 
-#### (b) Deployment Efficiency
+- **Deployment Efficiency:**
+  
+   The ArgoCD-powered GitOps workflow achieved deployment synchronization in under 4 minutes—a 62% improvement over manual CI/CD processes. Combined with Terraform-based provisioning, environment setup time was reduced from 8 hours to under 90 minutes. Versioned infrastructure and declarative deployments enabled full traceability and rapid rollback, enhancing operational governance.
 
-The ArgoCD-powered GitOps workflow achieved deployment synchronization in under 4 minutes—a 62% improvement over manual CI/CD processes. Combined with Terraform-based provisioning, environment setup time was reduced from 8 hours to under 90 minutes. Versioned infrastructure and declarative deployments enabled full traceability and rapid rollback, enhancing operational governance.
+- **Resiliency and Fault Tolerance:**
+  
+   Pod termination and node restart scenarios validated the system’s self-healing capabilities. Failed pods were rescheduled within 15 seconds, maintaining uninterrupted service. The load balancer and ingress controller efficiently rerouted traffic during disruptions, ensuring high availability even under transient failures.
 
-#### (c) Resiliency and Fault Tolerance
+- **Observability and Monitoring:**
+  
+   The integration of Prometheus, OpenTelemetry, and Azure Monitor provided near real-time visibility across all services. Distributed traces captured end-to-end transaction paths, identifying dependency latency in under 300 ms. Grafana dashboards unified cluster health, resource usage, and application performance, reducing mean time to detect (MTTD) from 12 minutes to less than 3 minutes.
 
-Pod termination and node restart scenarios validated the system’s self-healing capabilities. Failed pods were rescheduled within 15 seconds, maintaining uninterrupted service. The load balancer and ingress controller efficiently rerouted traffic during disruptions, ensuring high availability even under transient failures.
-
-#### (d) Observability and Monitoring
-
-The integration of Prometheus, OpenTelemetry, and Azure Monitor provided near real-time visibility across all services. Distributed traces captured end-to-end transaction paths, identifying dependency latency in under 300 ms. Grafana dashboards unified cluster health, resource usage, and application performance, reducing mean time to detect (MTTD) from 12 minutes to less than 3 minutes.
-
-#### (e) Security and Compliance
-
-Security validation confirmed 100% compliance with organizational policies. Authentication (Okta) and authorization (Keycloak) operated seamlessly with token-based service-to-service communication. All secrets and credentials were securely managed in Azure Key Vault, with RBAC enforcing least-privilege access. Network segmentation via Kubernetes Network Policies prevented unauthorized cross-namespace access.
+- **Security and Compliance:**
+  
+   Security validation confirmed 100% compliance with organizational policies. Authentication (Okta) and authorization (Keycloak) operated seamlessly with token-based service-to-service communication. All secrets and credentials were securely managed in Azure Key Vault, with RBAC enforcing least-privilege access. Network segmentation via Kubernetes Network Policies prevented unauthorized cross-namespace access.
 
 ### 5.5 Discussion
 
@@ -524,6 +525,7 @@ In summary, the combination of Kubernetes-managed microservices and Azure Event 
 11. Tasmin, F., Poudel, S., & Tareq, A. H. (2025). Next-Generation Event-Driven Architectures: Performance, Scalability, and Intelligent Orchestration Across Messaging Frameworks. arXiv. https://arxiv.org/abs/2510.04404 [Accessed: Oct. 22, 2025].
 12. Vettor, R. (2019). Developing Microservices Architecture on Microsoft Azure with Open Source Technologies. Pearson Education. https://ptgmedia.pearsoncmg.com/images/9780136819387/samplepages/9780136819387_Sample.pdf [Accessed: Oct. 22, 2025].
 13. Vladutu, C. (2025). Azure Event Grid vs Azure Service Bus vs Event Hubs: When to Use Each. Medium. https://cosmin-vladutu.medium.com/azure-event-grid-vs-azure-service-bus-vs-event-hubs-when-to-use-each-12900bb32ce8 [Accessed: Oct. 22, 2025].
+
 
 ### Books and Technical Reports
 
