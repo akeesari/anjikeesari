@@ -1,0 +1,53 @@
+<svg width="900" height="420" xmlns="http://www.w3.org/2000/svg">
+  <!-- Core Platform -->
+  <rect x="60" y="180" width="200" height="80" rx="14" fill="#e3f2fd" stroke="#333"/>
+  <text x="160" y="210" font-size="15" font-family="Arial" text-anchor="middle" fill="#222">Cloud-Native Platform</text>
+  <text x="160" y="230" font-size="13" font-family="Arial" text-anchor="middle" fill="#555">(AKS, Event Hub, GitOps, IaC)</text>
+
+  <!-- AI-Driven Autoscaling -->
+  <rect x="320" y="60" width="200" height="60" rx="12" fill="#ffe0b2" stroke="#333"/>
+  <text x="420" y="90" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">AI-Driven Autoscaling</text>
+  <text x="420" y="110" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">(Predictive, RL, Multi-metric)</text>
+
+  <!-- Autonomous Remediation -->
+  <rect x="600" y="60" width="200" height="60" rx="12" fill="#b2dfdb" stroke="#333"/>
+  <text x="700" y="90" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Autonomous Remediation</text>
+  <text x="700" y="110" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">(AIOps, Policy, RCA)</text>
+
+  <!-- Intelligent Observability -->
+  <rect x="320" y="320" width="200" height="60" rx="12" fill="#e1bee7" stroke="#333"/>
+  <text x="420" y="350" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Intelligent Observability</text>
+  <text x="420" y="370" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">(Cognitive Dashboards, Anomaly Prediction)</text>
+
+  <!-- Policy-Driven Governance -->
+  <rect x="600" y="320" width="200" height="60" rx="12" fill="#fffde7" stroke="#333"/>
+  <text x="700" y="350" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Policy-Driven Governance</text>
+  <text x="700" y="370" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">(OPA, Compliance as Code)</text>
+
+  <!-- Sustainability & Cost -->
+  <rect x="60" y="320" width="200" height="60" rx="12" fill="#c8e6c9" stroke="#333"/>
+  <text x="160" y="350" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Sustainability & Cost</text>
+  <text x="160" y="370" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">(Carbon-Aware, Predictive Cost)</text>
+
+  <!-- Multi-Cloud & Edge -->
+  <rect x="60" y="60" width="200" height="60" rx="12" fill="#b3e5fc" stroke="#333"/>
+  <text x="160" y="90" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Multi-Cloud & Edge</text>
+  <text x="160" y="110" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">(Federation, Latency-Aware)</text>
+
+  <!-- Collaboration -->
+  <rect x="800" y="180" width="80" height="80" rx="12" fill="#f8bbd0" stroke="#333"/>
+  <text x="840" y="210" font-size="13" font-family="Arial" text-anchor="middle" fill="#222">Academic & Industry Collaboration</text>
+
+  <!-- Arrows from Core Platform to Vision Areas -->
+  <polygon points="260,220 320,90 325,90 320,70 315,90 320,90" fill="#333"/>
+  <polygon points="260,220 320,350 325,350 320,370 315,350 320,350" fill="#333"/>
+  <polygon points="260,220 260,350 265,350 260,370 255,350 260,350" fill="#333"/>
+  <polygon points="260,220 60,90 65,90 60,70 55,90 60,90" fill="#333"/>
+  <polygon points="260,220 800,220 805,220 800,240 795,220 800,220" fill="#333"/>
+  <polygon points="260,220 600,90 605,90 600,70 595,90 600,90" fill="#333"/>
+  <polygon points="260,220 600,350 605,350 600,370 595,350 600,350" fill="#333"/>
+
+  <!-- Labels -->
+  <text x="450" y="30" font-size="16" font-family="Arial" text-anchor="middle" fill="#888">Future Work Vision: Intelligent, Sustainable, Policy-Aware Cloud-Native Platforms</text>
+  <text x="450" y="410" font-size="12" font-family="Arial" text-anchor="middle" fill="#888">Arrows show the evolution from current platform to future research and innovation areas</text>
+</svg>
