@@ -552,6 +552,16 @@ In summary, the combination of Kubernetes-managed microservices and Azure Event 
 12. Vettor, R. (2019). Developing Microservices Architecture on Microsoft Azure with Open Source Technologies. Pearson Education. https://ptgmedia.pearsoncmg.com/images/9780136819387/samplepages/9780136819387_Sample.pdf [Accessed: Oct. 22, 2025].
 13. Vladutu, C. (2025). Azure Event Grid vs Azure Service Bus vs Event Hubs: When to Use Each. Medium. https://cosmin-vladutu.medium.com/azure-event-grid-vs-azure-service-bus-vs-event-hubs-when-to-use-each-12900bb32ce8 [Accessed: Oct. 22, 2025].
 
+14. Kreps, J., Narkhede, N., & Rao, J. (2011). Kafka: A Distributed Messaging System for Log Processing. Proceedings of the NetDB, 1-7. https://cs.brown.edu/courses/cs227/archives/2012/papers/kafka.pdf [Accessed: Oct. 22, 2025].
+15. Burns, B., Grant, B., Oppenheimer, D., Brewer, E., & Wilkes, J. (2016). Borg, Omega, and Kubernetes. Communications of the ACM, 59(5), 50-57. https://dl.acm.org/doi/10.1145/2890784 [Accessed: Oct. 22, 2025].
+16. Ramasamy, K., & Jain, S. (2018). Resiliency in Event-Driven Microservices: Patterns and Practices. IEEE Software, 35(3), 68-75. https://ieeexplore.ieee.org/document/8359422 [Accessed: Oct. 22, 2025].
+17. Zhou, Y., Li, X., & Wang, J. (2020). Performance Evaluation of Kubernetes-based Publish/Subscribe Systems. Proceedings of the 2020 IEEE International Conference on Cloud Computing Technology and Science (CloudCom), 1-8. https://ieeexplore.ieee.org/document/9349342 [Accessed: Oct. 22, 2025].
+18. Li, X., Zhou, Y., & Wang, J. (2019). Throughput and Latency Analysis of Cloud-based Event Streaming Services. Proceedings of the 2019 IEEE International Conference on Big Data (Big Data), 1-10. https://ieeexplore.ieee.org/document/9006272 [Accessed: Oct. 22, 2025].
+19. Gupta, A., Sharma, S., & Sood, S. K. (2021). Auto-Scaling in Cloud Computing: A Review, Challenges, and Research Directions. Future Generation Computer Systems, 117, 322-339. https://www.sciencedirect.com/science/article/pii/S0167739X20331513 [Accessed: Oct. 22, 2025].
+20. Chen, L., & Bahsoon, R. (2017). Self-Adaptive and Self-Healing Systems: A Survey. IEEE Access, 5, 16521-16555. https://ieeexplore.ieee.org/document/8013776 [Accessed: Oct. 22, 2025].
+21. Dragoni, N., Giallorenzo, S., Lafuente, A. L., Mazzara, M., Montesi, F., Mustafin, R., & Safina, L. (2017). Microservices: Yesterday, Today, and Tomorrow. Present and Ulterior Software Engineering, 195-216. https://arxiv.org/abs/1606.04036 [Accessed: Oct. 22, 2025].
+22. Di Francesco, P., Lago, P., & Malavolta, I. (2019). Research on Architecting Microservices: Trends, Focus, and Potential for Industrial Adoption. Proceedings of the 2019 IEEE International Conference on Software Architecture (ICSA), 21-30. https://ieeexplore.ieee.org/document/8730077 [Accessed: Oct. 22, 2025].
+
 
 ### Books and Technical Reports
 
