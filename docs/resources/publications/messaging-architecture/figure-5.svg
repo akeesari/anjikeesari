@@ -6,7 +6,7 @@
 
   <!-- Monitoring/Telemetry -->
   <rect x="280" y="60" width="140" height="60" rx="12" fill="#fffde7" stroke="#333"/>
-  <text x="350" y="90" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Monitoring & Telemetry</text>
+  <text x="350" y="90" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Monitoring &amp; Telemetry</text>
   <text x="350" y="110" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">(Prometheus, Azure Monitor)</text>
 
   <!-- Anomaly Detection -->
@@ -21,7 +21,7 @@
 
   <!-- Feedback Loop -->
   <rect x="350" y="200" width="300" height="60" rx="12" fill="#e1bee7" stroke="#333"/>
-  <text x="500" y="230" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Feedback & Learning Loop</text>
+  <text x="500" y="230" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Feedback &amp; Learning Loop</text>
   <text x="500" y="250" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">(Model Updates, Policy Tuning)</text>
 
   <!-- Arrows: Microservices to Monitoring -->

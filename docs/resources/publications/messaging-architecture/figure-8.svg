@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="340" viewBox="0 0 700 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 20px sans-serif; fill: #222; }
+    .label { font: 13px sans-serif; fill: #222; }
+    .box { fill: #e3eefa; stroke: #2a6fa1; stroke-width: 1.5; rx: 8; }
+    .arrow { stroke: #2a6fa1; stroke-width: 1.5; marker-end: url(#arrowhead); }
+    .cloud { fill: #f5f5f5; stroke: #aaa; stroke-width: 1.5; }
+    .db { fill: #f9e6e6; stroke: #b44; stroke-width: 1.5; }
+    .key { fill: #f7f7d1; stroke: #bba600; stroke-width: 1.5; }
+    .gear { fill: #e6f9e6; stroke: #2a7f2a; stroke-width: 1.5; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a6fa1" />
+    </marker>
+  </defs>
+  <text x="350" y="28" text-anchor="middle" class="title">Example Architecture Overview</text>
+
+  <!-- User Clients -->
+  <rect x="30" y="70" width="90" height="36" class="box"/>
+  <text x="75" y="92" text-anchor="middle" class="label">User Clients</text>
+
+  <!-- API Gateway / Ingress -->
+  <rect x="150" y="70" width="120" height="36" class="box"/>
+  <text x="210" y="92" text-anchor="middle" class="label">API Gateway</text>
+  <text x="210" y="107" text-anchor="middle" class="label">/ Ingress</text>
+
+  <!-- Microservices Namespaces -->
+  <rect x="300" y="50" width="180" height="80" class="box"/>
+  <text x="390" y="75" text-anchor="middle" class="label">Microservices</text>
+  <text x="390" y="92" text-anchor="middle" class="label">Namespaces</text>
+  <text x="310" y="110" class="label">- finance-app</text>
+  <text x="310" y="125" class="label">- user-mgmt</text>
+  <text x="310" y="140" class="label">- platform-svcs</text>
+
+  <!-- Arrows: User Clients -> API Gateway -> Microservices -->
+  <line x1="120" y1="88" x2="150" y2="88" class="arrow"/>
+  <line x1="270" y1="88" x2="300" y2="88" class="arrow"/>
+
+  <!-- Auth Service -->
+  <rect x="150" y="130" width="120" height="32" class="box"/>
+  <text x="210" y="150" text-anchor="middle" class="label">Auth Service</text>
+  <text x="210" y="165" text-anchor="middle" class="label">(Keycloak/Okta)</text>
+  <line x1="210" y1="130" x2="210" y2="107" class="arrow"/>
+
+  <!-- Azure Service Bus -->
+  <ellipse cx="390" cy="180" rx="60" ry="18" class="cloud"/>
+  <text x="390" y="185" text-anchor="middle" class="label">Azure Service Bus</text>
+  <line x1="390" y1="130" x2="390" y2="162" class="arrow"/>
+
+  <!-- Azure SQL / PostgreSQL -->
+  <rect x="520" y="170" width="90" height="32" class="db"/>
+  <text x="565" y="190" text-anchor="middle" class="label">Azure SQL</text>
+  <text x="565" y="205" text-anchor="middle" class="label">/ PostgreSQL</text>
+  <line x1="480" y1="130" x2="565" y2="170" class="arrow"/>
+
+  <!-- Observability -->
+  <rect x="30" y="220" width="180" height="32" class="gear"/>
+  <text x="120" y="240" text-anchor="middle" class="label">Prometheus, Grafana, Azure Monitor</text>
+  <line x1="210" y1="162" x2="120" y2="220" class="arrow"/>
+
+  <!-- Azure Key Vault -->
+  <rect x="250" y="270" width="90" height="32" class="key"/>
+  <text x="295" y="290" text-anchor="middle" class="label">Azure Key Vault</text>
+  <line x1="295" y1="270" x2="295" y2="130" class="arrow"/>
+
+  <!-- Terraform -->
+  <rect x="370" y="270" width="70" height="32" class="gear"/>
+  <text x="405" y="290" text-anchor="middle" class="label">Terraform</text>
+  <line x1="405" y1="270" x2="405" y2="130" class="arrow"/>
+
+  <!-- Helm/Kustomize -->
+  <rect x="470" y="270" width="90" height="32" class="gear"/>
+  <text x="515" y="290" text-anchor="middle" class="label">Helm/Kustomize</text>
+  <line x1="515" y1="270" x2="515" y2="130" class="arrow"/>
+
+  <!-- ArgoCD -->
+  <rect x="590" y="270" width="70" height="32" class="gear"/>
+  <text x="625" y="290" text-anchor="middle" class="label">ArgoCD</text>
+  <line x1="625" y1="270" x2="515" y2="130" class="arrow"/>
+</svg>

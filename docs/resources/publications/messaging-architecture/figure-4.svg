@@ -46,6 +46,6 @@
 
   <!-- Labels -->
   <text x="150" y="40" font-size="13" font-family="Arial" text-anchor="middle" fill="#888">Application Layer</text>
-  <text x="500" y="20" font-size="13" font-family="Arial" text-anchor="middle" fill="#888">Metrics & Telemetry Collection</text>
-  <text x="810" y="40" font-size="13" font-family="Arial" text-anchor="middle" fill="#888">Visualization & Alerting</text>
+  <text x="500" y="20" font-size="13" font-family="Arial" text-anchor="middle" fill="#888">Metrics &amp; Telemetry Collection</text>
+  <text x="810" y="40" font-size="13" font-family="Arial" text-anchor="middle" fill="#888">Visualization &amp; Alerting</text>
 </svg>
