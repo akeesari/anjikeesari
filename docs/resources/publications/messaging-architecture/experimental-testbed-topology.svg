@@ -1,0 +1,53 @@
+<svg width="900" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- System Pool -->
+  <rect x="60" y="60" width="200" height="80" rx="14" fill="#e3f2fd" stroke="#333"/>
+  <text x="160" y="90" font-size="15" font-family="Arial" text-anchor="middle" fill="#222">System Pool</text>
+  <text x="160" y="110" font-size="13" font-family="Arial" text-anchor="middle" fill="#555">3 nodes (DS3v2)</text>
+  <text x="160" y="130" font-size="12" font-family="Arial" text-anchor="middle" fill="#888">Control Plane</text>
+
+  <!-- Application Pool -->
+  <rect x="340" y="60" width="320" height="80" rx="14" fill="#fffde7" stroke="#333"/>
+  <text x="500" y="90" font-size="15" font-family="Arial" text-anchor="middle" fill="#222">Application Pool</text>
+  <text x="500" y="110" font-size="13" font-family="Arial" text-anchor="middle" fill="#555">6 nodes (DS4v2)</text>
+  <text x="500" y="130" font-size="12" font-family="Arial" text-anchor="middle" fill="#888">Microservices Workloads</text>
+
+  <!-- Platform Pool -->
+  <rect x="700" y="60" width="140" height="80" rx="14" fill="#e1bee7" stroke="#333"/>
+  <text x="770" y="90" font-size="15" font-family="Arial" text-anchor="middle" fill="#222">Platform Pool</text>
+  <text x="770" y="110" font-size="13" font-family="Arial" text-anchor="middle" fill="#555">2 nodes</text>
+  <text x="770" y="130" font-size="12" font-family="Arial" text-anchor="middle" fill="#888">Infra Services</text>
+
+  <!-- Microservices Namespaces -->
+  <rect x="360" y="180" width="120" height="60" rx="10" fill="#b2dfdb" stroke="#333"/>
+  <text x="420" y="210" font-size="13" font-family="Arial" text-anchor="middle" fill="#222">finance-app</text>
+  <rect x="500" y="180" width="120" height="60" rx="10" fill="#ffe0b2" stroke="#333"/>
+  <text x="560" y="210" font-size="13" font-family="Arial" text-anchor="middle" fill="#222">user-management</text>
+  <rect x="640" y="180" width="120" height="60" rx="10" fill="#c8e6c9" stroke="#333"/>
+  <text x="700" y="210" font-size="13" font-family="Arial" text-anchor="middle" fill="#222">platform-services</text>
+
+  <!-- Service Connections -->
+  <line x1="420" y1="240" x2="420" y2="320" stroke="#333" stroke-width="2"/>
+  <line x1="560" y1="240" x2="560" y2="320" stroke="#333" stroke-width="2"/>
+  <line x1="700" y1="240" x2="700" y2="320" stroke="#333" stroke-width="2"/>
+
+  <!-- Azure Service Bus -->
+  <rect x="320" y="320" width="120" height="50" rx="10" fill="#f8bbd0" stroke="#333"/>
+  <text x="380" y="350" font-size="13" font-family="Arial" text-anchor="middle" fill="#222">Azure Service Bus</text>
+
+  <!-- PostgreSQL -->
+  <rect x="460" y="320" width="120" height="50" rx="10" fill="#d1c4e9" stroke="#333"/>
+  <text x="520" y="350" font-size="13" font-family="Arial" text-anchor="middle" fill="#222">PostgreSQL</text>
+
+  <!-- Monitoring -->
+  <rect x="600" y="320" width="120" height="50" rx="10" fill="#b3e5fc" stroke="#333"/>
+  <text x="660" y="350" font-size="13" font-family="Arial" text-anchor="middle" fill="#222">Prometheus / Grafana</text>
+
+  <!-- Arrows from Namespaces to Services -->
+  <polygon points="420,240 420,320 425,320 420,340 415,320 420,320" fill="#333"/>
+  <polygon points="560,240 560,320 565,320 560,340 555,320 560,320" fill="#333"/>
+  <polygon points="700,240 700,320 705,320 700,340 695,320 700,320" fill="#333"/>
+
+  <!-- Labels -->
+  <text x="450" y="30" font-size="15" font-family="Arial" text-anchor="middle" fill="#888">Experimental Testbed Topology</text>
+  <text x="450" y="390" font-size="12" font-family="Arial" text-anchor="middle" fill="#888">Pools, namespaces, and service connections for AKS evaluation environment</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg width="900" height="340" xmlns="http://www.w3.org/2000/svg">
+  <!-- Steps -->
+  <rect x="60" y="60" width="120" height="60" rx="12" fill="#cce5ff" stroke="#333"/>
+  <text x="120" y="90" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">1. Event</text>
+  <text x="120" y="110" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Publication</text>
+
+  <rect x="240" y="60" width="140" height="60" rx="12" fill="#e6ffe6" stroke="#333"/>
+  <text x="310" y="90" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">2. Event Hub</text>
+  <text x="310" y="110" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Distribution</text>
+
+  <rect x="440" y="60" width="140" height="60" rx="12" fill="#cce5ff" stroke="#333"/>
+  <text x="510" y="90" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">3. Event</text>
+  <text x="510" y="110" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Consumption</text>
+
+  <rect x="640" y="60" width="120" height="60" rx="12" fill="#fff3cd" stroke="#333"/>
+  <text x="700" y="90" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">4. Persistence</text>
+  <text x="700" y="110" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">& Analytics</text>
+
+  <rect x="820" y="60" width="60" height="60" rx="12" fill="#e2e3e5" stroke="#333"/>
+  <text x="850" y="90" font-size="13" font-family="Arial" text-anchor="middle" fill="#222">5.</text>
+  <text x="850" y="110" font-size="13" font-family="Arial" text-anchor="middle" fill="#222">Monitoring</text>
+
+  <!-- Arrows -->
+  <polygon points="180,90 240,90 240,85 260,90 240,95 240,90" fill="#333"/>
+  <polygon points="380,90 440,90 440,85 460,90 440,95 440,90" fill="#333"/>
+  <polygon points="580,90 640,90 640,85 660,90 640,95 640,90" fill="#333"/>
+  <polygon points="760,90 820,90 820,85 840,90 820,95 820,90" fill="#333"/>
+
+  <!-- Step Descriptions -->
+  <text x="120" y="150" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">External systems or APIs trigger business events</text>
+  <text x="310" y="150" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">Event Hub partitions distribute messages</text>
+  <text x="510" y="150" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">Subscribers process and validate events</text>
+  <text x="700" y="150" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">Results stored in PostgreSQL</text>
+  <text x="850" y="150" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">Metrics & alerts</text>
+
+  <!-- Feedback Arrow -->
+  <path d="M 850 120 Q 850 200 120 200 Q 60 200 60 120" fill="none" stroke="#888" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#888"/>
+    </marker>
+  </defs>
+  <text x="460" y="220" font-size="12" font-family="Arial" text-anchor="middle" fill="#888">Feedback loop for scaling, remediation, and tuning</text>
+</svg>
