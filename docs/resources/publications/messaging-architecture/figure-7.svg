@@ -26,17 +26,17 @@
 
   <!-- Sustainability & Cost -->
   <rect x="60" y="320" width="200" height="60" rx="12" fill="#c8e6c9" stroke="#333"/>
-  <text x="160" y="350" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Sustainability & Cost</text>
+  <text x="160" y="350" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Sustainability &amp; Cost</text>
   <text x="160" y="370" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">(Carbon-Aware, Predictive Cost)</text>
 
   <!-- Multi-Cloud & Edge -->
   <rect x="60" y="60" width="200" height="60" rx="12" fill="#b3e5fc" stroke="#333"/>
-  <text x="160" y="90" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Multi-Cloud & Edge</text>
+  <text x="160" y="90" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">Multi-Cloud &amp; Edge</text>
   <text x="160" y="110" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">(Federation, Latency-Aware)</text>
 
   <!-- Collaboration -->
   <rect x="800" y="180" width="80" height="80" rx="12" fill="#f8bbd0" stroke="#333"/>
-  <text x="840" y="210" font-size="13" font-family="Arial" text-anchor="middle" fill="#222">Academic & Industry Collaboration</text>
+  <text x="840" y="210" font-size="13" font-family="Arial" text-anchor="middle" fill="#222">Academic &amp; Industry Collaboration</text>
 
   <!-- Arrows from Core Platform to Vision Areas -->
   <polygon points="260,220 320,90 325,90 320,70 315,90 320,90" fill="#333"/>

@@ -66,8 +66,9 @@ While prior research has extensively addressed event-driven paradigms and distri
 
 In summary, this study advances the state of the art by providing actionable guidance and empirical evidence for practitioners and researchers seeking to design scalable, resilient, and high-performance messaging architectures in the cloud.
 
+
 **Figure 1. Logical Architecture Diagram**
-![Logical Architecture Diagram](logical-architecture-diagram-detailed.svg)
+![Figure 1](figure-1.svg)
 
 *Figure 1: Logical architecture of the cloud-native messaging platform, showing key components, namespaces, and supporting services within the Kubernetes cluster.*
 
@@ -114,8 +115,9 @@ Prometheus collects metrics, Grafana provides visualization, and Azure Monitor d
 
 The end-to-end data flow is illustrated in Figure 2 and proceeds as follows:
 
+
 **Figure 2. Data Flow Diagram**
-![Data Flow Diagram](data-flow-diagram.svg)
+![Figure 2](figure-2.svg)
 
 *Figure 2: Stepwise data flow from event publication to monitoring and feedback, highlighting the main processing and feedback loop in the architecture.*
 
@@ -187,8 +189,9 @@ Kubernetes manifests for each application are version-controlled in dedicated Gi
 
 The GitOps workflow is tightly integrated with CI systems (e.g., Azure DevOps, GitHub Actions), which trigger ArgoCD deployments upon successful image builds, automated manifest regeneration, and policy validation. This synergy creates a fully automated pipeline for delivering microservice updates with zero-touch operational overhead.
 
+
 **Figure 3. Deployment Pipeline Diagram (CI/CD & GitOps)**
-![Deployment Pipeline Diagram](deployment-pipeline-diagram.svg)
+![Figure 3](figure-3.svg)
 
 *Figure 3: End-to-end CI/CD and GitOps deployment pipeline, illustrating the flow from code commit through automated build, infrastructure provisioning, policy/approval gates, and ArgoCD-driven deployment to AKS clusters.*
 
@@ -204,8 +207,9 @@ An automation layer within the CI/CD pipeline generates manifests dynamically ba
 
 The observability layer integrates Prometheus, Grafana, Azure Monitor, and OpenTelemetry to provide full-stack visibility across clusters and services. Prometheus scrapes metrics from application and system exporters, while Grafana dashboards visualize key performance indicators such as latency, request throughput, and error ratios.
 
+
 **Figure 4. Observability Stack Diagram**
-![Observability Stack Diagram](observability-stack-diagram.svg)
+![Figure 4](figure-4.svg)
 
 *Figure 4: End-to-end observability stack, showing the flow of metrics, logs, and traces from AKS microservices through exporters, Prometheus, Azure Monitor, OpenTelemetry, and into Grafana dashboards for visualization and alerting.*
 
@@ -218,8 +222,9 @@ AI-driven observability modules, powered by Azure Machine Learning and custom an
 
 Self-healing capabilities are implemented using Kubernetes Operators and event-driven automation workflows powered by KEDA (Kubernetes Event-driven Autoscaling) and Azure Logic Apps. Operators continuously monitor resource health, leveraging custom controllers that interpret anomalies detected by AI models.
 
+
 **Figure 5. Self-Healing Workflow Diagram**
-![Self-Healing Workflow Diagram](self-healing-workflow-diagram.svg)
+![Figure 5](figure-5.svg)
 
 *Figure 5: Self-healing workflow showing the detection of anomalies, automated remediation actions, and the feedback loop for adaptive learning and policy tuning in a cloud-native environment.*
 
@@ -241,26 +246,13 @@ Comprehensive validation mechanisms are integrated into the pipeline to ensure d
 Feedback loops from monitoring dashboards, alerting systems, and AI-detected anomalies are periodically reviewed to refine observability thresholds, scaling rules, and remediation workflows. This continuous feedback ensures adaptive improvement and enhances the overall resilience of the Kubernetes ecosystem.
 
 
+
 ### 4.8 Example Architecture Visualization
 
-**Diagram Description:**
+**Figure 8. Example Architecture Visualization**
+![Figure 8](figure-8.svg)
 
-```
-[User Clients] --> [API Gateway / Ingress Controller] --> [Microservices Namespaces]
-   |                                                        |
-   |-- auth-service (Keycloak / Okta)                      |
-   |-- finance-app namespace: payment-service, ledger-service
-   |-- user-management namespace: profile-service, auth-service
-   |-- platform-services namespace: notification-service, analytics-service
-   |
-[Azure Service Bus] --> asynchronous event-driven communication
-[Azure SQL / PostgreSQL] --> data persistence for critical services
-[Prometheus + Grafana + Azure Monitor] --> metrics & observability
-[Azure Key Vault] --> secrets management
-[Terraform] --> IaC provisioning AKS clusters and network resources
-[Helm/Kustomize] --> manifest generation
-[ArgoCD] --> GitOps continuous deployment
-```
+*Figure 8: Visual representation of the example architecture, showing user clients, API gateway, microservices namespaces, supporting services, observability, secrets management, and deployment automation tools in the cloud-native messaging platform.*
 
 This implementation ensures a scalable, secure, automated, and observable enterprise-grade Kubernetes environment, bridging design considerations with operational reality.
 
@@ -292,8 +284,9 @@ The evaluation was structured to address the following objectives:
 
 Experiments were conducted on a dedicated, non-production Azure Kubernetes Service (AKS) environment designed to emulate enterprise-scale workloads:
 
+
 **Figure 6. Experimental Testbed Topology**
-![Experimental Testbed Topology](experimental-testbed-topology.svg)
+![Figure 6](figure-6.svg)
 
 *Figure 6: Topology of the AKS experimental testbed, showing system, application, and platform node pools, microservices namespaces, and service connections for benchmarking and evaluation.*
 
@@ -430,8 +423,9 @@ This **Section 7: Future Work and Research Directions** closes the article with 
 
 
 ## 7. Future Work and Research Directions
+
 **Figure 7. Future Work Vision Diagram**
-![Future Work Vision Diagram](future-work-vision-diagram.svg)
+![Figure 7](figure-7.svg)
 
 *Figure 7: Vision for future research—showing the evolution from current cloud-native platforms to intelligent, sustainable, and policy-aware architectures, including AI-driven autoscaling, autonomous remediation, intelligent observability, policy-driven governance, sustainability, and multi-cloud/edge integration.*
 

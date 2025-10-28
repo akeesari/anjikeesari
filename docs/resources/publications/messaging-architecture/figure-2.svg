@@ -14,7 +14,7 @@
 
   <rect x="640" y="60" width="120" height="60" rx="12" fill="#fff3cd" stroke="#333"/>
   <text x="700" y="90" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">4. Persistence</text>
-  <text x="700" y="110" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">& Analytics</text>
+  <text x="700" y="110" font-size="14" font-family="Arial" text-anchor="middle" fill="#222">&amp; Analytics</text>
 
   <rect x="820" y="60" width="60" height="60" rx="12" fill="#e2e3e5" stroke="#333"/>
   <text x="850" y="90" font-size="13" font-family="Arial" text-anchor="middle" fill="#222">5.</text>
@@ -31,7 +31,7 @@
   <text x="310" y="150" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">Event Hub partitions distribute messages</text>
   <text x="510" y="150" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">Subscribers process and validate events</text>
   <text x="700" y="150" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">Results stored in PostgreSQL</text>
-  <text x="850" y="150" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">Metrics & alerts</text>
+  <text x="850" y="150" font-size="12" font-family="Arial" text-anchor="middle" fill="#555">Metrics &amp; alerts</text>
 
   <!-- Feedback Arrow -->
   <path d="M 850 120 Q 850 200 120 200 Q 60 200 60 120" fill="none" stroke="#888" stroke-width="2" marker-end="url(#arrowhead)"/>
