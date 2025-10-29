@@ -72,7 +72,7 @@ In summary, this study advances the state of the art by providing actionable gui
 [![Alt text](figure-1.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-1.png){:target="_blank"}
 
 
-*Figure 1: Logical architecture of the cloud-native messaging platform, showing key components, and supporting services within the Kubernetes cluster and azure event hub namespace.*
+*Figure 1: Logical architecture of the cloud-native messaging platform, showing key components, and supporting services within the Kubernetes cluster and azure event hub namespace such as observability, secrets management, and deployment automation tools etc...*
 
 ---
 
@@ -252,23 +252,11 @@ Comprehensive validation mechanisms are integrated into the pipeline to ensure d
 
 Feedback loops from monitoring dashboards, alerting systems, and AI-detected anomalies are periodically reviewed to refine observability thresholds, scaling rules, and remediation workflows. This continuous feedback ensures adaptive improvement and enhances the overall resilience of the Kubernetes ecosystem.
 
-
-
-### 4.8 Example Architecture Visualization
-
-**Figure 8. Example Architecture Visualization**
-![Figure 8](figure-8.svg)
-
-*Figure 8: Visual representation of the example architecture, showing user clients, API gateway, microservices namespaces, supporting services, observability, secrets management, and deployment automation tools in the cloud-native messaging platform.*
-
 This implementation ensures a scalable, secure, automated, and observable enterprise-grade Kubernetes environment, bridging design considerations with operational reality.
 
 ---
 
 In summary, the implementation approach described in this section operationalizes the architectural vision, supporting scalability, reliability, automation, and compliance. Each layer—from infrastructure to observability and feedback—contributes to a robust foundation for high-throughput, event-driven microservices in the cloud.
-
----
-![alt text](image-2.png)
 
 ---
 
@@ -290,12 +278,6 @@ The evaluation was structured to address the following objectives:
 ### 5.2 Experimental Testbed
 
 Experiments were conducted on a dedicated, non-production Azure Kubernetes Service (AKS) environment designed to emulate enterprise-scale workloads:
-
-
-**Figure 6. Experimental Testbed Topology**
-![Figure 6](figure-6.svg)
-
-*Figure 6: Topology of the AKS experimental testbed, showing system, application, and platform node pools, microservices namespaces, and service connections for benchmarking and evaluation.*
 
 - **Cluster Configuration:**
    - 3-node system pool (DS3v2) for control-plane components
@@ -429,12 +411,14 @@ This **Section 7: Future Work and Research Directions** closes the article with 
 
 
 
-## 7. Future Work and Research Directions
+## 6. Future Work and Research Directions
 
-**Figure 7. Future Work Vision Diagram**
-![Figure 7](figure-7.svg)
+**Figure 6. Future Work Vision Diagram**
 
-*Figure 7: Vision for future research—showing the evolution from current cloud-native platforms to intelligent, sustainable, and policy-aware architectures, including AI-driven autoscaling, autonomous remediation, intelligent observability, policy-driven governance, sustainability, and multi-cloud/edge integration.*
+[![Alt text](figure-6.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-6.png){:target="_blank"}
+
+
+*Figure 6: Vision for future research—showing the evolution from current cloud-native platforms to intelligent, sustainable, and policy-aware architectures, including AI-driven autoscaling, autonomous remediation, intelligent observability, policy-driven governance, sustainability, and multi-cloud/edge integration.*
 
 ### 7.1 Motivation for Continued Research
 
