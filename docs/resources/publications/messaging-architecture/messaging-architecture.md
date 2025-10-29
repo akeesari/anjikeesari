@@ -68,9 +68,11 @@ In summary, this study advances the state of the art by providing actionable gui
 
 
 **Figure 1. Logical Architecture Diagram**
-![Figure 1](figure-1.svg)
 
-*Figure 1: Logical architecture of the cloud-native messaging platform, showing key components, namespaces, and supporting services within the Kubernetes cluster.*
+[![Alt text](figure-1.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-1.png){:target="_blank"}
+
+
+*Figure 1: Logical architecture of the cloud-native messaging platform, showing key components, and supporting services within the Kubernetes cluster and azure event hub namespace.*
 
 ---
 
@@ -117,7 +119,9 @@ The end-to-end data flow is illustrated in Figure 2 and proceeds as follows:
 
 
 **Figure 2. Data Flow Diagram**
-![Figure 2](figure-2.svg)
+
+[![Alt text](figure-2.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-2.png){:target="_blank"}
+
 
 *Figure 2: Stepwise data flow from event publication to monitoring and feedback, highlighting the main processing and feedback loop in the architecture.*
 
@@ -191,7 +195,8 @@ The GitOps workflow is tightly integrated with CI systems (e.g., Azure DevOps, G
 
 
 **Figure 3. Deployment Pipeline Diagram (CI/CD & GitOps)**
-![Figure 3](figure-3.svg)
+
+[![Alt text](figure-3.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-3.png){:target="_blank"}
 
 *Figure 3: End-to-end CI/CD and GitOps deployment pipeline, illustrating the flow from code commit through automated build, infrastructure provisioning, policy/approval gates, and ArgoCD-driven deployment to AKS clusters.*
 
@@ -209,7 +214,8 @@ The observability layer integrates Prometheus, Grafana, Azure Monitor, and OpenT
 
 
 **Figure 4. Observability Stack Diagram**
-![Figure 4](figure-4.svg)
+
+[![Alt text](figure-4.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-4.png){:target="_blank"}
 
 *Figure 4: End-to-end observability stack, showing the flow of metrics, logs, and traces from AKS microservices through exporters, Prometheus, Azure Monitor, OpenTelemetry, and into Grafana dashboards for visualization and alerting.*
 
@@ -224,7 +230,8 @@ Self-healing capabilities are implemented using Kubernetes Operators and event-d
 
 
 **Figure 5. Self-Healing Workflow Diagram**
-![Figure 5](figure-5.svg)
+
+[![Alt text](figure-5.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-5.png){:target="_blank"}
 
 *Figure 5: Self-healing workflow showing the detection of anomalies, automated remediation actions, and the feedback loop for adaptive learning and policy tuning in a cloud-native environment.*
 
@@ -317,25 +324,25 @@ To ensure a comprehensive evaluation, both system-level and service-level metric
 ### 5.4 Results and Analysis
 
 
-- **Scalability and Performance:**
-  
-   The architecture exhibited linear scalability under increasing load, with the Horizontal Pod Autoscaler (HPA) responding to CPU and memory thresholds within an average of 24 seconds. Response times remained below 180 ms for up to 8,000 concurrent requests per second, and no service experienced throttling or timeouts at peak load. These results confirm the elasticity and robustness of the AKS-based design.
+**Scalability and Performance**
 
-- **Deployment Efficiency:**
-  
-   The ArgoCD-powered GitOps workflow achieved deployment synchronization in under 4 minutes—a 62% improvement over manual CI/CD processes. Combined with Terraform-based provisioning, environment setup time was reduced from 8 hours to under 90 minutes. Versioned infrastructure and declarative deployments enabled full traceability and rapid rollback, enhancing operational governance.
+The architecture exhibited linear scalability under increasing load, with the Horizontal Pod Autoscaler (HPA) responding to CPU and memory thresholds within an average of 24 seconds. Response times remained below 180 ms for up to 8,000 concurrent requests per second, and no service experienced throttling or timeouts at peak load. These results confirm the elasticity and robustness of the AKS-based design.
 
-- **Resiliency and Fault Tolerance:**
-  
-   Pod termination and node restart scenarios validated the system’s self-healing capabilities. Failed pods were rescheduled within 15 seconds, maintaining uninterrupted service. The load balancer and ingress controller efficiently rerouted traffic during disruptions, ensuring high availability even under transient failures.
+**Deployment Efficiency**
 
-- **Observability and Monitoring:**
-  
-   The integration of Prometheus, OpenTelemetry, and Azure Monitor provided near real-time visibility across all services. Distributed traces captured end-to-end transaction paths, identifying dependency latency in under 300 ms. Grafana dashboards unified cluster health, resource usage, and application performance, reducing mean time to detect (MTTD) from 12 minutes to less than 3 minutes.
+The ArgoCD-powered GitOps workflow achieved deployment synchronization in under 4 minutes—a 62% improvement over manual CI/CD processes. Combined with Terraform-based provisioning, environment setup time was reduced from 8 hours to under 90 minutes. Versioned infrastructure and declarative deployments enabled full traceability and rapid rollback, enhancing operational governance.
 
-- **Security and Compliance:**
-  
-   Security validation confirmed 100% compliance with organizational policies. Authentication (Okta) and authorization (Keycloak) operated seamlessly with token-based service-to-service communication. All secrets and credentials were securely managed in Azure Key Vault, with RBAC enforcing least-privilege access. Network segmentation via Kubernetes Network Policies prevented unauthorized cross-namespace access.
+**Resiliency and Fault Tolerance**
+
+Pod termination and node restart scenarios validated the system’s self-healing capabilities. Failed pods were rescheduled within 15 seconds, maintaining uninterrupted service. The load balancer and ingress controller efficiently rerouted traffic during disruptions, ensuring high availability even under transient failures.
+
+**Observability and Monitoring**
+
+The integration of Prometheus, OpenTelemetry, and Azure Monitor provided near real-time visibility across all services. Distributed traces captured end-to-end transaction paths, identifying dependency latency in under 300 ms. Grafana dashboards unified cluster health, resource usage, and application performance, reducing mean time to detect (MTTD) from 12 minutes to less than 3 minutes.
+
+**Security and Compliance**
+
+Security validation confirmed 100% compliance with organizational policies. Authentication (Okta) and authorization (Keycloak) operated seamlessly with token-based service-to-service communication. All secrets and credentials were securely managed in Azure Key Vault, with RBAC enforcing least-privilege access. Network segmentation via Kubernetes Network Policies prevented unauthorized cross-namespace access.
 
 ### 5.5 Discussion
 
