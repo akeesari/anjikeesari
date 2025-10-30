@@ -395,11 +395,13 @@ Practical experience with the proposed system yielded several critical insights:
 - Observability-first design enhances reliability when introduced at inception rather than retrofitted post-deployment.
 - Governance achieves greater adoption when it is automated and transparent, rather than enforced through manual approval chains.
 
+
 ### Summary
+This section distills practical lessons and actionable recommendations for implementing scalable, secure, and observable cloud-native messaging systems. It emphasizes the importance of automation, GitOps, and continuous improvement to achieve operational excellence in Kubernetes-based environments.
 
-## 6. Future Work and Research Directions
+## 7. Future Work and Research Directions
 
-**Figure 6. Future Work Vision Diagram**
+**Figure 7. Future Work Vision Diagram**
 
 [![Alt text](figure-6.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-6.png){:target="_blank"}
 
@@ -485,8 +487,6 @@ The intersection of AI, cloud-native computing, and automation offers a rich lan
 - Evaluating sustainability metrics for enterprise-grade Kubernetes operations
 
 Such collaborations would accelerate innovation and bridge the gap between theoretical advancements and operational adoption in enterprise contexts.
-
----
 
 ### Summary
 
