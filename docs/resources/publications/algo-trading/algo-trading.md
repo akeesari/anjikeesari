@@ -164,44 +164,8 @@ This robust preprocessing pipeline significantly enhances the reliability of ana
 
 **Figure 2. Data Validation and Gap-Filling Flowchart**
 
-```
-	    +-------------------+
-	    |  Raw Data Input   |
-	    +-------------------+
-			    |
-			    v
-	    +---------------------------+
-	    |  Missing/Anomalous Data?  |
-	    +---------------------------+
-		    |             |
-		   No            Yes
-		    |             |
-		    v             v
-   +----------------+   +---------------------+
-   | Use as-is for  |   |  Flag & Isolate     |
-   | feature calc   |   |  Problem Data Point |
-   +----------------+   +---------------------+
-		    |             |
-		    |             v
-		    |   +--------------------------+
-		    |   |  Gap-Filling Algorithm   |
-		    |   | (interpolation, forward/ |
-		    |   |  backward fill, model)   |
-		    |   +--------------------------+
-		    |             |
-		    +-------------+
-			    |
-			    v
-	    +---------------------------+
-	    |  Data Integrity Checks     |
-	    +---------------------------+
-			    |
-			    v
-	    +---------------------------+
-	    |  Feature Engineering &     |
-	    |  Signal Generation        |
-	    +---------------------------+
-```
+[![Alt text](figure-2.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-2.png){:target="_blank"}
+
 *Figure 2. Data validation and gap-filling flowchart: Process of data validation, anomaly detection, gap-filling, and integrity checks prior to feature engineering and signal generation.*
 
 ---
@@ -325,64 +289,8 @@ This comprehensive machine learning integration enhances the system’s ability 
 
 **Figure 3. Machine Learning Pipeline for Trading Signals**
 
-```
-	+---------------------+
-	|  Feature Engineering|
-	| (technical + alt.   |
-	|  data, selection,   |
-	|  transformation)    |
-	+---------------------+
-				  |
-				  v
-	+---------------------+
-	|  Model Training     |
-	| (supervised ML,     |
-	|  cross-validation,  |
-	|  hyperparameter     |
-	|  tuning)            |
-	+---------------------+
-				  |
-				  v
-	+---------------------+
-	|  Model Validation   |
-	| (out-of-sample,     |
-	|  walk-forward,      |
-	|  performance eval)  |
-	+---------------------+
-				  |
-				  v
-	+---------------------+
-	|  Model Deployment   |
-	| (in-memory,         |
-	|  optimized for      |
-	|  low-latency)       |
-	+---------------------+
-				  |
-				  v
-	+---------------------+
-	|  Real-Time Inference|
-	| (live data,         |
-	|  signal generation) |
-	+---------------------+
-				  |
-				  v
-	+---------------------+
-	|  Performance/Drift  |
-	|  Monitoring         |
-	+---------------------+
-				  |
-				  v
-	+---------------------+
-	|  Model Retraining   |
-	| (periodic or on     |
-	|  regime change)     |
-	+---------------------+
-				  |
-				  +-------------------+
-										|
-										v
-						  (feedback loop)
-```
+[![Alt text](figure-3.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-3.png){:target="_blank"}
+
 *Figure 3. Machine learning pipeline for trading signals: Flow from feature engineering through training, validation, deployment, real-time inference, monitoring, and retraining.*
 
 ---
@@ -503,52 +411,8 @@ The integration of dynamic, real-time risk management ensures capital preservati
 
 **Figure 4. Risk Management Workflow Diagram**
 
-```
-	 +---------------------+
-	 |  Trade Signal Gen.  |
-	 +---------------------+
-		   |
-		   v
-	 +---------------------+
-	 |  Position Sizing    |
-	 |  (dynamic, real-time|
-	 |   based on risk)    |
-	 +---------------------+
-		   |
-		   v
-	 +---------------------+
-	 |  Stop-Loss &        |
-	 |  Drawdown Checks    |
-	 +---------------------+
-		   |
-		   v
-	 +---------------------+
-	 |  Trade Execution    |
-	 +---------------------+
-		   |
-		   v
-	 +---------------------+
-	 |  Real-Time Risk     |
-	 |  Monitoring         |
-	 +---------------------+
-		   |
-	 +---------+----------+
-	 |                    |
-	 v                    v
-  +----------------+   +---------------------+
-  | Normal Ops     |   | Risk Event Detected |
-  +----------------+   +---------------------+
-	 |                    |
-	 v                    v
-   (continue loop)   +----------------------+
-		     | Trading Halt/        |
-		     | Parameter Adjustment |
-		     +----------------------+
-			     |
-			     v
-		     (resume or manual      |
-		      intervention)         |
-```
+[![Alt text](figure-4.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-4.png){:target="_blank"}
+
 *Figure 4. Risk management workflow diagram: Trade signals flow through position sizing, stop-loss/drawdown checks, execution, and real-time risk monitoring, with automated halts or parameter adjustments on risk events.*
 
 ### 4.12 Trade Execution and Comprehensive Backtesting Framework
@@ -578,93 +442,10 @@ This methodology enables the system to operate as a robust, adaptive, and resear
 
 **Figure 1. High-Level Momentum Trading System Architecture: Layered, ultra-low latency platform for real-time momentum opportunity capture.**
 
-```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                    MOMENTUM TRADING SYSTEM ARCHITECTURE                                          │
-│                                        Target: <1s End-to-End Latency                                          │
-└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[![Alt text](figure-1.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-1.png){:target="_blank"}
+[![Alt text](figure-1.1.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-1.1.png){:target="_blank"}
 
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                           DATA LAYER                                                             │
-├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐        │
-│  │ Market Data     │  │ Topgainer       │  │ Level 2         │  │ News Sentiment  │  │ Volume Surge    │        │
-│  │ APIs            │  │ Feeds           │  │ Order Book      │  │ Feeds           │  │ Alerts          │        │
-│  │ (<0.5s latency) │  │ (pre-filtered)  │  │ (tick-by-tick)  │  │ (event-driven)  │  │ (real-time)     │        │
-│  └─────────────────┘  └─────────────────┘  └─────────────────┘  └─────────────────┘  └─────────────────┘        │
-└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-                                                      │
-                                                      ▼
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                      PROCESSING LAYER                                                            │
-├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│  ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ │
-│  │                            DATA ACQUISITION & VALIDATION                                                     │ │
-│  │  • Multi-provider synchronization    • Gap filling algorithms    • Real-time validation                   │ │
-│  │  • Timestamp alignment               • Anomaly detection         • Data integrity checks                  │ │
-│  └─────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │
-│                                                      │                                                           │
-│                                                      ▼                                                           │
-│  ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ │
-│  │                           MOMENTUM OPPORTUNITY IDENTIFICATION                                                │ │
-│  │  ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐        │ │
-│  │  │ Six Pillars     │ │ Technical       │ │ Volume & Float  │ │ News Sentiment  │ │ Price Action    │        │ │
-│  │  │ Filtering       │ │ Indicators      │ │ Analysis        │ │ Scoring         │ │ Patterns        │        │ │
-│  │  │ • Price Range   │ │ • VWAP          │ │ • Rel. Volume   │ │ • Event Impact  │ │ • Gap %         │        │ │
-│  │  │ • Gap %         │ │ • MACD          │ │ • Float Size    │ │ • Catalyst ID   │ │ • Breakouts     │        │ │
-│  │  │ • Liquidity     │ │ • RSI           │ │ • Volume Surge  │ │ • Momentum      │ │ • Momentum      │        │ │
-│  │  └─────────────────┘ └─────────────────┘ └─────────────────┘ └─────────────────┘ └─────────────────┘        │ │
-│  └─────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-                                                      │
-                                                      ▼
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                      INTELLIGENCE LAYER                                                          │
-├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│  ┌───────────────────────────────────┐                    ┌───────────────────────────────────┐                  │
-│  │        HYBRID SIGNAL GENERATION   │                    │        MACHINE LEARNING           │                  │
-│  │  ┌─────────────────────────────────┐ │                │  ┌─────────────────────────────────┐ │                  │
-│  │  │ • Multi-indicator fusion        │ │                │  │ • Supervised learning models   │ │                  │
-│  │  │ • Rule-based logic              │ │                │  │ • Feature engineering          │ │                  │
-│  │  │ • Momentum strength scoring     │ │◄──────────────►│  │ • Real-time inference          │ │                  │
-│  │  │ • Pattern recognition           │ │                │  │ • Adaptive retraining          │ │                  │
-│  │  │ • 67% accuracy (vs 54% baseline)│ │                │  │ • Regime shift detection        │ │                  │
-│  │  └─────────────────────────────────┘ │                │  └─────────────────────────────────┘ │                  │
-│  └───────────────────────────────────────┘                └───────────────────────────────────────┘                  │
-└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-                                                      │
-                                                      ▼
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                       EXECUTION LAYER                                                            │
-├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│  ┌───────────────────────────────────┐                    ┌───────────────────────────────────┐                  │
-│  │       RISK MANAGEMENT             │                    │       TRADE EXECUTION             │                  │
-│  │  • Momentum-aware position sizing  │                    │  • Low-latency order placement    │                  │
-│  │  • Dynamic stop-loss adjustment    │◄──────────────────►│  • Real-time order management     │                  │
-│  │  • Drawdown controls               │                    │  • Execution monitoring           │                  │
-│  │  • Momentum decay detection        │                    │  • Performance tracking           │                  │
-│  │  • Trading halts & alerts          │                    │  • <1s signal-to-execution        │                  │
-│  └───────────────────────────────────────┘                └───────────────────────────────────────┘                  │
-└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-                                                      │
-                                                      ▼
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                      MONITORING LAYER                                                            │
-├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│  • Real-time performance monitoring    • Latency tracking         • Accuracy metrics                           │
-│  • Momentum strength assessment        • Risk exposure monitoring • Alert management                           │
-│  • System health diagnostics           • Trade analytics          • Adaptive parameter tuning                 │
-└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-                                    ┌─────────────────────────────────────┐
-                                    │           KEY PERFORMANCE            │
-                                    │         • <1s End-to-End Latency    │
-                                    │         • 67% Signal Accuracy       │
-                                    │         • 22% ROI (vs 8% baseline)  │
-                                    │         • 7% Max Drawdown           │
-                                    │         • 1000+ Stocks/Second       │
-                                    └─────────────────────────────────────┘
-```
 *Figure 1. Comprehensive High-Level Architecture: Five-layer momentum trading system design emphasizing ultra-low latency processing, intelligent signal generation, and adaptive risk management for capturing short-lived momentum opportunities.*
 
 ---
@@ -690,75 +471,15 @@ These features collectively support proactive monitoring, rapid response to crit
 
 **Figure 5. Alerting and monitoring flow diagram: System events trigger alerts, which are delivered to users for notification and possible intervention.**
 
-```
-	+---------------------+
-	|  Event Detection    |
-	| (trade, error, risk)|
-	+---------------------+
-				 |
-				 v
-	+---------------------+
-	|  Alert Generation   |
-	| (SMTP/email/SMS)    |
-	+---------------------+
-				 |
-				 v
-	+---------------------+
-	|  User Notification  |
-	+---------------------+
-				 |
-				 v
-	+---------------------+
-	|  User/Auto Response |
-	| (acknowledge,       |
-	|  intervene, adjust) |
-	+---------------------+
-```
+[![Alt text](figure-5.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-5.png){:target="_blank"}
+
 *Figure 5. Alerting and monitoring flow diagram: System events trigger alerts, which are delivered to users for notification and possible intervention.*
 
----
+
 **Figure 6. System modularity overview: Modular structure of the platform, with each component operating independently and supporting extensibility.**
 
-```
-	+-------------------+
-	| Data Acquisition  |
-	+-------------------+
-						|
-						v
-	+-------------------+
-	| Filtering         |
-	+-------------------+
-						|
-						v
-	+-------------------+
-	| Feature Engineering|
-	+-------------------+
-						|
-						v
-	+-------------------+
-	| ML Models         |
-	+-------------------+
-						|
-						v
-	+-------------------+
-	| Signal Generation |
-	+-------------------+
-						|
-						v
-	+-------------------+
-	| Risk Management   |
-	+-------------------+
-						|
-						v
-	+-------------------+
-	| Trade Execution   |
-	+-------------------+
-						|
-						v
-	+-------------------+
-	| Alerting/Monitoring|
-	+-------------------+
-```
+[![Alt text](figure-6.png){:style="border: 1px solid black; border-radius: 10px;"}](figure-6.png){:target="_blank"}
+
 *Figure 6. System modularity overview: Modular structure of the platform, with each component operating independently and supporting extensibility.*
 
 
