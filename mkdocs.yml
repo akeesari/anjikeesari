@@ -206,7 +206,7 @@ nav:
   - Resources:
       - Publications:
         - Messaging Architecture : resources/publications/messaging-architecture/messaging-architecture.md
-        - Algorithmic Trading System : resources/publications/algo-trading/algo-trading.md
+        - AI Driven Algo Trading : resources/publications/algo-trading/ai-driven-algo-trading.md
         
       - Books:
         - Building Microservices with Containers : resources/books/microservices.md
