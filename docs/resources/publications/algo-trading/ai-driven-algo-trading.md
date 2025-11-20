@@ -84,12 +84,17 @@ A core innovation of the system is its use of topgainer lists and advanced filte
 
 The following six criteria form the foundational pillars of the system's stock selection process. These pillars are designed to identify high-momentum, liquid stocks with strong trading potential:
  
-1. **Price range** (typically `$1–$20`)
-2. **Gap percentage** (e.g., >10%)
-3. **Float** (e.g., <30M shares)
-4. **Volume and relative volume thresholds** (e.g., minimum 1,000,000 shares traded today and relative volume ≥ 2.0 compared to the 10–20 day average)
-5. **Liquidity and volatility measures** (e.g., minimum bid-ask spread ≤ 1% of price, average true range (ATR) ≥ 2% of price)
-6. **News sentiment** (e.g., positive sentiment score ≥ 0.7 on a normalized scale, or significant news event detected within the last 24 hours)
+1. **Price range** (typically `$1–$20`) — Targets liquid stocks with sufficient volatility for momentum capture while avoiding penny stock manipulation risks and ensuring adequate price increment granularity for technical analysis.
+
+2. **Gap percentage** (e.g., >10%) — Identifies pre-market catalysts indicating strong directional conviction and potential momentum continuation, filtering for stocks with significant overnight price dislocations driven by fundamental news or earnings events.
+
+3. **Float** (e.g., <30M shares) — Ensures lower outstanding shares enable faster price movements and stronger momentum sustainability, as reduced float amplifies supply-demand imbalances during high-conviction trading periods.
+
+4. **Volume and relative volume thresholds** (e.g., minimum 1,000,000 shares traded today and relative volume ≥ 2.0 compared to the 10–20 day average) — Validates genuine momentum strength through elevated trading activity versus historical averages, confirming institutional participation and reducing false breakout risks.
+
+5. **Liquidity and volatility measures** (e.g., minimum bid-ask spread ≤ 1% of price, average true range (ATR) ≥ 2% of price) — Ensures efficient execution with minimal slippage while confirming adequate intraday price movement for profit capture, balancing execution quality with momentum opportunity.
+
+6. **News sentiment** (e.g., positive sentiment score ≥ 0.7 on a normalized scale, or significant news event detected within the last 24 hours) — Incorporates fundamental catalysts driving momentum beyond pure technical signals, leveraging alternative data to identify event-driven opportunities with stronger directional conviction.
 
 **Empirical Validation of the Six Pillars:**
 
@@ -136,7 +141,7 @@ The filtering process applies these configurable criteria, which are dynamically
 The system computes features including price, volume, moving averages, and volatility for each stock. Advanced data validation ensures signal reliability through: (1) continuous monitoring for missing/stale/anomalous data with automated flagging, (2) gap-filling algorithms (linear interpolation, forward/backward filling) maintaining time series continuity, and (3) pre-signal integrity checks validating completeness and plausibility. Only validated data proceeds to indicator computation and ML inference, significantly reducing spurious signals in volatile markets.
 
 ### 3.4 Technical Indicators and Hybrid Signal Generation
-The system employs five momentum-optimized indicators: (1) multi-timeframe EMAs (9, 20, 200-period) for trend filtering and support/resistance, (2) VWAP for entry validation and dynamic support, (3) MACD for trend change signals and momentum strength, (4) RSI for extension measurement (50-70 momentum zone), and (5) volume analysis for liquidity validation. All indicators use custom parameterization optimized for the $1-$20 price range.
+The system employs five momentum-optimized indicators: (1) multi-timeframe EMAs (9, 20, 200-period) for trend filtering and support/resistance, (2) VWAP for entry validation and dynamic support, (3) MACD for trend change signals and momentum strength, (4) RSI for extension measurement (50-70 momentum zone), and (5) volume analysis for liquidity validation. All indicators use custom parameterization optimized for the `$1-$20` price range.
 
 **Momentum-Specific Fusion Logic:** Signals require multi-layered confirmation—price above EMAs, 150%+ volume surge, VWAP positioning, MACD expansion, and RSI 50-70 range. Adaptive weighting assigns position sizes: 100% when all 5 indicators align, 75% for 4/5 alignment, 50% for 3/5 (scalping). ML models enhance fusion by providing momentum continuation probabilities, with adaptive weighting based on regime detection. Dynamic stops use EMA levels (9-EMA for tight, 20-EMA for swing) with extension risk reduction (>15% from 9-EMA) and volume degradation exits (<75% entry volume).
 
@@ -202,45 +207,48 @@ This comprehensive machine learning integration enhances the system’s ability 
 
 ---
 
-#### 3.5.1 Model Selection and Validation
+**Model Selection and Validation**
+
 To ensure robust predictive performance and generalizability, the platform employs rigorous model selection and validation procedures:
 
-**Model Comparison and Evaluation:**
+*Model Comparison and Evaluation:*
 
   - Multiple supervised learning models (e.g., tree-based, neural networks, regression) are trained and compared using standardized performance metrics such as accuracy, Sharpe ratio, drawdown, and precision/recall.
   - The best-performing model is selected based on both predictive accuracy and risk-adjusted return, ensuring alignment with trading objectives.
 
-**Cross-Validation and Out-of-Sample Testing:**
+*Cross-Validation and Out-of-Sample Testing:*
 
   - K-fold cross-validation and walk-forward analysis are used to assess model stability and performance across different market conditions and time periods.
   - Out-of-sample testing is conducted on unseen data to evaluate generalizability and guard against overfitting.
 
-**Overfitting Avoidance:**
+*Overfitting Avoidance:*
 
   - Regularization techniques, early stopping, and feature selection are applied to prevent overfitting.
   - Model complexity is balanced with predictive power, and retraining schedules are established to adapt to new data while maintaining robustness.
 
 These practices ensure that the machine learning components of the trading system are both effective and reliable in real-world deployment.
 
-#### 3.5.2 Adaptive Learning and Regime Shifts
+**Adaptive Learning and Regime Shifts**
+
 To maintain robust performance in dynamic and evolving markets, the platform incorporates adaptive learning mechanisms and regime shift detection:
 
-**Market Regime Change Detection:**
+*Market Regime Change Detection:*
 
   - The system monitors key market indicators and model performance metrics to detect potential regime shifts, such as changes in volatility, liquidity, or price patterns.
   - Statistical drift detection methods and performance monitoring are used to identify when the predictive relationships in the data may have changed.
 
-**Adaptive Model Retraining:**
+*Adaptive Model Retraining:*
 
   - Upon detection of significant drift or degradation in model performance, the system can trigger retraining of machine learning models using the most recent data.
   - Retraining frequency is configurable and can be based on elapsed time, number of new data points, or detected regime changes.
 
-**Robustness to Changing Environments:**
+*Robustness to Changing Environments:*
 
   - By continuously updating models and monitoring for regime shifts, the platform remains resilient to non-stationary market conditions and avoids performance decay.
   - This adaptive approach ensures that trading strategies remain effective even as market dynamics evolve.
 
 ### 3.6 Risk Management Strategies
+
 Dynamic risk management continuously monitors volatility, exposure, and performance to adjust position sizes, stop-loss levels, and drawdown limits in real-time. Automated mechanisms halt trading or tighten controls during rapid drawdowns, volatility spikes, or detected anomalies—pausing entries, reducing sizes, or strictening stops until stabilization. This momentum-aware approach preserves capital and reduces extreme event exposure.
 
 ### 3.7 Backtesting and Validation Framework
@@ -259,19 +267,29 @@ The evaluation combines rigorous historical backtesting across 250 trading days 
 
 ### 4.1 Experimental Setup and Results
 
-Experiments employed historical backtesting (150 U.S. equities, $1-$20 range, 250 trading days, January-December 2023) and 30-day live paper trading simulation. Dataset covered diverse regimes: bull (40%), sideways (35%), volatile (25%), focusing on high-activity periods (market open, intraday breakouts, closing). Walk-forward validation (60-day train, 20-day test) with 20% out-of-sample data ensured generalizability. Comprehensive cost modeling: $0.005-0.01/share commissions, SEC fees, slippage (square-root model, 0.15% average), bid-ask spreads (0.08%), and liquidity constraints (5% ADV). Net ROI: 19.2% after all costs vs. 6.8% baseline.
+
+Experiments employed historical backtesting (150 U.S. equities, $1-$20 range, 250 trading days, January-December 2023) and 30-day live paper trading simulation. Dataset covered diverse regimes: bull (40%), sideways (35%), volatile (25%), focusing on high-activity periods (market open, intraday breakouts, closing). Walk-forward validation used 60-day training windows with 20-day testing periods, maintaining 20% out-of-sample data to ensure generalizability.
+
+Comprehensive cost modeling incorporated: (1) $0.005-0.01/share commissions plus SEC fees, (2) realistic slippage using square-root market impact model (0.15% average), (3) bid-ask spreads (0.08% of price), and (4) liquidity constraints limiting trades to 5% of average daily volume (ADV). All reported results reflect post-cost performance unless otherwise specified.
+
+**Primary Results**
+
+Table 3 presents core performance metrics comparing the proposed system against a single-indicator baseline. Gross ROI of 22% translates to 19.2% net ROI after transaction costs, representing a 2.8× improvement over the 6.8% net baseline return.
 
 | Metric                | Proposed System | Baseline (Single Indicator) |
 |-----------------------|----------------|-----------------------------|
 | Prediction Accuracy   | 67%            | 54%                         |
-| ROI                   | 22%            | 8%                          |
+| ROI (Gross)           | 22%            | 8%                          |
+| ROI (Net After Costs) | 19.2%          | 6.8%                        |
 | Sharpe Ratio          | 1.7            | 0.8                         |
 | Max Drawdown          | 7%             | 14%                         |
 | Win Rate              | 61%            | 47%                         |
 | Avg Trade Duration    | 13 min         | 16 min                      |
 | Execution Latency     | 0.7 sec        | 1.1 sec                     |
 
-*Table 3. Backtesting results comparing the proposed momentum trading system across multiple benchmarks and market conditions.*
+*Table 3. Core performance metrics comparing proposed system against single-indicator baseline. Net ROI reflects comprehensive cost modeling including commissions, slippage, and bid-ask spreads.*
+
+Cross-regime analysis (Table 3a) demonstrates consistent outperformance across diverse market conditions, with the proposed system achieving 22% average ROI versus 8% (single indicator), 6% (SPY market), 15% (MTUM ETF), 8% (commercial platform), and 6% (academic baseline). The system maintains superior risk-adjusted returns with 1.7 Sharpe ratio versus 0.6-1.2 for competing approaches, while reducing maximum drawdown to 7% compared to 12-19% across baselines.
 
 **Performance Across Market Regimes:**
 
@@ -287,11 +305,13 @@ Experiments employed historical backtesting (150 U.S. equities, $1-$20 range, 25
 *Commercial Platform: Industry-standard momentum trading software  
 **Academic Baseline: State-of-the-art from recent literature [6,7]
 
-*Table 3a. Performance comparison across different market regimes, demonstrating superior momentum capture in all conditions.*
+*Table 3a. Performance comparison across different market regimes, demonstrating superior momentum capture in all conditions. All ROI values are gross returns.*
 
-Compared to baseline strategies and market benchmarks, the proposed system achieved up to 14% higher returns than single-indicator approaches and 7% outperformance vs. dedicated momentum ETFs, with superior risk-adjusted performance across all tested market conditions.
+Statistical validation confirmed all improvements significant at p < 0.01 (paired t-tests) with 95% confidence intervals: ROI improvement 14.0% ± 2.1%, Sharpe ratio 1.7 ± 0.15, max drawdown 7.0% ± 0.8%. Performance remained stable across 12 walk-forward windows (mean ROI 22.1% ± 1.8% standard deviation), demonstrating robustness to temporal variations.
 
-All improvements statistically significant (paired t-tests, p < 0.01) with 95% CIs: ROI 14% ± 2.1%, Sharpe 1.7 ± 0.15, drawdown 7% ± 0.8%. Performance stable across 12 walk-forward windows. Practical impact: $100k portfolio generated $22k vs. $8k baseline with 50% less capital at risk ($7k vs. $14k max drawdown).
+**Execution Quality:** The system achieved 97.3% fill rate with 0.15% average slippage, 89% of trades executed within 1-second latency, and 94% stop-loss effectiveness preventing losses exceeding 5%. These execution metrics validate the sub-second architecture's practical viability for capturing short-lived momentum opportunities.
+
+**Practical Impact:** For a $100k portfolio over 250 trading days, the proposed system generated $22k gross profit ($19.2k net after costs) versus $8k gross ($6.8k net) baseline—representing 175% improvement in returns while maintaining 50% less capital at risk ($7k maximum drawdown vs. $14k baseline).
 
 ### 4.2 Ablation Studies
 Component contributions assessed by disabling modules:
@@ -306,7 +326,7 @@ Component contributions assessed by disabling modules:
 
 *Table 4. Ablation study results showing the impact of disabling key modules on system performance metrics. Removing any major component reduces accuracy, ROI, or risk-adjusted returns.*
 
-Results show hybrid indicators and dynamic risk management critical for profitability/drawdown reduction, with ML and alternative data providing additional accuracy gains. Bootstrap analysis (1000+ iterations) validates robustness. Momentum pattern recognition: 71% gap-up accuracy, 68% volume surge, 74% news-catalyst, 65% technical breakout (vs. 45-50% baselines). Execution quality: 97.3% fill rate, 0.15% slippage, 89% <1s timing precision, 94% stop-loss effectiveness preventing >5% losses.
+Results show hybrid indicators and dynamic risk management critical for profitability/drawdown reduction, with ML and alternative data providing additional accuracy gains. Bootstrap analysis (1000+ iterations) validates robustness. Momentum pattern recognition: 71% gap-up accuracy, 68% volume surge, 74% news-catalyst, 65% technical breakout (vs. 45-50% baselines).
 
 ### 4.3 Summary
 Key achievements (all p < 0.01): 67% accuracy vs. 54% baseline (+24%), 22% ROI vs. 8% (+175%), 1.7 Sharpe vs. 0.8 (+112%), 7% drawdown vs. 14% (-50%). Outperformed across all regimes: bull (+16% vs. single-indicator), sideways (+12%), volatile (+15%). Superior to commercial platforms (8% ROI), academic baselines (6% ROI), and momentum ETF (MTUM: 15% ROI). Component contributions: ML +9% ROI, risk management -12% drawdown, topgainer filtering +15% ROI, alternative data +7% ROI.
@@ -333,7 +353,7 @@ This work presents the first integrated, event-driven momentum trading platform 
 
 **Impact:** System achieved 175% ROI improvement (22% vs. 8%), 112% Sharpe improvement (1.7 vs. 0.8), 50% drawdown reduction—all p < 0.01 significant. For $100k portfolios: $22k profit vs. $8k baseline over 250 days with 50% less capital at risk, demonstrating substantial performance gains over single-indicator strategies, commercial platforms, and academic baselines.
 
-**Significance:** Results establish that systematic architectural integration—not incremental component improvements—drives substantial trading performance gains, challenging speed-accuracy tradeoff assumptions. The rigorous validation framework (tick-level backtesting, live simulation, ablation studies, cross-regime testing) provides a template for future trading system research. While targeting U.S. equities ($1-$20 range, 19.2% net ROI after costs), the modular methodology extends to other asset classes. Future work includes dynamic slippage modeling, institutional scalability ($1M+ portfolios), transformer-based pattern recognition, and cross-asset momentum frameworks.
+**Significance:** Results establish that systematic architectural integration—not incremental component improvements—drives substantial trading performance gains, challenging speed-accuracy tradeoff assumptions. The rigorous validation framework (tick-level backtesting, live simulation, ablation studies, cross-regime testing) provides a template for future trading system research. While targeting U.S. equities (`$1-$20` range, 19.2% net ROI after costs), the modular methodology extends to other asset classes. Future work includes dynamic slippage modeling, institutional scalability ($1M+ portfolios), transformer-based pattern recognition, and cross-asset momentum frameworks.
 
 ---
 
