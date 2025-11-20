@@ -33,7 +33,7 @@ Early algorithmic trading systems employed rule-based strategies with single tec
 
 ML/AI adoption—supervised learning, reinforcement learning, deep learning—has enhanced price prediction and pattern recognition [7,8]. However, most implementations operate isolated from technical analysis, suffer from "black box" problems, and lack risk management integration [9]. Prior risk management research (dynamic position sizing, stop-losses, drawdown controls) [10] implements these as disconnected modules, yielding Sharpe ratios <1.0 for momentum strategies [11] with delayed responses to adverse movements.
 
-Momentum trading research emphasizes timely stock selection and liquidity filters [12,13], but existing systems face fundamental limitations: (1) end-of-day screening vs. real-time identification, (2) static position sizing ignoring momentum decay, (3) inability to process sub-second data for short-lived opportunities. No prior work achieves sub-second latency with >65% accuracy.
+Momentum trading research emphasizes timely stock selection and liquidity filters [10,11], but existing systems face fundamental limitations: (1) end-of-day screening vs. real-time identification, (2) static position sizing ignoring momentum decay, (3) inability to process sub-second data for short-lived opportunities. No prior work achieves sub-second latency with >65% accuracy.
 
 **Research Gap:** No existing system unifies real-time data validation, adaptive ML, momentum-specific indicators, and integrated risk management in a sub-second architecture. Current systems trade speed for accuracy or vice versa. This work presents the first integrated platform achieving <1s latency, 67% accuracy, and momentum-aware risk controls.
 
@@ -360,9 +360,9 @@ This work presents the first integrated, event-driven momentum trading platform 
 
 ## References
 
-[1] T. Chan, "Algorithmic Trading: Winning Strategies and Their Rationale," Wiley, 2013.
+[1] E. P. Chan, "Algorithmic Trading: Winning Strategies and Their Rationale," Wiley, 2013.
 
-[2] M. H. Bollen, "Technical Analysis in the Foreign Exchange Market," in Handbook of Exchange Rates, Wiley, 2012, pp. 367–388.
+[2] C. J. Neely, P. A. Weller, and J. M. Ulrich, "The adaptive markets hypothesis: Evidence from the foreign exchange market," *Journal of Financial and Quantitative Analysis*, vol. 44, no. 2, pp. 467–488, 2009. [https://doi.org/10.1017/S0022109009090103](https://doi.org/10.1017/S0022109009090103)
 
 [3] J. Murphy, "Technical Analysis of the Financial Markets," New York Institute of Finance, 1999.
 
@@ -376,7 +376,7 @@ This work presents the first integrated, event-driven momentum trading platform 
 
 [8] J. Bollen, H. Mao, and X. Zeng, "Twitter mood predicts the stock market," *Journal of Computational Science*, vol. 2, no. 1, pp. 1–8, 2011. [https://doi.org/10.1016/j.jocs.2010.12.007](https://doi.org/10.1016/j.jocs.2010.12.007)
 
-[9] L. Kritzman and S. Page, "The Hierarchy of Investment Choice," *Financial Analysts Journal*, vol. 59, no. 4, pp. 15–23, 2003. [https://doi.org/10.2469/faj.v59.n4.2546](https://doi.org/10.2469/faj.v59.n4.2546)
+[9] C. Dunis, J. Laws, and P. Naim, "Applied Quantitative Methods for Trading and Investment," Wiley, 2003.
 
 [10] N. Jegadeesh and S. Titman, "Returns to Buying Winners and Selling Losers: Implications for Stock Market Efficiency," *Journal of Finance*, vol. 48, no. 1, pp. 65–91, 1993. [https://doi.org/10.1111/j.1540-6261.1993.tb04702.x](https://doi.org/10.1111/j.1540-6261.1993.tb04702.x)
 
@@ -386,7 +386,7 @@ This work presents the first integrated, event-driven momentum trading platform 
 
 [13] D. Silver, A. Huang, C. J. Maddison, et al., "Mastering the game of Go with deep neural networks and tree search," *Nature*, vol. 529, pp. 484–489, 2016. [https://doi.org/10.1038/nature16961](https://doi.org/10.1038/nature16961)
 
-[14] M. Kearns and Y. Nevmyvaka, "Machine learning for market microstructure and high frequency trading," in *High Frequency Trading: New Realities for Traders, Markets and Regulators*, Risk Books, 2013.
+[14] Z. Zhang and S. Zohren, "Multi-Horizon Forecasting for Limit Order Books: Novel Deep Learning Approaches and Hardware Acceleration using Intelligent Processing Units," *arXiv preprint arXiv:2105.10430*, 2021. [https://doi.org/10.48550/arXiv.2105.10430](https://doi.org/10.48550/arXiv.2105.10430)
 
 [15] T. Chen and C. Guestrin, "XGBoost: A scalable tree boosting system," in *Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining*, pp. 785–794, 2016. [https://doi.org/10.1145/2939672.2939785](https://doi.org/10.1145/2939672.2939785)
 
