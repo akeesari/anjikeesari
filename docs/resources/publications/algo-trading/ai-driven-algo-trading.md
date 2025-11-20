@@ -31,7 +31,7 @@ Organization: Section 2—related work, Section 3—methodology, Section 4—exp
 ## 2. Related Work
 Early algorithmic trading systems employed rule-based strategies with single technical indicators (moving averages, RSI, MACD) [1,2], suffering from <55% accuracy, inability to adapt to regime changes, and >5s latency unsuitable for momentum capture [3]. Recent hybrid methods combining multiple indicators (VWAP, MACD, RSI) improved accuracy to 60-62% [4-6] but remain rule-based without adaptive weighting, causing suboptimal performance during regime shifts.
 
-ML/AI adoption—supervised learning, reinforcement learning, deep learning—has enhanced price prediction and pattern recognition [7,8]. However, most implementations operate isolated from technical analysis, suffer from "black box" problems, and lack risk management integration [9]. Prior risk management research (dynamic position sizing, stop-losses, drawdown controls) [10] implements these as disconnected modules, yielding Sharpe ratios <1.0 for momentum strategies [11] with delayed responses to adverse movements.
+ML/AI adoption—supervised learning, reinforcement learning, deep learning—has enhanced price prediction and pattern recognition [7,8,15]. Deep learning approaches have demonstrated effectiveness in capturing universal features of price formation [15] and market microstructure dynamics [13]. However, most implementations operate isolated from technical analysis, suffer from "black box" problems, and lack risk management integration [9]. Prior risk management research (dynamic position sizing, stop-losses, drawdown controls) [10] implements these as disconnected modules, yielding Sharpe ratios <1.0 for momentum strategies [11] with delayed responses to adverse movements.
 
 Momentum trading research emphasizes timely stock selection and liquidity filters [10,11], but existing systems face fundamental limitations: (1) end-of-day screening vs. real-time identification, (2) static position sizing ignoring momentum decay, (3) inability to process sub-second data for short-lived opportunities. No prior work achieves sub-second latency with >65% accuracy.
 
@@ -94,7 +94,7 @@ The following six criteria form the foundational pillars of the system's stock s
 
 5. **Liquidity and volatility measures** (e.g., minimum bid-ask spread ≤ 1% of price, average true range (ATR) ≥ 2% of price) — Ensures efficient execution with minimal slippage while confirming adequate intraday price movement for profit capture, balancing execution quality with momentum opportunity.
 
-6. **News sentiment** (e.g., positive sentiment score ≥ 0.7 on a normalized scale, or significant news event detected within the last 24 hours) — Incorporates fundamental catalysts driving momentum beyond pure technical signals, leveraging alternative data to identify event-driven opportunities with stronger directional conviction.
+6. **News sentiment** (e.g., positive sentiment score ≥ 0.7 on a normalized scale, or significant news event detected within the last 24 hours) — Incorporates fundamental catalysts driving momentum beyond pure technical signals, leveraging alternative data and sentiment extraction techniques [17] to identify event-driven opportunities with stronger directional conviction.
 
 **Empirical Validation of the Six Pillars:**
 
@@ -166,8 +166,8 @@ The system employs five momentum-optimized indicators: (1) multi-timeframe EMAs 
 | Topgainer Filter       | Gap % Threshold        | >10%                |
 | ML Model (RandomForest)| n_estimators           | 100–500             |
 | ML Model (RandomForest)| max_depth              | 3–10                |
-| ML Model (XGBoost)     | learning_rate          | 0.01–0.1            |
-| ML Model (XGBoost)     | n_estimators           | 100–300             |
+| ML Model (XGBoost) [14]| learning_rate          | 0.01–0.1            |
+| ML Model (XGBoost) [14]| n_estimators           | 100–300             |
 | ML Model (NN)          | Hidden Layers          | 2–3                 |
 | ML Model (NN)          | Neurons/Layer          | 32–128              |
 | ML Model (NN)          | Activation             | ReLU                |
@@ -178,11 +178,11 @@ The system employs five momentum-optimized indicators: (1) multi-timeframe EMAs 
 ---
 
 ### 3.5 Machine Learning Models
-Supervised machine learning models are integrated to provide predictive analytics and adaptive signal refinement. Key aspects of the machine learning integration include:
+Supervised machine learning models are integrated to provide predictive analytics and adaptive signal refinement [12,16]. Deep learning techniques have demonstrated superior performance in financial pattern recognition and price prediction tasks [12,15], while systematic machine learning approaches adapted to financial markets' unique characteristics enable robust strategy development [16]. Key aspects of the machine learning integration include:
 
 **Training and Inference Pipelines:**
 
-  - The system includes automated pipelines for training, validating, and deploying supervised learning models using historical market data and engineered features.
+  - The system includes automated pipelines for training, validating, and deploying supervised learning models (including ensemble methods [14] and neural networks [12]) using historical market data and engineered features.
   - During live operation, the inference pipeline processes real-time data to generate probability scores or classifications, which are then fused with indicator-based signals for trade decision-making.
 
 **Feature Engineering Combining Technical and Alternative Data:**
@@ -384,20 +384,12 @@ This work presents the first integrated, event-driven momentum trading platform 
 
 [12] Y. Lecun, Y. Bengio, and G. Hinton, "Deep learning," *Nature*, vol. 521, pp. 436–444, 2015. [https://doi.org/10.1038/nature14539](https://doi.org/10.1038/nature14539)
 
-[13] D. Silver, A. Huang, C. J. Maddison, et al., "Mastering the game of Go with deep neural networks and tree search," *Nature*, vol. 529, pp. 484–489, 2016. [https://doi.org/10.1038/nature16961](https://doi.org/10.1038/nature16961)
+[13] Z. Zhang and S. Zohren, "Multi-Horizon Forecasting for Limit Order Books: Novel Deep Learning Approaches and Hardware Acceleration using Intelligent Processing Units," *arXiv preprint arXiv:2105.10430*, 2021. [https://doi.org/10.48550/arXiv.2105.10430](https://doi.org/10.48550/arXiv.2105.10430)
 
-[14] Z. Zhang and S. Zohren, "Multi-Horizon Forecasting for Limit Order Books: Novel Deep Learning Approaches and Hardware Acceleration using Intelligent Processing Units," *arXiv preprint arXiv:2105.10430*, 2021. [https://doi.org/10.48550/arXiv.2105.10430](https://doi.org/10.48550/arXiv.2105.10430)
+[14] T. Chen and C. Guestrin, "XGBoost: A scalable tree boosting system," in *Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining*, pp. 785–794, 2016. [https://doi.org/10.1145/2939672.2939785](https://doi.org/10.1145/2939672.2939785)
 
-[15] T. Chen and C. Guestrin, "XGBoost: A scalable tree boosting system," in *Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining*, pp. 785–794, 2016. [https://doi.org/10.1145/2939672.2939785](https://doi.org/10.1145/2939672.2939785)
+[15] J. Sirignano and R. Cont, "Universal features of price formation in financial markets: perspectives from deep learning," *Quantitative Finance*, vol. 19, no. 9, pp. 1449–1459, 2019. [https://doi.org/10.1080/14697688.2019.1571683](https://doi.org/10.1080/14697688.2019.1571683)
 
-[16] J. Sirignano and R. Cont, "Universal features of price formation in financial markets: perspectives from deep learning," *Quantitative Finance*, vol. 19, no. 9, pp. 1449–1459, 2019. [https://doi.org/10.1080/14697688.2019.1571683](https://doi.org/10.1080/14697688.2019.1571683)
+[16] A. Lopez de Prado, "Advances in Financial Machine Learning," Wiley, 2018.
 
-[17] S. Hochreiter and J. Schmidhuber, "Long short-term memory," *Neural Computation*, vol. 9, no. 8, pp. 1735–1780, 1997. [https://doi.org/10.1162/neco.1997.9.8.1735](https://doi.org/10.1162/neco.1997.9.8.1735)
-
-[18] A. Lopez de Prado, "Advances in Financial Machine Learning," Wiley, 2018.
-
-[19] J. Kelly, "A New Interpretation of Information Rate," *Bell System Technical Journal*, vol. 35, no. 4, pp. 917–926, 1956. [https://doi.org/10.1002/j.1538-7305.1956.tb03809.x](https://doi.org/10.1002/j.1538-7305.1956.tb03809.x)
-
-[20] M. F. Dixon, I. Halperin, and P. Bilokon, "Machine Learning in Finance: From Theory to Practice," Springer, 2020. [https://doi.org/10.1007/978-3-030-41068-1](https://doi.org/10.1007/978-3-030-41068-1)
-
-[21] S. R. Das and M. Y. Chen, "Yahoo! for Amazon: Sentiment extraction from small talk on the web," *Management Science*, vol. 53, no. 9, pp. 1375–1388, 2007. [https://doi.org/10.1287/mnsc.1070.0704](https://doi.org/10.1287/mnsc.1070.0704)
+[17] S. R. Das and M. Y. Chen, "Yahoo! for Amazon: Sentiment extraction from small talk on the web," *Management Science*, vol. 53, no. 9, pp. 1375–1388, 2007. [https://doi.org/10.1287/mnsc.1070.0704](https://doi.org/10.1287/mnsc.1070.0704)
