@@ -47,10 +47,10 @@ az login
 az account list --output table
 
 # Select the subscription
-az account set -s "anji.keesari"
+az account set -s "<subscription-name>"
 
 # Connect to Azure Kubernetes Service Cluster with User Role
-az aks get-credentials -g "rg-rgname-dev" -n "aks-clustername-dev"
+az aks get-credentials -g "<resource-group>" -n "<cluster-name>"
 
 # Verify the cluster info
 kubectl cluster-info
@@ -472,9 +472,9 @@ helm env
 output
 ```
 HELM_BIN="C:\ProgramData\chocolatey\lib\kubernetes-helm\tools\windows-amd64\helm.exe"
-HELM_CACHE_HOME="C:\Users\ANJI~1.KEE\AppData\Local\Temp\helm"
-HELM_CONFIG_HOME="C:\Users\anji.keesari\AppData\Roaming\helm"
-HELM_DATA_HOME="C:\Users\anji.keesari\AppData\Roaming\helm"
+HELM_CACHE_HOME="C:\Users\<username>\AppData\Local\Temp\helm"
+HELM_CONFIG_HOME="C:\Users\<username>\AppData\Roaming\helm"
+HELM_DATA_HOME="C:\Users\<username>\AppData\Roaming\helm"
 HELM_DEBUG="false"
 HELM_KUBEAPISERVER=""
 HELM_KUBEASGROUPS=""
@@ -484,10 +484,10 @@ HELM_KUBECONTEXT=""
 HELM_KUBETOKEN=""
 HELM_MAX_HISTORY="10"
 HELM_NAMESPACE="default"
-HELM_PLUGINS="C:\Users\anji.keesari\AppData\Roaming\helm\plugins"
-HELM_REGISTRY_CONFIG="C:\Users\anji.keesari\AppData\Roaming\helm\registry\config.json"
-HELM_REPOSITORY_CACHE="C:\Users\ANJI~1.KEE\AppData\Local\Temp\helm\repository"
-HELM_REPOSITORY_CONFIG="C:\Users\anji.keesari\AppData\Roaming\helm\repositories.yaml"
+HELM_PLUGINS="C:\Users\<username>\AppData\Roaming\helm\plugins"
+HELM_REGISTRY_CONFIG="C:\Users\<username>\AppData\Roaming\helm\registry\config.json"
+HELM_REPOSITORY_CACHE="C:\Users\<username>\AppData\Local\Temp\helm\repository"
+HELM_REPOSITORY_CONFIG="C:\Users\<username>\AppData\Roaming\helm\repositories.yaml"
 ```
 
 ## Commands Summary

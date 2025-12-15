@@ -22,8 +22,8 @@ choco install git
 To begin, it's important to configure your Git settings, associating your name and email with your commits. Use the following commands to set your name and email respectively:
 
 ``` sh
-git config --global user.name "anji.keesari"
-git config --global user.email "anjkeesari@gmail.com"
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
 ```
 ## Caching credentials:
 
@@ -89,9 +89,9 @@ git commit -am "(message)"      # Adds all changes to staging and commits them w
 To view the commit history of a repository, use the `git log` command. It provides you with an overview of past commits and their respective details. also, you can use `git log -p` to see the commit history along with the changes made to each file.
 
 ``` sh
-#  shows the commit history for the current repository:
+# shows the commit history for the current repository:
 git log
-# commit's history including all files and their changes:
+# commits' history including all files and their changes:
 git log -p
 
 press q any time to quit
@@ -124,12 +124,16 @@ git revert <commit-id>
 Replace <commit-id> with the ID of the commit you want to undo.
 
 If you have already committed changes and want to undo the most recent commit, you have a few options depending on your desired outcome:
+
 - Undo the commit and keep the changes as unstaged modifications:
+
 ```sh
 git reset HEAD^
 ```
-Undo the commit and completely discard the changes:
-```
+
+- Undo the commit and completely discard the changes:
+
+```sh
 git reset --hard HEAD^
 ```
 
@@ -192,6 +196,21 @@ git checkout <branch-name>
 # Switched to branch 'aspnet-api'
 git checkout aspnet-api
 ```
+
+## Git switch (Modern alternative)
+
+Starting from Git 2.23, you can use the `git switch` command as a clearer alternative to `git checkout` for switching branches.
+
+```sh
+git switch <branch-name>
+
+# Switch to branch 'aspnet-api'
+git switch aspnet-api
+
+# Create and switch to a new branch
+git switch -c <new-branch-name>
+```
+
 ## List branches
 
 It will show a list of all branches and mark the current branch with an asterisk and highlight it in green.
@@ -218,6 +237,29 @@ How to get more info about a remote repo in Git:
 ``` sh
 git remote show origin
 ```
+
+## Add a remote repository
+
+To add a new remote repository to your local Git repository:
+
+```sh
+git remote add <remote-name> <remote-url>
+
+# Example: Add origin remote
+git remote add origin https://github.com/username/repository.git
+```
+
+## Remove a remote repository
+
+To remove a remote repository from your local Git repository:
+
+```sh
+git remote remove <remote-name>
+
+# Example: Remove origin remote
+git remote remove origin
+```
+
 ## Merging branches
 
 In Git, merging allows you to combine the changes from one branch into another. To merge a branch into another branch, you can use the git merge command followed by the name of the branch you want to merge. Here's an example:
@@ -235,7 +277,7 @@ After performing the merge, it's a good practice to check the status of your rep
 
 ```sh
 git status
-git logs
+git log
 ```
 
 ## Delete branch
@@ -262,7 +304,7 @@ To create a new branch in Git using a specific commit hash, you can use the git 
 
 
 ``` sh
-git branch branch_name <commit-hash>
+git branch <branch-name> <commit-hash>
 # Step 1: Create the branch from the commit hash
 
 git branch new_branch 07615d50afde24d21e2180b90d3a0a58ec131980
@@ -271,7 +313,7 @@ git branch new_branch 07615d50afde24d21e2180b90d3a0a58ec131980
 
 # Step 2: Switch to the new branch & commit
 
-git commit -am “(message)” 
+git commit -am "(message)" 
 ```
 
 ## Rollback an old commit
@@ -279,7 +321,7 @@ git commit -am “(message)”
 You can revert an old commit using its commit id. 
 
 ``` sh
-git revert comit_id
+git revert <commit_id>
 ```
 ## How to resolve merge conflicts using git commands
 
@@ -333,14 +375,19 @@ Running this command will show you the stash ID, along with a description that i
 git stash list
 ```
 - Git stash pop:
-his command is used to apply the changes from the top of the stash stack and remove that stash from the stack.
+
+This command is used to apply the changes from the top of the stash stack and remove that stash from the stack.
+
 ```sh
-git stash pop:
+git stash pop
 ```
+
 - Git stash drop: 
+
 This command allows you to discard a stash from the stash stack. It permanently removes a stash and its changes, freeing up space in the stack.
+
 ```sh
-git stash drop: 
+git stash drop
 ```
 <!-- 
 ## How to set global git config settings?

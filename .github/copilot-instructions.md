@@ -53,6 +53,7 @@ Get-Process -Id (Get-NetTCPConnection -LocalPort 8000).OwningProcess | Stop-Proc
 - Use `python -m pip` and `python -m mkdocs` commands (not direct `pip` or `mkdocs`)
 - Python Scripts folder may not be in PATH by default
 - Ensure "Add Python to PATH" is checked during Python installation
+- Quick reference commands available in `helper.ps1` at project root
 
 ### Build & Deployment
 - **CI/CD**: GitHub Actions workflow at `.github/workflows/ci.yml` automatically deploys to GitHub Pages on push to `main`
@@ -69,6 +70,16 @@ Get-Process -Id (Get-NetTCPConnection -LocalPort 8000).OwningProcess | Stop-Proc
 3. Include frontmatter and standard structure (see `articles/1-article-template.txt`)
 4. Images go in `docs/articles/images/<topic-folder>/`
 
+**Article Structure Template** (from `1-article-template.txt`):
+- Introduction - Overview of the topic and problem statement
+- Technical Scenario - Real-world context and use cases
+- Objective - Clear list of goals and learning outcomes
+- Prerequisites - Required setup and knowledge
+- Key Concepts (optional) - Fundamental concepts explained with examples
+- Implementation Details - Step-by-step instructions
+- Conclusion - Summary and next steps
+- Reference - External links and resources
+
 ### Code Block Formatting
 Material for MkDocs uses PyMdown Extensions for enhanced code blocks:
 
@@ -84,7 +95,21 @@ def example():
 code here
 ```
 
-# Supported languages: python, c#, tf (Terraform), bash, yaml, powershell
+# Supported languages: python, c#, tf (Terraform), bash, yaml, powershell, javascript, json
+```
+
+### Admonitions (Callout Boxes)
+Use admonitions for notes, warnings, and tips:
+
+```markdown
+!!! note
+    This is a note callout
+
+!!! warning
+    This is a warning callout
+
+!!! tip
+    This is a tip callout
 ```
 
 ### Cheat Sheets Pattern
@@ -122,6 +147,8 @@ This pattern adds border styling and enables lightbox viewing.
 3. **Custom 404 and home pages** in `docs/overrides/` - don't modify generated HTML directly
 4. **Google Analytics** integrated via `extra.analytics` in mkdocs.yml (property: G-LJDPP0N88G)
 5. **Social links** configured in `extra.social` - update there for footer changes
+6. **Helper script** - `helper.ps1` at project root contains quick-reference commands for common tasks
+7. **Dependencies** - Only 4 required packages in `requirements.txt`: mkdocs-material, mkdocs-glightbox, mkdocs-pdf-export-plugin, mkpdfs-mkdocs
 
 ## Common Tasks
 

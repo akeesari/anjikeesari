@@ -1,9 +1,8 @@
-
 # Kubectl Commands
 
 ## Introduction
 
-In this article, I am going to present a comprehensive cheat sheet of commonly used **Kubectl** commands with examples.
+This is a comprehensive cheat sheet of commonly used **Kubectl** commands with examples.
 
 Kubectl is the command line configuration tool for Kubernetes that communicates with a Kubernetes API server. Using Kubectl allows you to create, inspect, update, and delete Kubernetes objects.
 
@@ -11,7 +10,7 @@ Kubectl is the command line configuration tool for Kubernetes that communicates 
 
 Use the following commands to install kubectl on Linux, macOS, and Windows.
 
-```sh
+```bash
 # Linux
 sudo apt-get update
 sudo apt-get install -y kubectl
@@ -22,17 +21,18 @@ brew install kubectl
 # Windows OS (using Choco)
 choco install kubernetes-cli
 
-#  verify the installation by running 
+# Verify the installation by running
 kubectl version
 ```
 
 <!-- For more information [window](./software/windows/#install-kubernetes-cli-or-kubectl-cli) -->
 
-## Connection to Kubernetes cluster
-We need to establish a connection to a Kubernetes cluster before we can utilize the power of kubectl commands. In this article, I will demonstrate the process using Azure Kubernetes Service (AKS), but keep in mind that you can connect to any Kubernetes cluster like Amazon Elastic Kubernetes Service (EKS), Google Kubernetes Engine (GKE), or any other Kubernetes platform to execute kubectl commands."
+## Connection to Kubernetes Cluster
 
-```sh
-# login into azure first
+We need to establish a connection to a Kubernetes cluster before we can utilize the power of kubectl commands. In this article, I will demonstrate the process using Azure Kubernetes Service (AKS), but keep in mind that you can connect to any Kubernetes cluster like Amazon Elastic Kubernetes Service (EKS), Google Kubernetes Engine (GKE), or any other Kubernetes platform to execute kubectl commands.
+
+```bash
+# Log in to Azure first
 az login
 
 az account list
@@ -40,7 +40,7 @@ az account list
 az account list --output table
 
 # Select the subscription
-az account set -s "anji.keesari"
+az account set -s "<subscription-name>"
 
 # Display information about the currently logged-in Azure subscription
 az account show
@@ -50,28 +50,29 @@ az account show --output table
 # Connect to Cluster
 
 # Connect to Azure Kubernetes Service Cluster with User Role
-az aks get-credentials -g "rg-rgname-dev" -n "aks-clustername-dev"
+az aks get-credentials -g "<resource-group>" -n "<cluster-name>"
 
 # Connect to Azure Kubernetes Service Cluster with Admin Role
-az aks get-credentials -g "rg-rgname-dev" -n "aks-clustername-dev" --admin
+az aks get-credentials -g "<resource-group>" -n "<cluster-name>" --admin
 
 # Display detailed information about an AKS cluster
-az aks show -g "rg-rgname-dev" -n "aks-clustername-dev"
+az aks show -g "<resource-group>" -n "<cluster-name>"
 ```
 <!-- more info <https://learn.microsoft.com/en-us/azure/aks/control-kubeconfig-access#available-cluster-roles-permissions> -->
 
 ## Cluster Information
 
-This command provides an overview of the cluster information, including the cluster endpoint, certificate authority, and other relevant details. 
+This command provides an overview of the cluster information, including the cluster endpoint, certificate authority, and other relevant details.
 
-``` sh
+```bash
 kubectl cluster-info
 ```
+
 ## Version
 
 Retrieves the Kubernetes version information for the client, server, and other components.
 
-``` sh
+```bash
 kubectl version
 kubectl version --short
 kubectl version --short --client
@@ -79,9 +80,9 @@ kubectl version --short --client
 
 ## kubectl --help
 
- This command provides a comprehensive overview of the kubectl command-line tool's usage, available commands, and options. It displays a detailed help message that guides you through the various functionalities and usage patterns of kubectl
+This command provides a comprehensive overview of the kubectl command-line tool's usage, available commands, and options. It displays a detailed help message that guides you through the various functionalities and usage patterns of kubectl.
 
-``` sh
+```bash
 kubectl --help
 kubectl logs --help
 kubectl exec --help
@@ -91,31 +92,36 @@ kubectl port-forward --help
 
 ## Set an Alias for kubectl
 
-Set an alias for kubectl in Powershell
+Set an alias for kubectl in PowerShell:
 
-```sh
-# set Alias
+```powershell
+# Set Alias
 New-Alias -Name 'k' -Value 'kubectl'
 
 # Verify
 k get pods -n sample
 ```
-Set an alias for kubectl in Bash
 
-```sh
+Set an alias for kubectl in Bash:
+
+```bash
+# Set Alias
 alias k=kubectl
+
+# Verify
+k get pods -n sample
 ```
 
-## Context and configuration
+## Context and Configuration
 
 Kubernetes context and configuration are crucial concepts for managing multiple clusters and switching between them using kubectl.
 
-**Configuration file**
+**Configuration file:**
 
 Kubectl uses a configuration file, usually located at `~/.kube/config` by default, to store cluster information, authentication details, and other settings.
 The configuration file is written in YAML format and can contain multiple contexts, each representing a different cluster.
 
-``` sh
+```bash
 # Show Merged kubeconfig settings.
 kubectl config view
 
@@ -142,11 +148,11 @@ kubectl config delete-context my-cluster-name
 ```
 
 
-## Listing resources
+## Listing Resources
 
 Use the `kubectl get` command followed by the resource type you want to list.
 
-```sh
+```bash
 # List all pods in the default namespace:
 kubectl get pods
 
@@ -196,8 +202,8 @@ kubectl get ingress -n sample
 
 Create a resource such as a service, deployment, job, or namespace using the `kubectl create` command.
 
-```sh
-# create a new namespace
+```bash
+# Create a new namespace
 kubectl create namespace sample
 
 # Create a Deployment
@@ -207,15 +213,13 @@ kubectl create deployment nginx-deployment  --image=nginx -n sample
 kubectl create service clusterip my-service --tcp=80:8080
 
 # Create a Secret from literal values:
-kubectl create secret generic my-secret --from-literal=username=admin 
---from-literal=password=pass123
+kubectl create secret generic my-secret --from-literal=username=admin --from-literal=password=pass123
 
 # Create a PersistentVolume
 kubectl create persistentvolume my-pv --capacity=1Gi --host-path=/data
 
 # Create a PersistentVolumeClaim
-kubectl create persistentvolumeclaim my-pvc --namespace=my-namespace 
---storageClassName=standard --request=1Gi
+kubectl create persistentvolumeclaim my-pvc --namespace=my-namespace --storageClassName=standard --request=1Gi
 
 # Create a resource from a YAML file
 kubectl create -f my-filename.yaml
@@ -225,11 +229,11 @@ kubectl apply -f my-filename.yaml
 
 ## Applying and Updating a Resource
 
-```sh
+```bash
 # Create a resource from a YAML file
 kubectl apply -f my-filename.yaml
 
- # create from multiple files
+# Create from multiple files
 kubectl apply -f ./file1.yaml -f ./file1.yaml 
 
 # create resource(s) in all manifest files in folder
@@ -238,11 +242,11 @@ kubectl apply -f ./folder1
 
 ## Creating vs Apply
 
-`kubectl create` is used for creating new resources, while `kubectl apply` is used for creating and updating resources. kubectl apply provides a more flexible and incremental approach to managing resource configurations.
+`kubectl create` is used for creating new resources, while `kubectl apply` is used for creating and updating resources. `kubectl apply` provides a more flexible and incremental approach to managing resource configurations.
 
-## Viewing and finding resources
+## Viewing and Finding Resources
 
-``` sh
+```bash
 # List all pods in the current namespace, with more details
 kubectl get pods -o wide
 # Get a pod's YAML
@@ -252,8 +256,7 @@ kubectl get pod my-pod -o yaml
 kubectl get services -n my-namespace --sort-by=.metadata.name
 
 # List pods Sorted by Restart Count
-kubectl get pods -n my-namespace 
---sort-by='.status.containerStatuses[0].restartCount'
+kubectl get pods -n my-namespace --sort-by='.status.containerStatuses[0].restartCount'
 
 # List PersistentVolumes sorted by capacity
 kubectl get pv -n my-namespace --sort-by=.spec.capacity.storage
@@ -269,9 +272,9 @@ kubectl get events -n my-namespace --sort-by=.metadata.creationTimestamp
 kubectl events -n my-namespace --types=Warning
 ```
 
-## Updating resources 
+## Updating Resources
 
-``` sh
+```bash
 # Rolling update "www" containers of "frontend" deployment, updating the image
 kubectl set image deployment/frontend www=image:v2               
 # Check the history of deployments including the revision
@@ -286,9 +289,9 @@ kubectl rollout status -w deployment/frontend
 kubectl rollout restart deployment/frontend                      
 ```
 
-## Patching resources
+## Patching Resources
 
-``` sh
+```bash
 # Update a container's image; spec.containers[*].name is required because it's a merge key
 kubectl patch pod my-pod -n my-namespace -p '{"spec":{"containers":[{"name":"kubernetes-serve-hostname","image":"new image"}]}}'
 
@@ -298,18 +301,19 @@ kubectl patch pod my-pod -n my-namespace --type='json' -p='[{"op": "replace", "p
 # Disable a deployment livenessProbe using a json patch with positional arrays
 kubectl patch deployment my-deployment -n my-namespace --type json   -p='[{"op": "remove", "path": "/spec/template/spec/containers/0/livenessProbe"}]'
 
-``` 
-## Editing resources 
+```
 
-``` sh
+## Editing Resources
+
+```bash
 # Edit the service named my-service
 kubectl edit svc/my-service -n my-namespace
 ```
 
-## Scaling resources 
+## Scaling Resources
 
-``` sh
- # Scale a replicaset named 'my-rs' to 3
+```bash
+# Scale a replicaset named 'my-rs' to 3
 kubectl scale --replicas=2 rs/my-rs -n my-namespace
 
 # Scale a resource specified in "my-file.yaml" to 3
@@ -324,9 +328,9 @@ kubectl get deployments -n sample # use this for verify
 kubectl scale --replicas=5 rc/my-rc1 rc/my-rc1 rc/my-rc1                   
 ```
 
-## Deleting resources
+## Deleting Resources
 
-``` sh
+```bash
 # Delete pods and services with same names "aspnet-api" and "aspnet-api"
 kubectl delete pod,service aspnet-api aspnet-api -n sample
 
@@ -345,15 +349,21 @@ kubectl -n my-namespace delete pod,svc --all
 
 
 ## kubectl logs
-``` sh
+
+```bash
 kubectl logs pod/my-pod -n my-namespace
 kubectl logs svc/my-svc -n my-namespace
 
 kubectl logs pods/sample-server-f486b9bd7-wtw9f -n sample
-# fetches the logs generated by the pod in the last 2 minutes.
-kubectl logs --since=2m pods/sample-server-f486b9bd7-wtw9f -n sample
 
-# logs from all the pods
+# Fetches the logs generated by the pod in the last 2 minutes
+kubectl logs --since=2m pods/sample-server-f486b9bd7-wtw9f -n sample
+```
+
+PowerShell examples:
+
+```powershell
+# Logs from all the pods
 kubectl get pods -n sample --no-headers=true | ForEach-Object { kubectl logs $_.Split()[0] -n sample }
 
 ## logs from all the pods since 5 hours
@@ -363,8 +373,9 @@ kubectl get pods -n sample --no-headers=true | ForEach-Object { kubectl logs --s
 kubectl get pods -n sample --no-headers=true | ForEach-Object { kubectl logs --since=5m $_.Split()[0] -n sample } | Select-String "exception"
 ```
 
-## Port-forward
-``` sh
+## Port-Forward
+
+```bash
 kubectl port-forward my-pod 5000:6000 
 kubectl port-forward service/aspnet-api 80:80 -n sample
 kubectl port-forward svc/pgadmin4 -n pgadmin4 80:80
@@ -376,9 +387,9 @@ kubectl port-forward svc/my-service 5000
 kubectl port-forward svc/my-service 5000:my-service-port  
 ```
 
-## Interacting with running Pods
+## Interacting with Running Pods
 
-``` sh
+```bash
 
 kubectl exec -n my-namespace -it my-pod -- bash
 kubectl exec -n my-namespace -it my-pod -- ls /
@@ -394,27 +405,27 @@ kubectl exec -n my-namespace my-pod -- printenv
 kubectl describe pod/nginx-deployment-9456bbbf9-ngv7f -n sample
 ```
 
-## Show metrics
+## Show Metrics
 
-```sh
+```bash
 # Show node metrics:
 kubectl top nodes
 
 # Show pod metrics:
 kubectl top pods
 
-#  --sort-by flag with the memory 
+# --sort-by flag with memory 
 kubectl top nodes --sort-by=memory 
 kubectl top pods --sort-by=memory -n sample
 ```
 
 
 
-## Formatting output 
+## Formatting Output
 
 You can format the output of commands to customize the information displayed.
 
-```sh
+```bash
 kubectl get pods -n sample -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName
 
 # all pods
@@ -447,11 +458,13 @@ kubectl get pods -n sample --output=custom-columns="NAME:.metadata.name,IMAGE:.s
 # This will get all container with the namespace in a pretty format:
 kubectl get pods --all-namespaces -o=custom-columns=NameSpace:.metadata.namespace,NAME:.metadata.name,CONTAINERS:.spec.containers[*].name
 
-# kubectl describe pod aspnet-api-6699db6d4b-66d7m -n sample  | grep "Container ID"
-# or
-kubectl describe pod aspnet-api-6699db6d4b-66d7m -n sample  | Select-String "Container ID"
+# Using grep (Linux/macOS)
+# kubectl describe pod aspnet-api-6699db6d4b-66d7m -n sample | grep "Container ID"
 
-# all pods in a namespace
+# Using PowerShell (Windows)
+kubectl describe pod aspnet-api-6699db6d4b-66d7m -n sample | Select-String "Container ID"
+
+# All pods in a namespace
 kubectl describe pods -n sample  | Select-String "name|Container ID"
 
 # display NAME and CONTAINERID
@@ -463,12 +476,11 @@ kubectl logs azure-vote-back-6dbbb4bccc-dnwmg -n sample
 ```
 
 
-## Command invoke
+## Command Invoke
 
-Use command invoke to access a private Azure Kubernetes Service (AKS) cluster, reference - <https://learn.microsoft.com/en-us/azure/aks/command-invoke>
+Use command invoke to access a private Azure Kubernetes Service (AKS) cluster. Reference: [AKS Command Invoke](https://learn.microsoft.com/en-us/azure/aks/command-invoke)
 
-
-``` sh
+```bash
   az aks command invoke --resource-group 'rg-rgname-dev' --name 'aks-aksname-dev' --command "kubectl get namespaces"
   az aks command invoke --resource-group 'rg-rgname-dev' --name 'aks-aksname-dev' --command "kubectl create namespace test"
 ``` 
@@ -477,17 +489,19 @@ Use command invoke to access a private Azure Kubernetes Service (AKS) cluster, r
 
 The `kubectl api-resources` command allows you to view the available resource types in your Kubernetes cluster. It provides a list of the supported resource types along with their **short names**, API group, and whether they are namespaced or not.
 
-```sh
+```bash
 # All namespaced resources
 kubectl api-resources --namespaced=true
 kubectl api-resources -o name
 kubectl api-resources -o wide
-kubectl api-resources --verbs=list,get 
+kubectl api-resources --verbs=list,get
 kubectl api-resources | more
-# use ctlr + c to exit
+# Use Ctrl + C to exit
 ```
 
-```sh
+Output:
+
+```bash
 NAME                               SHORTNAMES               APIVERSION                             NAMESPACED   KIND
 bindings                                                    v1                                     true         Binding
 componentstatuses                  cs                       v1                                     false        ComponentStatus
@@ -588,9 +602,9 @@ constrainttemplates                constraints              templates.gatekeeper
 ```
 
 
-## Help summary
+## Help Summary
 
-``` sh
+```bash
 Basic Commands (Beginner):
   create          Create a resource from a file or from stdin
   expose          Take a replication controller, service, deployment or pod and expose it as a new Kubernetes service
@@ -653,14 +667,6 @@ Other Commands:
 ```
 
 ## References
-- <https://kubernetes.io/docs/reference/kubectl/cheatsheet/>
-<!-- - <https://youtu.be/feLpGydQVio> - video
-- <https://www.youtube.com/watch?v=Si6og3Wa2Hg> - Visual Studio Code and Kubernetes plugin for beginners
-- https://www.bluematador.com/learn/kubectl-cheatsheet
-- https://spacelift.io/blog/kubernetes-cheat-sheet
-- https://gist.github.com/pydevops/0efd399befd960b5eb18d40adb68ef83
-- https://kubernetes.io/docs/reference/kubectl/cheatsheet/
-- https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest - Manage Azure Kubernetes Services. commands
-- https://www.bluematador.com/learn/kubectl-cheatsheet
-- https://phoenixnap.com/kb/kubectl-commands-cheat-sheet
-- https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands##logs -->
+
+- [Official Kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+- [Kubectl Commands Reference](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
