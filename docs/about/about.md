@@ -27,9 +27,8 @@ As a Cloud Architect in the financial services sector, I lead the technical visi
 
 
 **Technical Expertise**
-![alt text](image-1.png)
-
-
+ [![Skills](image-1.png){:style="border: 1px solid black; border-radius: 10px;"}](image-1.png){:target="_blank"}
+  
 **Personal Interests**
 
 During free time, I find joy in various activities such as playing soccer, hiking, exploring new places, and most importantly, spending quality time with loved ones.
