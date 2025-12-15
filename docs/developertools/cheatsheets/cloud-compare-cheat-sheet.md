@@ -1,9 +1,12 @@
-
 # Cloud Comparison Cheat Sheet
 
-Here's the comparison cheat sheet across Azure, AWS, and GCP.
+## Introduction
 
-This comprehensive cheat sheet covers a wide range of services across Azure, AWS, and GCP. Keep in mind that the availability of certain services may vary depending on the region and specific requirements. Also, these cloud platforms are constantly evolving, so new services may be introduced over time.
+This is a comprehensive comparison cheat sheet of cloud services across the three major cloud providers: Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
+
+This guide helps you understand equivalent services across different cloud platforms, making it easier to navigate multi-cloud environments, migrate between providers, or choose the right platform for your needs. Keep in mind that the availability of certain services may vary depending on the region and specific requirements. Also, these cloud platforms are constantly evolving, so new services may be introduced over time.
+
+## Cloud Services Comparison
 
 | Category                    | Azure Service              | AWS Service                    | GCP Service                   |
 |-----------------------------|----------------------------|--------------------------------|-------------------------------|
@@ -59,3 +62,18 @@ This comprehensive cheat sheet covers a wide range of services across Azure, AWS
 |                             | Azure Sentinel             | AWS Security Hub / AWS GuardDuty | Chronicle Security / Security Command Center |
 |                             | Azure Key Vault            | AWS Secrets Manager            | Cloud Key Management Service (KMS) |
 |                             | Azure Advanced Threat Protection | AWS GuardDuty              | Cloud Security Scanner        |
+
+## Key Differences
+
+**Azure** - Best for enterprises already invested in Microsoft ecosystem (Windows Server, Active Directory, Office 365). Strong hybrid cloud capabilities with Azure Arc.
+
+**AWS** - Most mature and extensive service catalog. Largest market share and global infrastructure. Best for startups and organizations needing cutting-edge services.
+
+**GCP** - Strong in data analytics, machine learning, and Kubernetes. Leverages Google's expertise in big data and AI. Competitive pricing and innovative services.
+
+## References
+
+- [Azure Services](https://azure.microsoft.com/en-us/products/)
+- [AWS Services](https://aws.amazon.com/products/)
+- [Google Cloud Services](https://cloud.google.com/products)
+- [Microsoft Entra ID (formerly Azure AD)](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id)
