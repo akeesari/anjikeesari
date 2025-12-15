@@ -34,7 +34,7 @@
     }
 
     .tx-hero__content {
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
         margin: 0 auto;
     }
 
@@ -72,7 +72,7 @@
     }
 
     .top-hr {
-        margin-top: 42px;
+        margin-top: 5px;
     }
 
     .feature-item {
@@ -219,13 +219,22 @@
     }
     .column {
     flex-basis: 50%; /* Adjust as needed */
-    padding: 10px;
+    padding: 5px;
     box-sizing: border-box;
     font-size: medium;
   }
   .column img {
-    max-width: 100%;
-    height: auto;
+    width: 480px;
+    height: 600px;
+    object-fit: fill;
+  }
+  .column h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  .column p {
+    margin-top: 5px;
+    margin-bottom: 10px;
   }
 </style>
 
@@ -236,9 +245,9 @@
         <div class="tx-hero__image">
           <!-- <img src="assets/product-layers.png" draggable="false"> -->
         </div>
-        <div style="margin: -2.4em 0 .64em">
+        <div style="margin: -2.4em 0 0.2em">
           <h2 style="color: white;"><b>Introduction</b></h2>
-          <p>Welcome to my personal website! I'm <b>Anji Keesari</b>, an passionate instructor, Cloud Architect, and a full stack developer with expertise in the Microsoft technology stack. This website is designed to provide you with easy-to-follow learning materials, tutorials, and valuable insights. My goal is to help you in various technologies such as Azure Cloud, Microservices, Kubernetes,Terraform , ArgoCD, Helmcharts, Azure DevOps, C#, .NET, React JS and more.</p>
+          <p>Welcome to my personal website! I'm <b>Anji Keesari</b>, a passionate instructor, Cloud Architect, AI Engineer, and full stack developer with expertise in the Microsoft technology stack. This website is designed to provide you with easy-to-follow learning materials, tutorials, and valuable insights. My goal is to help you master various technologies including Azure Cloud, AI/ML Engineering, Azure AI Foundry, Large Language Models (LLMs), AI Agent Frameworks, Model Context Protocol (MCP) servers, Microservices, Kubernetes, Terraform, ArgoCD, Helm Charts, Azure DevOps, C#, .NET, React JS, and more.</p>
           <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
             Get started
           </a>
@@ -273,8 +282,8 @@
             Free e-Book - <a href="http://Kubernetes.anjikeesari.com/" style="color: blue;" target="_blank">Read online</a>
         </h2>
         <p>Welcome to my Free e-Book, <b>Building Scalable Kubernetes Infrastructure for Microservices (A Practical Guide)</b>. In this book, I share my practical knowledge and hands-on experience in building scalable Kubernetes cloud infrastructure for microservices architecture using Azure and Terraform. I hope you find it valuable on your journey.</p>
-        <i><p>Note :This book is still a work in progress, However, you are still welcome to continue reading what has been written so far.</p></i>
-        <img src="assets/images/book-cover-2.png" alt=""  style="width: 400px; height: 550px;"/>
+        <img src="assets/images/book-cover-2.png" alt="" />
+        <i><p>Note: This book is still a work in progress. However, you are still welcome to continue reading what has been written so far.</p></i>
         
     </div>
 </div> 
