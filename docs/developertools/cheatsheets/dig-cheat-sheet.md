@@ -1,13 +1,12 @@
-
 # dig Commands
 
 ## Introduction
 
-In this article, I am going to present a comprehensive cheat sheet of commonly used **dig** commands with examples.
+This is a comprehensive cheat sheet of commonly used **dig** commands with examples.
 
 The `dig` command is a network administration tool used for querying `Domain Name System` (DNS) servers. It is commonly used on Unix-like operating systems, including Linux. The name `dig` stands for `domain information groper.`
 
- This command is useful for retrieving various types of DNS information, such as IP addresses associated with domain names, mail exchange records, name server information, and more.
+This command is useful for retrieving various types of DNS information, such as IP addresses associated with domain names, mail exchange records, name server information, and more.
 
 ## Installing dig
 
@@ -51,16 +50,17 @@ brew install bind
 
 Displays general help information about dig, including a list of available commands and options.
 
-```sh
+```bash
 dig -h
 # or
 dig -help
 ```
+
 ## dig version
 
-Displays version informatio of dig
+Displays version information of dig.
 
-```sh
+```bash
 dig -v
 # or
 dig version
@@ -80,8 +80,10 @@ dig [options] [domain]
 ```bash
 dig anjikeesari.com
 ```
-output 
-```sh
+
+Output:
+
+```bash
 ; <<>> DiG 9.10.6 <<>> anjikeesari.com
 ;; global options: +cmd
 ;; Got answer:
@@ -104,28 +106,29 @@ anjikeesari.com.	600	IN	A	185.199.108.153
 ;; WHEN: Wed Dec 27 15:28:58 PST 2023
 ;; MSG SIZE  rcvd: 108
 ```
-## Using dig for short answers:
+## Using dig for Short Answers:
 
 ```bash
 dig +short anjikeesari.com
 ```
 
-output
+Output:
 
-```sh
+```bash
 185.199.108.153
 185.199.109.153
 185.199.110.153
 185.199.111.153
 ```
-## Using dig for detailed answers:
+## Using dig for Detailed Answers:
 
 ```bash
 dig anjikeesari.com +noall +answer
 ```
-output
 
-```sh
+Output:
+
+```bash
 ; <<>> DiG 9.10.6 <<>> anjikeesari.com +noall +answer
 ;; global options: +cmd
 anjikeesari.com.	600	IN	A	185.199.108.153
@@ -133,17 +136,17 @@ anjikeesari.com.	600	IN	A	185.199.109.153
 anjikeesari.com.	600	IN	A	185.199.110.153
 anjikeesari.com.	600	IN	A	185.199.111.153
 ```
-## Using dig for specifying name servers:
+## Using dig for Specifying Name Servers:
 
 ```bash
-dig NS anjikeesari.com 
+dig NS anjikeesari.com
 # or
 dig NS anjikeesari.com +short
 ```
 
-output
+Output:
 
-```sh
+```bash
 ; <<>> DiG 9.10.6 <<>> NS anjikeesari.com
 ;; global options: +cmd
 ;; Got answer:
@@ -171,22 +174,23 @@ ns72.domaincontrol.com.	35656	IN	AAAA	2603:5:2294::2e
 ;; MSG SIZE  rcvd: 184
 ```
 
-## Using dig for auery all DNS record types:
+## Using dig to Query All DNS Record Types:
 
 ```bash
 dig anjikeesari.com ANY
 ```
 
-## Using dig to search for record type:
+## Using dig to Search for Record Type:
 
-Querying TXT records
+Querying TXT records:
 
 ```bash
 dig anjikeesari.com -t TXT
 ```
 
-output 
-```sh
+Output:
+
+```bash
 ; <<>> DiG 9.10.6 <<>> anjikeesari.com -t TXT
 ;; global options: +cmd
 ;; Got answer:
@@ -207,21 +211,22 @@ anjikeesari.com.	600	IN	SOA	ns71.domaincontrol.com. dns.jomax.net. 2023071000 28
 ;; MSG SIZE  rcvd: 112
 ```
 
-Querying A records 
+Querying A records:
 
-```sh
+```bash
 dig +nocmd anjikeesari.com a +noall +answer
 ```
 
-output
+Output:
 
-```sh
+```bash
 anjikeesari.com.	600	IN	A	185.199.109.153
 anjikeesari.com.	600	IN	A	185.199.110.153
 anjikeesari.com.	600	IN	A	185.199.111.153
 anjikeesari.com.	600	IN	A	185.199.108.153
 ```
-## Using dig to trace DNS path
+
+## Using dig to Trace DNS Path:
 
 ```bash
 dig +trace anjikeesari.com
@@ -229,34 +234,37 @@ dig +trace anjikeesari.com
 dig anjikeesari.com +trace
 ```
 
-Querying CNAME records 
+Querying CNAME records:
 
-```sh
+```bash
 dig +nocmd mail.google.com cname +noall +answer
 ```
-## Using dig for mail server for the domain:
+
+## Using dig for Mail Server for the Domain:
 
 ```bash
 dig MX anjikeesari.com +short
-# or 
+# or
 dig MX anjikeesari.com
 ```
 
-Querying MX records
+Querying MX records:
 
-```sh
+```bash
 dig +nocmd anjikeesari.com ms +noall +answer
 ```
 
-## Using dig for reverse DNS lookup:
+## Using dig for Reverse DNS Lookup:
 
 ```bash
 dig -x 185.199.108.153
-# or 
+# or
 dig -x 185.199.108.153 +short
 ```
-output
-```sh
+
+Output:
+
+```bash
 cdn-185-199-108-153.github.com.
 ```
 

@@ -2,10 +2,10 @@
 
 ## Introduction
 
-In this article, I am going to present a comprehensive list of essential tools and software commonly needed by developers in the IT industry. If you are using Window operating system, you can download and install the following software as per your requirements. It is recommended to use the choco tool for installation, but if you encounter any issues, you can also perform a direct install.
+In this article, I am going to present a comprehensive list of essential tools and software commonly needed by developers in the IT industry. If you are using Windows operating system, you can download and install the following software as per your requirements. It is recommended to use the choco tool for installation, but if you encounter any issues, you can also perform a direct install.
 
 !!! note
-    Restart your computer when prompted or needed and also restart your terminal for every install before validate it.
+    Restart your computer when prompted or needed and also restart your terminal for every install before validating it.
 
 ## Install Chocolatey
 
@@ -40,7 +40,7 @@ Upgrading Chocolatey
 ```sh
 choco upgrade chocolatey
 ```
-## Install VS code
+## Install VS Code
 
 It is the most commonly used IDE, It is widely used for programming and supports various languages with extensive customization options.
 
@@ -76,27 +76,7 @@ Note:
 
 ## VS Code Extensions
 
-After install VS code, install the following extensions in vs code as per the need:
-
-```sh
-Azure CLI Tools
-Azure Account
-Azure Kubernetes Services
-Kubernetes
-Azure Terraform
-C#
-Bridge to Kubernetes
-Dev Containers
-Remote Development
-Docker
-Dotnet
-Helm Intelligence
-vscode-helm
-Kubernetes – very helpful for debugging services in AKS 
-PostgreSQL - get this from Microsoft 
-PowerShell Extension- https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell
-MongoDB
-```
+After install VS Code, install the following extensions in VS Code as per the need.
 
 You can install directly using the VS Code CLI:
 
@@ -138,8 +118,16 @@ Git is a version control system used for tracking changes in software projects. 
 choco install git -y
 ```
 
+Verify the installation:
+
 ```sh
 git --version
+```
+
+Output:
+
+```
+git version 2.43.0.windows.1
 ```
 
 Upgrade Git to the Latest Version
@@ -211,12 +199,21 @@ Azure CLI is a command-line interface for managing and interacting with Microsof
 choco install azure-cli -y
 ```
 
+Verify the installation:
+
 ```sh
 az --version
 ```
 
-Upgrade Azure CLI
+Output:
 
+```
+azure-cli                         2.54.0
+core                              2.54.0
+telemetry                          1.1.0
+```
+
+Upgrade Azure CLI
 
 ```sh
 choco upgrade azure-cli -y
@@ -310,7 +307,19 @@ choco upgrade lens -y
 Azure Kubelogin is a tool that enables seamless authentication and access to Azure Kubernetes Service (AKS) clusters using your Azure credentials.
 
 ```sh
-choco install azure-kubelogin
+choco install azure-kubelogin -y
+```
+
+Verify the installation:
+
+```sh
+kubelogin --version
+```
+
+Upgrade Azure Kubelogin:
+
+```sh
+choco upgrade azure-kubelogin -y
 ```
 
 ## Install Helm
@@ -357,7 +366,7 @@ Alternatively, you can choose to use the graphical installation wizard for Postg
 
 Follow the installation wizard instructions to complete the PostgreSQL installation on your Windows system.
 
-!!!note
+!!! note
     Depending on your requirements, you may want to uncheck the option for `Stack Builder` during the installation process.
 
 **psql - Command-line tools**
@@ -373,8 +382,8 @@ C:\Program Files\PostgreSQL\16\bin
 ```
 Make sure to replace 16 with your specific PostgreSQL version if it differs.
 
-!!!note
-    System restart is needed after the isntallation
+!!! note
+    System restart is needed after the installation
 
 verify the psql installation
 
@@ -514,10 +523,28 @@ Python is a popular programming language known for its simplicity and versatilit
 choco install python
 ```
 
-## verify Pip installation
+Verify the installation:
+
+```sh
+python --version
+```
+
+Upgrade Python:
+
+```sh
+choco upgrade python -y
+```
+
+## Verify Pip installation
 
 ```sh
 pip --version
+```
+
+Output:
+
+```
+pip 23.3.1 from C:\Python312\lib\site-packages\pip (python 3.12)
 ```
 
 ## Install WSL
@@ -530,7 +557,7 @@ choco install wsl
 
 ```sh
 wsl --help
-// or
+# or
 wsl --list --verbose
 ```
 
@@ -599,6 +626,18 @@ JQ is a lightweight and flexible command-line tool for processing JSON data. It 
 choco install jq
 ```
 
+Verify the installation:
+
+```sh
+jq --version
+```
+
+Upgrade JQ:
+
+```sh
+choco upgrade jq -y
+```
+
 ## Install MongoDB Compass
 
 Install MongoDB Compass using Chocolatey
@@ -632,9 +671,17 @@ choco upgrade postman -y
 ```sh
 choco install notepadplusplus -y
 ```
+
 Verify Installation:
+
 ```sh
 notepad++
+```
+
+Upgrade Notepad++:
+
+```sh
+choco upgrade notepadplusplus -y
 ```
 
 ## Windows Terminal 
@@ -642,7 +689,13 @@ notepad++
 Allows us to access multiple command-line tools and shells in one customizable interface. It is an open-source project developed and maintained by Microsoft.
 
 ```sh
-choco install microsoft-windows-terminal
+choco install microsoft-windows-terminal -y
+```
+
+Upgrade Windows Terminal:
+
+```sh
+choco upgrade microsoft-windows-terminal -y
 ``` 
 
 ## Install Lightshot
@@ -680,9 +733,65 @@ You may need these additional software to perform daily activities.
 - SQL Search - <https://www.red-gate.com/products/sql-development/sql-search/>
 - JSON viewer online - <https://codebeautify.org/jsonviewer>
 - regexr validator - <https://regexr.com/>
-- SAML Tracer [Browser extention](https://chrome.google.com/webstore/detail/saml-tracer/mpdajninpobndbfcldcmbpnnbhibjmch?hl=en)
+- SAML Tracer [Browser extension](https://chrome.google.com/webstore/detail/saml-tracer/mpdajninpobndbfcldcmbpnnbhibjmch?hl=en)
 - WSL - <https://learn.microsoft.com/en-us/windows/wsl/install>
 - [Azure storage-explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/)
 - RDC - <https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman>
 - base64encode - <https://www.base64encode.org/>
 - LightShot (prntscr) - <https://app.prntscr.com/en/>
+
+## Troubleshooting
+
+### Common Installation Issues
+
+**Chocolatey Permission Errors**
+
+If you encounter permission errors, ensure you're running PowerShell or Command Prompt as Administrator:
+
+1. Right-click PowerShell/CMD
+2. Select "Run as Administrator"
+3. Run the installation command again
+
+**Path/Environment Variable Issues**
+
+If installed tools are not recognized:
+
+```sh
+# Refresh environment variables in current session
+refreshenv
+
+# Or restart your terminal
+```
+
+**Version Conflicts**
+
+To check installed versions and resolve conflicts:
+
+```sh
+# List all installed packages
+choco list --local-only
+
+# Force reinstall a package
+choco install <package> --force -y
+```
+
+**Network/Proxy Issues**
+
+If downloads fail due to network restrictions:
+
+```sh
+# Set proxy for Chocolatey
+choco config set proxy <proxy-url>
+choco config set proxyUser <username>
+choco config set proxyPassword <password>
+```
+
+### Additional Resources
+
+- [Chocolatey Documentation](https://docs.chocolatey.org/)
+- [Troubleshooting Guide](https://docs.chocolatey.org/en-us/troubleshooting)
+- [Useful Network Tools](../tools/useful-tools.md)
+- [Kubectl Cheat Sheet](../cheatsheets/kubectl-cheat-sheet.md)
+- [Docker Cheat Sheet](../cheatsheets/docker-cheat-sheet.md)
+- [Helm Cheat Sheet](../cheatsheets/helm-cheat-sheet.md)
+- [Terraform Cheat Sheet](../cheatsheets/terraform-cheat-sheet.md)

@@ -1,21 +1,23 @@
-# Download & install Software in Mac OS
+# Download & install Software in macOS
 
 ## Introduction
 
-In this article, I am going to present a comprehensive list of essential tools and software commonly needed by developers in the IT industry. If you are using Mac operating system, you can download and install the following software as per your requirements. It is recommended to use the `brew` tool for installation, but if you encounter any issues, you can also perform a direct manual install.
+In this article, I am going to present a comprehensive list of essential tools and software commonly needed by developers in the IT industry. If you are using macOS operating system, you can download and install the following software as per your requirements. It is recommended to use the `brew` tool for installation, but if you encounter any issues, you can also perform a direct manual install.
 
+!!! note
+    You may need to restart your Mac or terminal after completing all installations.
 
 ## What is Homebrew?
 
 Homebrew is a free and open-source software package management system that simplifies the installation of software on Apple's operating system, macOS, as well as Linux. 
 
-## Install homebrew
+## Install Homebrew
 
 This is the first software you may need to install before installing anything on a Mac. For more information, refer to this link: <https://brew.sh/>
 
 Homebrew is similar to Chocolatey in the Windows environment.
 
-homebrew (for Mac users) = cocho (for Windows users)
+homebrew (for Mac users) = choco (for Windows users)
 
 To use Homebrew, you will need to have a terminal window open and install Homebrew on your system. To install Homebrew, you can copy and paste the following command into the terminal:
 
@@ -23,24 +25,29 @@ To use Homebrew, you will need to have a terminal window open and install Homebr
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-output
+Expected output:
 
-``` 
+```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/anjikeesari/.zprofile   
 eval "$(/opt/homebrew/bin/brew shellenv)"  
 ```
-upgrade brew
 
-```sh 
-brew upgrade 
-```
-```bash
+Once the installation is finished, you can use the `brew` command to install, upgrade, and manage software packages using Homebrew.
+
+Verify the installation:
+
+```sh
 brew --version
 # or
 brew doctor
 ```
-Once the installation is finished, you can use the `brew` command to install, upgrade, and manage software packages using Homebrew.
+
+Upgrade Homebrew:
+
+```sh
+brew upgrade
+```
 
 
 ## Install Google Chrome 
@@ -49,10 +56,16 @@ Once the installation is finished, you can use the `brew` command to install, up
 brew install --cask google-chrome
 ```
 
-verify the installed version #
+Verify the installed version:
 
 ```sh
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version
+```
+
+Upgrade Google Chrome:
+
+```sh
+brew upgrade --cask google-chrome
 ```
 
 ## Install iTerm2 
@@ -61,6 +74,18 @@ iTerm2 is a popular terminal emulator for macOS. It provides a more advanced and
 
 ```sh
 brew install --cask iterm2
+```
+
+Verify the installation:
+
+```sh
+/Applications/iTerm.app/Contents/MacOS/iTerm2 --version
+```
+
+Upgrade iTerm2:
+
+```sh
+brew upgrade --cask iterm2
 ```
 
 ## Install PowerShell
@@ -75,12 +100,47 @@ brew install --cask powershell
 brew upgrade --cask powershell
 ```
 
-## Install vs code
+## Install VS Code
 
-It is the most commonly used IDE,  It is widely used for programming and supports various languages with extensive customization options.
+It is the most commonly used IDE, it is widely used for programming and supports various languages with extensive customization options.
 
-```
+```sh
 brew install --cask visual-studio-code
+```
+
+Verify the installation:
+
+```sh
+code --version
+```
+
+Upgrade VS Code:
+
+```sh
+brew upgrade --cask visual-studio-code
+```
+
+## VS Code Extensions
+
+Install essential VS Code extensions using the command line:
+
+```sh
+code --install-extension ms-vscode.azurecli
+code --install-extension ms-vscode.azure-account
+code --install-extension ms-kubernetes-tools.vscode-aks-tools
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension hashicorp.terraform
+code --install-extension ms-dotnettools.csharp
+code --install-extension ms-vscode-remote.remote-containers
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension tim-koehler.vscode-helm
+code --install-extension ms-vscode.powershell
+```
+
+List all installed extensions:
+
+```sh
+code --list-extensions
 ```
 
 ## Install git
@@ -88,23 +148,51 @@ brew install --cask visual-studio-code
 Git is a version control system used for tracking changes in software projects. It allows multiple developers to collaborate on a project efficiently and helps manage different versions of the code.
 
 ```sh
-brew install git 
-
-# verify the installation
-git --version    
+brew install git
 ```
+
+Verify the installation:
+
+```sh
+git --version
+```
+
+Output:
+
+```
+git version 2.43.0
+```
+
+Upgrade Git:
+
+```sh
+brew upgrade git
+```
+
 ## Install docker
 
 Docker is a platform that simplifies the process of creating, deploying, and running applications using containers. 
 
 ```sh
-brew install docker --cask
+brew install --cask docker
+```
 
-# verify the installation
+Verify the installation:
+
+```sh
 docker --version
+```
 
-# output
+Output:
+
+```
 Docker version 20.10.21, build baeda1f
+```
+
+Upgrade Docker:
+
+```sh
+brew upgrade --cask docker
 ```
 ## Install node
 
@@ -112,10 +200,19 @@ Node.js is a JavaScript runtime that allows you to execute JavaScript code outsi
 
 ```sh
 brew install node
+```
 
-# verify the installation
+Verify the installation:
+
+```sh
 node --version  
-npm version
+npm --version
+```
+
+Upgrade Node.js:
+
+```sh
+brew upgrade node
 ```
 
 ## Install dotnet
@@ -124,9 +221,18 @@ It provides a runtime environment and libraries for building and running differe
 
 ```sh
 brew install --cask dotnet
+```
 
-# verify the installation
+Verify the installation:
+
+```sh
 dotnet --version
+```
+
+Upgrade .NET:
+
+```sh
+brew upgrade --cask dotnet
 ```
 
 ## Install python3
@@ -135,9 +241,18 @@ Python is a popular programming language known for its simplicity and versatilit
 
 ```sh
 brew install python3
+```
 
-# verify the installation
+Verify the installation:
+
+```sh
 python3 --version
+```
+
+Upgrade Python 3:
+
+```sh
+brew upgrade python3
 ```
 
 ## Upgrade pip
@@ -160,6 +275,18 @@ Azure CLI is a command-line interface for managing and interacting with Microsof
 brew install azure-cli
 ```
 
+Verify the installation:
+
+```sh
+az --version
+```
+
+Upgrade Azure CLI:
+
+```sh
+brew upgrade azure-cli
+```
+
 ## Install kubectl
 
  kubectl is a command-line tool used to interact with Kubernetes clusters. It enables you to deploy, manage, and monitor applications running on Kubernetes.
@@ -169,10 +296,17 @@ For more information, please refer to the following link: - - <https://kubernete
 ```sh
 brew install kubectl
 ```
-verify the installation
+
+Verify the installation:
 
 ```sh
-kubectl version 
+kubectl version
+```
+
+Upgrade kubectl:
+
+```sh
+brew upgrade kubectl
 ```
 
 ## Install Lens
@@ -183,6 +317,18 @@ Lens is a popular Kubernetes platform that serves as a robust and advanced devel
 brew install --cask lens
 ```
 
+Verify the installation:
+
+```sh
+lens --version
+```
+
+Upgrade Lens:
+
+```sh
+brew upgrade --cask lens
+```
+
 ## Install Terraform
 
 Terraform is an infrastructure-as-code tool used for provisioning and managing cloud resources. It allows you to define your infrastructure in code and automates the deployment and management of resources across different cloud providers.
@@ -191,10 +337,16 @@ Terraform is an infrastructure-as-code tool used for provisioning and managing c
 brew install terraform
 ```
 
-verify the installation
+Verify the installation:
 
 ```sh
 terraform version
+```
+
+Upgrade Terraform:
+
+```sh
+brew upgrade terraform
 ```
 
 ## Install Helm
@@ -205,10 +357,16 @@ Helm is a package manager for Kubernetes that simplifies the deployment and mana
 brew install helm
 ```
 
-verify the installation
+Verify the installation:
 
 ```sh
 helm version
+```
+
+Upgrade Helm:
+
+```sh
+brew upgrade helm
 ```
 
 ## Install argocd
@@ -219,10 +377,16 @@ Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 brew install argocd
 ```
 
-verify the installation
+Verify the installation:
 
 ```sh
 argocd version
+```
+
+Upgrade Argo CD:
+
+```sh
+brew upgrade argocd
 ```
 
 ## Install pgadmin4
@@ -233,6 +397,18 @@ pgAdmin is a graphical administration and development platform for PostgreSQL, a
 brew install pgadmin4
 ```
 
+Verify the installation:
+
+```sh
+brew list pgadmin4
+```
+
+Upgrade pgAdmin 4:
+
+```sh
+brew upgrade pgadmin4
+```
+
 ## Install Azure Data Studio
 
 Data management tool that enables working with SQL Server, PostgerSQL, MySQL and more.
@@ -240,12 +416,36 @@ Data management tool that enables working with SQL Server, PostgerSQL, MySQL and
 ```sh
 brew install --cask azure-data-studio
 ```
+
+Verify the installation:
+
+```sh
+brew list azure-data-studio
+```
+
+Upgrade Azure Data Studio:
+
+```sh
+brew upgrade --cask azure-data-studio
+```
 ## Azure Storage Explorer
 
 Azure Storage Explorer is a standalone application provided by Microsoft that allows users to interact Azure storage account services and making it easier to work with Azure Blob Storage, Azure Queue Storage, Azure Table Storage, and Azure Cosmos DB.
 
 ```sh
 brew install --cask microsoft-azure-storage-explorer
+```
+
+Verify the installation:
+
+```sh
+brew list microsoft-azure-storage-explorer
+```
+
+Upgrade Azure Storage Explorer:
+
+```sh
+brew upgrade --cask microsoft-azure-storage-explorer
 ```
 ## Install Microsoft Remote Desktop
 
@@ -256,12 +456,36 @@ Microsoft Remote Desktop is a Microsoft application that allows users to remotel
 brew install --cask microsoft-remote-desktop
 ```
 
+Verify the installation:
+
+```sh
+brew list microsoft-remote-desktop
+```
+
+Upgrade Microsoft Remote Desktop:
+
+```sh
+brew upgrade --cask microsoft-remote-desktop
+```
+
 ## Install zoom
 
 Zoom is a video conferencing and online meeting platform that enables you to communicate with others through video, audio, and chat. It's widely used for remote work and virtual meetings.
 
-```
+```sh
 brew install --cask zoom
+```
+
+Verify the installation:
+
+```sh
+brew list zoom
+```
+
+Upgrade Zoom:
+
+```sh
+brew upgrade --cask zoom
 ```
 
 ## Install Teams
@@ -301,10 +525,22 @@ follow the instruction provided in the following links to install docker.
 
 ## Install github
 
-GitHub is a web-based platform for version control and collaboration that allows developers to host, review, and manage code repositories. It's widely used for open-source projects and collaborative development.
+GitHub CLI (gh) is a command-line tool that brings GitHub functionality to your terminal, allowing you to manage pull requests, issues, repositories, and other GitHub features without leaving the command line.
 
-```
+```sh
 brew install gh
+```
+
+Verify the installation:
+
+```sh
+gh --version
+```
+
+Upgrade GitHub CLI:
+
+```sh
+brew upgrade gh
 ```
 
 ## Install jq
@@ -315,6 +551,18 @@ brew install gh
 brew install jq
 ```
 
+Verify the installation:
+
+```sh
+jq --version
+```
+
+Upgrade JQ:
+
+```sh
+brew upgrade jq
+```
+
 ## Install postman
 
 
@@ -322,6 +570,18 @@ Postman is a popular API development and testing tool. It allows you to make HTT
 
 ```sh
 brew install --cask postman
+```
+
+Verify the installation:
+
+```sh
+brew list postman
+```
+
+Upgrade Postman:
+
+```sh
+brew upgrade --cask postman
 ```
 
 ## Install Lightshot
@@ -359,3 +619,127 @@ I don't see brew commands to install this tool but you can install it manually f
 - https://www.robinwieruch.de/mac-setup-web-development/
 - https://www.robinwieruch.de/mac-setup-web-development/
 -->
+
+## Troubleshooting
+
+### Common Installation Issues
+
+**Homebrew Permission Errors**
+
+If you encounter permission errors during installation:
+
+```sh
+# Fix Homebrew permissions
+sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/share
+
+# For Apple Silicon Macs
+sudo chown -R $(whoami) /opt/homebrew
+```
+
+**Command Not Found After Installation**
+
+If installed tools are not recognized:
+
+```sh
+# Add Homebrew to PATH (for Apple Silicon)
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# For Intel Macs
+echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
+
+# Restart terminal or source the profile
+source ~/.zprofile
+```
+
+**Xcode Command Line Tools Issues**
+
+Homebrew requires Xcode Command Line Tools:
+
+```sh
+# Install Xcode Command Line Tools
+xcode-select --install
+
+# Verify installation
+xcode-select -p
+```
+
+**Version Conflicts**
+
+To check installed versions and resolve conflicts:
+
+```sh
+# List all installed packages
+brew list
+
+# Check for outdated packages
+brew outdated
+
+# Force reinstall a package
+brew reinstall <package>
+```
+
+### Additional Resources
+
+- [Homebrew Documentation](https://docs.brew.sh/)
+- [Homebrew FAQ](https://docs.brew.sh/FAQ)
+- [Useful Network Tools](../tools/useful-tools.md)
+- [Kubectl Cheat Sheet](../cheatsheets/kubectl-cheat-sheet.md)
+- [Docker Cheat Sheet](../cheatsheets/docker-cheat-sheet.md)
+- [Helm Cheat Sheet](../cheatsheets/helm-cheat-sheet.md)
+- [Terraform Cheat Sheet](../cheatsheets/terraform-cheat-sheet.md)
+- [Git Cheat Sheet](../cheatsheets/git-cheat-sheet.md)
+
+# For Intel Macs
+echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
+
+# Restart terminal or source the profile
+source ~/.zprofile
+```
+
+**Xcode Command Line Tools Issues**
+
+Homebrew requires Xcode Command Line Tools:
+
+```sh
+# Install Xcode Command Line Tools
+xcode-select --install
+
+# Verify installation
+xcode-select -p
+```
+
+**Version Conflicts**
+
+To check installed versions and resolve conflicts:
+
+```sh
+# List all installed packages
+brew list
+
+# Check for outdated packages
+brew outdated
+
+# Force reinstall a package
+brew reinstall <package>
+```
+
+### Quick Command Reference: Windows vs macOS
+
+| Task | Windows (Chocolatey) | macOS (Homebrew) |
+|------|---------------------|------------------|
+| Install package | `choco install <package>` | `brew install <package>` |
+| Install GUI app | `choco install <package>` | `brew install --cask <package>` |
+| Update package manager | `choco upgrade chocolatey` | `brew update` |
+| Upgrade package | `choco upgrade <package> -y` | `brew upgrade <package>` |
+| Upgrade all | `choco upgrade all -y` | `brew upgrade` |
+| List installed | `choco list --local-only` | `brew list` |
+| Search packages | `choco search <package>` | `brew search <package>` |
+| Uninstall package | `choco uninstall <package>` | `brew uninstall <package>` |
+| Get package info | `choco info <package>` | `brew info <package>` |
+
+### Additional Resources
+
+- [Homebrew Documentation](https://docs.brew.sh/)
+- [Homebrew FAQ](https://docs.brew.sh/FAQ)
+- [Useful Network Tools](../tools/useful-tools.md)

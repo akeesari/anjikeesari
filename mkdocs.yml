@@ -126,14 +126,12 @@ extra:
     property: G-LJDPP0N88G
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com
+      link: https://github.com/akeesari
     - icon: fontawesome/brands/twitter
       link: https://twitter.com
     - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in
-    - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/
-
+      link: https://www.linkedin.com/in/anjikeesari
+  generator: false
   footer: |
       <style>
         .md-footer {

@@ -5,6 +5,10 @@
 {{ super() }}
 <style>
 
+    body, html {
+        overflow-x: hidden;
+    }
+
     .md-main {
         flex-grow: 0
     }
@@ -16,13 +20,13 @@
 
     .tx-container {
         padding-top: .0rem;
+        padding-bottom: 0;
         /* background: linear-gradient(to bottom, var(--md-primary-fg-color), rgb(30, 77, 62) 99%,#fff 99%) */
         background: linear-gradient(to bottom, var(--md-primary-fg-color), hsla(160deg,47%,55%,1) 99%,#fff 99%)
     }
 
     .tx-hero {
-        margin: 32px 2.8rem;
-        margin: 32px 1pc;
+        margin: 32px 0 32px 1rem;
         color: var(--md-primary-bg-color);
         justify-content: center;
     }
@@ -48,6 +52,7 @@
     .tx-hero .md-button {
         margin-top: .5rem;
         margin-right: .5rem;
+        margin-bottom: 0;
         color: var(--md-primary-bg-color)
     }
 
@@ -72,7 +77,7 @@
     }
 
     .top-hr {
-        margin-top: 5px;
+        margin-top: 0;
     }
 
     .feature-item {
@@ -126,8 +131,8 @@
         .tx-hero__content {
             max-width: 22rem;
             margin-top: 3.5rem;
-            margin-bottom: 3.5rem;
-            margin-left: 1.0rem;
+            margin-bottom: 1.5rem;
+            margin-left: 0.5rem;
             margin-right: 4.0rem;
             align-items: center;
         }
@@ -144,7 +149,9 @@
             max-width: 61rem;
             margin-right: auto;
             margin-left: auto;
+            margin-bottom: 30px;
             padding: 0 .2rem;
+            align-items: flex-start;
         }
 
         .bottom-hr {
@@ -227,25 +234,65 @@
     width: 480px;
     height: 600px;
     object-fit: fill;
+    display: block;
+    margin-top: 15px;
   }
   .column h2 {
     margin-top: 5px;
     margin-bottom: 10px;
   }
-  .column p {
+    .column p {
     margin-top: 5px;
     margin-bottom: 10px;
   }
-</style>
 
-<!-- Main site Entry button descriptions -->
+  /* Mobile responsive design for ebook columns */
+  @media screen and (max-width: 768px) {
+    .top-hr {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .column {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 15px 5px;
+    }
+    
+    .column img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .column h2 {
+      text-align: center;
+      font-size: 20px;
+    }
+    
+    .column p {
+      text-align: left;
+    }
+  }
+
+  /* Tablet responsive design */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .column img {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+    }
+  }
+</style><!-- Main site Entry button descriptions -->
 <section class="tx-container">
     <div class="md-grid md-typeset">
       <div class="tx-hero">
         <div class="tx-hero__image">
           <!-- <img src="assets/product-layers.png" draggable="false"> -->
         </div>
-        <div style="margin: -2.4em 0 0.2em">
+        <div style="margin: -2.4em 0 -1em 0">
           <h2 style="color: white;"><b>Introduction</b></h2>
           <p>Welcome to my personal website! I'm <b>Anji Keesari</b>, a passionate instructor, Cloud Architect, AI Engineer, and full stack developer with expertise in the Microsoft technology stack. This website is designed to provide you with easy-to-follow learning materials, tutorials, and valuable insights. My goal is to help you master various technologies including Azure Cloud, AI/ML Engineering, Azure AI Foundry, Large Language Models (LLMs), AI Agent Frameworks, Model Context Protocol (MCP) servers, Microservices, Kubernetes, Terraform, ArgoCD, Helm Charts, Azure DevOps, C#, .NET, React JS, and more.</p>
           <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
@@ -281,7 +328,7 @@
         <h2>
             Free e-Book - <a href="http://Kubernetes.anjikeesari.com/" style="color: blue;" target="_blank">Read online</a>
         </h2>
-        <p>Welcome to my Free e-Book, <b>Building Scalable Kubernetes Infrastructure for Microservices (A Practical Guide)</b>. In this book, I share my practical knowledge and hands-on experience in building scalable Kubernetes cloud infrastructure for microservices architecture using Azure and Terraform. I hope you find it valuable on your journey.</p>
+        <p>Welcome to my Free e-Book, <b>Building Scalable Kubernetes Infrastructure for Microservices (A Practical Guide)</b>. In this book, I share my practical knowledge and hands-on experience in creating microservices with docker containers. I hope you find it valuable on your journey.</p>
         <img src="assets/images/book-cover-2.png" alt="" />
         <i><p>Note: This book is still a work in progress. However, you are still welcome to continue reading what has been written so far.</p></i>
         
