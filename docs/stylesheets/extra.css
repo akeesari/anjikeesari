@@ -2,6 +2,28 @@
    TYPOGRAPHY - Headings
    ============================================ */
 
+/* ============================================
+   HEADER - Theme-aware styling
+   ============================================ */
+
+/* Light mode header - Use default Material theme color */
+[data-md-color-scheme="default"] .md-header {
+  background-color: var(--md-primary-fg-color) !important;
+}
+
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: var(--md-primary-fg-color) !important;
+}
+
+/* Dark mode header - Deep slate blue */
+[data-md-color-scheme="slate"] .md-header {
+  background-color: hsl(210deg, 25%, 22%) !important;
+}
+
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: hsl(210deg, 25%, 22%) !important;
+}
+
 /* Logo and Header customization */
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
@@ -345,6 +367,65 @@ li {
 /* ============================================
    NAVIGATION HEADER FIX
    ============================================ */
+
+/* Make theme toggle and search icons same size with modern styling */
+.md-header__button {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  padding: 0.3rem !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid transparent !important;
+}
+
+.md-header__button svg {
+  width: 2rem !important;
+  height: 2rem !important;
+  transition: transform 0.2s ease !important;
+}
+
+/* Hover effect for all header buttons */
+.md-header__button:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.md-header__button:hover svg {
+  transform: scale(1.1);
+}
+
+/* Active/click feedback */
+.md-header__button:active {
+  transform: translateY(0) scale(0.95);
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Special styling for theme toggle in light mode */
+[data-md-color-scheme="default"] .md-header__button[for="__palette_1"] {
+  background-color: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-md-color-scheme="default"] .md-header__button[for="__palette_1"]:hover {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Special styling for theme toggle in dark mode */
+[data-md-color-scheme="slate"] .md-header__button[for="__palette_0"] {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-md-color-scheme="slate"] .md-header__button[for="__palette_0"]:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
 
 /* Fix navigation tabs - white text on colored background for both modes */
 .md-tabs__link {
