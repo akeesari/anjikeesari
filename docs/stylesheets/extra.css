@@ -83,8 +83,6 @@
   margin-top: 2rem !important;
   margin-bottom: 0.8rem !important;
   padding-top: 0.5rem;
-  border-left: 4px solid #0066cc;
-  padding-left: 0.75rem;
 }
 
 [data-md-color-scheme="slate"] h2 {
@@ -94,8 +92,6 @@
   margin-top: 2rem !important;
   margin-bottom: 0.8rem !important;
   padding-top: 0.5rem;
-  border-left: 4px solid #58a6ff;
-  padding-left: 0.75rem;
 }
 
 /* H3 Styling - Subsections */
