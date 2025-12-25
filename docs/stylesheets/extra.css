@@ -191,6 +191,57 @@
 }
 
 /* ============================================
+   CARDS - Enhanced styling
+   ============================================ */
+
+/* Card grid layout */
+.grid.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Individual card styling */
+.grid.cards > ul {
+  display: contents;
+}
+
+.grid.cards > ul > li {
+  list-style: none;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Light mode cards */
+[data-md-color-scheme="default"] .grid.cards > ul > li {
+  background-color: #f5f7fa;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+[data-md-color-scheme="default"] .grid.cards > ul > li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border-color: #1976d2;
+  background-color: #ffffff;
+}
+
+/* Dark mode cards */
+[data-md-color-scheme="slate"] .grid.cards > ul > li {
+  background-color: #1e2228;
+  border: 1px solid #37474f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+[data-md-color-scheme="slate"] .grid.cards > ul > li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border-color: #42a5f5;
+}
+
+/* ============================================
    PARAGRAPHS & TEXT
    ============================================ */
 
