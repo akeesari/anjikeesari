@@ -191,15 +191,83 @@
 }
 
 /* ============================================
-   CARDS - Enhanced styling
+   BUTTONS - Global styling
    ============================================ */
+
+/* All buttons get rounded corners */
+.md-button {
+  border-radius: 8px !important;
+}
+
+/* Primary button colors - Light mode */
+[data-md-color-scheme="default"] .md-button--primary {
+  background-color: #1976d2 !important;
+  color: #ffffff !important;
+  border-color: #1976d2 !important;
+}
+
+/* Primary button colors - Dark mode (brighter for contrast) */
+[data-md-color-scheme="slate"] .md-button--primary {
+  background-color: #64b5f6 !important;
+  color: #000000 !important;
+  border-color: #64b5f6 !important;
+}
+
+[data-md-color-scheme="default"] .md-button--primary:hover,
+[data-md-color-scheme="default"] .md-button--primary:focus {
+  background-color: #1565c0 !important;
+  border-color: #1565c0 !important;
+}
+
+[data-md-color-scheme="slate"] .md-button--primary:hover,
+[data-md-color-scheme="slate"] .md-button--primary:focus {
+  background-color: #90caf9 !important;
+  border-color: #90caf9 !important;
+}
+
+/* Home page hero section buttons - Override global styles */
+.tx-hero .md-button--primary {
+  background-color: var(--md-primary-bg-color) !important;
+  color: hsla(280deg, 37%, 48%, 1) !important;
+  border-color: var(--md-primary-bg-color) !important;
+}
+
+.tx-hero .md-button:focus,
+.tx-hero .md-button:hover {
+  background-color: var(--md-accent-fg-color) !important;
+  color: var(--md-default-bg-color) !important;
+  border-color: var(--md-accent-fg-color) !important;
+}
+
+/* ============================================
+   CARDS - Global styling for all card elements
+   ============================================ */
+
+/* Shared card base styles */
+.grid.cards > ul > li,
+.column {
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
 /* Card grid layout */
 .grid.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin: 2rem 0;
+}
+
+@media (max-width: 900px) {
+  .grid.cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid.cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Individual card styling */
@@ -207,38 +275,40 @@
   display: contents;
 }
 
+/* Grid cards specific */
 .grid.cards > ul > li {
   list-style: none;
-  border-radius: 12px;
   padding: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Light mode cards */
-[data-md-color-scheme="default"] .grid.cards > ul > li {
-  background-color: #f5f7fa;
-  border: 1px solid #d1d5db;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+/* Light mode - All cards */
+[data-md-color-scheme="default"] .grid.cards > ul > li,
+[data-md-color-scheme="default"] .column {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-[data-md-color-scheme="default"] .grid.cards > ul > li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+[data-md-color-scheme="default"] .grid.cards > ul > li:hover,
+[data-md-color-scheme="default"] .column:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   border-color: #1976d2;
-  background-color: #ffffff;
 }
 
-/* Dark mode cards */
-[data-md-color-scheme="slate"] .grid.cards > ul > li {
-  background-color: #1e2228;
-  border: 1px solid #37474f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+/* Dark mode - All cards */
+[data-md-color-scheme="slate"] .grid.cards > ul > li,
+[data-md-color-scheme="slate"] .column {
+  background-color: rgba(30, 40, 50, 0.95);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-[data-md-color-scheme="slate"] .grid.cards > ul > li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  border-color: #42a5f5;
+[data-md-color-scheme="slate"] .grid.cards > ul > li:hover,
+[data-md-color-scheme="slate"] .column:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 /* ============================================
