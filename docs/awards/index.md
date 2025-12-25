@@ -58,7 +58,7 @@ As a recognized expert in cloud architecture, AI/ML, Infrastructure as Code, and
 
 ## Industry Judging Activities
 
-<div class="grid cards" markdown>
+<div class="grid cards two-card-wide" markdown>
 
 -   **🏆 Globee Awards**
 
