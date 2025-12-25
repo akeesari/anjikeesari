@@ -13,4 +13,20 @@ document.addEventListener('DOMContentLoaded', function() {
             link.setAttribute('rel', 'noopener noreferrer'); // Security best practice
         }
     });
+    
+    // Make site name in header clickable and link to homepage
+    var headerTitle = document.querySelector('.md-header__title');
+    if (headerTitle) {
+        // Remove any existing link if present and wrap content
+        var existingLink = headerTitle.querySelector('a');
+        if (!existingLink) {
+            // Make the entire title clickable
+            headerTitle.style.cursor = 'pointer';
+            headerTitle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                window.location.href = '/anjikeesari/';
+            });
+        }
+    }
 });

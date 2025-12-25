@@ -2,6 +2,34 @@
    TYPOGRAPHY - Headings
    ============================================ */
 
+/* Logo and Header customization */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.md-header__title {
+  margin-left: 0.4rem !important;
+}
+
+/* Make site name look clickable and add link styling */
+.md-header__title {
+  cursor: pointer !important;
+}
+
+.md-header__title .md-header__ellipsis {
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.md-header__title:hover .md-header__ellipsis {
+  opacity: 0.8;
+}
+
 /* H1 Styling - Page Titles */
 [data-md-color-scheme="default"] h1 {
   color: #1a1a1a;
