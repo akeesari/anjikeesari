@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 # Contact
 
 I'm always interested in connecting with fellow technology professionals, discussing Cloud Architecture, Application Architecture & AI/ML/LLM Architecture or potential collaboration opportunities.

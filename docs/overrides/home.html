@@ -255,39 +255,13 @@
     margin: 10px;
     box-sizing: border-box;
     font-size: medium;
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     min-height: 700px;
   }
   
-  /* Light mode cards - White background with dark text */
-  [data-md-color-scheme="default"] .column {
-    background-color: rgba(255, 255, 255, 0.95);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
+  /* Removed duplicate card styles - now handled globally in extra.css */
   
-  /* Dark mode cards - Dark background with light text */
-  [data-md-color-scheme="slate"] .column {
-    background-color: rgba(30, 40, 50, 0.95);
-    border: 2px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  }
-  
-  .column:hover {
-    transform: translateY(-5px);
-  }
-  
-  [data-md-color-scheme="default"] .column:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  }
-  
-  [data-md-color-scheme="slate"] .column:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-    border-color: rgba(255, 255, 255, 0.25);
-  }
   .column img {
     width: 100%;
     max-width: 100%;
@@ -396,7 +370,7 @@
         <div class="tx-hero__content" style="margin: -2.4em 0 0 0">
           <h2><b>Introduction</b></h2>
           <p>Welcome to my personal website! I'm <b>Anji Keesari</b>, a passionate instructor, Cloud Architect, AI Engineer, and full stack developer with expertise in the Microsoft technology stack. This website is designed to provide you with easy-to-follow learning materials, tutorials, and valuable insights. My goal is to help you master various technologies including Azure Cloud, AI/ML Engineering, Azure AI Foundry, Large Language Models (LLMs), AI Agent Frameworks, Model Context Protocol (MCP) servers, Microservices, Kubernetes, Terraform, ArgoCD, Helm Charts, Azure DevOps, C#, .NET, React JS, and more.</p>
-          <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
+          <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary" style="font-size: 0.75rem; padding: 0.3rem 0.8rem; border-radius: 8px;">
             Get started
           </a>
           <!-- <a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}" class="md-button">
