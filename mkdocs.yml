@@ -163,6 +163,8 @@ nav:
   
   - Research: research/index.md
   
+  - Awards: awards/index.md
+  
   - Developer Tools:
       - Introduction:
         - Introduction: developertools/introduction/introduction.md
