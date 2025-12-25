@@ -89,7 +89,7 @@
     }
 
     .feature-item h2 {
-        color: #333;
+        color: var(--md-typeset-color);
         font-weight: 300;
         font-size: 25px;
         white-space: nowrap;
@@ -106,7 +106,7 @@
         line-height: 1.8em;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
-        color: #111;
+        color: var(--md-typeset-color);
         margin: 0 0 10px;
         display: block;
     }
@@ -125,16 +125,18 @@
         .tx-hero {
             display: flex;
             /* align-items: center; */
-            justify-content: center;
+            justify-content: flex-start;
         }
 
         .tx-hero__content {
-            max-width: 22rem;
+            max-width: 100%;
+            width: 100%;
             margin-top: 3.5rem;
             margin-bottom: 1.5rem;
-            margin-left: 0.5rem;
-            margin-right: 4.0rem;
-            align-items: center;
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0;
+            align-items: flex-start;
         }
     }
 
@@ -292,8 +294,8 @@
         <div class="tx-hero__image">
           <!-- <img src="assets/product-layers.png" draggable="false"> -->
         </div>
-        <div style="margin: -2.4em 0 -1em 0">
-          <h2 style="color: white;"><b>Introduction</b></h2>
+        <div class="tx-hero__content" style="margin: -2.4em 0 -1em 0">
+          <h2><b>Introduction</b></h2>
           <p>Welcome to my personal website! I'm <b>Anji Keesari</b>, a passionate instructor, Cloud Architect, AI Engineer, and full stack developer with expertise in the Microsoft technology stack. This website is designed to provide you with easy-to-follow learning materials, tutorials, and valuable insights. My goal is to help you master various technologies including Azure Cloud, AI/ML Engineering, Azure AI Foundry, Large Language Models (LLMs), AI Agent Frameworks, Model Context Protocol (MCP) servers, Microservices, Kubernetes, Terraform, ArgoCD, Helm Charts, Azure DevOps, C#, .NET, React JS, and more.</p>
           <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
             Get started
@@ -317,8 +319,8 @@
  <div class="top-hr">
     <div class="column">
         <h2>  
-            <!-- Free e-Book - <a href="Building Microservices with Containers (A Practical Guide).pdf" download="Building Microservices with Containers (A Practical Guide).pdf" style="color: blue;">Read online</a> -->
-            Free e-Book - <a href="http://microservices.anjikeesari.com/" style="color: blue;" target="_blank">Read online</a>
+            <!-- Free e-Book - <a href="Building Microservices with Containers (A Practical Guide).pdf" download="Building Microservices with Containers (A Practical Guide).pdf">Read online</a> -->
+            Free e-Book - <a href="http://microservices.anjikeesari.com/" target="_blank">Read online</a>
         </h2>
         <p>Welcome to my Free e-Book, <b>Building Microservices with Containers (A Practical Guide)</b>. In this book, I share my practical knowledge and hands-on experience in creating microservices with docker containers. I hope you find it valuable on your journey.</p>
         
@@ -326,7 +328,7 @@
     </div>
     <div class="column">
         <h2>
-            Free e-Book - <a href="http://Kubernetes.anjikeesari.com/" style="color: blue;" target="_blank">Read online</a>
+            Free e-Book - <a href="http://Kubernetes.anjikeesari.com/" target="_blank">Read online</a>
         </h2>
         <p>Welcome to my Free e-Book, <b>Building Scalable Kubernetes Infrastructure for Microservices (A Practical Guide)</b>. In this book, I share my practical knowledge and hands-on experience in creating microservices with docker containers. I hope you find it valuable on your journey.</p>
         <img src="assets/images/book-cover-2.png" alt="" />
