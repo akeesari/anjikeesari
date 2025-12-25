@@ -151,7 +151,7 @@ hide:
 
 # copyright   
 copyright: |
-  Copyright &copy; 2024 <a href="https://anjikeesari.com/"  target="_blank" rel="noopener">Anji Keesari</a>
+  &copy; Copyright 2018 <a href="https://anjikeesari.com/"  target="_blank" rel="noopener">Anji Keesari</a> - All Rights Reserved
 
 
 # Page tree
@@ -160,6 +160,9 @@ nav:
     - Home: index.md        
   # - Blogs:
   #   - Blogs: blogs.md
+  
+  - Research: research/index.md
+  
   - Developer Tools:
       - Introduction:
         - Introduction: developertools/introduction/introduction.md
@@ -202,10 +205,6 @@ nav:
   #       - Node JS : techstack/node-js.md
   #       - QA Automation : techstack/testing.md
   - Resources:
-      - Publications:
-        - Messaging Architecture : resources/publications/messaging-architecture/messaging-architecture.md
-        - AI Driven Algo Trading : resources/publications/algo-trading/ai-driven-algo-trading.md
-        
       - Books:
         - Building Microservices with Containers : resources/books/microservices.md
         - Microservices on Kubernetes : resources/books/kubernetes.md
