@@ -19,14 +19,14 @@
     }
 
     .tx-container {
-        padding-top: .0rem;
-        padding-bottom: 0;
-        /* background: linear-gradient(to bottom, var(--md-primary-fg-color), rgb(30, 77, 62) 99%,#fff 99%) */
-        background: linear-gradient(to bottom, var(--md-primary-fg-color), hsla(160deg,47%,55%,1) 99%,#fff 99%)
+        padding-top: 0rem;
+        padding-bottom: 3rem;
+        background: linear-gradient(to bottom, var(--md-primary-fg-color), hsla(160deg,47%,55%,1));
+        min-height: 100vh;
     }
 
     .tx-hero {
-        margin: 32px 0 32px 1rem;
+        margin: 32px 0 10px 1rem;
         color: var(--md-primary-bg-color);
         justify-content: center;
     }
@@ -38,7 +38,7 @@
     }
 
     .tx-hero__content {
-        padding-bottom: 0.5rem;
+        padding-bottom: 0;
         margin: 0 auto;
     }
 
@@ -89,6 +89,9 @@
 
     .top-hr {
         margin-top: 0;
+        padding-top: 1rem;
+        color: var(--md-primary-bg-color);
+        padding: 0 1rem 0 1rem;
     }
 
     .feature-item {
@@ -238,25 +241,74 @@
         padding-top: 20px;
     }
     .column {
-    flex-basis: 50%; /* Adjust as needed */
-    padding: 5px;
+    flex: 1 1 45%;
+    padding: 10px 20px 20px 20px;
+    margin: 10px;
     box-sizing: border-box;
     font-size: medium;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 700px;
+  }
+  
+  .column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   }
   .column img {
-    width: 480px;
-    height: 600px;
-    object-fit: fill;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
     display: block;
+    margin: 0 auto;
     margin-top: 15px;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  .column:last-child img {
+    max-height: 500px;
+    object-fit: contain;
   }
   .column h2 {
-    margin-top: 5px;
+    margin-top: 0;
     margin-bottom: 10px;
+    color: #333 !important;
   }
-    .column p {
+  
+  .column h2 * {
+    color: inherit;
+  }
+  
+  .column p {
     margin-top: 5px;
     margin-bottom: 10px;
+    color: #333 !important;
+  }
+  
+  .column p b {
+    color: #333 !important;
+  }
+  
+  .column a {
+    color: #1976d2 !important;
+    text-decoration: none;
+  }
+  
+  .column a:hover {
+    color: #1565c0 !important;
+    text-decoration: underline;
+  }
+  
+  .column i,
+  .column i p {
+    color: #666 !important;
   }
 
   /* Mobile responsive design for ebook columns */
@@ -305,7 +357,7 @@
         <div class="tx-hero__image">
           <img src="about/images/anji-pic2.png" alt="Anji Keesari" draggable="false">
         </div>
-        <div class="tx-hero__content" style="margin: -2.4em 0 -1em 0">
+        <div class="tx-hero__content" style="margin: -2.4em 0 0 0">
           <h2><b>Introduction</b></h2>
           <p>Welcome to my personal website! I'm <b>Anji Keesari</b>, a passionate instructor, Cloud Architect, AI Engineer, and full stack developer with expertise in the Microsoft technology stack. This website is designed to provide you with easy-to-follow learning materials, tutorials, and valuable insights. My goal is to help you master various technologies including Azure Cloud, AI/ML Engineering, Azure AI Foundry, Large Language Models (LLMs), AI Agent Frameworks, Model Context Protocol (MCP) servers, Microservices, Kubernetes, Terraform, ArgoCD, Helm Charts, Azure DevOps, C#, .NET, React JS, and more.</p>
           <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
@@ -323,30 +375,34 @@
           </a>           -->
         </div>
       </div>
-    </div>
-</section>
-
-<!-- Main site box descriptions -->
- <div class="top-hr">
+      
+      <!-- Main site box descriptions -->
+      <div class="top-hr">
     <div class="column">
         <h2>  
             <!-- Free e-Book - <a href="Building Microservices with Containers (A Practical Guide).pdf" download="Building Microservices with Containers (A Practical Guide).pdf">Read online</a> -->
             Free e-Book - <a href="http://microservices.anjikeesari.com/" target="_blank">Read online</a>
         </h2>
-        <p>Welcome to my Free e-Book, <b>Building Microservices with Containers (A Practical Guide)</b>. In this book, I share my practical knowledge and hands-on experience in creating microservices with docker containers. I hope you find it valuable on your journey.</p>
+        <p>Welcome to my Free e-Book <b>Building Microservices with Containers (A Practical Guide)</b>. In this book, I share my practical knowledge and hands-on experience in creating microservices with docker containers. I hope you find it valuable on your journey.</p>
         
-        <img src="assets/images/book-cover-1.png" alt="" />
+        <a href="http://microservices.anjikeesari.com/" target="_blank">
+            <img src="assets/images/book-cover-1.png" alt="Building Microservices with Containers" />
+        </a>
     </div>
     <div class="column">
         <h2>
             Free e-Book - <a href="http://Kubernetes.anjikeesari.com/" target="_blank">Read online</a>
         </h2>
-        <p>Welcome to my Free e-Book, <b>Building Scalable Kubernetes Infrastructure for Microservices (A Practical Guide)</b>. In this book, I share my practical knowledge and hands-on experience in creating microservices with docker containers. I hope you find it valuable on your journey.</p>
-        <img src="assets/images/book-cover-2.png" alt="" />
+        <p>Welcome to my Free e-Book <b>Building Scalable Kubernetes Infrastructure for Microservices (A Practical Guide)</b>. In this book, I share my practical knowledge and hands-on experience in creating microservices with docker containers. I hope you find it valuable on your journey.</p>
+        <a href="http://Kubernetes.anjikeesari.com/" target="_blank">
+            <img src="assets/images/book-cover-2.png" alt="Building Scalable Kubernetes Infrastructure" />
+        </a>
         <i><p>Note: This book is still a work in progress. However, you are still welcome to continue reading what has been written so far.</p></i>
         
     </div>
-</div> 
+      </div>
+    </div>
+</section>
 {% endblock %}
 {% block content %}{% endblock %}
 {% block footer %}{% endblock %}
