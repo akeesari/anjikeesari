@@ -205,10 +205,6 @@ nav:
   #       - Node JS : techstack/node-js.md
   #       - QA Automation : techstack/testing.md
   - Resources:
-      - Books:
-        - Building Microservices with Containers : resources/books/microservices.md
-        - Microservices on Kubernetes : resources/books/kubernetes.md
-
       - Videos:
         - .NET Core Web API : resources/webapi.md
         - Azure Cloud : resources/azure-cloud.md
