@@ -159,9 +159,40 @@ nav:
   # - Blogs:
   #   - Blogs: blogs.md
   
+  - About:
+      - About: about/about.md
+      # - Profile : about/profile.md
+      # - Accomplishments : about/accomplishments.md
+  
   - Research: research/index.md
   
   - Awards: awards/index.md
+  
+  - Articles:
+      # - Article Template :  articles/1-article-template.md
+      - Articles :  articles/1-article-collection.md      
+      - AKS Pod Connection to PostgreSQL :  articles/20251113.1-aks-workload-identity.md
+      - Kubernetes CronJob :  articles/20240325.1-cronjob.md      
+      - Connecting to Azure Cache for Redis :  articles/20240323.1-redis-connection.md
+      - Setup Azure Monitor Alerts for CPU & Memory Spikes :  articles/20240302.1-alerts-cpu-memory.md
+      - Running Azure DevOps Private Agents in AKS :  articles/20240218.1-build-agent.md
+      - Create Website using Material for MkDocs:  articles/mkdocs-setup.md
+      - Azure Application Availability Alerts Setup:  articles/app-availability-alert.md
+      - Azure Log Alerts Setup:  articles/azure-log-alerts.md
+      - Getting Started with Keycloak:  articles/keycloak.md
+      - Getting Started with Drupal:  articles/drupal.md
+      - Exploring Docker Fundamentals:  articles/docker-fundamentals.md
+      - What are Development Containers?:  articles/dev-containers-introduction.md
+      - Developing Applications inside a Dev Containers : articles/dev-containers-local-setup.md
+      - Delete PV and PVC stuck in terminating state: articles/pv-pvc-stuck.md
+      - Kubernetes Namespace Stuck: articles/namespace-stuck.md
+      - Undoing changes with git reset: articles/git-reset.md
+      - Hiding the Full path in VSCode Terminal:  articles/hide-full-path.md
+      - Interacting with Azure App Service:  articles/app-service-publishing-profile.md
+      - Single Sign-On - Introduction:  articles/single-sign-on.md
+      - Single Sign-On - OAuth 2.0 flows:  articles/oatuh2.0-flows.md
+      - Setting up Mac Terminal with Oh-My-Zsh:  articles/mac-terminal-setup.md
+      - Setting up Windows Terminal with Oh-My-Posh:  articles/windows-terminal-setup.md
   
   - Developer Tools:
       - Introduction:
@@ -208,35 +239,6 @@ nav:
       - Videos:
         - .NET Core Web API : resources/webapi.md
         - Azure Cloud : resources/azure-cloud.md
-  - Articles:
-      # - Article Template :  articles/1-article-template.md
-      - Articles :  articles/1-article-collection.md      
-      - AKS Pod Connection to PostgreSQL :  articles/20251113.1-aks-workload-identity.md
-      - Kubernetes CronJob :  articles/20240325.1-cronjob.md      
-      - Connecting to Azure Cache for Redis :  articles/20240323.1-redis-connection.md
-      - Setup Azure Monitor Alerts for CPU & Memory Spikes :  articles/20240302.1-alerts-cpu-memory.md
-      - Running Azure DevOps Private Agents in AKS :  articles/20240218.1-build-agent.md
-      - Create Website using Material for MkDocs:  articles/mkdocs-setup.md
-      - Azure Application Availability Alerts Setup:  articles/app-availability-alert.md
-      - Azure Log Alerts Setup:  articles/azure-log-alerts.md
-      - Getting Started with Keycloak:  articles/keycloak.md
-      - Getting Started with Drupal:  articles/drupal.md
-      - Exploring Docker Fundamentals:  articles/docker-fundamentals.md
-      - What are Development Containers?:  articles/dev-containers-introduction.md
-      - Developing Applications inside a Dev Containers : articles/dev-containers-local-setup.md
-      - Delete PV and PVC stuck in terminating state: articles/pv-pvc-stuck.md
-      - Kubernetes Namespace Stuck: articles/namespace-stuck.md
-      - Undoing changes with git reset: articles/git-reset.md
-      - Hiding the Full path in VSCode Terminal:  articles/hide-full-path.md
-      - Interacting with Azure App Service:  articles/app-service-publishing-profile.md
-      - Single Sign-On - Introduction:  articles/single-sign-on.md
-      - Single Sign-On - OAuth 2.0 flows:  articles/oatuh2.0-flows.md
-      - Setting up Mac Terminal with Oh-My-Zsh:  articles/mac-terminal-setup.md
-      - Setting up Windows Terminal with Oh-My-Posh:  articles/windows-terminal-setup.md
-  - About:
-      - About: about/about.md
-      # - Profile : about/profile.md
-      # - Accomplishments : about/accomplishments.md
   - Contact:
       - Contact Us: contact.md
   # - personal:
