@@ -10,28 +10,26 @@
     }
 
     .md-main {
-        flex-grow: 0
+        flex-grow: 0;
+        display: none;
     }
 
     .md-main__inner {
-        display: flex;
-        height: 100%;
+        display: none;
     }
 
     /* Light mode - Fresh green gradient */
     [data-md-color-scheme="default"] .tx-container {
         padding-top: 0rem;
-        padding-bottom: 3rem;
+        padding-bottom: 1rem;
         background: linear-gradient(to bottom, var(--md-primary-fg-color), hsla(160deg,47%,55%,1));
-        min-height: 100vh;
     }
     
     /* Dark mode - Deep blue-gray to dark teal gradient */
     [data-md-color-scheme="slate"] .tx-container {
         padding-top: 0rem;
-        padding-bottom: 3rem;
+        padding-bottom: 1rem;
         background: linear-gradient(to bottom, hsl(210deg, 25%, 18%), hsl(180deg, 25%, 25%));
-        min-height: 100vh;
     }
 
     .tx-hero {
@@ -415,4 +413,3 @@
 </section>
 {% endblock %}
 {% block content %}{% endblock %}
-{% block footer %}{% endblock %}

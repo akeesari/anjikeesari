@@ -136,12 +136,6 @@ extra:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com
   generator: false
-  footer: |
-      <style>
-        .md-footer {
-          display: none;
-        }
-      </style>
 plugins:
   - search
   # - awesome-pages
