@@ -89,7 +89,7 @@
 [data-md-color-scheme="default"] h1 {
   color: #1a1a1a;
   font-weight: 700 !important;
-  font-size: 2.2em !important;
+  font-size: 2em !important;
   margin-top: 1.5rem !important;
   margin-bottom: 1rem !important;
   line-height: 1.3 !important;
@@ -100,7 +100,7 @@
 [data-md-color-scheme="slate"] h1 {
   color: #ffffff;
   font-weight: 700 !important;
-  font-size: 2.2em !important;
+  font-size: 2em !important;
   margin-top: 1.5rem !important;
   margin-bottom: 1rem !important;
   line-height: 1.3 !important;
@@ -310,6 +310,50 @@
 @media (max-width: 600px) {
   .grid.cards {
     grid-template-columns: 1fr;
+  }
+  
+  /* Reduce card padding on mobile */
+  .grid.cards > ul > li {
+    padding: 1rem !important;
+  }
+  
+  /* Make Resume button stack properly on mobile */
+  h1 .md-button {
+    display: block !important;
+    margin: 0.5rem 0 0 0 !important;
+    width: fit-content !important;
+  }
+}
+
+/* Mobile adjustments for very small screens */
+@media (max-width: 400px) {
+  .grid.cards > ul > li {
+    padding: 0.75rem !important;
+  }
+}
+
+/* Responsive image sizing for About page photo */
+@media (max-width: 900px) {
+  img[align="right"] {
+    width: 200px !important;
+    height: 200px !important;
+    float: none !important;
+    display: block !important;
+    margin: 1rem auto !important;
+  }
+}
+
+@media (max-width: 600px) {
+  img[align="right"] {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  img[align="right"] {
+    width: 120px !important;
+    height: 120px !important;
   }
 }
 
