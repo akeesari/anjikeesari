@@ -3,6 +3,39 @@
    ============================================ */
 
 /* ============================================
+   FOOTER - Hide prev/next navigation
+   ============================================ */
+
+/* Hide the prev/next page navigation in footer */
+.md-footer__inner {
+  display: none !important;
+}
+
+/* Reduce footer height only */
+.md-footer {
+  padding: 0 !important;
+  min-height: auto !important;
+}
+
+.md-footer-meta {
+  padding: 0 !important;
+  min-height: auto !important;
+}
+
+.md-footer-meta__inner {
+  padding: 0.2rem 0 !important;
+  min-height: auto !important;
+}
+
+.md-footer-social {
+  padding: 0 !important;
+}
+
+.md-footer-copyright {
+  padding: 0 !important;
+}
+
+/* ============================================
    HEADER - Theme-aware styling
    ============================================ */
 
