@@ -127,10 +127,14 @@ extra:
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/akeesari
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/anjikeesari
+    - icon: fontawesome/brands/medium
+      link: https://medium.com/@anjkeesari
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@anji.keesari
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com
   generator: false
   footer: |
       <style>
