@@ -168,7 +168,10 @@ nav:
       # - Profile : about/profile.md
       # - Accomplishments : about/accomplishments.md
   
-  - Research: research/index.md
+  - Research:
+      - Research: research/index.md
+      - Publications:
+        - Integrating AI Agent Frameworks with Existing Microservices : resources/publications/AI-Agent-Microservices/AI-Agent-Microservices-Integration.md
   
   - Awards: awards/index.md
   
