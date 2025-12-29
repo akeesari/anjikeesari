@@ -18,6 +18,26 @@ Cloud architecture researcher with published peer-reviewed papers in algorithmic
 
 ## Published Scholarly Articles
 
+### Integrating AI Agent Frameworks with Existing Microservices: An Adapter-Based Architecture for Enterprises **(WIP)**
+
+**Status:** Work in Progress - Internal Review  
+**Expected Publication:** 2025
+
+**Research Contribution:**  
+Novel architectural framework for integrating AI agent systems with existing microservices ecosystems, enabling enterprises to adopt intelligent automation through evolutionary rather than revolutionary modernization. Addresses critical challenges in authentication propagation, distributed tracing, security compliance, and performance optimization while supporting multiple AI agent frameworks (LangChain, Semantic Kernel, Agent Framework).
+
+**Key Innovations:**
+- Hybrid architecture for AI-microservices integration with standardized adapter patterns
+- Validated design patterns for service wrapping and agent tool development
+- Production implementation in financial services sector with 40% reduction in API orchestration complexity
+- Comprehensive security evaluation confirming SOC 2 and PCI DSS compliance
+
+**Keywords:** AI agents, microservices architecture, enterprise integration, large language models, API gateway, distributed systems, RESTful services, authentication propagation, tool calling, Model Context Protocol, LangChain, Semantic Kernel, financial services, software architecture patterns
+
+[📖 Read Draft Paper](../resources/publications/AI-Agent-Microservices/AI-Agent-Microservices-Integration.md)
+
+---
+
 ### AI-Driven Algorithmic Trading: Integrating Machine Learning, Hybrid Technical Indicators, and Risk Management for Momentum Strategies
 
 **Journal:** International Journal of Engineering and Computer Science (IJECS)  
