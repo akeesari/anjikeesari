@@ -161,7 +161,7 @@ nav:
   #   - Blogs: blogs.md
   
   - About:
-      - About: about/about.md
+      - About: about/index.md
       # - Profile : about/profile.md
       # - Accomplishments : about/accomplishments.md
   
@@ -199,8 +199,7 @@ nav:
       - Setting up Windows Terminal with Oh-My-Posh:  articles/windows-terminal-setup.md
   
   - Developer Tools:
-      - Introduction:
-        - Introduction: developertools/introduction/introduction.md
+      - Overview: developertools/index.md
       - Download & Install software:
         - Developer Workstation Configuration: developertools/software/workstation.md    
         - Windows OS: developertools/software/windows.md
@@ -244,7 +243,7 @@ nav:
         - .NET Core Web API : resources/webapi.md
         - Azure Cloud : resources/azure-cloud.md
   - Contact:
-      - Contact Us: contact.md
+      - Contact Us: contact/index.md
   # - personal:
   #     - Yosemite Clouds Rest: personal/yosemite-clouds-rest.md
       # - Breakfast Recipes: personal/breakfast-recipes.md

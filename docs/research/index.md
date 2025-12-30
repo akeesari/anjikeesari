@@ -135,4 +135,4 @@ Comprehensive empirical performance analysis of high-throughput cloud-native mes
 
 Interested in collaborating on research in cloud architecture, distributed systems, or algorithmic trading? 
 
-[Contact Me](../contact.md) | [LinkedIn](https://www.linkedin.com/in/anjikeesari){:target="_blank"}
+[Contact Me](../contact/index.md) | [LinkedIn](https://www.linkedin.com/in/anjikeesari){:target="_blank"}
