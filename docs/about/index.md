@@ -138,4 +138,4 @@ During free time, I find joy in playing soccer, hiking through California trails
 
 ## Let's Connect
 
-Interested in cloud architecture, AI/ML integration, or collaboration opportunities? [Get in touch →](../contact.md)
+Interested in cloud architecture, AI/ML integration, or collaboration opportunities? [Get in touch →](../contact/index.md)
