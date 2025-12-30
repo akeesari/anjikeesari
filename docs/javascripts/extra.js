@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             headerTitle.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                window.location.href = '/anjikeesari/';
+                window.location.href = '/';
             });
         }
     }
