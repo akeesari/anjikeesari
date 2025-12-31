@@ -168,7 +168,7 @@ nav:
   - Research:
       - Research: research/index.md
       - Publications:
-        - Integrating AI Agent Frameworks with Existing Microservices : resources/publications/AI-Agent-Microservices/AI-Agent-Microservices-Integration.md
+        - Integrating AI Agent Frameworks with Existing Microservices : research/publications/ai-agent-microservices-integration/index.md
   
   - Awards: awards/index.md
   

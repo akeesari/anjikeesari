@@ -34,7 +34,7 @@ Novel architectural framework for integrating AI agent systems with existing mic
 
 **Keywords:** AI agents, microservices architecture, enterprise integration, large language models, API gateway, distributed systems, RESTful services, authentication propagation, tool calling, Model Context Protocol, LangChain, Semantic Kernel, financial services, software architecture patterns
 
-[📖 Read Draft Paper](../resources/publications/AI-Agent-Microservices/AI-Agent-Microservices-Integration.md)
+[📖 Read Draft Paper](publications/ai-agent-microservices-integration/index.md)
 
 ---
 
