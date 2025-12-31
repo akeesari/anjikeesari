@@ -1,10 +1,30 @@
+---
+hide:
+  - toc
+---
+
+<style>
+.md-typeset table:not([class]) {
+    border: none !important;
+}
+.md-typeset table:not([class]) thead {
+    border-bottom: 2px solid var(--md-default-fg-color--lighter);
+}
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+    border: none !important;
+}
+</style>
+
 # Azure Cloud - Reference Architecture Guide
 
 ## Introduction
 
-Welcome to **`Step-by-Step Practical Guide on Azure Reference Architecture**. In this course, you will learn how to build a comprehensive Azure architecture suitable for small, medium, and even enterprise-scale organizations. Throughout the labs, I'll guide you in deploying a website and its microservices in Azure using Azure DevOps CI & CD Pipelines. 
-We strongly recommend following the labs in the listed sequence to ensure a clear understanding of the concepts that can be directly applied to your own projects.
-Our goal is to save your time by providing a similar design solution for your organization. By the end of this course, you will become familiar with the major services offered by Azure and gain real-life project experience. 
+Build enterprise-grade Azure architectures from the ground up. This hands-on video series guides you through designing and deploying a complete cloud infrastructure suitable for organizations of any scale, using real-world patterns and Azure DevOps automation.
+
+**What You'll Learn**: Azure networking fundamentals, security design, App Service Environments, Application Gateway configuration, ARM template infrastructure as code, and automated CI/CD pipelines for production deployments.
+
+**Best For**: Cloud architects, DevOps engineers, and developers responsible for designing, implementing, or maintaining Azure cloud infrastructure. 
 
 ## YouTube videos
 
@@ -30,7 +50,3 @@ Our goal is to save your time by providing a similar design solution for your or
 | **Lab-14:**         | [Deploying ARM Templates using Azure DevOps Pipelines](https://www.youtube.com/watch?v=a2CHApotJNY&t=1089s) |
 | **Lab-15:**         | [ Deploy a website or APIs to Azure with Azure App Service](https://www.youtube.com/watch?v=XqHOmSZM35U&t=315s)|
 | **Lab-16:**         | [ Create Azure Application Gateway ](https://www.youtube.com/watch?v=p3AN1Oh7HeE&t=2391s)|
-
-## Source code
-
-Work in progress...

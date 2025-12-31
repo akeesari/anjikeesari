@@ -153,4 +153,4 @@ These recognitions confirm what I already believe: technology's greatest impact 
 
 ## Let's Connect
 
-Interested in collaboration, speaking opportunities, or award nominations? [Get in touch →](../contact.md)
+Interested in collaboration, speaking opportunities, or award nominations? [Get in touch →](../contact/index.md)
