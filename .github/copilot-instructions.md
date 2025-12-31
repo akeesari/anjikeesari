@@ -115,7 +115,7 @@ Use admonitions for notes, warnings, and tips:
 ### Cheat Sheets Pattern
 Location: `docs/developertools/cheatsheets/`
 Format: `<tool>-cheat-sheet.md` (e.g., `kubectl-cheat-sheet.md`, `docker-cheat-sheet.md`)
-Each must be registered in `mkdocs.yml` navigation under `Developer Tools → Cheat Sheets`
+Each must be registered in `mkdocs.yml` navigation under `Tools → Cheat Sheets`
 
 ## MkDocs Configuration Essentials
 
@@ -154,7 +154,7 @@ This pattern adds border styling and enables lightbox viewing.
 
 **Add new cheat sheet**:
 1. Create `docs/developertools/cheatsheets/<tool>-cheat-sheet.md`
-2. Add to `mkdocs.yml` nav under `Developer Tools → Cheat Sheets`
+2. Add to `mkdocs.yml` nav under `Tools → Cheat Sheets`
 
 **Add new article**:
 1. Create `docs/articles/YYYYMMDD.#-topic.md`

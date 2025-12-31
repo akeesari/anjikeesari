@@ -1,43 +1,73 @@
-# Introduction
+# Tools
 
-Welcome to my personal knowledge-sharing platform!
+Welcome to the Tools section - your comprehensive resource hub for modern cloud-native development, infrastructure automation, and AI engineering.
 
-This website brings together years of my hands-on experience, continuous learning, and teaching across modern cloud-native technologies. It is created for developers, architects, and learners who aim to build reliable, production-grade solutions using today's most relevant tools and technologies.
+This section provides practical guides, quick-reference cheat sheets, and setup instructions to accelerate your development workflow. Whether you're setting up a new workstation, learning Kubernetes, or building AI applications, you'll find battle-tested resources based on real-world production experience.
 
-This site is organized with the following topics:
+## What You'll Find Here
 
-## Developer Tools
+### Setup Guides
 
-This section focuses on helping you set up your local development environment quickly and efficiently, covering both [Windows](software/windows.md) and [macOS](software/mac.md) operating systems. It includes:
+Step-by-step installation guides for essential developer tools and software across multiple operating systems:
 
-* **Download & Install Software** – Step-by-step installation guides for essential developer tools on [Windows](software/windows.md) and [macOS](software/mac.md).
-* **Developer Workstation Configuration** – Best practices for setting up a clean, powerful development environment.
-* **Useful Tools** – A list of [network related tools](tools/useful-tools.md) that enhance developer productivity.
-* **Cheat Sheets** – A collection of clear, quick-reference guides for common technologies:
+* **[Workstation Configuration](software/workstation.md)** - Hardware recommendations and best practices for 2025 developer workstations
+* **[Windows Setup](software/windows.md)** - Complete Windows development environment setup with Chocolatey automation
+* **[macOS Setup](software/mac.md)** - Comprehensive macOS development tools installation with Homebrew
 
-  * [Git](cheatsheets/git-cheat-sheet.md), [Docker](cheatsheets/docker-cheat-sheet.md), [Dockerfile](cheatsheets/dockerfile-cheat-sheet.md), [Kubectl](cheatsheets/kubectl-cheat-sheet.md), [Helm](cheatsheets/helm-cheat-sheet.md), [ArgoCD](cheatsheets/argocd-cheat-sheet.md), [Azure CLI](cheatsheets/az-cli-cheat-sheet.md), [ACR](cheatsheets/az-acr-cheat-sheet.md), [Terraform](cheatsheets/terraform-cheat-sheet.md), [Redis](cheatsheets/redis-cheat-sheet.md), and more.
+### Network Tools
 
-* **AI Engineering** – [AI concepts](ai-engineering/ai-concepts.md), [learning roadmaps](ai-engineering/ai-learning-roadmap.md), and [technology stack](ai-engineering/ai-technology-stack.md) for AI/ML development.
+Essential [network troubleshooting and DNS tools](tools/network-tools.md) for debugging connectivity issues, DNS resolution, and infrastructure diagnostics.
 
-## Resources
+### Cheat Sheets
 
-This section covers the books I've authored on Azure and Kubernetes, along with YouTube video tutorials covering .NET and Azure-based development.
+Quick-reference guides for the most commonly used developer tools and technologies:
 
-## Articles
+**Version Control & Development**
+* [Git](cheatsheets/git-cheat-sheet.md) - Version control commands and workflows
+* [.NET CLI](cheatsheets/dotnet-cheat-sheet.md) - .NET SDK commands, project management, EF Core
 
-This section features detailed technical content based on real-world experience, use cases, and implementation patterns. Each article is written with practical examples, code snippets, deployment patterns, and architecture diagrams where applicable.
+**Containers & Orchestration**
+* [Docker](cheatsheets/docker-cheat-sheet.md) - Container management commands
+* [Dockerfile](cheatsheets/dockerfile-cheat-sheet.md) - Container image building best practices
+* [Docker Compose](cheatsheets/docker-compose-cheat-sheet.md) - Multi-container application orchestration
+* [Kubectl](cheatsheets/kubectl-cheat-sheet.md) - Kubernetes cluster management
+* [Helm](cheatsheets/helm-cheat-sheet.md) - Kubernetes package manager
+* [ArgoCD](cheatsheets/argocd-cheat-sheet.md) - GitOps continuous delivery
 
-## About
+**Infrastructure & Cloud**
+* [Terraform](cheatsheets/terraform-cheat-sheet.md) - Infrastructure as Code commands
+* [Azure CLI](cheatsheets/az-cli-cheat-sheet.md) - Azure cloud management
+* [Azure ACR](cheatsheets/az-acr-cheat-sheet.md) - Azure Container Registry operations
 
-This section provides a brief overview of my background and technical journey.
+**Databases & Data**
+* [PostgreSQL](cheatsheets/postgresql-cheat-sheet.md) - Database management and operations
+* [Redis](cheatsheets/redis-cheat-sheet.md) - In-memory data store commands
 
-## Contact
+**Network & Diagnostics**
+* [Dig](cheatsheets/dig-cheat-sheet.md) - DNS lookup and troubleshooting
+* [Cloud Compare](cheatsheets/cloud-compare-cheat-sheet.md) - Cloud provider feature comparison
 
-I encourage you to reach out if you're interested in collaboration, contributing to open-source projects, or exploring ideas in cloud-native technologies, DevOps, and AI engineering.
+### AI Engineering
+
+Resources for building AI-powered applications and understanding modern AI/ML technologies:
+
+* **[AI Concepts](ai-engineering/ai-concepts.md)** - Fundamental AI/ML concepts and terminology
+* **[Learning Roadmap](ai-engineering/ai-learning-roadmap.md)** - Structured path for AI engineering skill development
+* **[Technology Stack](ai-engineering/ai-technology-stack.md)** - Tools and frameworks for AI application development
+
+## How to Use This Section
+
+**For Quick Reference:** Jump directly to any cheat sheet when you need a command syntax or pattern reminder.
+
+**For Learning:** Start with setup guides to establish your development environment, then explore cheat sheets for technologies you want to master.
+
+**For AI Development:** Follow the AI Engineering learning roadmap and reference the technology stack for tool selection.
+
+## Contributing
+
+Found an issue or want to suggest improvements? Contributions are welcome! Reach out via the [Contact](../contact.md) page.
 
 ---
 
-Thank you for visiting my website.
-
-— *Anji Keesari*
+*All content is regularly updated to reflect current best practices and tool versions.*
 

@@ -198,31 +198,33 @@ nav:
       - Setting up Mac Terminal with Oh-My-Zsh:  articles/mac-terminal-setup.md
       - Setting up Windows Terminal with Oh-My-Posh:  articles/windows-terminal-setup.md
   
-  - Developer Tools:
+  - Tools:
       - Overview: developertools/index.md
-      - Download & Install software:
-        - Developer Workstation Configuration: developertools/software/workstation.md    
-        - Windows OS: developertools/software/windows.md
-        - Mac OS: developertools/software/mac.md
-      - Tools:
-        - Useful Tools: developertools/tools/useful-tools.md
+      - Setup Guides:
+        - Workstation: developertools/software/workstation.md    
+        - Windows: developertools/software/windows.md
+        - macOS: developertools/software/mac.md
+      - Network Tools: developertools/tools/network-tools.md
       - AI Engineering:
-        - AI Concepts: developertools/ai-engineering/ai-concepts.md
+        - Concepts: developertools/ai-engineering/ai-concepts.md
         - Learning Roadmap: developertools/ai-engineering/ai-learning-roadmap.md
-        - Technology Stack: developertools/ai-engineering/ai-technology-stack.md
+        - Tech Stack: developertools/ai-engineering/ai-technology-stack.md
       - Cheat Sheets:
-        - Git Cheat Sheet: developertools/cheatsheets/git-cheat-sheet.md
-        - Dockerfile Cheat Sheet: developertools/cheatsheets/dockerfile-cheat-sheet.md        
-        - Docker Cheat Sheet: developertools/cheatsheets/docker-cheat-sheet.md        
-        - Kubectl Cheat Sheet: developertools/cheatsheets/kubectl-cheat-sheet.md
-        - ArgoCD Cheat Sheet: developertools/cheatsheets/argocd-cheat-sheet.md
-        - Helm Cheat Sheet: developertools/cheatsheets/helm-cheat-sheet.md
-        - Azure CLI Cheat Sheet: developertools/cheatsheets/az-cli-cheat-sheet.md
-        - AZ ACR Cheat Sheet: developertools/cheatsheets/az-acr-cheat-sheet.md
-        - Terraform Cheat Sheet: developertools/cheatsheets/terraform-cheat-sheet.md
-        - Redis Cache Cheat Sheet: developertools/cheatsheets/redis-cheat-sheet.md
-        - Cloud Compare Cheat Sheet: developertools/cheatsheets/cloud-compare-cheat-sheet.md
-        - Dig Cheat Sheet: developertools/cheatsheets/dig-cheat-sheet.md        
+        - Git: developertools/cheatsheets/git-cheat-sheet.md
+        - .NET CLI: developertools/cheatsheets/dotnet-cheat-sheet.md
+        - Dockerfile: developertools/cheatsheets/dockerfile-cheat-sheet.md
+        - Docker: developertools/cheatsheets/docker-cheat-sheet.md
+        - Docker Compose: developertools/cheatsheets/docker-compose-cheat-sheet.md
+        - Kubectl: developertools/cheatsheets/kubectl-cheat-sheet.md
+        - Helm: developertools/cheatsheets/helm-cheat-sheet.md
+        - ArgoCD: developertools/cheatsheets/argocd-cheat-sheet.md
+        - Terraform: developertools/cheatsheets/terraform-cheat-sheet.md
+        - Azure CLI: developertools/cheatsheets/az-cli-cheat-sheet.md
+        - Azure ACR: developertools/cheatsheets/az-acr-cheat-sheet.md
+        - PostgreSQL: developertools/cheatsheets/postgresql-cheat-sheet.md
+        - Redis: developertools/cheatsheets/redis-cheat-sheet.md
+        - Dig: developertools/cheatsheets/dig-cheat-sheet.md
+        - Cloud Compare: developertools/cheatsheets/cloud-compare-cheat-sheet.md        
         
   # - Technology Stack:        
   #       - Technology Stack: techstack/tech-stack.md    
