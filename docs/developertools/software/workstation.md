@@ -1,4 +1,4 @@
-# Developer Workstation Configuration (2025)
+# Developer Workstation Configuration
 
 Building an effective development environment is crucial for productivity, performance, and long-term comfort. This guide provides practical recommendations for assembling a modern developer workstation, whether you're setting up a new machine, upgrading an existing one, or planning remote work infrastructure.
 

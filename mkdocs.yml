@@ -120,8 +120,8 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - tables
-  # - toc:                 
-  #     permalink: true
+  - toc:
+      toc_depth: 2
 
 extra:
   analytics:
@@ -241,9 +241,10 @@ nav:
   #       - Node JS : techstack/node-js.md
   #       - QA Automation : techstack/testing.md
   - Resources:
-      - Videos:
-        - .NET Core Web API : resources/webapi.md
-        - Azure Cloud : resources/azure-cloud.md
+      - Overview: resources/index.md
+      - Video Tutorials:
+        - Azure Reference Architecture: resources/azure-cloud.md
+        - .NET Core Web API: resources/webapi.md
   - Contact:
       - Contact Us: contact/index.md
   # - personal:

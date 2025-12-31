@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Tools
 
 Welcome to the Tools section - your comprehensive resource hub for modern cloud-native development, infrastructure automation, and AI engineering.
@@ -65,7 +70,7 @@ Resources for building AI-powered applications and understanding modern AI/ML te
 
 ## Contributing
 
-Found an issue or want to suggest improvements? Contributions are welcome! Reach out via the [Contact](../contact.md) page.
+Found an issue or want to suggest improvements? Contributions are welcome! Reach out via the [Contact](../contact/index.md) page.
 
 ---
 
