@@ -790,7 +790,7 @@ choco config set proxyPassword <password>
 
 - [Chocolatey Documentation](https://docs.chocolatey.org/)
 - [Troubleshooting Guide](https://docs.chocolatey.org/en-us/troubleshooting)
-- [Useful Network Tools](../tools/useful-tools.md)
+- [Network Tools](../tools/network-tools.md)
 - [Kubectl Cheat Sheet](../cheatsheets/kubectl-cheat-sheet.md)
 - [Docker Cheat Sheet](../cheatsheets/docker-cheat-sheet.md)
 - [Helm Cheat Sheet](../cheatsheets/helm-cheat-sheet.md)

@@ -12,7 +12,7 @@ Welcome to the repository for my personal website - a comprehensive technical bl
 This static documentation website is built with **Material for MkDocs** and serves as a platform for sharing:
 
 - **Technical Articles** - In-depth tutorials and guides on Azure, Kubernetes, DevOps, and more
-- **Developer Tools** - Cheat sheets, quick references, and practical guides
+- **Tools** - Cheat sheets, quick references, and practical guides
 - **Publications** - Technical books and research papers
 - **Learning Resources** - Curated content for cloud architects and developers
 

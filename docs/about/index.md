@@ -80,6 +80,7 @@ What excites me most is not just building infrastructure, but reimagining how te
 
     Distinguished memberships and judging roles:
 
+    - **IEEE Member** - Institute of Electrical and Electronics Engineers
     - **SAS Fellow** - International Society for Academic & Scientific Society
     - **IOASD Royal Fellow** - International Organization for Academic Development
     - **Globee Awards Judge** (2025) - Impact, Leaders, Business
@@ -126,7 +127,7 @@ Cloud-Native Applications • Distributed Systems • High-Throughput Architectu
 
 ## Professional Philosophy
 
-> "Work for excellence in your craft, empower your team, and share knowledge freely. Technology's true power lies not just in what it can do, but in how we use it to advance the field and create opportunities for others."
+> "The best architectures solve today's problems while preparing for tomorrow's opportunities. But technical excellence alone isn't enough—I believe in multiplying impact by sharing what I learn freely. Every tutorial I write, every pattern I document, and every engineer I mentor creates ripples that extend far beyond any single project. That's how we advance not just our careers, but our entire field."
 
 ---
 
