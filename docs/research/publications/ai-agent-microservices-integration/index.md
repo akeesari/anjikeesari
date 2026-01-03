@@ -135,52 +135,8 @@ Figs. 1–3 summarize the system overview, request flow, and a reference deploym
 
 **Fig. 1. Three-Layer Hybrid Architecture with Cross-Cutting Concerns**
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        Client Applications                      │
-│              (Web App, Mobile App, Desktop Client)              │
-└────────────────────────────┬────────────────────────────────────┘
-                             │ HTTPS/REST
-                             ▼
-┌─────────────────────────────────────────────────────────────────┐
-│              Layer 1: AI Agent Orchestration Layer              │
-│  ┌──────────────┐  ┌────────────────┐  ┌──────────────────┐     │
-│  │ Agent Runtime │  │ Tool Registry  │  │ State Management │     │
-│  │ Environment   │  │ & Discovery    │  │ (Cosmos DB)      │     │
-│  └──────────────┘  └────────────────┘  └──────────────────┘     │
-└────────────────────────────┬────────────────────────────────────┘
-                             │ Tool Invocation
-                             ▼
-┌─────────────────────────────────────────────────────────────────┐
-│           Layer 2: Integration and Adapter Layer                │
-│  ┌──────────────┐  ┌────────────────┐  ┌──────────────────┐     │
-│  │ Service       │  │ Authentication │  │ Schema           │     │
-│  │ Facades       │  │ Bridge         │  │ Transformation   │     │
-│  └──────────────┘  └────────────────┘  └──────────────────┘     │
-│  ┌──────────────────────────────────────────────────────────┐   │
-│  │              Caching Layer (Redis)                       │   │
-│  └──────────────────────────────────────────────────────────┘   │
-└────────────────────────────┬────────────────────────────────────┘
-                             │ API Calls (REST/gRPC)
-                             ▼
-┌─────────────────────────────────────────────────────────────────┐
-│        Layer 3: Existing Microservices Infrastructure           │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────┐     │
-│  │  User &  │  │Portfolio │  │ Market   │  │ Strategy /   │     │
-│  │ Account  │  │ Service  │  │ Data Svc │  │ Backtest Svc│      │
-│  └──────────┘  └──────────┘  └──────────┘  └──────────────┘     │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────┐     │
-│  │Reporting │  │  News &  │  │  Audit   │  │Notification  │     │
-│  │ Service  │  │Research S│  │ Service  │  │   Service    │     │
-│  └──────────┘  └──────────┘  └──────────┘  └──────────────┘     │
-└─────────────────────────────────────────────────────────────────┘
-┌─────────────────────────────────────────────────────────────────┐
-│             Cross-Cutting Concerns (All Layers)                 │
-│  Security: IdP (Entra ID/Okta) + OAuth 2.0/OIDC/JWT, RBAC/ABAC   │
-│  Observability: OpenTelemetry, logs+correlation IDs, alerts      │
-│  Performance: caching/batching/timeouts                          │
-└─────────────────────────────────────────────────────────────────┘
-```
+[![Alt text](image-1.png){:style="border: 0px solid black; border-radius: 0px;"}](image-1.png){:target="_blank"}
+
 
 **Description**: This diagram illustrates the three-layer architecture with clear separation of concerns and integrated cross-cutting capabilities. Client applications interact with the Agent Orchestration Layer, which manages agent lifecycle and reasoning. The Integration Layer bridges agents and microservices through facades, authentication, and schema translation. Existing microservices remain unchanged in Layer 3. Cross-cutting concerns—security, observability, and performance—apply across all layers and are shown separately for readability. The observability tools shown are representative options; in practice, organizations typically adopt either a cloud-native stack (e.g., Azure Monitor/Application Insights) or an open-source stack (e.g., Prometheus/Grafana/Jaeger), with OpenTelemetry for instrumentation.
 
@@ -188,32 +144,7 @@ Figs. 1–3 summarize the system overview, request flow, and a reference deploym
 
 **Fig. 2. Agent Request Processing Flow**
 
-```
-User        Agent Runtime       Tool Registry       Integration Layer   Auth Bridge      Microservice
- │              │                   │                    │               │              │
- │──1──────────>│                   │                    │               │              │
- │  Query       │                   │                    │               │              │
- │              │──2───────────────>│                    │               │              │
- │              │  Discover Tools   │                    │               │              │
- │              │<─3────────────────│                    │               │              │
- │              │   Tool List       │                    │               │              │
- │              │  4) Reason & Select Tools (LLM Inference)              │              │
- │              │──5────────────────────────────────────>│               │              │
- │              │  Invoke Tool                           │               │              │
- │              │                                        │──6───────────>│              │
- │              │                                        │  Get Token    │              │
- │              │                                        │<─7────────────│              │
- │              │                                        │   Token       │              │
- │              │                                        │──8─────────────────────────>│
- │              │                                        │  API Call (with Auth)        │
- │              │                                        │<─9─────────────────────────│
- │              │                                        │  Response                    │
- │              │<─10────────────────────────────────────│               │              │
- │              │  Transformed Result                    │               │              │
- │              │  11) Synthesize Response (LLM Inference)               │              │
- │<─12──────────│                   │                    │               │              │
- │  Response    │                   │                    │               │              │
-```
+[![Alt text](image-2.png){:style="border: 1px solid black; border-radius: 10px;"}](image-2.png){:target="_blank"}
 
 **Steps**:
 1. User submits natural language query
@@ -232,83 +163,9 @@ User        Agent Runtime       Tool Registry       Integration Layer   Auth Bri
 
 **Fig. 3. Single-Region Azure Deployment (Reference)**
 
-```
-  ┌───────────────────────────────────────────────────────────┐
-  │              Delivery + Governance Tooling                 │
-  │                                                           │
-  │  Source Repo -> CI Pipeline -> Build/Scan -> ACR           │
-  │   (Git)         (Azure DevOps/     (SAST/SCA/      (Images)│
-  │                  GitHub Actions)    Image Scan)            │
-  │                                                           │
-  │                 GitOps (Desired State)                     │
-  │            Helm Charts  -> Argo CD  -> AKS                 │
-  │                                                           │
-  │          Policy/Guardrails: Azure Policy / Gatekeeper      │
-  │          Supply Chain: SBOM + signing                      │
-  │          Cloud/Runtime: Defender for Cloud/Containers      │
-  └───────────────────────────────────────────────────────────┘
 
-            ┌───────────────┴────────────────┐
-            │                                │
-            ▼                                ▼
-     ┌────────────────────────┐      ┌─────────────────────────────┐
-     │     Azure Front Door    │      │ Azure Container Registry     │
-     │ (Global Entry + WAF)    │      │ (ACR)                        │
-     └────────────┬───────────┘      └──────────────┬──────────────┘
-       │ HTTPS                                  │ image pull
-       ▼                                        ▼
-     ┌────────────────────────┐      ┌─────────────────────────────┐
-     │  Application Gateway   │      │ AKS (pull images at deploy)  │
-     │   / Ingress Controller │      └─────────────────────────────┘
-     └────────────┬───────────┘
-       │ HTTPS
-       ▼
-  ┌───────────────────────────────────────────────────────────────────┐
-  │                           Single Region                            │
-  │                          (e.g., East US)                           │
-  │                                                                     │
-  │  ┌────────────────────────┐        ┌─────────────────────────────┐ │
-  │  │ Microsoft Entra ID      │        │ Azure Key Vault             │ │
-  │  │ (OIDC/OAuth)            │        │ (Secrets/Keys)              │ │
-  │  └──────────┬─────────────┘        └──────────┬──────────────────┘ │
-  │             │ tokens / claims                 │ secrets / keys       │
-  │             ▼                                 ▼                      │
-  │  ┌──────────────────────────────┐     ┌─────────────────────────────┐ │
-  │  │ AKS: Agent Runtime (Ingress)   │---->│ Azure OpenAI                │ │
-  │  │ - Orchestrator/Router         │     │ (Chat + Embeddings)         │ │
-  │  │ - Tool Registry + MCP Client  │     └─────────────────────────────┘ │
-  │  │ - RAG Retriever               │---->┌─────────────────────────────┐ │
-  │  └──────────────┬───────────────┘     │ Vector Index / Search        │ │
-  │                 │ MCP Tool Calls      │ (RAG)                        │ │
-  │                 ▼                     └─────────────────────────────┘ │
-  │        ┌────────────────────────┐                                    │
-  │        │ MCP Tool Servers        │                                    │
-  │        │ (Facades/Adapters)      │                                    │
-  │        └──────────┬─────────────┘                                    │
-  │                   ▼                                                 │
-  │        ┌────────────────────────┐      ┌──────────────────────────┐   │
-  │        │ API Management          │----->│ Internal APIs / Mesh      │   │
-  │        │ (Policies)              │      └──────────┬──────────────┘   │
-  │        └────────────────────────┘                 │ REST/gRPC          │
-  │                                                   ▼                   │
-  │                                      ┌──────────────────────────┐     │
-  │                                      │ Microservices (in AKS)    │     │
-  │                                      └──────────────────────────┘     │
-  │                                                                     │
-  │  ┌─────────────────────────────┐                                    │
-  │  │ Azure AI Foundry             │                                    │
-  │  │ (Agent Service)              │                                    │
-  │  └─────────────────────────────┘                                    │
-  │                                                                     │
-  │  AKS workloads (Agent + Microservices)  ----->  Platform Services    │
-  │                 ┌──────────────────────────────────────────────┐    │
-  │                 │ Platform Services (used by AKS workloads)     │    │
-  │                 │ Redis | Cosmos DB | Service Bus | Storage     │    │
-  │                 │ Monitor/App Insights | Sentinel               │    │
-  │                 └──────────────────────────────────────────────┘    │
-  └───────────────────────────────────────────────────────────────────┘
-
-```
+[![Alt text](image-3.png){:style="border: 1px solid black; border-radius: 0px;"}](image-3.png){:target="_blank"}
+[![Alt text](image-4.png){:style="border: 1px solid black; border-radius: 0px;"}](image-4.png){:target="_blank"}
 
 **Components**:
 
