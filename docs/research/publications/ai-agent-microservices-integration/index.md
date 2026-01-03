@@ -15,9 +15,11 @@ Email: anjkeesari@gmail.com
 
 Enterprises face a critical challenge integrating AI agent technologies into established microservices architectures without disrupting operations. Organizations in regulated industries have invested substantially in microservices infrastructure that cannot be easily replaced. This paper presents an architectural framework enabling AI agent integration with existing microservices ecosystems through evolutionary rather than revolutionary modernization.
 
-We propose a hybrid three-layer architecture introducing an agent orchestration layer that interacts with microservices through standardized adapter patterns and API gateway integration. The framework addresses enterprise requirements including authentication propagation, distributed tracing, security compliance, and performance optimization while supporting multiple agent platforms and maintaining backward compatibility with existing services.
+This paper proposes a hybrid three-layer architecture introducing an agent orchestration layer that interacts with microservices through standardized adapter patterns and API gateway integration. The framework addresses enterprise requirements including authentication propagation, distributed tracing, security compliance, and performance optimization while supporting multiple agent platforms and maintaining backward compatibility with existing services.
 
-This work contributes: (1) a comprehensive architectural framework for integrating AI agents with existing microservices through non-invasive adapter patterns; (2) a catalog of seven reusable design patterns addressing authentication, tool management, caching, and hybrid orchestration; (3) systematic implementation guidance covering framework selection, tool development, security, and observability; and (4) architectural principles enabling evolutionary modernization without disrupting existing services. The framework provides a practical roadmap for enterprises in regulated industries seeking to adopt AI capabilities while preserving infrastructure investments and maintaining compliance requirements.
+Unlike prior work that focuses primarily on agent runtimes or LLM-to-tool interfaces, this paper targets brownfield enterprise integration: integrating agents into existing microservices while preserving established security, observability, and operational controls.
+
+Key contributions include the three-layer integration architecture, a reusable pattern catalog with implementation guidance, and an anonymized, production-inspired case study (TradeSignal) with an evaluation methodology.
 
 **Index Terms**—AI agents, microservices architecture, enterprise integration, large language models, API gateway, distributed systems, RESTful services, authentication propagation, tool calling, Model Context Protocol, LangChain, Semantic Kernel, financial services, software architecture patterns.
 
@@ -41,9 +43,9 @@ Integrating AI agent frameworks with existing microservices architectures presen
 
 **Architectural Incompatibility**: Traditional microservices communicate through synchronous REST calls or message queues with well-defined contracts. AI agents operate through dynamic tool calling, where the runtime determines function invocation based on natural language reasoning. This fundamental difference creates integration challenges that standard API gateways cannot fully resolve.
 
-**Security and Compliance**: Enterprise API ecosystems implement sophisticated security models (OAuth 2.0, JWT, RBAC). AI agents must respect these boundaries while orchestrating calls across multiple services with different authentication requirements. Current frameworks provide limited guidance on enterprise security integration, authentication propagation, and audit logging required for regulatory compliance.
+**Security and Compliance**: Enterprise API ecosystems implement sophisticated security models (OAuth 2.0, JSON Web Tokens (JWTs), role-based access control (RBAC), and attribute-based access control (ABAC)). AI agents must respect these boundaries while orchestrating calls across multiple services with different authentication requirements. Current frameworks provide limited guidance on enterprise security integration, authentication propagation, and audit logging required for regulatory compliance.
 
-**Performance Optimization**: REST APIs require low-latency responses with strict SLAs (sub-100ms for critical operations). AI agents add computational overhead from LLM inference, tool selection, and multi-step reasoning. Organizations need architectural patterns minimizing latency impact while maintaining intelligence benefits, including strategies for caching, request batching, and hybrid execution models.
+**Performance Optimization**: REST APIs require low-latency responses with strict service-level agreements (SLAs) (e.g., sub-100 ms for critical operations in latency-sensitive domains). AI agents add computational overhead from LLM inference, tool selection, and multi-step reasoning. Organizations need architectural patterns minimizing latency impact while maintaining intelligence benefits, including strategies for caching, request batching, and hybrid execution models.
 
 **Observability and Schema Management**: Traditional distributed tracing tools are designed for request-response patterns, not complex agent decision trees with multiple tool invocations. Additionally, bridging strongly-typed microservice schemas (OpenAPI, Protocol Buffers) with natural language agent interactions requires systematic approaches to schema translation, validation, and error handling.
 
@@ -55,23 +57,27 @@ This research develops a practical architectural framework for integrating AI ag
 
 ### 1.4 Contributions
 
-This paper contributes: (1) a three-layer hybrid architectural framework enabling seamless AI agent integration with existing microservices through standardized adapter patterns and API gateway integration; (2) seven design patterns with implementation guidance and trade-off analysis addressing authentication propagation, tool registry management, caching strategies, and hybrid orchestration; (3) systematic implementation approach covering agent framework selection criteria, automated tool generation from OpenAPI specifications, enterprise security integration, and comprehensive observability patterns; and (4) architectural principles for non-invasive integration preserving existing security models, enabling evolutionary adoption, and maintaining compliance in regulated environments. The framework provides a practical roadmap for enterprises seeking AI capabilities while preserving infrastructure investments.
+This paper contributes: (1) a three-layer, adapter-based architectural framework enabling non-invasive AI agent integration with existing microservices; (2) seven reusable design patterns with implementation guidance and trade-off analysis addressing authentication propagation, tool registry management, caching strategies, and hybrid orchestration; (3) a systematic implementation approach covering framework selection, automated tool generation from OpenAPI specifications, enterprise security integration, and observability integration; (4) architectural principles supporting evolutionary adoption while preserving existing security models and compliance constraints; and (5) an anonymized, production-inspired case study (TradeSignal) plus evaluation methodology to validate feasibility and quantify latency/cost/correctness trade-offs.
+
+### 1.5 Scope and Methodology
+
+This paper is an architecture and design-pattern contribution grounded in enterprise microservices constraints. We assume existing services expose well-defined APIs (e.g., REST, gRPC) with established authentication and authorization controls, and we focus on integration mechanisms that do not require microservice modification. The scope is the agent-to-microservice integration boundary (tool modeling, adapters/facades, authentication propagation, schema translation, and observability). We do not propose new learning algorithms or LLM architectures; instead, we provide a framework-agnostic integration approach intended to be implemented with multiple agent platforms.
 
 ---
 
 ## 2. Related Work
 
-Our work builds upon and extends research in three interconnected areas: microservices architecture patterns, AI agent frameworks, and enterprise AI integration strategies. We review key contributions in each area and identify gaps that our framework addresses.
+This paper builds upon and extends research in three interconnected areas: microservices architecture patterns, AI agent frameworks, and enterprise AI integration strategies. It reviews key contributions in each area and identifies gaps that our framework addresses.
 
 ### 2.1 Microservices Architecture and API Management
 
 Foundational work by Newman [1] and Richardson [2] established microservices design principles and pattern languages, focusing primarily on greenfield system design rather than integration with new capabilities. API gateways [3,4] and service meshes (Istio [5], Linkerd [6]) provide sophisticated infrastructure for service communication but are designed for traditional request-response patterns with predefined endpoints. They lack semantic understanding of dynamic, reasoning-based invocation required by AI agents.
 
-OpenAPI specifications [7] enable automated API documentation and client generation but assume static, programmatic consumption. Our work extends these concepts by automatically generating agent tool definitions from OpenAPI specifications, bridging structured API contracts with natural language agent interfaces—a gap not addressed by existing API management solutions.
+OpenAPI specifications [7] enable automated API documentation and client generation but assume static, programmatic consumption. This paper extends these concepts by automatically generating agent tool definitions from OpenAPI specifications, bridging structured API contracts with natural language agent interfaces—a gap not addressed by existing API management solutions.
 
 ### 2.2 AI Agent Frameworks and Orchestration
 
-Modern agent frameworks including LangChain [8], AutoGen [9], Semantic Kernel [10], and LangGraph [12] provide abstractions for tool orchestration and multi-step reasoning. LangChain pioneered agent-tool interaction patterns but assumes simple integration scenarios. AutoGen advances multi-agent coordination but targets research scenarios. Microsoft's enterprise frameworks (Semantic Kernel, Agent Framework [11]) emphasize production-readiness but focus on building new applications rather than integrating with existing architectures.
+Modern agent frameworks including LangChain [8], AutoGen [9], Semantic Kernel [10], and LangGraph [12] provide abstractions for tool orchestration and multi-step reasoning. LangChain pioneered agent-tool interaction patterns but assumes simple integration scenarios. AutoGen advances multi-agent coordination but targets research scenarios. Microsoft's enterprise frameworks (e.g., Semantic Kernel) emphasize production-readiness but often focus on building new applications rather than integrating with existing architectures.
 
 Recent advances in LLM function calling [13,14] improved tool invocation reliability, while standardization efforts like Model Context Protocol (MCP) aim to provide unified tool interfaces. Emerging platforms (Azure AI Foundry) integrate multiple frameworks with enterprise governance. However, these developments address the agent-LLM interface rather than the architectural challenges of integrating agents with production microservices—specifically authentication propagation, distributed tracing across agent reasoning steps, schema bridging between natural language and typed APIs, and compliance enforcement in regulated environments.
 
@@ -79,7 +85,7 @@ Recent advances in LLM function calling [13,14] improved tool invocation reliabi
 
 MLOps literature [15] addresses model deployment and monitoring but focuses on traditional ML rather than autonomous agents. Enterprise AI governance frameworks [16,17] provide responsible AI guidance but are orthogonal to architectural integration challenges. API security research [18] examines protecting ML endpoints from attacks, not enabling agents as authenticated API clients. Industry case studies [19,20] document chatbot implementations with custom point-to-point integrations rather than systematic architectural frameworks.
 
-Earlier work on semantic web services and AI planning [21,22] attempted automated service orchestration through formal ontologies but proved too complex for adoption. Modern LLM-based agents make intelligent orchestration practical through natural language understanding but introduce new challenges our work addresses.
+Earlier work on semantic web services and AI planning [21,22] attempted automated service orchestration through formal ontologies but proved too complex for adoption. Modern LLM-based agents make intelligent orchestration practical through natural language understanding but introduce new challenges this paper addresses.
 
 ### 2.4 Research Gaps and Our Contribution
 
@@ -97,17 +103,17 @@ Critical gaps remain despite progress in related areas:
 
 **Validated Patterns**: No comprehensive catalog of design patterns exists for enterprise agent-microservices integration, forcing organizations to discover solutions independently.
 
-Our work addresses these gaps through an architectural framework providing integrated solutions spanning architecture, security, performance, and reusable patterns for enterprise adoption.
+This paper addresses these gaps through an architectural framework providing integrated solutions spanning architecture, security, performance, and reusable patterns for enterprise adoption.
 
 ---
 
 ## 3. Architectural Framework
 
-This section presents our hybrid architectural framework for integrating AI agent systems with existing microservices. The framework addresses the challenges identified in Section 1.2 through a layered architecture that separates concerns while enabling seamless interaction between agents and services. We describe the key components, their interactions, and the design rationale behind each architectural decision.
+This section presents a hybrid, three-layer architectural framework for integrating AI agent systems with existing microservices. The framework addresses the challenges in Section 1.2 by separating concerns across layers while preserving existing service boundaries.
 
 ### 3.1 Overview and Design Principles
 
-Our framework introduces a three-layer architecture between client applications and existing microservices (Figure 1):
+Our framework introduces a three-layer architecture between client applications and existing microservices (Fig. 1):
 
 **Layer 1: Agent Orchestration Layer** manages agent lifecycle, reasoning, and tool selection. Framework-agnostic, supporting LangChain, Semantic Kernel, and Microsoft Agent Framework through unified abstraction.
 
@@ -119,15 +125,15 @@ Our framework introduces a three-layer architecture between client applications 
 
 Key principles: **Non-Invasiveness** (no microservice modifications), **Framework Agnosticism** (preventing vendor lock-in), **Security by Design** (enforcement at every layer), **Evolutionary Adoption** (incremental integration), and **Performance Optimization** (caching, batching, hybrid execution).
 
-Typical flow: user request → agent reasoning and tool selection → integration layer translates to API calls with authentication → microservices process → integration transforms responses → agent synthesizes → final response. This enables natural language-driven orchestration while respecting security boundaries.
+Typical flow: user request → agent selects tools → integration layer enforces authn/authz and schema validation → microservices execute → integration transforms → agent synthesizes.
 
 ### 3.2 Architecture Diagrams
 
-This section provides visual representations of the key architectural components and their interactions. The framework employs three core diagrams: the system overview showing the three-layer architecture with integrated cross-cutting concerns (Figure 1), the component interaction sequence illustrating request flow (Figure 2), and the multi-region deployment architecture (Figure 3).
+Figs. 1–3 summarize the system overview, request flow, and a reference deployment model.
 
 #### 3.2.1 System Overview Architecture
 
-**Figure 1: Three-Layer Hybrid Architecture with Cross-Cutting Concerns**
+**Fig. 1. Three-Layer Hybrid Architecture with Cross-Cutting Concerns**
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -163,12 +169,12 @@ This section provides visual representations of the key architectural components
 ┌─────────────────────────────────────────────────────────────────┐
 │        Layer 3: Existing Microservices Infrastructure           │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────┐     │
-│  │ Accounts │  │Portfolio │  │ Trading  │  │  Financial   │     │
-│  │ Service  │  │ Service  │  │ Service  │  │Planning Svc  │     │
+│  │  User &  │  │Portfolio │  │ Market   │  │ Strategy /  │     │
+│  │ Account  │  │ Service  │  │ Data Svc │  │ Backtest Svc│     │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────────┘     │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────┐     │
-│  │Reporting │  │ Document │  │  Audit   │  │Notification  │     │
-│  │ Service  │  │Management│  │ Service  │  │   Service    │     │
+│  │Reporting │  │  News &  │  │  Audit   │  │Notification  │     │
+│  │ Service  │  │Research S│  │ Service  │  │   Service    │     │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────────┘     │
 └─────────────────────────────────────────────────────────────────┘
 
@@ -185,11 +191,11 @@ This section provides visual representations of the key architectural components
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-**Description**: This diagram illustrates the three-layer architecture with clear separation of concerns and integrated cross-cutting capabilities. Client applications interact with the Agent Orchestration Layer, which manages agent lifecycle and reasoning. The Integration Layer bridges agents and microservices through facades, authentication, and schema translation. Existing microservices remain unchanged in Layer 3. Cross-cutting concerns—security (authentication, authorization, encryption, audit) and observability (distributed tracing, metrics, logging, dashboards)—span all layers, ensuring enterprise-grade quality attributes throughout the system.
+**Description**: This diagram illustrates the three-layer architecture with clear separation of concerns and integrated cross-cutting capabilities. Client applications interact with the Agent Orchestration Layer, which manages agent lifecycle and reasoning. The Integration Layer bridges agents and microservices through facades, authentication, and schema translation. Existing microservices remain unchanged in Layer 3. Cross-cutting concerns—security (authentication, authorization, encryption, audit) and observability (distributed tracing, metrics, logging, dashboards)—span all layers, ensuring enterprise-grade quality attributes throughout the system. The observability tools shown are representative options; in practice, organizations typically adopt either a cloud-native stack (e.g., Azure Monitor/Application Insights) or an open-source stack (e.g., Prometheus/Grafana/Jaeger), with OpenTelemetry for instrumentation.
 
 #### 3.2.2 Component Interaction Sequence
 
-**Figure 2: Agent Request Processing Flow**
+**Fig. 2. Agent Request Processing Flow**
 
 ```
 User    Agent       Tool        Integration   Auth       Microservice
@@ -248,7 +254,7 @@ User    Agent       Tool        Integration   Auth       Microservice
 
 #### 3.2.3 Deployment Architecture
 
-**Figure 3: Multi-Region Azure Deployment**
+**Fig. 3. Multi-Region Azure Deployment**
 
 ```
                     ┌────────────────────────┐
@@ -277,7 +283,7 @@ User    Agent       Tool        Integration   Auth       Microservice
 ┌───▼────▼────┐        ┌──────▼──▼───▼──┐      ┌──────▼──────┐
 │Azure OpenAI │        │ Cosmos DB      │      │  Azure      │
 │  Service    │        │(Global Distrib)│      │  OpenAI     │
-│  (GPT-4)    │        │                │      │  Service    │
+│   (LLM)     │        │                │      │  Service    │
 └─────────────┘        └────────────────┘      └─────────────┘
                               │
                     ┌─────────┴─────────┐
@@ -307,121 +313,121 @@ User    Agent       Tool        Integration   Auth       Microservice
 
 ---
 
-These three architecture diagrams provide comprehensive visual representation of the framework's key components, their interactions, and deployment patterns. They serve as blueprints for implementation and facilitate communication among technical stakeholders. Figure 1 integrates cross-cutting security and observability concerns that span all layers, emphasizing the enterprise-grade quality attributes built into the architecture.
+Figs. 1–3 provide a compact reference for the components, interactions, and deployment considerations described in Sections 3.1–3.6.
 
 ---
 
 ### 3.3 Agent Orchestration Layer
 
-This layer provides the agent runtime environment managing lifecycle, state, and downstream interactions through three key components:
+This layer comprises three components:
 
-**Agent Runtime Environment** hosts agent instances with lifecycle management, LLM provider abstraction (OpenAI, Azure OpenAI, Anthropic), reasoning pattern implementation (ReAct, Chain-of-Thought), and multi-agent coordination for complex workflows.
+**Agent Runtime Environment** hosts agent instances and orchestrates reasoning and multi-step workflows (e.g., Reason + Act (ReAct)).
 
-**Tool Registry and Discovery** catalogs available microservices as tools with semantic descriptions optimized for LLM understanding. Registration automates from OpenAPI specifications, supports dynamic discovery with permission filtering, version management, and access control preventing unauthorized operations.
+**Tool Registry and Discovery** catalogs tools and metadata (often auto-generated from OpenAPI), supporting permission-filtered discovery and versioning.
 
-**State Management** handles conversation history with intelligent context pruning, shared state repository (Redis, Cosmos DB) for persistence across instances, session management with configurable timeouts, and comprehensive audit trails capturing reasoning steps and decisions for compliance.
+**State Management** stores conversation/session state with context pruning and audit trails for troubleshooting and compliance.
 
 ### 3.4 Integration and Adapter Layer
 
 This layer bridges agents and microservices through four key patterns:
 
-**Service Facade Pattern** wraps complex APIs with simplified interfaces, reducing parameter complexity and transforming responses into concise, agent-consumable formats. Implements error handling translating technical codes to natural language and retry logic for transient failures.
+**Service Facade Pattern** wraps complex APIs into simplified, agent-optimized tools and normalizes errors and retries.
 
-**Authentication Bridge Pattern** propagates user tokens (JWT, OAuth) throughout workflows, supports service principals for background tasks, manages token refresh automatically, enforces fine-grained authorization (RBAC/ABAC), and maintains security context isolation for multi-tenant deployments.
+**Authentication Bridge Pattern** propagates user and service principal identities (JWT/OAuth 2.0), handles refresh, and enforces authorization (RBAC/ABAC) at tool boundaries.
 
-**Schema Translation and Validation** converts OpenAPI specifications to agent tool schemas automatically, validates inputs before microservice invocation, performs intelligent type coercion (strings to numbers/booleans/dates), normalizes varied response formats, and manages schema evolution enabling agents to work with service updates.
+**Schema Translation and Validation** generates tool schemas from contracts (e.g., OpenAPI), validates inputs, normalizes outputs, and manages schema evolution.
 
-**Caching and Performance Optimization** implements response caching with configurable policies, tool definition caching, LLM response caching (30-50% cost reduction), and request batching to minimize latency and network overhead.
+**Caching and Performance Optimization** applies caching and batching to reduce repeated calls and stabilize latency.
 
 ### 3.5 Existing Microservices and Cross-Cutting Concerns
 
-**Existing Microservices Layer** represents unchanged enterprise infrastructure with standard APIs (REST, gRPC, GraphQL) and OpenAPI contracts. Services require no modifications—integration logic resides in upper layers. Security models are preserved, and services evolve independently with Integration Layer handling schema changes.
+**Existing Microservices Layer** remains unchanged, exposing standard APIs (REST, gRPC, GraphQL) and contracts (e.g., OpenAPI). Schema drift is absorbed by the Integration Layer rather than requiring microservice changes.
 
-**Cross-Cutting Concerns** span all layers: **Security** (authentication, authorization, encryption, audit logging propagating from agent to services), **Observability** (OpenTelemetry-based distributed tracing and metrics), **Performance** (caching and batching strategies), and **Compliance** (data retention, audit trails, encryption meeting regulatory requirements).
+**Cross-Cutting Concerns** span all layers: **Security**, **Observability**, **Performance**, and **Compliance**.
 
 ### 3.6 Data Flow and Orchestration Patterns
 
 The framework supports four orchestration patterns:
 
-**Synchronous Request-Response** for queries and simple updates with strict latency requirements (<5 seconds): request → agent reasoning → tool invocation → synthesis → response.
+**Synchronous Request-Response** for interactive queries: request → tool calls → synthesis → response.
 
-**Asynchronous Processing** for long-running workflows: immediate job ID return → background execution → event bus status updates → completion notification. Leverages message queues (Service Bus, RabbitMQ, Kafka) for workflows spanning minutes to hours.
+**Asynchronous Processing** for long-running workflows: return job ID, execute in background, publish status, and notify on completion.
 
-**Hybrid Orchestration** intelligently routes requests: simple deterministic operations bypass agents for optimal performance; complex reasoning uses full agent capabilities. Decision criteria: task complexity, performance requirements, cost considerations, ambiguity level.
+**Hybrid Orchestration** routes simple deterministic operations to non-agent paths and reserves agents for multi-step reasoning (based on complexity, latency, cost, and ambiguity).
 
-**Event-Driven Integration** enables reactive workflows where agents subscribe to microservice events (e.g., "InventoryLow") and trigger autonomous actions, enabling proactive system responses.
+**Event-Driven Integration** triggers agent actions from microservice events when proactive workflows are needed.
 
-This layered architecture addresses the challenges identified in Section 1.2 while maintaining flexibility for diverse enterprise environments.
+---
 
 ---
 
 ## 4. Implementation Approach
 
-This section provides practical guidance for implementing the architectural framework described in Section 3. We detail technology choices, implementation patterns, and best practices based on our production deployment experience. While the framework is technology-agnostic, we provide concrete examples to illustrate key concepts.
+This section provides practical guidance for implementing the framework in Section 3. While the architecture is platform-agnostic, we include concrete examples informed by the TradeSignal case study.
 
 ### 4.1 Agent Framework Selection
 
-Selecting the appropriate AI agent framework is a critical decision that impacts development velocity, operational complexity, and long-term maintainability. We evaluate leading frameworks against enterprise requirements:
+Framework selection impacts development velocity, operational complexity, and maintainability. This section evaluates frameworks against enterprise requirements.
 
 #### 4.1.1 Evaluation Criteria
 
 Organizations should assess agent frameworks based on:
 
-**Production Readiness**: Does the framework provide robust error handling, logging, telemetry, and monitoring capabilities? Production-grade frameworks should handle edge cases gracefully and provide visibility into agent behavior for troubleshooting and compliance.
+**Production Readiness**: Error handling, logging, telemetry, monitoring, and operational troubleshooting.
 
-**Enterprise Integration**: How well does the framework support authentication, authorization, and integration with existing enterprise systems? Look for built-in support for OAuth, JWT, service principals, and common enterprise protocols.
+**Enterprise Integration**: Authentication/authorization integration (OAuth 2.0, JWT, service principals) and compatibility with enterprise controls.
 
-**Performance Characteristics**: What are the latency profiles and resource requirements? Consider LLM invocation patterns, caching capabilities, and optimization features. Frameworks that minimize redundant LLM calls and support streaming responses offer better performance.
+**Performance Characteristics**: Latency, resource usage, caching, streaming, and controls to reduce redundant LLM calls.
 
-**Multi-Agent Support**: For complex scenarios, does the framework enable multiple specialized agents to collaborate? Evaluate agent-to-agent communication patterns, task delegation, and result aggregation capabilities.
+**Multi-Agent Support**: Support for specialized agents, delegation, coordination, and result aggregation.
 
-**Extensibility**: Can the framework be customized for domain-specific requirements? Look for plugin systems, custom tool integration APIs, and extensible reasoning engines.
+**Extensibility**: Tool/plugin APIs, customization hooks, and compatibility with domain-specific workflows.
 
-**Ecosystem and Community**: Active communities provide valuable resources, plugins, and support. Consider the availability of documentation, examples, and third-party integrations.
+**Ecosystem and Community**: Documentation quality, examples, and third-party integrations.
 
-**Licensing and Cost**: Evaluate licensing terms, especially for commercial deployments. Some frameworks have restrictions on commercial use or require attribution.
+**Licensing and Cost**: Commercial licensing constraints and total cost of ownership.
 
 #### 4.1.2 Framework Comparison
 
-**LangChain** (Python, JavaScript): Most mature framework with extensive integrations and active community. Strengths: rich ecosystem, flexible composition. Weaknesses: complex abstractions, limited enterprise features. Best for rapid prototyping.
+**LangChain** (Python, JavaScript): Large ecosystem and flexible composition; often best for prototyping and highly customized builds.
 
-**Microsoft Semantic Kernel** (.NET, Python, Java): Enterprise-focused with Azure integration, Application Insights telemetry, and production-grade error handling. Best for Microsoft stack organizations with compliance requirements.
+**Microsoft Semantic Kernel** (.NET, Python, Java): Enterprise-oriented with strong .NET support and production features.
 
-**Microsoft Agent Framework** (Python, .NET): Multi-agent focused with built-in communication, task routing, and observability. Includes financial services patterns. Best for complex workflows in regulated industries.
+**Microsoft Agent Framework** (Python, .NET): Multi-agent support with task routing and observability; a fit for complex workflows.
 
-**AutoGen** (Python): Research-oriented with multi-agent conversations and diverse agent personas. Less mature for production. Best for experimentation.
+**AutoGen** (Python): Research-oriented multi-agent conversations; typically best for experimentation.
 
-**LangGraph** (Python): Extends LangChain with stateful graph workflows and human-in-the-loop patterns. Best for explicit control flow requirements.
+**LangGraph** (Python): Stateful graph workflows and human-in-the-loop patterns for explicit control flow.
 
-**Azure AI Foundry** (Multi-language): Unified platform with 11,000+ models, 1,400+ connectors, integrated security (Entra Agent ID), and compliance features. Best for organizations seeking integrated solutions with Azure ecosystem.
+**Azure AI Foundry** (Multi-language): Managed platform with integrated governance, security, and deployment primitives.
 
 #### 4.1.3 Recommendation
 
-For enterprise production deployments, we recommend **Semantic Kernel**, **Microsoft Agent Framework**, or **Azure AI Foundry** for their production readiness, enterprise features, and support for regulated industries. For organizations preferring Python-first ecosystems or requiring maximum flexibility, **LangChain with LangGraph** provides a mature alternative with extensive customization options. Unified platforms like Azure AI Foundry may simplify deployment for organizations seeking integrated solutions, though the architectural patterns presented in this paper remain relevant regardless of platform choice.
+For enterprise production deployments, **Semantic Kernel**, **Microsoft Agent Framework**, and managed platforms such as **Azure AI Foundry** are often good fits due to production readiness and governance features. For Python-first teams needing maximum flexibility, **LangChain with LangGraph** provides a mature alternative.
 
-Our financial services implementation uses Microsoft Agent Framework for its multi-agent capabilities, built-in compliance features, and Azure integration. The framework selection should align with organizational technology strategy, team expertise, and specific use case requirements. The integration patterns and architectural framework we present are platform-agnostic and apply across all agent frameworks.
+Our trading research assistant case study (Section 6) uses Microsoft Agent Framework due to its multi-agent capabilities and enterprise integration. Framework selection should align with organizational strategy and constraints; the architectural patterns in this paper remain platform-agnostic.
 
 ### 4.2 Tool Development and Registration
 
-Converting existing microservices into agent-consumable tools is central to the integration approach. We describe systematic patterns for tool development:
+Converting microservices into agent-consumable tools is central to the integration approach.
 
 #### 4.2.1 Automated Tool Generation from OpenAPI
 
-Most modern microservices expose OpenAPI/Swagger specifications describing their APIs. We automate tool generation from these specifications:
+Most modern microservices expose OpenAPI/Swagger specifications. Tool generation can be automated from these contracts:
 
-**Specification Parsing**: Extract endpoint definitions, parameter schemas, authentication requirements, and response structures from OpenAPI specifications. Tools like `openapi-generator` or custom parsers can process OpenAPI 3.x specifications.
+**Specification Parsing**: Extract operations, parameter/response schemas, and authentication requirements from OpenAPI 3.x.
 
-**Tool Schema Generation**: Convert OpenAPI operations into agent tool definitions. Each tool includes:
-- **Name**: Concise, descriptive identifier (e.g., `get_account_balance`, `create_transaction`)
-- **Description**: Natural language explanation optimized for LLM understanding, describing what the tool does, when to use it, and any prerequisites
-- **Parameters**: Typed parameter definitions with descriptions, including required vs. optional parameters
+**Tool Schema Generation**: Convert operations into tool definitions with:
+- **Name**: Concise, descriptive identifier (e.g., `get_stock_quote`, `run_backtest`)
+- **Description**: LLM-oriented intent and usage guidance
+- **Parameters**: Typed inputs (required vs. optional)
 - **Authentication**: Required authentication method and scopes
 
-**LLM-Optimized Descriptions**: Auto-generated descriptions from OpenAPI are often too technical. We enhance them with natural language descriptions that explain business intent:
+**LLM-Optimized Descriptions**: OpenAPI summaries are often too technical; enrich them with user-oriented intent:
 
 ```
-Original: "GET /api/accounts/{accountId}/balance"
-Enhanced: "Retrieves the current balance and available funds for a customer account. Use this tool when the user asks about their account balance, available funds, or financial position. Requires account ID which can be obtained from search_accounts tool."
+Original: "GET /api/marketdata/{symbol}/quote"
+Enhanced: "Get the latest quote (price, change, volume). Use when user asks for current price. Requires a valid symbol."
 ```
 
 **Parameter Simplification**: Complex APIs with many optional parameters are simplified into multiple focused tools. For example, a comprehensive search API might be exposed as separate tools for common search patterns (search by name, search by ID, search by date range).
@@ -430,28 +436,32 @@ Enhanced: "Retrieves the current balance and available funds for a customer acco
 
 Not all integrations can be fully automated. Custom tool implementation handles:
 
-**Complex Business Logic**: Tools that orchestrate multiple microservice calls or apply business rules beyond simple API invocation. These tools encapsulate complexity, presenting simplified interfaces to agents.
+**Complex Business Logic**: Orchestrating multiple calls and enforcing business rules behind a simplified tool.
 
-**Data Aggregation**: Tools that combine data from multiple sources, perform calculations, or apply transformations before returning results to agents.
+**Data Aggregation**: Combining sources, performing calculations, and returning structured summaries.
 
-**Error Handling and Validation**: Custom tools implement robust error handling, retries, circuit breakers, and validation logic specific to business requirements.
+**Error Handling and Validation**: Retries, circuit breakers, and domain-specific validation.
 
-**Performance Optimization**: Custom implementations can optimize for agent use cases, such as pre-fetching related data, applying caching strategies, or returning summarized results. For example, an account summary tool might aggregate data from balance, transaction, and alert services into a single comprehensive response, reducing the number of tool calls required and providing a natural language summary for the agent.
+**Performance Optimization**: Prefetching, caching, and summarization to reduce tool calls and stabilize response times.
 
 #### 4.2.3 Tool Organization and Protocol Standards
 
-Efficient tool discovery requires domain categorization (accounts, transactions, reports), capability tags (read-only, mutating, sensitive-data) for security filtering, usage examples for correct invocation patterns, and dependency documentation for execution sequences.
+Efficient discovery benefits from domain categories (market-data, research, analytics/backtesting), capability tags (read-only, mutating, sensitive), and lightweight usage notes.
 
-Emerging standards like Model Context Protocol (MCP) offer framework portability. However, regardless of protocol choice—custom interfaces, OpenAPI schemas, or MCP—enterprise requirements persist: token validation, authorization enforcement, audit logging, and secure data transformation. Our architectural patterns apply across all tool interface protocols.
+Standards like Model Context Protocol (MCP) can improve portability. Regardless of protocol choice, enterprise requirements persist (token validation, authorization, audit logging, secure transformation).
 
 ### 4.3 Security Implementation
 
-Implementing enterprise-grade security across the architecture:
+This section summarizes enterprise security controls applied across the layers.
 
-#### 4.3.1 Authentication Architecture
+#### 4.3.1 Threat Model and Trust Boundaries
+
+Assume user input is untrusted even when the runtime environment is controlled. Key threats include prompt injection leading to unsafe tool use, confused-deputy authorization failures, token leakage via telemetry, and data exfiltration through overly broad tool responses. Trust boundaries exist at (i) client → agent, (ii) agent → integration/tools, and (iii) integration → microservices. Mitigations include permission-filtered tool discovery, schema validation, explicit authorization checks for each tool call, and data minimization/redaction in logs and traces.
+
+#### 4.3.2 Authentication Architecture
 
 **User Authentication Flow**:
-1. User authenticates to frontend application (OAuth 2.0, OIDC)
+1. User authenticates to frontend application (OAuth 2.0, OpenID Connect (OIDC))
 2. Frontend receives JWT access token
 3. Agent requests include the bearer token
 4. Authentication Bridge validates token and extracts user identity
@@ -461,30 +471,29 @@ Implementing enterprise-grade security across the architecture:
 For scheduled or background agent tasks, service principals (managed identities in Azure, service accounts in Kubernetes) provide authentication without user context. These principals have restricted permissions limited to necessary operations.
 
 **Token Management**:
-- Tokens are cached with awareness of expiration times
-- Automatic token refresh before expiration prevents service disruptions
-- Secure token storage in memory (never logged or persisted to disk)
-- Token invalidation on logout or session termination
+- Cache tokens with expiry awareness and refresh when applicable
+- Keep tokens in memory only; never log or persist
+- Invalidate tokens on logout/session termination
 
-#### 4.3.2 Authorization Enforcement
+#### 4.3.3 Authorization Enforcement
 
-**Role-Based Access Control (RBAC)**: Users' roles determine which tools they can invoke. The Tool Registry filters available tools based on role membership, ensuring agents only present authorized capabilities.
+**Role-Based Access Control (RBAC)**: Roles determine which tools are visible and invocable; the Tool Registry filters tools accordingly.
 
-**Attribute-Based Access Control (ABAC)**: Fine-grained authorization based on user attributes, resource properties, and environmental factors. For example, financial advisors can only access accounts they manage, enforced at the Integration Layer before invoking microservices.
+**Attribute-Based Access Control (ABAC)**: Enforce fine-grained checks (user, resource, environment) at the Integration Layer before invoking downstream services.
 
-**Least Privilege Principle**: Agent service principals have minimal permissions required for operation. Separate principals for different agent workflows enable granular permission management.
+**Least Privilege**: Use minimal scopes/permissions; separate identities for workflows when needed.
 
-**Authorization Decision Logging**: All authorization decisions (granted and denied) are logged with full context for audit and compliance purposes.
+**Authorization Logging**: Log allow/deny decisions with sufficient context for audit and incident response.
 
-#### 4.3.3 Data Privacy and Compliance
+#### 4.3.4 Data Privacy and Compliance
 
 **PII Handling**: Personally Identifiable Information (PII) is handled according to regulatory requirements:
-- PII is never logged in plain text
-- Conversation histories containing PII are encrypted at rest
-- PII access is audited with detailed trails
-- Data retention policies ensure timely deletion
+- Do not log PII in plain text
+- Encrypt conversation state at rest
+- Audit access to sensitive records
+- Enforce retention and deletion policies
 
-**Data Residency**: For multi-region deployments, data is processed and stored in compliance with regional regulations (GDPR, CCPA). Agent deployments can be region-specific to ensure data never leaves required boundaries.
+**Data Residency**: Ensure processing/storage satisfy regional constraints (e.g., GDPR, CCPA); consider region-specific deployments.
 
 **Encryption**:
 - All data in transit uses TLS 1.3
@@ -499,152 +508,132 @@ For scheduled or background agent tasks, service principals (managed identities 
 
 ### 4.4 Observability and Monitoring
 
-Comprehensive observability enables troubleshooting, performance optimization, and compliance verification:
+Observability supports troubleshooting, performance optimization, and compliance verification.
 
 #### 4.4.1 Distributed Tracing
 
-The framework integrates OpenTelemetry for standardized distributed tracing across all layers. Trace spans capture agent reasoning, tool invocations, microservice calls, and LLM operations with custom attributes including tool parameters, token counts, authentication context, and business identifiers. Trace context propagation enables end-to-end visualization from user request through agent reasoning to microservice execution.
+OpenTelemetry enables standardized distributed tracing across layers. Spans cover agent execution, tool invocations, microservice calls, and model operations, with correlation IDs and selected attributes (e.g., tool name, token usage, and request identifiers).
 
-Visualization platforms include Jaeger/Zipkin (open-source), Azure Application Insights, AWS X-Ray, or Google Cloud Trace, enabling timing analysis and bottleneck identification.
+Traces can be visualized in common backends (open-source or cloud-native) to identify bottlenecks.
 
 #### 4.4.2 Structured Logging
 
-JSON-formatted logs with consistent fields (timestamp, level, component, operation, identifiers, metrics, status) enable aggregation and analysis. Log levels: DEBUG (reasoning steps), INFO (operations), WARN (retries, degradation), ERROR (failures, violations).
+JSON logs with consistent fields (timestamp, level, component, operation, identifiers, status) enable aggregation and analysis. Suggested levels: DEBUG (reasoning breadcrumbs), INFO (operations), WARN (retries/degradation), ERROR (failures/violations).
 
-Centralized platforms include Azure Log Analytics (KQL queries), ELK Stack, Splunk, or CloudWatch Logs. Automatic redaction protects sensitive data while preserving debugability.
+Centralize logs in a searchable backend. Redact/minimize sensitive fields by default.
 
 #### 4.4.3 Performance Metrics and Alerting
 
-Key metrics include end-to-end latency, agent reasoning time, tool invocation latency, LLM token usage, cache hit rates, error rates by category, and concurrent sessions. Real-time dashboards (Grafana/Prometheus, Azure Monitor Workbooks, CloudWatch, Datadog, New Relic) enable operational monitoring and capacity planning.
+Key metrics include end-to-end latency, tool-call latency, model time/token usage, cache hit rate, error rates, and concurrency. Dashboards support monitoring and capacity planning.
 
-Automated alerts trigger on elevated error rates (>5%), high latency (p95 >3s), LLM failures, authentication degradation, and resource exhaustion.
+Configure alerts for elevated error rates, p95 latency regressions, authentication failures, and resource exhaustion.
 
 #### 4.4.4 Agent Decision Logging
 
-Detailed logs capture agent reasoning for compliance and debugging: user query, tools considered/selected with rationale, invocation parameters, results, and synthesis logic. Immutable audit trails record who (user identity), what (operations), when (timestamps), why (reasoning), and what data (resources accessed). Retention follows regulatory requirements (e.g., 7 years for financial services) with secure archival.
+Decision logs capture: user query, tools considered/selected (with brief rationale), invocation parameters, results, and synthesis outcome. Audit trails record who/what/when/why and accessed resources; retention follows applicable regulatory requirements with secure archival.
 
 ---
 
-The implementation approach outlined in this section provides practical guidance for enterprise-grade AI agent deployments. Systematic tool development, robust security implementation, and comprehensive observability are essential for successful integration with existing microservices. The following section catalogs design patterns and best practices addressing common integration challenges.
+Section 4 outlined implementation considerations; Section 5 catalogs reusable patterns that address common integration challenges.
 
 ---
 
 ## 5. Design Patterns and Best Practices
 
-This section catalogs design patterns and best practices for integrating AI agents with existing microservices. These patterns address common integration challenges and provide reusable solutions applicable across different organizational contexts. Each pattern includes intent, motivation, implementation guidance, and trade-offs.
+This section catalogs reusable patterns and best practices for agent–microservice integration. Each pattern includes intent, motivation, implementation guidance, and trade-offs.
 
-### 6.1 Architectural Patterns
+### 5.1 Architectural Patterns
 
-#### 6.1.1 Service Facade Pattern
+#### 5.1.1 Service Facade Pattern
 
 **Intent**: Simplify complex microservice APIs into agent-optimized interfaces that reduce cognitive load on LLMs and minimize token usage.
 
-**Motivation**: Raw microservice APIs often expose low-level operations with numerous parameters, optional fields, and complex response structures. LLMs struggle with excessive complexity, leading to incorrect tool selections or malformed parameters. Service facades present simplified, high-level operations that encapsulate common use cases.
+**Motivation**: Microservice APIs can be parameter-heavy and response-dense; agents perform better with smaller, intent-oriented tools.
 
-**Implementation**: A facade wraps complex APIs with multiple optional parameters and detailed responses into simplified tools with minimal required parameters and concise, agent-optimized responses. For instance, an account service API requiring numerous parameters for history inclusion, beneficiary details, and document retrieval can be simplified into a single tool accepting only account ID and returning a structured summary with key details and recent activity. The facade handles parameter defaults, data aggregation, and response summarization internally.
+**Implementation**: Wrap complex APIs into simpler tools with fewer required parameters and concise, structured outputs. The facade can set defaults, select providers, and summarize responses.
 
 **Benefits**:
-- Reduced LLM token usage (concise responses)
+- Reduced token usage and faster responses
 - Higher tool selection accuracy
 - Encapsulated business logic
-- Easier testing and maintenance
 
 **Trade-offs**:
-- Additional abstraction layer adds latency (typically 50-100ms)
-- May need multiple facades for different use cases
-- Requires domain expertise to design effective abstractions
+- Additional abstraction and maintenance overhead
+- Multiple facades may be needed for different use cases
 
 **When to Use**: For complex APIs with >5 parameters or when response data needs significant filtering or transformation.
 
-#### 6.1.2 Tool Registry Pattern
+#### 5.1.2 Tool Registry Pattern
 
 **Intent**: Centralize tool definitions, metadata, and access control to enable dynamic tool discovery and permission-based filtering.
 
-**Motivation**: Agents need to discover available tools dynamically based on user context and permissions. Hardcoding tool lists is inflexible and creates maintenance burden. A centralized registry enables runtime tool management, version control, and access control.
+**Motivation**: Hardcoded tool lists do not scale across teams, versions, and permission models.
 
 **Implementation**:
-- Registry stores tool definitions with metadata (name, description, parameters, categories, required permissions)
-- Agents query registry with user context (identity, roles, permissions)
-- Registry filters and returns only authorized tools
-- Tool definitions loaded from configuration or auto-generated from OpenAPI specs
-- Supports tool versioning and A/B testing of tool descriptions
+- Store tool definitions and metadata (including required permissions)
+- Query by user context and return only authorized tools
+- Support versioning and controlled updates (e.g., A/B tests)
 
 **Benefits**:
-- Dynamic tool management without code deployment
-- Consistent access control across all agents
-- Easy to add/remove/update tools
-- Supports multi-tenancy and role-based tool visibility
+- Centralized governance and consistent access control
+- Easier tool lifecycle management (add/remove/update/version)
 
 **Trade-offs**:
-- Additional service dependency
-- Registry becomes critical single point of failure (mitigate with caching and redundancy)
-- Requires robust configuration management
+- Additional dependency; mitigate with caching and redundancy
+- Requires disciplined configuration management
 
-**When to Use**: Always for enterprise deployments with multiple tools (>5) or varying user permissions.
+**When to Use**: Recommended for deployments with multiple tools (>5) or varying user permissions.
 
-#### 6.1.3 Authentication Bridge Pattern
+#### 5.1.3 Authentication Bridge Pattern
 
 **Intent**: Propagate user authentication context through agent workflows to downstream microservices while maintaining security boundaries.
 
-**Motivation**: Agents must invoke microservices on behalf of users, respecting existing authentication and authorization models. Direct credential handling by agents creates security risks. An authentication bridge manages credentials securely and propagates context transparently.
+**Motivation**: Agents must call protected APIs on behalf of users without handling credentials unsafely.
 
 **Implementation**:
-- Capture user JWT token at agent entry point
-- Validate token and extract user identity/permissions
-- Store in agent execution context (in-memory, never persisted)
-- Automatically attach token to all microservice requests
-- Handle token refresh transparently
-- For service principal scenarios, use separate managed identities
+- Capture and validate the user token at ingress
+- Propagate identity to downstream calls via the integration layer
+- Use separate service principals/managed identities for background tasks
 
 **Benefits**:
-- Maintains existing security models
-- No credential exposure to agent code
-- Proper audit trails (user attribution)
-- Simplified agent implementation (no auth logic)
+- Preserves existing security models and audit trails
+- Reduces credential exposure to agent logic
 
 **Trade-offs**:
-- Requires token management infrastructure
-- Token expiration can interrupt long-running workflows (mitigate with refresh)
-- Complex token propagation in multi-service calls
+- Requires token lifecycle handling (expiry/refresh)
+- More complex propagation across multi-service workflows
 
-**When to Use**: Always for enterprise systems with authentication requirements.
+**When to Use**: Recommended when downstream systems enforce authentication (typical in enterprise environments).
 
-#### 6.1.4 Hybrid Orchestration Pattern
+#### 5.1.4 Hybrid Orchestration Pattern
 
 **Intent**: Intelligently route requests between agent-based reasoning and traditional API orchestration based on complexity, performance requirements, and cost.
 
-**Motivation**: Not all requests benefit from agent reasoning. Simple, deterministic operations incur unnecessary LLM costs and latency when routed through agents. Hybrid orchestration optimizes the cost/performance/intelligence trade-off.
+**Motivation**: Route deterministic operations to fast paths and reserve agents for ambiguity and multi-step reasoning.
 
 **Implementation**:
-- Request classifier analyzes incoming requests
-- Classification criteria:
-  - Ambiguity level (natural language vs. structured)
-  - Required reasoning (lookup vs. analysis)
-  - Performance requirements (sub-100ms vs. multi-second acceptable)
-  - Cost sensitivity
+- Classify requests by ambiguity, reasoning depth, latency targets, and cost sensitivity
 - Simple requests → direct API calls
 - Complex requests → agent reasoning
-- Borderline requests → agent with simplified tool set
+- Borderline requests → restricted tool set or shorter prompts
 
-**Decision Logic**: The request classifier evaluates incoming requests based on natural language presence, multi-step requirements, operation complexity (CRUD vs. analytical), and latency constraints. Requests containing natural language and requiring multi-step reasoning route to full agent capabilities. Simple CRUD operations with strict latency requirements (sub-100ms) bypass the agent entirely. Borderline cases route to agents with restricted tool sets for balanced performance and capability.
+**Decision Logic**: Use simple rules (and telemetry feedback) to tune routing over time.
 
 **Benefits**:
-- Optimized cost (avoid unnecessary LLM calls)
-- Better performance for simple operations
-- Flexibility to adjust routing based on load or costs
+- Reduced cost and latency for simple operations
+- Flexibility to adapt routing based on load/cost
 
 **Trade-offs**:
-- Classification logic adds complexity
-- Risk of mis-classification (simple request routed to expensive path)
-- Requires monitoring to tune classification rules
+- Additional complexity and risk of misclassification
+- Requires monitoring to tune rules
 
 **When to Use**: When cost optimization is important or when significant portion of requests are simple/deterministic.
 
-#### 6.1.5 Circuit Breaker Pattern for LLM Providers
+#### 5.1.5 Circuit Breaker Pattern for LLM Providers
 
 **Intent**: Prevent cascading failures when LLM providers experience outages or degraded performance.
 
-**Motivation**: LLM providers may experience rate limits, outages, or latency spikes. Without circuit breakers, agents continuously retry failing requests, wasting resources and degrading user experience.
+**Motivation**: Rate limits, outages, and latency spikes can cascade into retries and degraded user experience.
 
 **Implementation**:
 - Monitor LLM provider health (success rate, latency, error types)
@@ -655,22 +644,19 @@ This section catalogs design patterns and best practices for integrating AI agen
 - If test requests succeed, close circuit; otherwise reopen
 
 **Benefits**:
-- Prevents resource exhaustion on failing provider
-- Faster failure detection and user notification
-- Enables multi-provider redundancy
+- Prevents cascading failures and resource exhaustion
+- Enables fail-fast and fallback routing
 
 **Trade-offs**:
-- Adds complexity to LLM integration
-- False positives may temporarily disable working provider
-- Requires careful threshold tuning
+- Requires careful threshold tuning and adds integration complexity
 
 **When to Use**: For production systems with strict SLAs or when using multiple LLM providers.
 
-#### 6.1.6 Saga Pattern for Multi-Step Workflows
+#### 5.1.6 Saga Pattern for Multi-Step Workflows
 
 **Intent**: Manage distributed transactions across multiple microservices with compensating actions for rollback on failure.
 
-**Motivation**: Agents may orchestrate complex workflows involving multiple write operations (e.g., create account → fund transfer → document generation). Partial failures require rollback to maintain consistency.
+**Motivation**: Multi-step workflows with writes can partially fail and require compensating actions to restore consistency.
 
 **Implementation**:
 - Break workflow into steps with explicit success criteria
@@ -679,311 +665,350 @@ This section catalogs design patterns and best practices for integrating AI agen
 - On failure, execute compensating actions in reverse order
 - Final state: either all steps completed or all rolled back
 
-**Account Opening Example**: A typical account opening workflow involves creating the account record, transferring initial funds, generating required documents, and sending confirmation notifications. Each step defines a compensating action: deleting the account record, reversing the fund transfer, deleting generated documents, and sending cancellation notices respectively. On partial failure, the agent executes compensating actions in reverse order to restore system consistency.
+**Order/Alert Workflow Example**: Define compensations (delete, revert derived artifacts, cancellation notices) and execute them in reverse order on failure.
 
 **Benefits**:
-- Maintains consistency across distributed operations
-- Clear failure recovery path
+- Clear recovery path for distributed write workflows
 - Explicit modeling of complex workflows
 
 **Trade-offs**:
-- Increased implementation complexity
-- Compensating actions must be idempotent
-- Not all operations have perfect compensation
+- Compensation design is non-trivial; actions must be idempotent
+- Not all operations have perfect rollback semantics
 
 **When to Use**: For workflows with multiple write operations that must maintain consistency.
 
-#### 6.1.7 Agent Specialization Pattern
+#### 5.1.7 Agent Specialization Pattern
 
 **Intent**: Create specialized agents for specific domains rather than single general-purpose agent, improving accuracy and performance.
 
-**Motivation**: General-purpose agents with access to all tools struggle with tool selection accuracy when tool count exceeds ~20-30. Specialized agents with focused tool sets perform better on domain-specific tasks.
+**Motivation**: As tool count grows, a single general agent can struggle with selection accuracy; specialization narrows the decision space.
 
 **Implementation**:
 - Define agent personas aligned with user roles or task domains
   - Portfolio Analysis Agent (read-only, analysis tools)
-  - Trading Agent (order management, execution tools)
-  - Onboarding Agent (account creation, compliance tools)
+  - Trading Agent (market data, portfolio views, alerting)
+  - Strategy Agent (backtesting, risk metrics)
 - Each agent has curated tool set relevant to domain
 - Router agent directs user requests to appropriate specialist agent
 - Specialists can delegate to other specialists when needed
 
 **Benefits**:
-- Higher tool selection accuracy (smaller tool set)
-- Faster reasoning (less tools to consider)
-- Specialized prompting for domain
-- Easier to optimize per-domain
+- Higher tool selection accuracy and faster reasoning
+- Easier per-domain tuning
 
 **Trade-offs**:
-- Requires accurate request routing
-- More agents to manage and monitor
-- Handoff complexity between agents
+- Requires accurate routing and more operational overhead
 
 **When to Use**: When total tool count exceeds 25-30 or when distinct user roles have different tool requirements.
 
-### 6.2 Implementation Best Practices
+### 5.2 Implementation Best Practices
 
-#### 6.2.1 Gradual Rollout and Validation
+#### 5.2.1 Gradual Rollout and Validation
 
 **Start with Read-Only Tools**: Begin integration with read-only, non-critical tools to validate architecture with minimal risk. Build confidence before introducing write operations.
 
 **Shadow Mode Testing**: Run agents in parallel with existing systems, comparing agent outputs to traditional methods without exposing to users. Identify discrepancies and refine before production release.
 
-**Phased User Rollout**: 
-- Alpha: Internal users and developers (10-20 users)
-- Beta: Friendly pilot users (50-100 users)
-- Gradual production: 10% → 25% → 50% → 100% of users
-- Monitor metrics at each phase before expanding
+**Phased Rollout**: Start with internal users, expand to a small pilot, then gradually increase exposure. Monitor quality, latency, cost, and incident rates at each stage before expanding.
 
 **Human-in-the-Loop**: For high-stakes operations, require human approval before executing agent actions. Gradually reduce oversight as confidence builds.
 
-#### 6.2.2 Prompt Engineering and Tool Descriptions
+#### 5.2.2 Prompt Engineering and Tool Descriptions
 
 **Optimize Tool Descriptions for LLMs**:
-- Use clear, action-oriented names (`get_account_balance` not `retrieve_balance_info`)
-- Provide natural language descriptions with context, not just API documentation
-- Include examples of when to use the tool
-- Specify prerequisites and dependencies
-- Keep descriptions concise (<100 words)
+- Use clear, action-oriented names and intent-oriented descriptions
+- Include minimal prerequisites/dependencies and one short usage example
+- Keep descriptions concise and consistent across tools
 
 **System Prompts**:
-- Clearly define agent role and responsibilities
-- Specify behavioral guidelines (politeness, conciseness, accuracy over speed)
-- Include safety instructions (never guess credentials, always verify before mutations)
-- Provide domain context and terminology
+- Define role/scope and behavioral guidelines
+- Include safety constraints (verify inputs before mutations; do not guess)
+- Provide domain context and required terminology
 
-**Few-Shot Examples**: Include examples of ideal tool usage in prompts to guide agent behavior.
+**Few-Shot Examples**: Add a small number of high-quality examples when tool misuse is common.
 
-#### 6.2.3 Intelligent Caching Strategies
+#### 5.2.3 Intelligent Caching Strategies
 
 **Multi-Level Caching**:
 - **L1 - Tool Definitions**: Cache tool schemas in agent runtime (rarely change)
 - **L2 - LLM Responses**: Cache identical prompts (works for common queries)
-- **L3 - Microservice Responses**: Cache read-only API responses with appropriate TTLs
+- **L3 - Microservice Responses**: Cache read-only API responses with appropriate time-to-live (TTL) values
 
 **Cache Key Design**: Include user identity, query parameters, and timestamps in cache keys to prevent unauthorized access to cached data.
 
-**Selective Caching**: Only cache deterministic, stable data. Never cache:
+**Selective Caching**: Only cache deterministic, stable data. Do not cache:
 - User-specific sensitive data beyond session lifetime
-- Real-time data (account balances, market prices)
+- Real-time data (live market prices)
 - Intermediate workflow state
 
-**Cache Invalidation**: Implement TTL-based expiration and explicit invalidation for write operations affecting cached data.
+**Cache Invalidation**: Implement time-to-live (TTL)-based expiration and explicit invalidation for write operations affecting cached data.
 
-#### 6.2.4 Error Handling and Recovery
+#### 5.2.4 Error Handling and Recovery
 
-**Graceful Degradation**: When tools fail, provide fallback responses:
-- "I'm unable to retrieve account balance right now. Please try again in a moment."
-- Suggest alternative actions users can take
-- Never expose technical error details to users
+**Graceful Degradation**: Provide a user-friendly failure message, suggest an alternative action, and avoid exposing internal error details.
 
 **Automatic Retries**: Implement exponential backoff for transient failures (network issues, rate limits).
 
-**Error Context**: Log full error context (tool name, parameters, user ID, trace ID) for debugging while showing sanitized errors to users.
+**Error Context**: Log tool name, sanitized parameters, user/session identifiers, and trace IDs for debugging.
 
-**Fallback Flows**: For critical operations, maintain alternative paths (e.g., if agent fails, direct user to traditional UI).
+**Fallback Flows**: For critical operations, maintain a non-agent path (e.g., traditional UI).
 
-#### 6.2.5 Performance Optimization
+#### 5.2.5 Performance Optimization
 
 **Parallel Tool Invocation**: When agent needs multiple independent tools, invoke them in parallel rather than sequentially.
 
 **Response Streaming**: Stream LLM responses to users for perceived performance improvement, especially for longer responses.
 
 **Prompt Optimization**: Minimize prompt tokens:
-- Remove unnecessary conversation history (keep only relevant context)
-- Summarize long tool responses before feeding back to LLM
-- Use smaller models (GPT-3.5) for simple tasks
+- Keep only relevant conversation history
+- Summarize long tool responses before re-injecting
+- Use smaller models for simple tasks
 
 **Connection Pooling**: Reuse HTTP connections to microservices to reduce connection overhead.
 
-### 6.3 Common Pitfalls and Solutions
+### 5.3 Common Pitfalls and Solutions
 
-#### 6.3.1 Token Context Window Limitations
+#### 5.3.1 Token Context Window Limitations
 
-**Problem**: LLMs have finite context windows (e.g., GPT-4: 128K tokens). Long conversations or large tool responses exhaust context.
+**Problem**: LLMs have finite context windows (model-dependent). Long conversations or large tool responses can exhaust available context.
 
 **Solutions**:
-- **Conversation Summarization**: Periodically summarize conversation history to compress context
-- **Selective History**: Only retain turns relevant to current task
-- **Response Filtering**: Return only relevant fields from tool responses, not complete payloads
-- **Context Window Monitoring**: Alert when context usage exceeds 80% of limit
+- **Summarize and prune**: Periodically summarize history and retain only task-relevant turns
+- **Filter tool outputs**: Return only relevant fields (avoid full payloads)
+- **Monitor context use**: Track context growth and apply backpressure when approaching limits
 
-#### 6.3.2 Hallucination and Accuracy Issues
+#### 5.3.2 Hallucination and Accuracy Issues
 
 **Problem**: LLMs may generate plausible but incorrect information, especially for numbers, dates, or specific facts.
 
 **Solutions**:
-- **Grounding in Data**: Always require agents to use tools for facts, never rely on LLM knowledge
-- **Structured Outputs**: Use function calling/JSON mode to ensure formatted responses
-- **Verification Steps**: For critical operations, have agent verify inputs before execution
-- **Human Oversight**: Require approval for high-stakes decisions
+- **Ground and verify**: Require tool-backed facts and add explicit verification steps for critical actions
+- **Constrain outputs**: Prefer structured outputs (e.g., function calling/JSON mode)
+- **Escalate risk**: Require human approval for high-stakes decisions
 
-#### 6.3.3 Cost Management
+#### 5.3.3 Cost Management
 
 **Problem**: LLM API costs can escalate quickly with high usage or inefficient prompting.
 
 **Solutions**:
-- **Usage Monitoring**: Track token usage per user, per agent, per tool
-- **Budget Alerts**: Alert when costs exceed thresholds
-- **Model Selection**: Use cheaper models for simple tasks, reserve powerful models for complex reasoning
-- **Aggressive Caching**: Cache common queries to reduce LLM calls
-- **Rate Limiting**: Limit requests per user to prevent abuse
+- **Monitor and cap**: Track token usage and enforce budgets/rate limits
+- **Route by complexity**: Use cheaper models for simple tasks and larger models for complex reasoning
+- **Reduce calls**: Cache common queries and avoid redundant LLM/tool invocations
 
-#### 6.3.4 Security and Compliance
+#### 5.3.4 Security and Compliance
 
 **Problem**: Agents may inadvertently expose sensitive data or enable unauthorized operations.
 
 **Solutions**:
-- **Least Privilege**: Grant agents minimal permissions required
-- **Data Redaction**: Remove PII from logs and caches
-- **Authorization Checks**: Verify permissions before every tool invocation, not just at entry
-- **Audit Everything**: Log all agent decisions, tool invocations, and data access
-- **Regular Reviews**: Conduct security reviews and penetration testing
+- **Least privilege and redaction**: Minimize permissions and redact sensitive fields in logs/caches
+- **Authorize every call**: Enforce authorization at each tool invocation, not only at ingress
+- **Audit and review**: Maintain audit trails and conduct regular security testing
 
-#### 6.3.5 Tool Selection Accuracy
+#### 5.3.5 Tool Selection Accuracy
 
 **Problem**: Agents select wrong tools or misuse tools, especially as tool count increases.
 
 **Solutions**:
-- **Tool Organization**: Group related tools by category
-- **Clear Naming**: Use descriptive, unambiguous tool names
-- **Detailed Descriptions**: Provide usage context, examples, and prerequisites
-- **Few-Shot Examples**: Include example tool usages in system prompts
-- **Tool Specialization**: Use specialized agents with focused tool sets
-- **Validation**: Validate tool parameters before invocation
+- **Reduce ambiguity**: Use clear naming, categories, and concise, intent-oriented tool descriptions
+- **Constrain choices**: Use specialization (or restricted tool sets) as tool count grows
+- **Validate inputs**: Validate and normalize parameters before invocation
 
-#### 6.3.6 Latency and User Experience
+#### 5.3.6 Latency and User Experience
 
-**Problem**: Multi-step agent reasoning introduces latency (2-5 seconds typical), which may feel slow for users accustomed to instant responses.
+**Problem**: Multi-step agent reasoning introduces latency (often seconds), which may feel slow for users accustomed to instant responses.
 
 **Solutions**:
-- **Set Expectations**: Inform users that complex analysis takes time
-- **Progress Indicators**: Show "thinking..." or "analyzing data..." messages
-- **Response Streaming**: Stream partial results as they become available
-- **Hybrid Routing**: Route simple queries to fast paths
-- **Async for Long Tasks**: For workflows >5 seconds, make async and notify on completion
+- **Set expectations and show progress**: Provide progress indicators and stream partial results when feasible
+- **Route and defer**: Use hybrid routing for fast paths and async execution for long-running workflows
 
 ---
 
-The design patterns and best practices documented in this section provide actionable guidance for implementing AI agent integration with microservices. These patterns address common challenges enterprises face during adoption, drawn from analysis of existing frameworks and enterprise integration patterns literature. The following section discusses challenges and limitations encountered in agent-microservices integration.
+Section 6 presents an anonymized case study and evaluation approach; Section 7 summarizes challenges and limitations.
 
 ---
 
-## 6. Challenges and Limitations
+## 6. Case Study and Evaluation
 
-While the framework addresses key integration challenges, several limitations and areas for improvement exist. This section provides candid assessment of challenges and recommendations for future work.
+This section summarizes an implementation case study used to validate the feasibility of the proposed architecture and patterns. We base the discussion on **TradeSignal**, a production-inspired, market-data-driven “trading research assistant” system that integrates an AI agent layer with a microservices-based backend. To keep the case study reusable and appropriate for publication, we **anonymize external provider identities and endpoints**, and focus on architectural decisions and measurable system properties rather than vendor-specific integrations.
 
-### 6.1 Technical Challenges
+### 6.1 Case Study Context (Anonymized)
 
-#### 6.1.1 LLM Latency and Cost Trade-offs
+The system provides a conversational interface for market research and analysis. Users submit natural language queries (e.g., “Get the latest quote for a symbol”, “Summarize recent news”, “Run a simple backtest”), and the agent orchestrates calls to internal services and external data providers.
 
-**Challenge**: LLM inference introduces unavoidable latency (500-800ms per reasoning cycle). Users accustomed to instant API responses find multi-second wait times noticeable. More powerful models (GPT-4) provide better accuracy but cost significantly more than smaller models.
+External dependencies are abstracted behind adapters and described generically:
+
+- **Broker API**: OAuth 2.0-protected trading/brokerage integration (token acquisition, refresh, and scoped access).
+- **Market Data Provider A/B**: Quote and chart retrieval APIs used with fallback routing.
+- **News/Sentiment Provider**: News aggregation and sentiment inputs.
+
+### 6.2 Mapping to the Proposed Architecture
+
+The implementation aligns with the three-layer framework (Section 3):
+
+- **Agent orchestration layer**: A single-agent deployment can handle basic tool calling; a multi-agent specialization approach decomposes responsibilities into (i) real-time market data retrieval, (ii) computational strategy analysis/backtesting, (iii) news/research synthesis, and (iv) a coordinator agent for routing and aggregation.
+- **Integration and adapter layer**: A service layer mediates tool invocations, applies schema validation/translation, enforces authorization checks, and implements caching. Provider-specific logic is isolated into adapters, enabling provider swapping without changing agent prompts or tool schemas.
+- **Existing services and data layer**: The backend persists user and analysis artifacts in a relational store and uses an in-memory cache for latency-sensitive reads.
+
+In TradeSignal, this mapping corresponds to (i) a managed agent runtime (cloud-hosted) for orchestration, (ii) a microservice-facing API layer that hosts adapters/facades and caching, and (iii) standard backing services for persistence and low-latency reads. Provider anonymization is handled at the adapter boundary so prompts, tool schemas, and business logic remain stable when providers change.
+
+Cross-cutting concerns (Section 3) were incorporated as follows:
+
+- **Security**: OAuth 2.0 token handling for external calls; enterprise identity integration for platform authentication; and least-privilege authorization checks at tool boundaries (not only at API ingress).
+- **Performance**: Short time-to-live (TTL) caching for high-frequency reads (quotes/movers), request batching where possible, and model selection strategies (smaller models for retrieval/summarization; larger models for multi-step quantitative reasoning).
+- **Operations**: Containerized deployment with local orchestration and a Kubernetes (Helm) path for cloud deployment; health probes for readiness/liveness.
+
+### 6.3 Evaluation Methodology
+
+The primary goal of this evaluation is not to claim universal benchmark numbers, but to demonstrate (i) architectural feasibility in a realistic microservices setting and (ii) measurable trade-offs across latency, cost, and correctness under representative workloads.
+
+We recommend reporting results under two workload classes:
+
+1. **Retrieval-oriented queries** (single or few tool calls): quote lookups, top movers, simple news summaries.
+2. **Analysis-oriented queries** (multi-step reasoning and/or CPU-bound tasks): backtests, portfolio/risk analysis, multi-signal comparisons.
+
+Suggested metrics (report medians and tail latency):
+
+- **End-to-end latency** ($p50$, $p95$) per workload class
+- **Tool-call latency** by tool category (internal service vs. external provider adapter)
+- **Cache hit rate** and impact on latency for retrieval workloads
+- **Cost per query** (token-based LLM cost + compute cost for CPU-bound analysis)
+- **Correctness proxies**: schema validation pass rate; tool selection accuracy on a labeled query set; and regression tests for deterministic analytics
+
+**Evaluation Setup (Recommended Reporting Format):**
+
+| Workload Class | Representative Queries | Primary Components Exercised | Metrics to Report | Measurement Notes |
+|---|---|---|---|---|
+| Retrieval-oriented | Quote lookup, top movers, short news summary | Agent runtime, tool registry, adapter layer, cache, external provider adapter | $p50/p95$ latency, tool-call latency, cache hit rate, token usage | Report cold-cache vs. warm-cache; include provider fallback rate as an operational indicator |
+| Analysis-oriented | Backtest, portfolio/risk analysis, multi-signal comparison | Agent runtime, orchestrator/specialists, deterministic compute service, persistence | $p50/p95$ latency, compute time vs. LLM time split, cost per query, error rate | Separate deterministic compute runtime from LLM inference; include timeout/retry policy configuration |
+
+For both workload classes, collect measurements using end-to-end request tracing (e.g., OpenTelemetry spans) and structured logs with correlation IDs. Report the workload generator characteristics (request rate, concurrency, duration) and deployment conditions (region placement, instance sizes, and model selection policy) to keep results comparable.
+
+### 6.4 Evaluation Notes and Threats to Validity
+
+To keep claims defensible for journal review, the following should be stated explicitly when reporting results:
+
+- Results are **deployment-dependent** (model choice, region placement, network conditions, and provider rate limits materially affect latency and throughput).
+- Caching can inflate throughput for retrieval workloads; report both **cold-cache** and **warm-cache** runs.
+- For analysis workloads, separate LLM inference time from deterministic compute time (e.g., backtest engine runtime).
+- Provider anonymization can reduce reproducibility; mitigate by reporting adapter behavior and interface contracts (schemas) rather than vendor-specific endpoints.
+
+---
+
+## 7. Challenges and Limitations
+
+This section summarizes key challenges, limitations, and directions for future work.
+
+### 7.1 Technical Challenges
+
+#### 7.1.1 LLM Latency and Cost Trade-offs
+
+**Challenge**: LLM inference adds latency and cost relative to direct API calls. Multi-step reasoning can feel slow for interactive workflows, and larger models can improve accuracy at higher cost.
 
 **Current Mitigation**: Hybrid orchestration, caching, response streaming, and model selection based on task complexity help but cannot eliminate the fundamental latency floor.
 
-**Future Direction**: Emerging models with faster inference, optimized distillations, and local LLM deployment may reduce latency. Speculative execution where agents predict likely next steps could pre-fetch data, hiding latency.
+**Future Direction**: Faster inference, distillation, and local deployment may reduce latency; speculative execution can pre-fetch likely data to hide round-trips.
 
-#### 6.1.2 Context Window Management
+#### 7.1.2 Context Window Management
 
-**Challenge**: Multi-step conversations exhaust LLM context windows. Current limits (128K-200K tokens) fill quickly with conversation history, tool schemas, and microservice responses, forcing conversation restarts and losing valuable context.
+**Challenge**: Multi-step conversations can exhaust context windows as history, tool schemas, and tool responses accumulate, forcing summarization or restarts.
 
-**Current Mitigation**: Conversation summarization, selective history retention, and response filtering help but introduce potential information loss.
+**Current Mitigation**: Summarization, selective retention, and response filtering reduce context use but may omit details.
 
-**Future Direction**: Models with larger context windows (1M+ tokens) are emerging. Alternative architectures with external memory systems (vector databases, knowledge graphs) could provide unlimited context.
+**Future Direction**: Larger-context models and external memory (e.g., vector databases, knowledge graphs) can offload long-term context.
 
-#### 6.1.3 Tool Selection Accuracy
+#### 7.1.3 Tool Selection Accuracy
 
-**Challenge**: Tool selection accuracy plateaus around 94-96% even with extensive prompt engineering. Errors persist with ambiguous requests or similar-sounding tools.
+**Challenge**: Tool selection remains imperfect, especially for ambiguous requests or overlapping tools.
 
 **Current Mitigation**: User confirmation for high-stakes operations, fallback to human assistance, and continuous refinement of tool descriptions.
 
-**Future Direction**: Fine-tuning models on organization-specific tool usage patterns and reinforcement learning from human feedback (RLHF) could improve accuracy.
+**Future Direction**: Fine-tuning on organization-specific tool usage and reinforcement learning from human feedback (RLHF) can improve selection accuracy.
 
-#### 6.1.4 Multi-Service Transaction Consistency
+#### 7.1.4 Multi-Service Transaction Consistency
 
-**Challenge**: Ensuring consistency across multiple write operations to different microservices remains complex. Compensating transactions are not always perfect reversals (e.g., reversing stock trades after market movement).
+**Challenge**: Consistency across multi-service write workflows is complex, and compensating actions may be imperfect (e.g., reversing trades after market movement).
 
 **Current Mitigation**: Saga pattern with compensating transactions, human approval for high-value operations, and explicit transaction boundaries.
 
-**Future Direction**: Integration with distributed transaction coordinators (two-phase commit protocols) could provide stronger consistency guarantees at performance cost.
+**Future Direction**: Stronger coordination (e.g., two-phase commit) may improve consistency at a performance and availability cost.
 
-#### 6.1.5 Real-Time Data Requirements
+#### 7.1.5 Real-Time Data Requirements
 
-**Challenge**: Agents work with point-in-time data snapshots. For rapidly changing data (market prices, inventory levels), data may be stale by completion.
+**Challenge**: For rapidly changing domains, data can become stale between reasoning and execution.
 
 **Current Mitigation**: Refresh data at execution time, not reasoning time. Display timestamps indicating freshness.
 
-**Future Direction**: Event-driven agent architectures reacting to real-time data streams could eliminate staleness. Streaming tool responses could provide continuous updates.
+**Future Direction**: Event-driven architectures and streaming tool responses can reduce staleness.
 
-### 6.2 Organizational Challenges
+### 7.2 Organizational Challenges
 
-#### 6.2.1 Skills Gap and Training
+#### 7.2.1 Skills Gap and Training
 
-**Challenge**: Enterprise teams lack experience with LLM-based systems. Concepts like prompt engineering, context window management, and hallucination mitigation are unfamiliar, causing slower development and suboptimal implementations.
+**Challenge**: Many teams lack experience with LLM-based systems (prompting, context management, and hallucination mitigation), slowing delivery.
 
-**Recommendations**: Team training on LLM fundamentals, hiring specialists for initial implementation, internal knowledge bases, and centers of excellence to share learnings.
+**Recommendations**: Provide training, seed the team with specialists early, and document internal best practices.
 
-#### 6.2.2 Change Management and User Adoption
+#### 7.2.2 Change Management and User Adoption
 
-**Challenge**: Users comfortable with traditional UIs may resist conversational interfaces. Concerns about AI reliability, especially in critical domains, can slow adoption.
+**Challenge**: Users may resist conversational interfaces, and reliability concerns can slow adoption in critical domains.
 
-**Recommendations**: Extensive user testing, gradual feature rollout with opt-in periods, clear benefit communication, executive sponsorship, and hybrid interfaces supporting both traditional and conversational modes.
+**Recommendations**: Roll out gradually, measure user outcomes, and offer hybrid interfaces alongside conversational entry points.
 
-#### 6.2.3 Governance and Accountability
+#### 7.2.3 Governance and Accountability
 
-**Challenge**: Determining accountability when agents make errors is complex—LLM provider, framework developer, tool implementer, or user responsibility is unclear.
+**Challenge**: Accountability for agent errors can be unclear across model, framework, tool, and user responsibilities.
 
-**Recommendations**: Clear governance frameworks defining accountability, comprehensive audit trails for root cause analysis, human-in-the-loop for critical decisions, and gradual expansion of agent autonomy.
+**Recommendations**: Define governance and escalation paths, maintain audit trails, and keep humans in the loop for critical actions.
 
-### 6.3 Limitations and Future Research Directions
+### 7.3 Limitations and Future Research Directions
 
-#### 6.3.1 Framework Generalizability
+#### 7.3.1 Framework Generalizability
 
-**Limitation**: While the framework principles are designed to be domain-agnostic, validation across multiple industries and contexts would strengthen generalizability claims.
+**Limitation**: Broader validation across industries and organizational contexts would strengthen generalizability.
 
-**Future Research**: Case studies in healthcare, manufacturing, retail, and other domains would validate broader applicability. Comparative studies could identify industry-specific patterns.
+**Future Research**: Cross-domain case studies and comparative evaluations could identify industry-specific adaptations.
 
-#### 6.3.2 Advanced Reasoning Capabilities
+#### 7.3.2 Advanced Reasoning Capabilities
 
-**Limitation**: Current agents excel at orchestration and information synthesis but struggle with complex reasoning requiring deep domain expertise, multi-step logical inference, or mathematical optimization.
+**Limitation**: Agents excel at orchestration and synthesis but still struggle with deep domain reasoning and mathematical optimization.
 
-**Future Research**: Hybrid architectures combining LLMs with specialized AI/ML models (optimization engines, computer vision, predictive models) could expand agent capabilities.
+**Future Research**: Hybrid designs combining LLMs with specialized models (e.g., optimization engines and predictors) could expand capabilities.
 
-#### 6.3.3 Long-Running Autonomous Workflows
+#### 7.3.3 Long-Running Autonomous Workflows
 
-**Limitation**: The framework focuses on user-initiated, relatively short workflows (seconds to minutes). Long-running autonomous agents (hours/days) remain challenging due to error accumulation and context drift.
+**Limitation**: Long-running autonomous agents (hours/days) remain challenging due to error accumulation and context drift.
 
-**Future Research**: Persistent agent architectures with checkpoint/resume capabilities, extended memory systems, and multi-day context management could enable autonomous long-running processes.
+**Future Research**: Persistent agents with checkpoint/resume, external memory, and multi-day context management are promising directions.
 
-#### 6.3.4 Multi-Modal Capabilities
+#### 7.3.4 Multi-Modal Capabilities
 
-**Limitation**: The framework primarily handles text-based interactions. Documents often contain charts, tables, and images requiring visual understanding.
+**Limitation**: The framework primarily targets text interactions; many enterprise artifacts require visual understanding.
 
-**Future Research**: Integration with multi-modal models (GPT-4V, Claude Vision) and specialized chart/diagram generation tools could enable richer interactions.
+**Future Research**: Integration with vision-capable multi-modal models and specialized chart/diagram generation tools could enable richer interactions.
 
-#### 6.3.5 Explainability and Transparency
+#### 7.3.5 Explainability and Transparency
 
-**Limitation**: While the framework logs agent decisions, explaining why an agent made a particular choice remains challenging. LLMs are fundamentally opaque.
+**Limitation**: While decisions can be logged, explaining why an agent made a choice remains challenging due to model opacity.
 
 **Future Research**: Explainable AI techniques adapted to LLM-based agents, counterfactual analysis, and causality-based explanations could improve transparency.
 
-#### 6.3.6 Adversarial Robustness
+#### 7.3.6 Adversarial Robustness
 
-**Limitation**: Basic prompt injection attacks can be mitigated, but sophisticated adversarial attacks designed to manipulate agent behavior remain a concern.
+**Limitation**: Beyond basic prompt injection, sophisticated adversarial attacks remain a concern.
 
 **Future Research**: Red team exercises with advanced attackers, formal verification methods for agent behaviors, and adversarial training could harden agents.
 
 ---
 
-The challenges and limitations identified inform future research directions and set realistic expectations for organizations considering adoption. Acknowledging limitations builds trust and guides continuous improvement.
+These limitations set expectations for adoption and motivate future work.
 
 ---
 
-## 7. Conclusion
+## 8. Conclusion
 
-### 7.1 Summary of Contributions
+### 8.1 Summary of Contributions
 
-This paper presented a comprehensive architectural framework for integrating AI agent systems with existing microservices architectures in enterprise environments. The work addresses a critical challenge facing organizations: how to leverage intelligent automation capabilities of modern AI agents while preserving substantial investments in established microservices infrastructure.
+This paper presented an architectural framework for integrating AI agent systems with existing enterprise microservices while preserving established service boundaries and investments.
 
 Our key contributions include:
 
@@ -995,11 +1020,11 @@ Our key contributions include:
 
 **4. Non-Invasive Integration Principles**: The framework preserves existing microservices unchanged, enabling evolutionary adoption without disrupting operations. This de-risks AI integration for enterprises with substantial infrastructure investments.
 
-The framework addresses research gaps identified in related work: architectural patterns for brownfield integration, enterprise security patterns, performance optimization strategies, production-grade observability, schema bridging between natural language and typed APIs, and reusable design patterns. By providing an integrated solution spanning these challenges, the work fills a significant gap in the AI agent integration literature.
+Together, these contributions address gaps in brownfield integration patterns, security propagation, observability, schema bridging between natural language and typed APIs, and reusable design guidance.
 
-### 7.2 Practical Implications
+### 8.2 Practical Implications
 
-The practical impact of this work extends to broader enterprise AI adoption:
+Practical implications for enterprise adoption include:
 
 **Accelerated AI Adoption**: Organizations can adopt AI agent technologies without prohibitive cost and risk of wholesale system replacement. Evolutionary integration enables gradual rollout, building confidence before large-scale commitment.
 
@@ -1007,43 +1032,43 @@ The practical impact of this work extends to broader enterprise AI adoption:
 
 **Democratized AI Capabilities**: The framework enables organizations without deep AI expertise to deploy agent-based automation. Systematic tool generation from OpenAPI specifications, standardized security integration, and comprehensive observability lower the expertise barrier.
 
-**Enterprise-Grade Quality**: By addressing security, compliance, performance, and observability from the outset, the framework enables production deployments meeting enterprise standards. This is particularly critical for regulated industries where compliance is non-negotiable.
+**Enterprise-Grade Quality**: By addressing security, compliance, performance, and observability up front, the framework supports production deployments, including regulated environments.
 
-**Foundation for Innovation**: Beyond immediate automation benefits, the framework provides a platform for continuous innovation. New AI capabilities (multi-modal models, advanced reasoning, specialized domain models) can be integrated without architectural changes, future-proofing investments.
+**Foundation for Innovation**: New capabilities (multi-modal inputs, advanced reasoning, domain-specific models) can be incorporated within the same integration boundaries.
 
-**Industry Applicability**: While the architectural principles are technology-agnostic, the framework's patterns apply broadly. Healthcare organizations orchestrating clinical workflows, manufacturing companies optimizing supply chains, and retail enterprises personalizing customer experiences face similar integration challenges.
+**Industry Applicability**: While technology-agnostic, the patterns generalize across domains with similar integration constraints.
 
-### 7.3 Future Work
+### 8.3 Future Work
 
-Several promising directions for future research emerged from this work:
+Promising future directions include:
 
-**Multi-Modal Integration**: Extending the framework to support multi-modal agents capable of processing and generating images, charts, and documents would significantly expand use cases. Visual document analysis, chart-based presentations, and diagram-based explanations represent high-value opportunities.
+**Multi-Modal Integration**: Support for documents, charts, and images to expand use cases beyond text.
 
-**Federated Agent Architectures**: Large enterprises often have microservices spanning multiple business units, regions, and security domains. Federated agent architectures where specialized agents collaborate across organizational boundaries while respecting security constraints would enable enterprise-scale systems.
+**Federated Agent Architectures**: Specialized agents collaborating across organizational and security boundaries.
 
-**Continuous Learning**: Frameworks enabling agents to learn from usage patterns, user feedback, and outcomes would improve performance over time. Reinforcement learning from human feedback (RLHF) applied to tool selection and workflow orchestration could reduce errors and optimize efficiency.
+**Continuous Learning**: Learning from usage patterns and feedback (including RLHF) to improve tool selection and orchestration.
 
-**Domain-Specific Frameworks**: While our framework is domain-agnostic, specialized variants for specific industries could encode domain best practices, compliance patterns, and industry-specific integration challenges. Healthcare-specific frameworks could include HIPAA compliance patterns and EHR integration templates.
+**Domain-Specific Frameworks**: Industry-specific variants that encode compliance constraints and common workflow patterns.
 
-**Advanced Reasoning Integration**: Combining LLM-based agents with specialized AI/ML models—optimization engines, predictive models, causal inference systems—could extend agent capabilities beyond orchestration to true decision support.
+**Advanced Reasoning Integration**: Combining agents with specialized models (optimization, prediction, causal inference) for decision support.
 
-**Edge and Hybrid Deployments**: Extending to edge scenarios (on-premises, air-gapped environments) with local LLM deployment would expand applicability to sensitive or latency-critical scenarios. Hybrid architectures balancing cloud and edge could optimize cost, latency, and security.
+**Edge and Hybrid Deployments**: Patterns for on-premises/air-gapped deployments and cloud-edge trade-offs.
 
-**Cross-Organizational Agent Collaboration**: B2B scenarios where agents from different organizations collaborate on shared workflows introduce additional challenges around trust, data sharing, and inter-organizational security.
+**Cross-Organizational Agent Collaboration**: B2B collaboration with explicit trust, data sharing, and security boundaries.
 
-**Unified Agent Platforms**: Emerging platforms integrating multiple frameworks, models, and enterprise services (Azure AI Foundry, AWS Bedrock Agents, Google Vertex AI Agents) may simplify certain deployment aspects. Research on how these platforms can adopt the architectural patterns presented here would accelerate adoption.
+**Unified Agent Platforms**: How platform-managed agent stacks can adopt these patterns while preserving portability.
 
-**Empirical Validation**: Future work should include empirical validation across multiple industries and organizational contexts to validate generalizability and identify domain-specific patterns.
+**Empirical Validation**: Cross-domain evaluations to strengthen generalizability claims.
 
-### 7.4 Closing Remarks
+### 8.4 Closing Remarks
 
-The integration of AI agents with existing microservices architectures represents a pragmatic path to enterprise AI adoption. By enabling evolutionary rather than revolutionary modernization, organizations can harness the transformative potential of AI while preserving the stability and investments of established systems. This work provides an architectural roadmap grounded in enterprise integration patterns and best practices.
+Integrating AI agents with existing microservices provides a pragmatic path to modernization: evolutionary adoption can deliver automation benefits while preserving stability and prior investments.
 
-As AI capabilities continue advancing, the principles presented here—layered integration, security by design, evolutionary adoption, and production-grade quality—will remain relevant even as specific technologies evolve. The framework is not an endpoint but a foundation upon which organizations can build increasingly sophisticated AI-driven capabilities.
+As AI capabilities evolve, the core principles—layered integration, security by design, evolutionary adoption, and production-grade operations—remain stable.
 
-We hope this work accelerates enterprise AI adoption, reduces implementation barriers, and inspires further research on practical AI integration challenges. The architecture diagrams, design patterns, and detailed implementation guidance provide concrete starting points for practitioners. By sharing both opportunities and challenges candidly, we aim to contribute to the collective knowledge of the rapidly evolving field of enterprise AI integration.
+The architecture diagrams, patterns, and implementation guidance provide a concrete starting point for practitioners and a basis for further research.
 
-The future of enterprise software lies not in replacing microservices with AI agents, but in combining the reliability and precision of traditional systems with the flexibility and intelligence of AI. This hybrid approach, exemplified by our framework, represents the pragmatic path forward for organizations seeking to modernize while preserving existing investments.
+Rather than replacing microservices, the goal is to combine reliable services with agent-driven orchestration where it adds value.
 
 ---
 
@@ -1057,23 +1082,23 @@ The future of enterprise software lies not in replacing microservices with AI ag
 
 [4] M. Amundsen, *RESTful Web API Patterns and Practices*. O'Reilly Media, 2022.
 
-[5] "Istio: Service Mesh," Istio Authors, 2023. [Online]. Available: https://istio.io. [Accessed: Dec. 2025].
+[5] "Istio: Service Mesh," Istio Authors, 2023. [Online]. Available: https://istio.io. [Accessed: Jan. 2026].
 
-[6] "Linkerd: Ultralight Service Mesh," Linkerd Authors, 2023. [Online]. Available: https://linkerd.io. [Accessed: Dec. 2025].
+[6] "Linkerd: Ultralight Service Mesh," Linkerd Authors, 2023. [Online]. Available: https://linkerd.io. [Accessed: Jan. 2026].
 
-[7] "OpenAPI Specification v3.1.0," OpenAPI Initiative, 2021. [Online]. Available: https://spec.openapis.org/oas/v3.1.0. [Accessed: Dec. 2025].
+[7] "OpenAPI Specification v3.1.0," OpenAPI Initiative, 2021. [Online]. Available: https://spec.openapis.org/oas/v3.1.0. [Accessed: Jan. 2026].
 
-[8] H. Chase, "LangChain: Building applications with LLMs through composability," GitHub repository, 2022. [Online]. Available: https://github.com/langchain-ai/langchain. [Accessed: Dec. 2025].
+[8] H. Chase, "LangChain: Building applications with LLMs through composability," GitHub repository, 2022. [Online]. Available: https://github.com/langchain-ai/langchain. [Accessed: Jan. 2026].
 
 [9] Q. Wu et al., "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation," *arXiv preprint arXiv:2308.08155*, 2023.
 
-[10] Microsoft, "Semantic Kernel: Integrate cutting-edge LLM technology quickly and easily into your apps," GitHub repository, 2023. [Online]. Available: https://github.com/microsoft/semantic-kernel.
+[10] Microsoft, "Semantic Kernel: Integrate cutting-edge LLM technology quickly and easily into your apps," GitHub repository, 2023. [Online]. Available: https://github.com/microsoft/semantic-kernel. [Accessed: Jan. 2026].
 
-[11] Microsoft, "Azure AI Foundry: Agent Service," Microsoft Azure Documentation, 2024. [Online]. Available: https://learn.microsoft.com/azure/ai-studio/. [Accessed: Dec. 2025].
+[11] Microsoft, "Azure AI Foundry: Agent Service," Microsoft Azure Documentation, 2024. [Online]. Available: https://learn.microsoft.com/azure/ai-studio/. [Accessed: Jan. 2026].
 
-[12] LangGraph Contributors, "LangGraph: Build stateful, multi-actor applications with LLMs," GitHub repository, 2024. [Online]. Available: https://github.com/langchain-ai/langgraph. [Accessed: Dec. 2025].
+[12] LangGraph Contributors, "LangGraph: Build stateful, multi-actor applications with LLMs," GitHub repository, 2024. [Online]. Available: https://github.com/langchain-ai/langgraph. [Accessed: Jan. 2026].
 
-[13] OpenAI, "Function calling and other API updates," OpenAI Blog, Jun. 2023. [Online]. Available: https://openai.com/index/function-calling-and-other-api-updates/. [Accessed: Dec. 2025].
+[13] OpenAI, "Function calling and other API updates," OpenAI Blog, Jun. 2023. [Online]. Available: https://openai.com/index/function-calling-and-other-api-updates/. [Accessed: Jan. 2026].
 
 [14] J. Schick et al., "Toolformer: Language Models Can Teach Themselves to Use Tools," *arXiv preprint arXiv:2302.04761*, 2023.
 
@@ -1097,7 +1122,7 @@ The future of enterprise software lies not in replacing microservices with AI ag
 
 [24] T. Brown et al., "Language Models are Few-Shot Learners," in *Advances in Neural Information Processing Systems*, vol. 33, 2020, pp. 1877-1901.
 
-[25] Microsoft, "Azure OpenAI Service Documentation," Microsoft Azure Documentation, 2024. [Online]. Available: https://learn.microsoft.com/azure/ai-services/openai/. [Accessed: Dec. 2025].
+[25] Microsoft, "Azure OpenAI Service Documentation," Microsoft Azure Documentation, 2024. [Online]. Available: https://learn.microsoft.com/azure/ai-services/openai/. [Accessed: Jan. 2026].
 
 [26] P. Hevner, S. March, J. Park, and S. Ram, "Design Science in Information Systems Research," *MIS Quarterly*, vol. 28, no. 1, pp. 75-105, 2004.
 
@@ -1105,6 +1130,6 @@ The future of enterprise software lies not in replacing microservices with AI ag
 
 [28] M. Fowler, "Patterns of Enterprise Application Architecture," Addison-Wesley Professional, 2002.
 
-[29] OpenTelemetry, "Cloud Native Computing Foundation: OpenTelemetry," 2024. [Online]. Available: https://opentelemetry.io. [Accessed: Dec. 2025].
+[29] OpenTelemetry, "Cloud Native Computing Foundation: OpenTelemetry," 2024. [Online]. Available: https://opentelemetry.io. [Accessed: Jan. 2026].
 
-[30] "General Data Protection Regulation (GDPR)," European Parliament and Council of the European Union, Regulation (EU) 2016/679, Apr. 2016.
+[30] "General Data Protection Regulation (GDPR)," European Parliament and Council of the European Union, Regulation (EU) 2016/679, Apr. 2016. [Online]. Available: https://eur-lex.europa.eu/eli/reg/2016/679/oj. [Accessed: Jan. 2026].
