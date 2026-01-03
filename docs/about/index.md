@@ -6,7 +6,7 @@ hide:
   - toc
 ---
 
-# Cloud Architect, Researcher & Technology Leader [Resume](Anji%20Keesari%20-%20Cloud%20Architect.pdf){:target="_blank" .md-button .md-button--primary style="font-size: 0.75rem; padding: 0.3rem 0.8rem; border-radius: 8px; margin-left: 1rem; vertical-align: middle;"}
+# Cloud Architect, Researcher & Technology Leader
 
 ![image.jpg](images/anji-pic2.png){ align=right width=320 height=320 style="border-radius: 50%;"}
 
