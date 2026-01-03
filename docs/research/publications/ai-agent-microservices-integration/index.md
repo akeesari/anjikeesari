@@ -19,7 +19,7 @@ This paper proposes a hybrid three-layer architecture introducing an agent orche
 
 Unlike prior work that focuses primarily on agent runtimes or LLM-to-tool interfaces, this paper targets brownfield enterprise integration: integrating agents into existing microservices while preserving established security, observability, and operational controls.
 
-Key contributions include the three-layer integration architecture, a reusable pattern catalog with implementation guidance, and an anonymized, production-inspired case study (TradeSignal) with an evaluation methodology.
+Key contributions include the three-layer integration architecture, a reusable pattern catalog with implementation guidance, and an anonymized, production-inspired case study (TradeSignal, a market-data-driven “trading research assistant” integrating an agent layer with a microservices backend) with an evaluation methodology.
 
 **Index Terms**—AI agents, microservices architecture, enterprise integration, large language models, API gateway, distributed systems, RESTful services, authentication propagation, tool calling, Model Context Protocol, LangChain, Semantic Kernel, financial services, software architecture patterns.
 
@@ -57,7 +57,7 @@ This research develops a practical architectural framework for integrating AI ag
 
 ### 1.4 Contributions
 
-This paper contributes: (1) a three-layer, adapter-based architectural framework enabling non-invasive AI agent integration with existing microservices; (2) seven reusable design patterns with implementation guidance and trade-off analysis addressing authentication propagation, tool registry management, caching strategies, and hybrid orchestration; (3) a systematic implementation approach covering framework selection, automated tool generation from OpenAPI specifications, enterprise security integration, and observability integration; (4) architectural principles supporting evolutionary adoption while preserving existing security models and compliance constraints; and (5) an anonymized, production-inspired case study (TradeSignal) plus evaluation methodology to validate feasibility and quantify latency/cost/correctness trade-offs.
+This paper contributes: (1) a three-layer, adapter-based architectural framework enabling non-invasive AI agent integration with existing microservices; (2) seven reusable design patterns with implementation guidance and trade-off analysis addressing authentication propagation, tool registry management, caching strategies, and hybrid orchestration; (3) a systematic implementation approach covering framework selection, automated tool generation from OpenAPI specifications, enterprise security integration, and observability integration; (4) architectural principles supporting evolutionary adoption while preserving existing security models and compliance constraints; and (5) an anonymized, production-inspired case study (TradeSignal, a market-data-driven “trading research assistant” integrating an agent layer with a microservices backend) plus evaluation methodology to validate feasibility and quantify latency/cost/correctness trade-offs.
 
 ### 1.5 Scope and Methodology
 
@@ -176,7 +176,7 @@ Figs. 1–3 summarize the system overview, request flow, and a reference deploym
 └─────────────────────────────────────────────────────────────────┘
 ┌─────────────────────────────────────────────────────────────────┐
 │             Cross-Cutting Concerns (All Layers)                 │
-│  Security: Entra ID/OAuth 2.0/JWT, RBAC/ABAC, TLS, audit logs    │
+│  Security: IdP (Entra ID/Okta) + OAuth 2.0/OIDC/JWT, RBAC/ABAC   │
 │  Observability: OpenTelemetry, logs+correlation IDs, alerts      │
 │  Performance: caching/batching/timeouts                          │
 └─────────────────────────────────────────────────────────────────┘
@@ -244,7 +244,8 @@ User        Agent Runtime       Tool Registry       Integration Layer   Auth Bri
   │            Helm Charts  -> Argo CD  -> AKS                 │
   │                                                           │
   │          Policy/Guardrails: Azure Policy / Gatekeeper      │
-  │          Cloud Posture: Defender for Cloud                 │
+  │          Supply Chain: SBOM + signing                      │
+  │          Cloud/Runtime: Defender for Cloud/Containers      │
   └───────────────────────────────────────────────────────────┘
 
             ┌───────────────┴────────────────┐
@@ -303,7 +304,7 @@ User        Agent Runtime       Tool Registry       Integration Layer   Auth Bri
   │                 ┌──────────────────────────────────────────────┐    │
   │                 │ Platform Services (used by AKS workloads)     │    │
   │                 │ Redis | Cosmos DB | Service Bus | Storage     │    │
-  │                 │ Monitor/App Insights                          │    │
+  │                 │ Monitor/App Insights | Sentinel               │    │
   │                 └──────────────────────────────────────────────┘    │
   └───────────────────────────────────────────────────────────────────┘
 
@@ -313,16 +314,16 @@ User        Agent Runtime       Tool Registry       Integration Layer   Auth Bri
 
 - **Agent runtime and tools**: Agent orchestrator, tool registry, MCP client, MCP tool servers (facades/adapters), and retrieval components (RAG)
 - **Core runtime (single region)**: Azure Front Door, Application Gateway/Ingress, AKS (agent runtime and microservices), Entra ID, Key Vault, ACR, Azure OpenAI (chat + embeddings), Redis, Cosmos DB, and Azure Monitor/Application Insights
-- **Delivery and GitOps**: Source repo, CI pipeline, build/security scans, Helm charts, and Argo CD
+- **Delivery and GitOps**: Source repo, CI pipeline, build/security scans (SAST/SCA/IaC/secrets + image scan), SBOM/signing, Helm charts, and Argo CD
 - **Platform extensions**: API Management, service mesh, Azure AI Foundry (Agent Service), Service Bus, Azure Storage, and vector index/search
-- **Security posture and policy**: Azure Policy / OPA Gatekeeper and Defender for Cloud
+- **Security posture and policy**: Azure Policy / OPA Gatekeeper, Defender for Cloud/Containers, and Sentinel (SIEM)
 
 Note: Not every deployment requires all components shown; the diagram is a reference configuration.
 
 **Data Flow**:
-1. Code, IaC, and Helm charts are versioned in a source repository; CI builds containers and runs security checks (as configured)
+1. Code, IaC, and Helm charts are versioned in a source repository; CI builds containers and runs security checks (SAST/SCA/IaC/secrets, image scanning) and produces signed artifacts/SBOMs (as configured)
 2. Images are pushed to ACR; Argo CD syncs Helm releases/manifests from Git into AKS (GitOps)
-3. Admission policies (Azure Policy/Gatekeeper) can enforce guardrails at deploy time; Defender for Cloud provides posture visibility
+3. Admission policies (Azure Policy/Gatekeeper) can enforce guardrails at deploy time; Defender for Cloud/Containers provides posture and runtime visibility; Sentinel can centralize security events
 4. Users connect to the regional endpoint via Azure Front Door
 5. Ingress routes HTTPS traffic to the agent runtime in AKS
 6. Agent runtime authenticates/authorizes via Entra ID and uses Azure OpenAI (chat + embeddings) for planning, tool selection, and synthesis
@@ -331,7 +332,7 @@ Note: Not every deployment requires all components shown; the diagram is a refer
 9. Async tasks publish/consume messages via Service Bus (when workflows are long-running)
 10. Session state and orchestration metadata are persisted in Cosmos DB; large artifacts can be stored in Azure Storage
 11. Secrets and keys are retrieved from Key Vault; images are pulled from ACR to AKS
-12. Telemetry flows to Azure Monitor/Application Insights for unified observability
+12. Telemetry flows to Azure Monitor/Application Insights for unified observability; security logs/events can be centralized in Sentinel
 
 ---
 
@@ -385,7 +386,7 @@ The framework supports four orchestration patterns:
 
 ## 4. Implementation Approach
 
-This section provides practical guidance for implementing the framework in Section 3. While the architecture is platform-agnostic, we include concrete examples informed by the TradeSignal case study.
+This section provides practical guidance for implementing the framework in Section 3. While the architecture is platform-agnostic, we include concrete examples informed by the TradeSignal case study (Section 6).
 
 ### 4.1 Agent Framework Selection
 
@@ -427,7 +428,7 @@ Organizations should assess agent frameworks based on:
 
 For enterprise production deployments, **Semantic Kernel**, **Microsoft Agent Framework**, and managed platforms such as **Azure AI Foundry** are often good fits due to production readiness and governance features. For Python-first teams needing maximum flexibility, **LangChain with LangGraph** provides a mature alternative.
 
-Our trading research assistant case study (Section 6) uses Microsoft Agent Framework due to its multi-agent capabilities and enterprise integration. Framework selection should align with organizational strategy and constraints; the architectural patterns in this paper remain platform-agnostic.
+Our TradeSignal trading research assistant case study (Section 6) uses Microsoft Agent Framework due to its multi-agent capabilities and enterprise integration. Framework selection should align with organizational strategy and constraints; the architectural patterns in this paper remain platform-agnostic.
 
 ### 4.2 Tool Development and Registration
 
@@ -482,7 +483,7 @@ Assume user input is untrusted even when the runtime environment is controlled. 
 
 #### 4.3.2 Authentication Architecture
 
-**User Authentication Flow**:
+**User Authentication Flow** (example identity provider: Microsoft Entra ID or Okta):
 1. User authenticates to frontend application (OAuth 2.0, OpenID Connect (OIDC))
 2. Frontend receives JWT access token
 3. Agent requests include the bearer token
