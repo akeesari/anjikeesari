@@ -7,7 +7,7 @@ hide:
 
 ## Authors
 Anji Keesari  
-Cloud Architect & Researcher  
+Cloud Architect   
 San Ramon, California, USA  
 Email: anjkeesari@gmail.com
 

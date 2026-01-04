@@ -186,6 +186,51 @@
   color: #79c0ff;
   text-decoration: underline;
 }
+/* ============================================
+   TEXT-TO-SPEECH BUTTON (Articles, Research, and Developer Tools Only)
+   ============================================ */
+
+.listen-icon-btn {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.75rem;
+  background: transparent;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  padding: 0.25rem 0.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.listen-icon-btn:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+  border-color: var(--md-accent-fg-color);
+}
+
+.listen-icon-btn .listen-icon {
+  display: inline-block;
+}
+
+.listen-icon-btn.listening {
+  animation: pulse 1.5s ease-in-out infinite;
+  border-color: var(--md-accent-fg-color);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.listen-icon-btn.no-speech-support {
+  display: none;
+}
+
+/* Hide button if browser doesn't support speech synthesis */
+.no-speech-support #listen-button {
+  display: none;
+}
 
 /* ============================================
    CODE BLOCKS
