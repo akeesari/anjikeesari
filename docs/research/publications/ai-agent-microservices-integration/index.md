@@ -164,8 +164,7 @@ Figs. 1–3 summarize the system overview, request flow, and a reference deploym
 **Fig. 3. Single-Region Azure Deployment (Reference)**
 
 
-[![Alt text](image-3.png){:style="border: 1px solid black; border-radius: 0px;"}](image-3.png){:target="_blank"}
-[![Alt text](image-4.png){:style="border: 1px solid black; border-radius: 0px;"}](image-4.png){:target="_blank"}
+[![Alt text](image-3.png){:style="border: 0px solid black; border-radius: 0px;"}](image-3.png){:target="_blank"}
 
 **Components**:
 
