@@ -23,6 +23,7 @@ As a recognized expert in cloud architecture, AI/ML, Infrastructure as Code, and
     **International Society for Academic & Scientific Society**
 
     **Level**: [Fellow Member](https://www.sassociety.com/membership-id-sas-fsass-929-2025/){:target="_blank"}  
+    **Certificate**: [View Certificate](SAS-Certificate.pdf){:target="_blank"}  
     **Organization**: [SAS Society](https://www.sassociety.com/){:target="_blank"}  
     **Awarded**: 2025  
     **Status**: Active
@@ -36,6 +37,7 @@ As a recognized expert in cloud architecture, AI/ML, Infrastructure as Code, and
     **International Organization for Academic and Scientific Development**
 
     **Level**: [Royal Fellow](https://ioasd.org/royal-fellows/membership-id-frioasd-1022-2025/){:target="_blank"}  
+    **Certificate**: [View Certificate](IOASD-Certificate.pdf){:target="_blank"}  
     **Organization**: [IOASD](https://www.ioasd.org/){:target="_blank"}  
     **Awarded**: 2025  
     **Status**: Active
@@ -49,11 +51,12 @@ As a recognized expert in cloud architecture, AI/ML, Infrastructure as Code, and
     **Institute of Electrical and Electronics Engineers**
 
     **Level**: Member  
+    **Certificate**: [View Certificate](IEEE-Certification.pdf){:target="_blank"}  
     **Organization**: [IEEE](https://www.ieee.org/){:target="_blank"}  
     **Joined**: 2025  
     **Status**: Active
 
-    **Recognition**: World's largest technical professional organization dedicated to advancing technology for humanity. IEEE membership represents global recognition in electrical engineering, computer science, and information technology.
+    **Recognition**: Recognized by IEEE for significant contributions to engineering, research, and technical leadership. IEEE membership represents global recognition in electrical engineering, computer science, and information technology.
 
 </div>
 
@@ -72,14 +75,18 @@ As a recognized expert in cloud architecture, AI/ML, Infrastructure as Code, and
     Selected by [Globee Awards](https://globeeawards.com/){:target="_blank"} to evaluate global enterprise submissions across cloud architecture, AI/ML, and infrastructure solutions.
 
     **Judging Period**: 2025 - Present
-    
-    **Programs**: Globee Awards for Impact • Leaders • Business
 
-    **Evaluation Focus**: 
+    **Certificates**: 
     
-    **Impact**: Technology-driven transformation outcomes, AI/ML innovation results, measurable business value  
-    **Leaders**: Innovation leadership, strategic technology vision, digital transformation strategy  
-    **Business**: Enterprise solutions excellence, operational efficiency, cloud-native modernization, emerging technology adoption
+    - [View Impact Certificate](2025 Globee Awards for Impact - Certificate.pdf){:target="_blank"} 
+    - [View Leadership Certificate](2025 Globee Awards for Leadership - Certificate.pdf){:target="_blank"} 
+    - [View Business Certificate](2025 Globee Awards for Business - Certificate.pdf){:target="_blank"}
+
+    **Evaluation Focus**:
+
+    **Impact**: Technology-driven transformation outcomes, AI/ML innovation results  
+    **Leaders**: Innovation leadership, strategic technology vision  
+    **Business**: Enterprise solutions excellence, operational efficiency
 
 -   **⭐ Stevie Awards Member**
 
@@ -89,10 +96,11 @@ As a recognized expert in cloud architecture, AI/ML, Infrastructure as Code, and
 
     Member of [Stevie Awards](https://stevieawards.com/){:target="_blank"}, the world's premier business awards organization recognizing excellence in innovation and technology achievement.
 
-    **Joined**: 2025 • **Status**: Active
+    **Joined**: 2025  
+    **Status**: Active
 
     **Technology Leadership**:
-    
+
     **Digital Transformation**: Enterprise modernization strategies, cloud-native architecture adoption, technology-driven business impact  
     **AI/ML Innovation**: Large Language Models (LLMs), AI Agents, intelligent automation, machine learning integration  
     **Architecture Excellence**: Microservices platforms, distributed systems, API Gateway, event-driven architectures, emerging technologies adoption
@@ -101,15 +109,23 @@ As a recognized expert in cloud architecture, AI/ML, Infrastructure as Code, and
 
     ---
 
-    **Technical Reviewer for International Research Journals**
+    **Peer Reviewer / Editorial Team**
 
-    Contributing enterprise architecture expertise to peer review of academic research in cloud computing, AI/ML, and distributed systems.
+    **Journals**:
 
-    **Architecture Domains**: Enterprise cloud-native architectures • Event-driven systems design • Multi-tenant platform architecture • Scalability and resilience patterns • AI/ML integration strategies • Infrastructure modernization
+    - [International Numeric Journal of Machine Learning and Robots](https://injmr.com/index.php/fewfewf/about/editorialTeam){:target="_blank"}
+    - [International Journal of Machine Learning and Artificial Intelligence](https://jmlai.in/index.php/ijmlai/about/editorialTeam){:target="_blank"}
+    - [International Meridian Journal](https://meridianjournal.in/index.php/IMJ/index){:target="_blank"}
 
-    **Evaluation Approach**: Assessing research through strategic lens of digital transformation leadership, emerging technology adoption, enterprise integration patterns, microservices architecture, and real-world scalability challenges
-
-    **Value**: Evaluating research through lens of extensive enterprise implementation experience
+    **Focus Areas**: 
+    
+    - Cloud computing 
+    - Cloud-native architecture 
+    - Microservices 
+    - Distributed systems 
+    - AI/ML,  MLOps 
+    - Data engineering 
+    - Enterprise architecture
 
 </div>
 
