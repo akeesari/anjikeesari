@@ -1,0 +1,424 @@
+<!-- Custom HTML site displayed as the Home chapter -->
+
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+<style>
+
+    body, html {
+        overflow-x: hidden;
+    }
+
+    .md-main {
+        flex-grow: 0;
+    }
+
+    .md-main__inner {
+        display: flex;
+        height: 100%;
+    }
+
+    /* Light mode - Fresh green gradient */
+    [data-md-color-scheme="default"] .tx-container {
+        padding-top: 0rem;
+        padding-bottom: 1rem;
+        background: linear-gradient(to bottom, var(--md-primary-fg-color), hsla(160deg,47%,55%,1));
+    }
+    
+    /* Dark mode - Deep blue-gray to dark teal gradient */
+    [data-md-color-scheme="slate"] .tx-container {
+        padding-top: 0rem;
+        padding-bottom: 1rem;
+        background: linear-gradient(to bottom, hsl(210deg, 25%, 18%), hsl(180deg, 25%, 25%));
+    }
+
+    .tx-hero {
+        margin: 32px 0 10px 1rem;
+        color: var(--md-primary-bg-color);
+        justify-content: center;
+    }
+
+    .tx-hero h1 {
+        margin-bottom: 1rem;
+        color: currentColor;
+        font-weight: 700
+    }
+
+    .tx-hero__content {
+        padding-bottom: 0;
+        margin: 0 auto;
+    }
+
+    .tx-hero__image{
+        width:17rem;
+        height:17rem;
+        order:1;
+        padding-right: 2.5rem;
+    }
+
+    .tx-hero__image img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        display: block;
+        margin-top: 30px;
+    }
+    
+    /* Responsive image sizing */
+    @media screen and (max-width: 600px) {
+        .tx-hero__image img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    
+    @media screen and (max-width: 400px) {
+        .tx-hero__image img {
+            width: 120px;
+            height: 120px;
+        }
+    }
+
+    .tx-hero .md-button {
+        margin-top: .5rem;
+        margin-right: .5rem;
+        margin-bottom: 0;
+        color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button--primary {
+        background-color: var(--md-primary-bg-color);
+        color: hsla(280deg, 37%, 48%, 1);
+        border-color: var(--md-primary-bg-color)
+    }
+
+    .tx-hero .md-button:focus,
+    .tx-hero .md-button:hover {
+        background-color: var(--md-accent-fg-color);
+        color: var(--md-default-bg-color);
+        border-color: var(--md-accent-fg-color)
+    }
+
+    .feature-item h2 svg {
+        height: 30px;
+        float: left;
+        margin-right: 10px;
+        transform: translateY(10%);
+    }
+
+    .top-hr {
+        margin-top: 0;
+        padding-top: 1rem;
+        color: var(--md-primary-bg-color);
+        padding: 0 1rem 0 1rem;
+    }
+
+    .feature-item {
+        font-weight: 300;
+        box-sizing: border-box;
+        padding: 0 15px;
+        word-break: break-word
+    }
+
+    .feature-item h2 {
+        color: var(--md-typeset-color);
+        font-weight: 300;
+        font-size: 1.56em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: normal;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: inherit;
+    }
+
+    .feature-item p {
+        font-size: 1em;
+        line-height: 1.8em;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        color: var(--md-typeset-color);
+        margin: 0 0 10px;
+        display: block;
+    }
+
+    @media screen and (max-width:30em) {
+        .tx-hero h1 {
+            font-size: 1.4rem
+        }
+    }
+
+    @media screen and (min-width:60em) {
+        .md-sidebar--secondary {
+            display: none
+        }
+
+        .tx-hero {
+            display: flex;
+            /* align-items: center; */
+            justify-content: flex-start;
+        }
+
+        .tx-hero__content {
+            max-width: 100%;
+            width: 100%;
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0;
+            align-items: flex-start;
+        }
+    }
+
+    @media screen and (min-width:76.25em) {
+        .md-sidebar--primary {
+            display: none
+        }
+
+        .top-hr {
+            width: 100%;
+            display: flex;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 30px;
+            padding: 0 .2rem;
+            align-items: stretch;
+        }
+
+        .bottom-hr {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            max-width: 61rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 .2rem;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .feature-item:hover {
+            background-color: #526cfe47;
+            border-radius: 3px;
+        }
+    }
+
+    .hr {
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .text-center {
+        text-align: center;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 15px;
+        font-size: 1.44em;
+        font-weight: 300;
+        padding-bottom: 10px;
+    }
+
+    .logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: row wrap;
+        margin: 0 auto;
+    }
+
+    .logos img {
+        flex: 1 1 auto;
+        padding: 25px;
+        max-height: 130px;
+        vertical-align: middle;
+    }
+
+    .hr-logos {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    .md-footer-meta__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 1.0rem;
+    }
+
+    .md-footer-social {
+        padding-top: 20px;
+    }
+    .column {
+    flex: 1 1 45%;
+    padding: 10px 20px 20px 20px;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Removed duplicate card styles - now handled globally in extra.css */
+  
+  .column img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  .column:last-child img {
+    max-height: 380px;
+    object-fit: contain;
+  }
+  .column h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .column h2 * {
+    color: inherit;
+  }
+  
+  .column p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Light mode text - Dark */
+  [data-md-color-scheme="default"] .column h2,
+  [data-md-color-scheme="default"] .column p,
+  [data-md-color-scheme="default"] .column p b {
+    color: #333 !important;
+  }
+  
+  /* Dark mode text - Light */
+  [data-md-color-scheme="slate"] .column h2,
+  [data-md-color-scheme="slate"] .column p,
+  [data-md-color-scheme="slate"] .column p b {
+    color: #e0e0e0 !important;
+  }
+  
+  .column a {
+    color: #1976d2 !important;
+    text-decoration: none;
+  }
+  
+  .column a:hover {
+    color: #1565c0 !important;
+    text-decoration: underline;
+  }
+  
+  .column i,
+  .column i p {
+    color: #666 !important;
+  }
+
+  /* Mobile responsive design for ebook columns */
+  @media screen and (max-width: 768px) {
+    .top-hr {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .column {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 15px 5px;
+    }
+    
+    .column img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .column h2 {
+      text-align: center;
+      font-size: 20px;
+    }
+    
+    .column p {
+      text-align: left;
+    }
+  }
+
+  /* Tablet responsive design */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .column img {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+    }
+  }
+</style><!-- Main site Entry button descriptions -->
+<section class="tx-container">
+    <div class="md-grid md-typeset">
+      <div class="tx-hero">
+        <div class="tx-hero__content" style="margin: -2.4em 0 0 0">
+          <h2><b>Introduction</b></h2>
+          <p>Welcome to my personal website! I'm <b>Anji Keesari</b>, a passionate instructor, Cloud Architect, AI Engineer, and full stack developer with expertise in the Microsoft technology stack. This website is designed to provide you with easy-to-follow learning materials, tutorials, and valuable insights. My goal is to help you master various technologies including Azure Cloud, AI/ML Engineering, Azure AI Foundry, Large Language Models (LLMs), AI Agent Frameworks, MCP servers,  Building AI Agents & Microservices, Kubernetes, Terraform, ArgoCD, Helm Charts, Azure DevOps, C#, .NET, React JS, and more.</p>
+          <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary" style="font-size: 0.75rem; padding: 0.3rem 0.8rem; border-radius: 8px;">
+            Get started
+          </a>
+          <!-- <a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}" class="md-button">
+            Go to GitHub
+          </a> -->
+          <!-- <br />
+          <h2><b>e-Book</b></h2>
+          <p >Welcome to my eBook, <a href="http://k8s.anjikeesari.com/" style="color:peru;" target="_blank"><b>Build & Deploy Microservices on Kubernetes using ArgoCD & Helm</b></a>. In this book, I'm going to share my practical knowledge about creating and managing microservices applications in Kubernetes using the latest tools like ArgoCD and Helm.</p>
+          <p>Note :This book is still a work in progress, However, you are still welcome to continue reading what has been written so far.</p>
+          <a href="http://k8s.anjikeesari.com/" title="Build & Deploy Microservices on Kubernetes using ArgoCD & Helm" class="md-button md-button--primary" target="_blank">
+            Get started
+          </a>           -->
+        </div>
+      </div>
+      
+      <!-- Main site box descriptions -->
+      <div class="top-hr">
+    <div class="column">
+        <h2>  
+            <!-- Free e-Book - <a href="Building Microservices with Containers (A Practical Guide).pdf" download="Building Microservices with Containers (A Practical Guide).pdf">Read online</a> -->
+            Free e-Book - <a href="http://microservices.anjikeesari.com/" target="_blank">Read online</a>
+        </h2>
+        <p>Welcome to my Free e-Book <b>Building Microservices with Containers (A Practical Guide)</b>. In this book, I share my practical knowledge and hands-on experience in creating microservices with docker containers. I hope you find it valuable on your journey.</p>
+        
+        <a href="http://microservices.anjikeesari.com/" target="_blank">
+            <img src="assets/images/book-cover-1.png" alt="Building Microservices with Containers" />
+        </a>
+    </div>
+    <div class="column">
+        <h2>
+            Free e-Book - <a href="http://Kubernetes.anjikeesari.com/" target="_blank">Read online</a>
+        </h2>
+        <p>Welcome to my Free e-Book <b>Building Scalable Kubernetes Infrastructure for Microservices (A Practical Guide)</b>. In this book, I share my practical knowledge and hands-on experience in creating microservices with docker containers. I hope you find it valuable on your journey.</p>
+        <a href="http://Kubernetes.anjikeesari.com/" target="_blank">
+            <img src="assets/images/book-cover-2.png" alt="Building Scalable Kubernetes Infrastructure" />
+        </a>
+        <i><p>Note: This book is still a work in progress. However, you are still welcome to continue reading what has been written so far.</p></i>
+        
+    </div>
+      </div>
+    </div>
+</section>
+{% endblock %}
+{% block content %}{% endblock %}

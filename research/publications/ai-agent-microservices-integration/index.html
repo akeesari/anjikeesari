@@ -1,0 +1,3692 @@
+<!-- Elements added to main will be displayed on all pages -->
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to my personal (anjikeesari.com) website!  ">
+      
+      
+        <meta name="author" content="Anji Keesari">
+      
+      
+        <link rel="canonical" href="https://anjikeesari.com/research/publications/ai-agent-microservices-integration/">
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+        <link rel="next" href="../../../awards/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/ak-logo.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Integrating AI Agent Frameworks with Existing Microservices - Anji Keesari</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-LJDPP0N88G"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-LJDPP0N88G",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-LJDPP0N88G",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#integrating-ai-agent-frameworks-with-existing-microservices-an-adapter-based-architecture-for-enterprises" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Anji Keesari" class="md-header__button md-logo" aria-label="Anji Keesari" data-md-component="logo">
+      
+  <img src="../../../assets/images/ak-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Anji Keesari
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Integrating AI Agent Frameworks with Existing Microservices
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Research
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../awards/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Awards
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../articles/1-article-collection/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Articles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../developertools/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tools
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../resources/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../contact/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Contact
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Anji Keesari" class="md-nav__button md-logo" aria-label="Anji Keesari" data-md-component="logo">
+      
+  <img src="../../../assets/images/ak-logo.png" alt="logo">
+
+    </a>
+    Anji Keesari
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../about/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publications
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Publications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../awards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Awards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Articles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Articles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/1-article-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Articles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/20251113.1-aks-workload-identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AKS Pod Connection to PostgreSQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/20240325.1-cronjob/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes CronJob
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/20240323.1-redis-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting to Azure Cache for Redis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/20240302.1-alerts-cpu-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup Azure Monitor Alerts for CPU & Memory Spikes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/20240218.1-build-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Azure DevOps Private Agents in AKS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/mkdocs-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create Website using Material for MkDocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/app-availability-alert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Application Availability Alerts Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/azure-log-alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Log Alerts Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/keycloak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started with Keycloak
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/drupal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started with Drupal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/docker-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exploring Docker Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/dev-containers-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What are Development Containers?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/dev-containers-local-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developing Applications inside a Dev Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/pv-pvc-stuck/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delete PV and PVC stuck in terminating state
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/namespace-stuck/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes Namespace Stuck
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/git-reset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Undoing changes with git reset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/hide-full-path/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hiding the Full path in VSCode Terminal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/app-service-publishing-profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interacting with Azure App Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/single-sign-on/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single Sign-On - Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/oatuh2.0-flows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single Sign-On - OAuth 2.0 flows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/mac-terminal-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting up Mac Terminal with Oh-My-Zsh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/windows-terminal-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting up Windows Terminal with Oh-My-Posh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../developertools/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/software/workstation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workstation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/software/windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/software/mac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/tools/network-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/ai-engineering/ai-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/ai-engineering/ai-learning-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/ai-engineering/ai-technology-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheets
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cheat Sheets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/git-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/dotnet-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    .NET CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/dockerfile-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dockerfile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/docker-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/docker-compose-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/kubectl-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubectl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/helm-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Helm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/argocd-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ArgoCD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/terraform-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/az-cli-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/az-acr-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure ACR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/postgresql-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/redis-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/dig-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dig
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../developertools/cheatsheets/cloud-compare-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Compare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../resources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/azure-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Reference Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/webapi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    .NET Core Web API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../contact/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contact
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-related-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Related Work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-architectural-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Architectural Framework
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-implementation-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Implementation Approach
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-design-patterns-and-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Design Patterns and Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-case-study-and-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Case Study and Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-challenges-and-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Challenges and Limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+  
+                  
+  
+
+
+
+
+<h1 id="integrating-ai-agent-frameworks-with-existing-microservices-an-adapter-based-architecture-for-enterprises">Integrating AI Agent Frameworks with Existing Microservices: An Adapter-Based Architecture for Enterprises</h1>
+<h2 id="authors">Authors</h2>
+<p>Anji Keesari<br />
+Cloud Architect <br />
+San Ramon, California, USA<br />
+Email: anjkeesari@gmail.com</p>
+<h2 id="abstract">Abstract</h2>
+<p>Enterprises face a critical challenge integrating AI agent technologies into established microservices architectures without disrupting operations. Organizations in regulated industries have invested substantially in microservices infrastructure that cannot be easily replaced. This paper presents an architectural framework enabling AI agent integration with existing microservices ecosystems through evolutionary rather than revolutionary modernization.</p>
+<p>This paper proposes a hybrid three-layer architecture introducing an agent orchestration layer that interacts with microservices through standardized adapter patterns and API gateway integration. The framework addresses enterprise requirements including authentication propagation, distributed tracing, security compliance, and performance optimization while supporting multiple agent platforms and maintaining backward compatibility with existing services.</p>
+<p>Unlike prior work that focuses primarily on agent runtimes or LLM-to-tool interfaces, this paper targets brownfield enterprise integration: integrating agents into existing microservices while preserving established security, observability, and operational controls.</p>
+<p>Key contributions include the three-layer integration architecture, a reusable pattern catalog with implementation guidance, and an anonymized, production-inspired case study (TradeSignal, a market-data-driven “trading research assistant” integrating an agent layer with a microservices backend) with an evaluation methodology.</p>
+<p><strong>Index Terms</strong>—AI agents, microservices architecture, enterprise integration, large language models, API gateway, distributed systems, RESTful services, authentication propagation, tool calling, Model Context Protocol, LangChain, Semantic Kernel, financial services, software architecture patterns.</p>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<h3 id="11-background-and-motivation">1.1 Background and Motivation</h3>
+<p>Microservices architectures have become the standard for enterprise distributed systems, with organizations investing substantially in these infrastructures to power critical business operations. Concurrently, large language models (LLMs) and AI agent frameworks offer unprecedented opportunities for intelligent automation. AI agents—autonomous systems capable of reasoning, planning, and executing complex tasks through tool use—can interpret natural language instructions, make contextual decisions, and orchestrate multiple services to accomplish high-level objectives.</p>
+<p>However, enterprises face a critical challenge: existing microservices infrastructures represent substantial investments that cannot be abandoned, yet AI agent frameworks are designed for greenfield development. This disconnect creates barriers to AI adoption, especially in regulated industries where system stability, security, and compliance are paramount. Organizations need practical approaches enabling evolutionary modernization rather than complete system replacement.</p>
+<p>Regulated industries exemplify this challenge. Financial services platforms, healthcare systems, and government infrastructures rely on mature microservices ecosystems handling sensitive data under strict compliance requirements (SOC 2, PCI DSS, HIPAA). Introducing AI agents requires architectural planning ensuring security, reliability, and regulatory compliance.</p>
+<p>This paper addresses these challenges through a hybrid architectural framework enabling evolutionary integration of AI agents with existing microservices.</p>
+<h3 id="12-problem-statement">1.2 Problem Statement</h3>
+<p>Integrating AI agent frameworks with existing microservices architectures presents significant challenges that current research and industry practices have not adequately addressed:</p>
+<p><strong>Architectural Incompatibility</strong>: Traditional microservices communicate through synchronous REST calls or message queues with well-defined contracts. AI agents operate through dynamic tool calling, where the runtime determines function invocation based on natural language reasoning. This fundamental difference creates integration challenges that standard API gateways cannot fully resolve.</p>
+<p><strong>Security and Compliance</strong>: Enterprise API ecosystems implement sophisticated security models (OAuth 2.0, JSON Web Tokens (JWTs), role-based access control (RBAC), and attribute-based access control (ABAC)). AI agents must respect these boundaries while orchestrating calls across multiple services with different authentication requirements. Current frameworks provide limited guidance on enterprise security integration, authentication propagation, and audit logging required for regulatory compliance.</p>
+<p><strong>Performance Optimization</strong>: REST APIs require low-latency responses with strict service-level agreements (SLAs) (e.g., sub-100 ms for critical operations in latency-sensitive domains). AI agents add computational overhead from LLM inference, tool selection, and multi-step reasoning. Organizations need architectural patterns minimizing latency impact while maintaining intelligence benefits, including strategies for caching, request batching, and hybrid execution models.</p>
+<p><strong>Observability and Schema Management</strong>: Traditional distributed tracing tools are designed for request-response patterns, not complex agent decision trees with multiple tool invocations. Additionally, bridging strongly-typed microservice schemas (OpenAPI, Protocol Buffers) with natural language agent interactions requires systematic approaches to schema translation, validation, and error handling.</p>
+<p>These interconnected challenges require a comprehensive architectural framework addressing them holistically while maintaining compatibility with existing systems.</p>
+<h3 id="13-research-objectives">1.3 Research Objectives</h3>
+<p>This research develops a practical architectural framework for integrating AI agents with existing microservices in enterprise environments. Specific objectives include: (1) designing a comprehensive framework supporting multiple agent platforms while preserving security, performance, and compliance; (2) identifying reusable design patterns with concrete implementation guidance; (3) developing optimization strategies for latency, security, and observability; and (4) providing systematic implementation guidance enabling organizations to adopt AI agents while maintaining compatibility with existing infrastructure.</p>
+<h3 id="14-contributions">1.4 Contributions</h3>
+<p>This paper contributes: (1) a three-layer, adapter-based architectural framework enabling non-invasive AI agent integration with existing microservices; (2) seven reusable design patterns with implementation guidance and trade-off analysis addressing authentication propagation, tool registry management, caching strategies, and hybrid orchestration; (3) a systematic implementation approach covering framework selection, automated tool generation from OpenAPI specifications, enterprise security integration, and observability integration; (4) architectural principles supporting evolutionary adoption while preserving existing security models and compliance constraints; and (5) an anonymized, production-inspired case study (TradeSignal, a market-data-driven “trading research assistant” integrating an agent layer with a microservices backend) plus evaluation methodology to validate feasibility and quantify latency/cost/correctness trade-offs.</p>
+<h3 id="15-scope-and-methodology">1.5 Scope and Methodology</h3>
+<p>This paper is an architecture and design-pattern contribution grounded in enterprise microservices constraints. We assume existing services expose well-defined APIs (e.g., REST, gRPC) with established authentication and authorization controls, and we focus on integration mechanisms that do not require microservice modification. The scope is the agent-to-microservice integration boundary (tool modeling, adapters/facades, authentication propagation, schema translation, and observability). We do not propose new learning algorithms or LLM architectures; instead, we provide a framework-agnostic integration approach intended to be implemented with multiple agent platforms.</p>
+<hr />
+<h2 id="2-related-work">2. Related Work</h2>
+<p>This paper builds upon and extends research in three interconnected areas: microservices architecture patterns, AI agent frameworks, and enterprise AI integration strategies. It reviews key contributions in each area and identifies gaps that our framework addresses.</p>
+<h3 id="21-microservices-architecture-and-api-management">2.1 Microservices Architecture and API Management</h3>
+<p>Foundational work by Newman [1] and Richardson [2] established microservices design principles and pattern languages, focusing primarily on greenfield system design rather than integration with new capabilities. API gateways [3,4] and service meshes (Istio [5], Linkerd [6]) provide sophisticated infrastructure for service communication but are designed for traditional request-response patterns with predefined endpoints. They lack semantic understanding of dynamic, reasoning-based invocation required by AI agents.</p>
+<p>OpenAPI specifications [7] enable automated API documentation and client generation but assume static, programmatic consumption. This paper extends these concepts by automatically generating agent tool definitions from OpenAPI specifications, bridging structured API contracts with natural language agent interfaces—a gap not addressed by existing API management solutions.</p>
+<h3 id="22-ai-agent-frameworks-and-orchestration">2.2 AI Agent Frameworks and Orchestration</h3>
+<p>Modern agent frameworks including LangChain [8], AutoGen [9], Semantic Kernel [10], and LangGraph [12] provide abstractions for tool orchestration and multi-step reasoning. LangChain pioneered agent-tool interaction patterns but assumes simple integration scenarios. AutoGen advances multi-agent coordination but targets research scenarios. Microsoft's enterprise frameworks (e.g., Semantic Kernel) emphasize production-readiness but often focus on building new applications rather than integrating with existing architectures.</p>
+<p>Recent advances in LLM function calling [13,14] improved tool invocation reliability, while standardization efforts like Model Context Protocol (MCP) aim to provide unified tool interfaces. Emerging platforms (Azure AI Foundry) integrate multiple frameworks with enterprise governance. However, these developments address the agent-LLM interface rather than the architectural challenges of integrating agents with production microservices—specifically authentication propagation, distributed tracing across agent reasoning steps, schema bridging between natural language and typed APIs, and compliance enforcement in regulated environments.</p>
+<h3 id="23-enterprise-ai-integration">2.3 Enterprise AI Integration</h3>
+<p>MLOps literature [15] addresses model deployment and monitoring but focuses on traditional ML rather than autonomous agents. Enterprise AI governance frameworks [16,17] provide responsible AI guidance but are orthogonal to architectural integration challenges. API security research [18] examines protecting ML endpoints from attacks, not enabling agents as authenticated API clients. Industry case studies [19,20] document chatbot implementations with custom point-to-point integrations rather than systematic architectural frameworks.</p>
+<p>Earlier work on semantic web services and AI planning [21,22] attempted automated service orchestration through formal ontologies but proved too complex for adoption. Modern LLM-based agents make intelligent orchestration practical through natural language understanding but introduce new challenges this paper addresses.</p>
+<h3 id="24-research-gaps-and-our-contribution">2.4 Research Gaps and Our Contribution</h3>
+<p>Critical gaps remain despite progress in related areas:</p>
+<p><strong>Brownfield Integration</strong>: Existing frameworks assume greenfield development, with minimal guidance for integrating agents with established microservices in regulated industries.</p>
+<p><strong>Enterprise Security</strong>: Current frameworks lack patterns for authentication propagation, authorization enforcement, and audit logging when agents access protected APIs. Security models for human users don't translate directly to autonomous agents.</p>
+<p><strong>Performance &amp; Observability</strong>: Limited research addresses end-to-end latency optimization when agents orchestrate multiple services under enterprise SLAs, or capturing agent reasoning in distributed traces for troubleshooting and compliance.</p>
+<p><strong>Schema Bridging</strong>: The semantic gap between strongly-typed API schemas and natural language agent interactions lacks systematic solutions for translation, validation, and type safety.</p>
+<p><strong>Cost Optimization</strong>: Research on optimizing LLM token costs, implementing intelligent caching, and determining when to use agent vs. traditional orchestration is nascent.</p>
+<p><strong>Validated Patterns</strong>: No comprehensive catalog of design patterns exists for enterprise agent-microservices integration, forcing organizations to discover solutions independently.</p>
+<p>This paper addresses these gaps through an architectural framework providing integrated solutions spanning architecture, security, performance, and reusable patterns for enterprise adoption.</p>
+<hr />
+<h2 id="3-architectural-framework">3. Architectural Framework</h2>
+<p>This section presents a hybrid, three-layer architectural framework for integrating AI agent systems with existing microservices. The framework addresses the challenges in Section 1.2 by separating concerns across layers while preserving existing service boundaries.</p>
+<h3 id="31-overview-and-design-principles">3.1 Overview and Design Principles</h3>
+<p>Our framework introduces a three-layer architecture between client applications and existing microservices (Fig. 1):</p>
+<p><strong>Layer 1: Agent Orchestration Layer</strong> manages agent lifecycle, reasoning, and tool selection. Framework-agnostic, supporting LangChain, Semantic Kernel, and Microsoft Agent Framework through unified abstraction.</p>
+<p><strong>Layer 2: Integration and Adapter Layer</strong> bridges natural language interactions with structured APIs through Tool Registry, Service Adapters, Authentication Bridge, and Schema Transformation components, handling security and data conversions.</p>
+<p><strong>Layer 3: Existing Microservices Layer</strong> represents unchanged enterprise infrastructure, preserving investments while exposing capabilities through standard APIs (REST, gRPC, GraphQL).</p>
+<p><strong>Cross-Cutting Concerns</strong> including security, observability, and performance optimization span all layers with distributed tracing, audit logging, and monitoring providing end-to-end visibility.</p>
+<p>Key principles: <strong>Non-Invasiveness</strong> (no microservice modifications), <strong>Framework Agnosticism</strong> (preventing vendor lock-in), <strong>Security by Design</strong> (enforcement at every layer), <strong>Evolutionary Adoption</strong> (incremental integration), and <strong>Performance Optimization</strong> (caching, batching, hybrid execution).</p>
+<p>Typical flow: user request → agent selects tools → integration layer enforces authn/authz and schema validation → microservices execute → integration transforms → agent synthesizes.</p>
+<h3 id="32-architecture-diagrams">3.2 Architecture Diagrams</h3>
+<p>Figs. 1–3 summarize the system overview, request flow, and a reference deployment model.</p>
+<h4 id="321-system-overview-architecture">3.2.1 System Overview Architecture</h4>
+<p><strong>Fig. 1. Three-Layer Hybrid Architecture with Cross-Cutting Concerns</strong></p>
+<p><a href="image-1.png" target="_blank"><img alt="Alt text" src="image-1.png" style="border: 0px solid black; border-radius: 0px;" /></a></p>
+<p><strong>Description</strong>: This diagram illustrates the three-layer architecture with clear separation of concerns and integrated cross-cutting capabilities. Client applications interact with the Agent Orchestration Layer, which manages agent lifecycle and reasoning. The Integration Layer bridges agents and microservices through facades, authentication, and schema translation. Existing microservices remain unchanged in Layer 3. Cross-cutting concerns—security, observability, and performance—apply across all layers and are shown separately for readability. The observability tools shown are representative options; in practice, organizations typically adopt either a cloud-native stack (e.g., Azure Monitor/Application Insights) or an open-source stack (e.g., Prometheus/Grafana/Jaeger), with OpenTelemetry for instrumentation.</p>
+<h4 id="322-component-interaction-sequence">3.2.2 Component Interaction Sequence</h4>
+<p><strong>Fig. 2. Agent Request Processing Flow</strong></p>
+<p><a href="image-2.png" target="_blank"><img alt="Alt text" src="image-2.png" style="border: 1px solid black; border-radius: 10px;" /></a></p>
+<p><strong>Steps</strong>:
+1. User submits natural language query
+2. Agent queries Tool Registry for available tools
+3. Registry returns filtered tool list based on permissions
+4. Agent reasons about query and selects appropriate tools (LLM inference)
+5. Agent invokes selected tool through Integration Layer
+6-7. Integration Layer retrieves authentication token via Auth Bridge
+8. Integration Layer calls microservice with auth token
+9. Microservice returns response
+10. Integration Layer transforms response to agent-friendly format
+11. Agent synthesizes final response (LLM inference)
+12. Final response returned to user</p>
+<h4 id="323-deployment-architecture">3.2.3 Deployment Architecture</h4>
+<p><strong>Fig. 3. Single-Region Azure Deployment (Reference)</strong></p>
+<p><a href="image-3.png" target="_blank"><img alt="Alt text" src="image-3.png" style="border: 0px solid black; border-radius: 0px;" /></a></p>
+<p><strong>Components</strong>:</p>
+<ul>
+<li><strong>Agent runtime and tools</strong>: Agent orchestrator, tool registry, MCP client, MCP tool servers (facades/adapters), and retrieval components (RAG)</li>
+<li><strong>Core runtime (single region)</strong>: Azure Front Door, Application Gateway/Ingress, AKS (agent runtime and microservices), Entra ID, Key Vault, ACR, Azure OpenAI (chat + embeddings), Redis, Cosmos DB, and Azure Monitor/Application Insights</li>
+<li><strong>Delivery and GitOps</strong>: Source repo, CI pipeline, build/security scans (SAST/SCA/IaC/secrets + image scan), SBOM/signing, Helm charts, and Argo CD</li>
+<li><strong>Platform extensions</strong>: API Management, service mesh, Azure AI Foundry (Agent Service), Service Bus, Azure Storage, and vector index/search</li>
+<li><strong>Security posture and policy</strong>: Azure Policy / OPA Gatekeeper, Defender for Cloud/Containers, and Sentinel (SIEM)</li>
+</ul>
+<p>Note: Not every deployment requires all components shown; the diagram is a reference configuration.</p>
+<p><strong>Data Flow</strong>:
+1. Code, IaC, and Helm charts are versioned in a source repository; CI builds containers and runs security checks (SAST/SCA/IaC/secrets, image scanning) and produces signed artifacts/SBOMs (as configured)
+2. Images are pushed to ACR; Argo CD syncs Helm releases/manifests from Git into AKS (GitOps)
+3. Admission policies (Azure Policy/Gatekeeper) can enforce guardrails at deploy time; Defender for Cloud/Containers provides posture and runtime visibility; Sentinel can centralize security events
+4. Users connect to the regional endpoint via Azure Front Door
+5. Ingress routes HTTPS traffic to the agent runtime in AKS
+6. Agent runtime authenticates/authorizes via Entra ID and uses Azure OpenAI (chat + embeddings) for planning, tool selection, and synthesis
+7. Tool discovery and invocation are performed via MCP (tool registry + MCP tool servers), with API Mgmt applying policies where used
+8. Retrieval-augmented generation (RAG) queries a vector index/search service; Redis caches frequent retrieval/tool responses
+9. Async tasks publish/consume messages via Service Bus (when workflows are long-running)
+10. Session state and orchestration metadata are persisted in Cosmos DB; large artifacts can be stored in Azure Storage
+11. Secrets and keys are retrieved from Key Vault; images are pulled from ACR to AKS
+12. Telemetry flows to Azure Monitor/Application Insights for unified observability; security logs/events can be centralized in Sentinel</p>
+<hr />
+<p>Figs. 1–3 provide a compact reference for the components, interactions, and deployment considerations described in Sections 3.1–3.6.</p>
+<hr />
+<h3 id="33-agent-orchestration-layer">3.3 Agent Orchestration Layer</h3>
+<p>This layer comprises three components:</p>
+<p><strong>Agent Runtime Environment</strong> hosts agent instances and orchestrates reasoning and multi-step workflows (e.g., Reason + Act (ReAct)).</p>
+<p><strong>Tool Registry and Discovery</strong> catalogs tools and metadata (often auto-generated from OpenAPI), supporting permission-filtered discovery and versioning.</p>
+<p><strong>State Management</strong> stores conversation/session state with context pruning and audit trails for troubleshooting and compliance.</p>
+<h3 id="34-integration-and-adapter-layer">3.4 Integration and Adapter Layer</h3>
+<p>This layer bridges agents and microservices through four key patterns:</p>
+<p><strong>Service Facade Pattern</strong> wraps complex APIs into simplified, agent-optimized tools and normalizes errors and retries.</p>
+<p><strong>Authentication Bridge Pattern</strong> propagates user and service principal identities (JWT/OAuth 2.0), handles refresh, and enforces authorization (RBAC/ABAC) at tool boundaries.</p>
+<p><strong>Schema Translation and Validation</strong> generates tool schemas from contracts (e.g., OpenAPI), validates inputs, normalizes outputs, and manages schema evolution.</p>
+<p><strong>Caching and Performance Optimization</strong> applies caching and batching to reduce repeated calls and stabilize latency.</p>
+<h3 id="35-existing-microservices-and-cross-cutting-concerns">3.5 Existing Microservices and Cross-Cutting Concerns</h3>
+<p><strong>Existing Microservices Layer</strong> remains unchanged, exposing standard APIs (REST, gRPC, GraphQL) and contracts (e.g., OpenAPI). Schema drift is absorbed by the Integration Layer rather than requiring microservice changes.</p>
+<p><strong>Cross-Cutting Concerns</strong> span all layers: <strong>Security</strong>, <strong>Observability</strong>, <strong>Performance</strong>, and <strong>Compliance</strong>.</p>
+<h3 id="36-data-flow-and-orchestration-patterns">3.6 Data Flow and Orchestration Patterns</h3>
+<p>The framework supports four orchestration patterns:</p>
+<p><strong>Synchronous Request-Response</strong> for interactive queries: request → tool calls → synthesis → response.</p>
+<p><strong>Asynchronous Processing</strong> for long-running workflows: return job ID, execute in background, publish status, and notify on completion.</p>
+<p><strong>Hybrid Orchestration</strong> routes simple deterministic operations to non-agent paths and reserves agents for multi-step reasoning (based on complexity, latency, cost, and ambiguity).</p>
+<p><strong>Event-Driven Integration</strong> triggers agent actions from microservice events when proactive workflows are needed.</p>
+<hr />
+<hr />
+<h2 id="4-implementation-approach">4. Implementation Approach</h2>
+<p>This section provides practical guidance for implementing the framework in Section 3. While the architecture is platform-agnostic, we include concrete examples informed by the TradeSignal case study (Section 6).</p>
+<h3 id="41-agent-framework-selection">4.1 Agent Framework Selection</h3>
+<p>Framework selection impacts development velocity, operational complexity, and maintainability. This section evaluates frameworks against enterprise requirements.</p>
+<h4 id="411-evaluation-criteria">4.1.1 Evaluation Criteria</h4>
+<p>Organizations should assess agent frameworks based on:</p>
+<p><strong>Production Readiness</strong>: Error handling, logging, telemetry, monitoring, and operational troubleshooting.</p>
+<p><strong>Enterprise Integration</strong>: Authentication/authorization integration (OAuth 2.0, JWT, service principals) and compatibility with enterprise controls.</p>
+<p><strong>Performance Characteristics</strong>: Latency, resource usage, caching, streaming, and controls to reduce redundant LLM calls.</p>
+<p><strong>Multi-Agent Support</strong>: Support for specialized agents, delegation, coordination, and result aggregation.</p>
+<p><strong>Extensibility</strong>: Tool/plugin APIs, customization hooks, and compatibility with domain-specific workflows.</p>
+<p><strong>Ecosystem and Community</strong>: Documentation quality, examples, and third-party integrations.</p>
+<p><strong>Licensing and Cost</strong>: Commercial licensing constraints and total cost of ownership.</p>
+<h4 id="412-framework-comparison">4.1.2 Framework Comparison</h4>
+<p><strong>LangChain</strong> (Python, JavaScript): Large ecosystem and flexible composition; often best for prototyping and highly customized builds.</p>
+<p><strong>Microsoft Semantic Kernel</strong> (.NET, Python, Java): Enterprise-oriented with strong .NET support and production features.</p>
+<p><strong>Microsoft Agent Framework</strong> (Python, .NET): Multi-agent support with task routing and observability; a fit for complex workflows.</p>
+<p><strong>AutoGen</strong> (Python): Research-oriented multi-agent conversations; typically best for experimentation.</p>
+<p><strong>LangGraph</strong> (Python): Stateful graph workflows and human-in-the-loop patterns for explicit control flow.</p>
+<p><strong>Azure AI Foundry</strong> (Multi-language): Managed platform with integrated governance, security, and deployment primitives.</p>
+<h4 id="413-recommendation">4.1.3 Recommendation</h4>
+<p>For enterprise production deployments, <strong>Semantic Kernel</strong>, <strong>Microsoft Agent Framework</strong>, and managed platforms such as <strong>Azure AI Foundry</strong> are often good fits due to production readiness and governance features. For Python-first teams needing maximum flexibility, <strong>LangChain with LangGraph</strong> provides a mature alternative.</p>
+<p>Our TradeSignal trading research assistant case study (Section 6) uses Microsoft Agent Framework due to its multi-agent capabilities and enterprise integration. Framework selection should align with organizational strategy and constraints; the architectural patterns in this paper remain platform-agnostic.</p>
+<h3 id="42-tool-development-and-registration">4.2 Tool Development and Registration</h3>
+<p>Converting microservices into agent-consumable tools is central to the integration approach.</p>
+<h4 id="421-automated-tool-generation-from-openapi">4.2.1 Automated Tool Generation from OpenAPI</h4>
+<p>Most modern microservices expose OpenAPI/Swagger specifications. Tool generation can be automated from these contracts:</p>
+<p><strong>Specification Parsing</strong>: Extract operations, parameter/response schemas, and authentication requirements from OpenAPI 3.x.</p>
+<p><strong>Tool Schema Generation</strong>: Convert operations into tool definitions with:
+- <strong>Name</strong>: Concise, descriptive identifier (e.g., <code>get_stock_quote</code>, <code>run_backtest</code>)
+- <strong>Description</strong>: LLM-oriented intent and usage guidance
+- <strong>Parameters</strong>: Typed inputs (required vs. optional)
+- <strong>Authentication</strong>: Required authentication method and scopes</p>
+<p><strong>LLM-Optimized Descriptions</strong>: OpenAPI summaries are often too technical; enrich them with user-oriented intent:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Original: &quot;GET /api/marketdata/{symbol}/quote&quot;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Enhanced: &quot;Get the latest quote (price, change, volume). Use when user asks for current price. Requires a valid symbol.&quot;
+</span></code></pre></div>
+<p><strong>Parameter Simplification</strong>: Complex APIs with many optional parameters are simplified into multiple focused tools. For example, a comprehensive search API might be exposed as separate tools for common search patterns (search by name, search by ID, search by date range).</p>
+<h4 id="422-custom-tool-implementation">4.2.2 Custom Tool Implementation</h4>
+<p>Not all integrations can be fully automated. Custom tool implementation handles:</p>
+<p><strong>Complex Business Logic</strong>: Orchestrating multiple calls and enforcing business rules behind a simplified tool.</p>
+<p><strong>Data Aggregation</strong>: Combining sources, performing calculations, and returning structured summaries.</p>
+<p><strong>Error Handling and Validation</strong>: Retries, circuit breakers, and domain-specific validation.</p>
+<p><strong>Performance Optimization</strong>: Prefetching, caching, and summarization to reduce tool calls and stabilize response times.</p>
+<h4 id="423-tool-organization-and-protocol-standards">4.2.3 Tool Organization and Protocol Standards</h4>
+<p>Efficient discovery benefits from domain categories (market-data, research, analytics/backtesting), capability tags (read-only, mutating, sensitive), and lightweight usage notes.</p>
+<p>Standards like Model Context Protocol (MCP) can improve portability. Regardless of protocol choice, enterprise requirements persist (token validation, authorization, audit logging, secure transformation).</p>
+<h3 id="43-security-implementation">4.3 Security Implementation</h3>
+<p>This section summarizes enterprise security controls applied across the layers.</p>
+<h4 id="431-threat-model-and-trust-boundaries">4.3.1 Threat Model and Trust Boundaries</h4>
+<p>Assume user input is untrusted even when the runtime environment is controlled. Key threats include prompt injection leading to unsafe tool use, confused-deputy authorization failures, token leakage via telemetry, and data exfiltration through overly broad tool responses. Trust boundaries exist at (i) client → agent, (ii) agent → integration/tools, and (iii) integration → microservices. Mitigations include permission-filtered tool discovery, schema validation, explicit authorization checks for each tool call, and data minimization/redaction in logs and traces.</p>
+<h4 id="432-authentication-architecture">4.3.2 Authentication Architecture</h4>
+<p><strong>User Authentication Flow</strong> (example identity provider: Microsoft Entra ID or Okta):
+1. User authenticates to frontend application (OAuth 2.0, OpenID Connect (OIDC))
+2. Frontend receives JWT access token
+3. Agent requests include the bearer token
+4. Authentication Bridge validates token and extracts user identity
+5. Token is propagated to all downstream microservice calls</p>
+<p><strong>Service Principal Authentication</strong>:
+For scheduled or background agent tasks, service principals (managed identities in Azure, service accounts in Kubernetes) provide authentication without user context. These principals have restricted permissions limited to necessary operations.</p>
+<p><strong>Token Management</strong>:
+- Cache tokens with expiry awareness and refresh when applicable
+- Keep tokens in memory only; never log or persist
+- Invalidate tokens on logout/session termination</p>
+<h4 id="433-authorization-enforcement">4.3.3 Authorization Enforcement</h4>
+<p><strong>Role-Based Access Control (RBAC)</strong>: Roles determine which tools are visible and invocable; the Tool Registry filters tools accordingly.</p>
+<p><strong>Attribute-Based Access Control (ABAC)</strong>: Enforce fine-grained checks (user, resource, environment) at the Integration Layer before invoking downstream services.</p>
+<p><strong>Least Privilege</strong>: Use minimal scopes/permissions; separate identities for workflows when needed.</p>
+<p><strong>Authorization Logging</strong>: Log allow/deny decisions with sufficient context for audit and incident response.</p>
+<h4 id="434-data-privacy-and-compliance">4.3.4 Data Privacy and Compliance</h4>
+<p><strong>PII Handling</strong>: Personally Identifiable Information (PII) is handled according to regulatory requirements:
+- Do not log PII in plain text
+- Encrypt conversation state at rest
+- Audit access to sensitive records
+- Enforce retention and deletion policies</p>
+<p><strong>Data Residency</strong>: Ensure processing/storage satisfy regional constraints (e.g., GDPR, CCPA); consider region-specific deployments.</p>
+<p><strong>Encryption</strong>:
+- All data in transit uses TLS 1.3
+- Sensitive data at rest is encrypted using managed keys (Azure Key Vault, AWS KMS)
+- Conversation state in shared storage is encrypted</p>
+<p><strong>Compliance Validation</strong>: The framework includes compliance validation tools that verify:
+- All tools enforce authentication
+- Authorization checks occur before service invocation
+- Audit logs capture required information
+- Data handling meets retention and encryption requirements</p>
+<h3 id="44-observability-and-monitoring">4.4 Observability and Monitoring</h3>
+<p>Observability supports troubleshooting, performance optimization, and compliance verification.</p>
+<h4 id="441-distributed-tracing">4.4.1 Distributed Tracing</h4>
+<p>OpenTelemetry enables standardized distributed tracing across layers. Spans cover agent execution, tool invocations, microservice calls, and model operations, with correlation IDs and selected attributes (e.g., tool name, token usage, and request identifiers).</p>
+<p>Traces can be visualized in common backends (open-source or cloud-native) to identify bottlenecks.</p>
+<h4 id="442-structured-logging">4.4.2 Structured Logging</h4>
+<p>JSON logs with consistent fields (timestamp, level, component, operation, identifiers, status) enable aggregation and analysis. Suggested levels: DEBUG (reasoning breadcrumbs), INFO (operations), WARN (retries/degradation), ERROR (failures/violations).</p>
+<p>Centralize logs in a searchable backend. Redact/minimize sensitive fields by default.</p>
+<h4 id="443-performance-metrics-and-alerting">4.4.3 Performance Metrics and Alerting</h4>
+<p>Key metrics include end-to-end latency, tool-call latency, model time/token usage, cache hit rate, error rates, and concurrency. Dashboards support monitoring and capacity planning.</p>
+<p>Configure alerts for elevated error rates, p95 latency regressions, authentication failures, and resource exhaustion.</p>
+<h4 id="444-agent-decision-logging">4.4.4 Agent Decision Logging</h4>
+<p>Decision logs capture: user query, tools considered/selected (with brief rationale), invocation parameters, results, and synthesis outcome. Audit trails record who/what/when/why and accessed resources; retention follows applicable regulatory requirements with secure archival.</p>
+<hr />
+<p>Section 4 outlined implementation considerations; Section 5 catalogs reusable patterns that address common integration challenges.</p>
+<hr />
+<h2 id="5-design-patterns-and-best-practices">5. Design Patterns and Best Practices</h2>
+<p>This section catalogs reusable patterns and best practices for agent–microservice integration. Each pattern includes intent, motivation, implementation guidance, and trade-offs.</p>
+<h3 id="51-architectural-patterns">5.1 Architectural Patterns</h3>
+<h4 id="511-service-facade-pattern">5.1.1 Service Facade Pattern</h4>
+<p><strong>Intent</strong>: Simplify complex microservice APIs into agent-optimized interfaces that reduce cognitive load on LLMs and minimize token usage.</p>
+<p><strong>Motivation</strong>: Microservice APIs can be parameter-heavy and response-dense; agents perform better with smaller, intent-oriented tools.</p>
+<p><strong>Implementation</strong>: Wrap complex APIs into simpler tools with fewer required parameters and concise, structured outputs. The facade can set defaults, select providers, and summarize responses.</p>
+<p><strong>Benefits</strong>:
+- Reduced token usage and faster responses
+- Higher tool selection accuracy
+- Encapsulated business logic</p>
+<p><strong>Trade-offs</strong>:
+- Additional abstraction and maintenance overhead
+- Multiple facades may be needed for different use cases</p>
+<p><strong>When to Use</strong>: For complex APIs with &gt;5 parameters or when response data needs significant filtering or transformation.</p>
+<h4 id="512-tool-registry-pattern">5.1.2 Tool Registry Pattern</h4>
+<p><strong>Intent</strong>: Centralize tool definitions, metadata, and access control to enable dynamic tool discovery and permission-based filtering.</p>
+<p><strong>Motivation</strong>: Hardcoded tool lists do not scale across teams, versions, and permission models.</p>
+<p><strong>Implementation</strong>:
+- Store tool definitions and metadata (including required permissions)
+- Query by user context and return only authorized tools
+- Support versioning and controlled updates (e.g., A/B tests)</p>
+<p><strong>Benefits</strong>:
+- Centralized governance and consistent access control
+- Easier tool lifecycle management (add/remove/update/version)</p>
+<p><strong>Trade-offs</strong>:
+- Additional dependency; mitigate with caching and redundancy
+- Requires disciplined configuration management</p>
+<p><strong>When to Use</strong>: Recommended for deployments with multiple tools (&gt;5) or varying user permissions.</p>
+<h4 id="513-authentication-bridge-pattern">5.1.3 Authentication Bridge Pattern</h4>
+<p><strong>Intent</strong>: Propagate user authentication context through agent workflows to downstream microservices while maintaining security boundaries.</p>
+<p><strong>Motivation</strong>: Agents must call protected APIs on behalf of users without handling credentials unsafely.</p>
+<p><strong>Implementation</strong>:
+- Capture and validate the user token at ingress
+- Propagate identity to downstream calls via the integration layer
+- Use separate service principals/managed identities for background tasks</p>
+<p><strong>Benefits</strong>:
+- Preserves existing security models and audit trails
+- Reduces credential exposure to agent logic</p>
+<p><strong>Trade-offs</strong>:
+- Requires token lifecycle handling (expiry/refresh)
+- More complex propagation across multi-service workflows</p>
+<p><strong>When to Use</strong>: Recommended when downstream systems enforce authentication (typical in enterprise environments).</p>
+<h4 id="514-hybrid-orchestration-pattern">5.1.4 Hybrid Orchestration Pattern</h4>
+<p><strong>Intent</strong>: Intelligently route requests between agent-based reasoning and traditional API orchestration based on complexity, performance requirements, and cost.</p>
+<p><strong>Motivation</strong>: Route deterministic operations to fast paths and reserve agents for ambiguity and multi-step reasoning.</p>
+<p><strong>Implementation</strong>:
+- Classify requests by ambiguity, reasoning depth, latency targets, and cost sensitivity
+- Simple requests → direct API calls
+- Complex requests → agent reasoning
+- Borderline requests → restricted tool set or shorter prompts</p>
+<p><strong>Decision Logic</strong>: Use simple rules (and telemetry feedback) to tune routing over time.</p>
+<p><strong>Benefits</strong>:
+- Reduced cost and latency for simple operations
+- Flexibility to adapt routing based on load/cost</p>
+<p><strong>Trade-offs</strong>:
+- Additional complexity and risk of misclassification
+- Requires monitoring to tune rules</p>
+<p><strong>When to Use</strong>: When cost optimization is important or when significant portion of requests are simple/deterministic.</p>
+<h4 id="515-circuit-breaker-pattern-for-llm-providers">5.1.5 Circuit Breaker Pattern for LLM Providers</h4>
+<p><strong>Intent</strong>: Prevent cascading failures when LLM providers experience outages or degraded performance.</p>
+<p><strong>Motivation</strong>: Rate limits, outages, and latency spikes can cascade into retries and degraded user experience.</p>
+<p><strong>Implementation</strong>:
+- Monitor LLM provider health (success rate, latency, error types)
+- States: CLOSED (normal), OPEN (failing, stop requests), HALF-OPEN (testing recovery)
+- When failure threshold exceeded (e.g., 50% errors over 1 minute), open circuit
+- While open, immediately fail-fast or route to fallback provider
+- After timeout (e.g., 30 seconds), enter half-open state
+- If test requests succeed, close circuit; otherwise reopen</p>
+<p><strong>Benefits</strong>:
+- Prevents cascading failures and resource exhaustion
+- Enables fail-fast and fallback routing</p>
+<p><strong>Trade-offs</strong>:
+- Requires careful threshold tuning and adds integration complexity</p>
+<p><strong>When to Use</strong>: For production systems with strict SLAs or when using multiple LLM providers.</p>
+<h4 id="516-saga-pattern-for-multi-step-workflows">5.1.6 Saga Pattern for Multi-Step Workflows</h4>
+<p><strong>Intent</strong>: Manage distributed transactions across multiple microservices with compensating actions for rollback on failure.</p>
+<p><strong>Motivation</strong>: Multi-step workflows with writes can partially fail and require compensating actions to restore consistency.</p>
+<p><strong>Implementation</strong>:
+- Break workflow into steps with explicit success criteria
+- Each step has corresponding compensating action (rollback)
+- Agent tracks workflow state (steps completed, pending, failed)
+- On failure, execute compensating actions in reverse order
+- Final state: either all steps completed or all rolled back</p>
+<p><strong>Order/Alert Workflow Example</strong>: Define compensations (delete, revert derived artifacts, cancellation notices) and execute them in reverse order on failure.</p>
+<p><strong>Benefits</strong>:
+- Clear recovery path for distributed write workflows
+- Explicit modeling of complex workflows</p>
+<p><strong>Trade-offs</strong>:
+- Compensation design is non-trivial; actions must be idempotent
+- Not all operations have perfect rollback semantics</p>
+<p><strong>When to Use</strong>: For workflows with multiple write operations that must maintain consistency.</p>
+<h4 id="517-agent-specialization-pattern">5.1.7 Agent Specialization Pattern</h4>
+<p><strong>Intent</strong>: Create specialized agents for specific domains rather than single general-purpose agent, improving accuracy and performance.</p>
+<p><strong>Motivation</strong>: As tool count grows, a single general agent can struggle with selection accuracy; specialization narrows the decision space.</p>
+<p><strong>Implementation</strong>:
+- Define agent personas aligned with user roles or task domains
+  - Portfolio Analysis Agent (read-only, analysis tools)
+  - Trading Agent (market data, portfolio views, alerting)
+  - Strategy Agent (backtesting, risk metrics)
+- Each agent has curated tool set relevant to domain
+- Router agent directs user requests to appropriate specialist agent
+- Specialists can delegate to other specialists when needed</p>
+<p><strong>Benefits</strong>:
+- Higher tool selection accuracy and faster reasoning
+- Easier per-domain tuning</p>
+<p><strong>Trade-offs</strong>:
+- Requires accurate routing and more operational overhead</p>
+<p><strong>When to Use</strong>: When total tool count exceeds 25-30 or when distinct user roles have different tool requirements.</p>
+<h3 id="52-implementation-best-practices">5.2 Implementation Best Practices</h3>
+<h4 id="521-gradual-rollout-and-validation">5.2.1 Gradual Rollout and Validation</h4>
+<p><strong>Start with Read-Only Tools</strong>: Begin integration with read-only, non-critical tools to validate architecture with minimal risk. Build confidence before introducing write operations.</p>
+<p><strong>Shadow Mode Testing</strong>: Run agents in parallel with existing systems, comparing agent outputs to traditional methods without exposing to users. Identify discrepancies and refine before production release.</p>
+<p><strong>Phased Rollout</strong>: Start with internal users, expand to a small pilot, then gradually increase exposure. Monitor quality, latency, cost, and incident rates at each stage before expanding.</p>
+<p><strong>Human-in-the-Loop</strong>: For high-stakes operations, require human approval before executing agent actions. Gradually reduce oversight as confidence builds.</p>
+<h4 id="522-prompt-engineering-and-tool-descriptions">5.2.2 Prompt Engineering and Tool Descriptions</h4>
+<p><strong>Optimize Tool Descriptions for LLMs</strong>:
+- Use clear, action-oriented names and intent-oriented descriptions
+- Include minimal prerequisites/dependencies and one short usage example
+- Keep descriptions concise and consistent across tools</p>
+<p><strong>System Prompts</strong>:
+- Define role/scope and behavioral guidelines
+- Include safety constraints (verify inputs before mutations; do not guess)
+- Provide domain context and required terminology</p>
+<p><strong>Few-Shot Examples</strong>: Add a small number of high-quality examples when tool misuse is common.</p>
+<h4 id="523-intelligent-caching-strategies">5.2.3 Intelligent Caching Strategies</h4>
+<p><strong>Multi-Level Caching</strong>:
+- <strong>L1 - Tool Definitions</strong>: Cache tool schemas in agent runtime (rarely change)
+- <strong>L2 - LLM Responses</strong>: Cache identical prompts (works for common queries)
+- <strong>L3 - Microservice Responses</strong>: Cache read-only API responses with appropriate time-to-live (TTL) values</p>
+<p><strong>Cache Key Design</strong>: Include user identity, query parameters, and timestamps in cache keys to prevent unauthorized access to cached data.</p>
+<p><strong>Selective Caching</strong>: Only cache deterministic, stable data. Do not cache:
+- User-specific sensitive data beyond session lifetime
+- Real-time data (live market prices)
+- Intermediate workflow state</p>
+<p><strong>Cache Invalidation</strong>: Implement time-to-live (TTL)-based expiration and explicit invalidation for write operations affecting cached data.</p>
+<h4 id="524-error-handling-and-recovery">5.2.4 Error Handling and Recovery</h4>
+<p><strong>Graceful Degradation</strong>: Provide a user-friendly failure message, suggest an alternative action, and avoid exposing internal error details.</p>
+<p><strong>Automatic Retries</strong>: Implement exponential backoff for transient failures (network issues, rate limits).</p>
+<p><strong>Error Context</strong>: Log tool name, sanitized parameters, user/session identifiers, and trace IDs for debugging.</p>
+<p><strong>Fallback Flows</strong>: For critical operations, maintain a non-agent path (e.g., traditional UI).</p>
+<h4 id="525-performance-optimization">5.2.5 Performance Optimization</h4>
+<p><strong>Parallel Tool Invocation</strong>: When agent needs multiple independent tools, invoke them in parallel rather than sequentially.</p>
+<p><strong>Response Streaming</strong>: Stream LLM responses to users for perceived performance improvement, especially for longer responses.</p>
+<p><strong>Prompt Optimization</strong>: Minimize prompt tokens:
+- Keep only relevant conversation history
+- Summarize long tool responses before re-injecting
+- Use smaller models for simple tasks</p>
+<p><strong>Connection Pooling</strong>: Reuse HTTP connections to microservices to reduce connection overhead.</p>
+<h3 id="53-common-pitfalls-and-solutions">5.3 Common Pitfalls and Solutions</h3>
+<h4 id="531-token-context-window-limitations">5.3.1 Token Context Window Limitations</h4>
+<p><strong>Problem</strong>: LLMs have finite context windows (model-dependent). Long conversations or large tool responses can exhaust available context.</p>
+<p><strong>Solutions</strong>:
+- <strong>Summarize and prune</strong>: Periodically summarize history and retain only task-relevant turns
+- <strong>Filter tool outputs</strong>: Return only relevant fields (avoid full payloads)
+- <strong>Monitor context use</strong>: Track context growth and apply backpressure when approaching limits</p>
+<h4 id="532-hallucination-and-accuracy-issues">5.3.2 Hallucination and Accuracy Issues</h4>
+<p><strong>Problem</strong>: LLMs may generate plausible but incorrect information, especially for numbers, dates, or specific facts.</p>
+<p><strong>Solutions</strong>:
+- <strong>Ground and verify</strong>: Require tool-backed facts and add explicit verification steps for critical actions
+- <strong>Constrain outputs</strong>: Prefer structured outputs (e.g., function calling/JSON mode)
+- <strong>Escalate risk</strong>: Require human approval for high-stakes decisions</p>
+<h4 id="533-cost-management">5.3.3 Cost Management</h4>
+<p><strong>Problem</strong>: LLM API costs can escalate quickly with high usage or inefficient prompting.</p>
+<p><strong>Solutions</strong>:
+- <strong>Monitor and cap</strong>: Track token usage and enforce budgets/rate limits
+- <strong>Route by complexity</strong>: Use cheaper models for simple tasks and larger models for complex reasoning
+- <strong>Reduce calls</strong>: Cache common queries and avoid redundant LLM/tool invocations</p>
+<h4 id="534-security-and-compliance">5.3.4 Security and Compliance</h4>
+<p><strong>Problem</strong>: Agents may inadvertently expose sensitive data or enable unauthorized operations.</p>
+<p><strong>Solutions</strong>:
+- <strong>Least privilege and redaction</strong>: Minimize permissions and redact sensitive fields in logs/caches
+- <strong>Authorize every call</strong>: Enforce authorization at each tool invocation, not only at ingress
+- <strong>Audit and review</strong>: Maintain audit trails and conduct regular security testing</p>
+<h4 id="535-tool-selection-accuracy">5.3.5 Tool Selection Accuracy</h4>
+<p><strong>Problem</strong>: Agents select wrong tools or misuse tools, especially as tool count increases.</p>
+<p><strong>Solutions</strong>:
+- <strong>Reduce ambiguity</strong>: Use clear naming, categories, and concise, intent-oriented tool descriptions
+- <strong>Constrain choices</strong>: Use specialization (or restricted tool sets) as tool count grows
+- <strong>Validate inputs</strong>: Validate and normalize parameters before invocation</p>
+<h4 id="536-latency-and-user-experience">5.3.6 Latency and User Experience</h4>
+<p><strong>Problem</strong>: Multi-step agent reasoning introduces latency (often seconds), which may feel slow for users accustomed to instant responses.</p>
+<p><strong>Solutions</strong>:
+- <strong>Set expectations and show progress</strong>: Provide progress indicators and stream partial results when feasible
+- <strong>Route and defer</strong>: Use hybrid routing for fast paths and async execution for long-running workflows</p>
+<hr />
+<p>Section 6 presents an anonymized case study and evaluation approach; Section 7 summarizes challenges and limitations.</p>
+<hr />
+<h2 id="6-case-study-and-evaluation">6. Case Study and Evaluation</h2>
+<p>This section summarizes an implementation case study used to validate the feasibility of the proposed architecture and patterns. We base the discussion on <strong>TradeSignal</strong>, a production-inspired, market-data-driven “trading research assistant” system that integrates an AI agent layer with a microservices-based backend. To keep the case study reusable and appropriate for publication, we <strong>anonymize external provider identities and endpoints</strong>, and focus on architectural decisions and measurable system properties rather than vendor-specific integrations.</p>
+<h3 id="61-case-study-context-anonymized">6.1 Case Study Context (Anonymized)</h3>
+<p>The system provides a conversational interface for market research and analysis. Users submit natural language queries (e.g., “Get the latest quote for a symbol”, “Summarize recent news”, “Run a simple backtest”), and the agent orchestrates calls to internal services and external data providers.</p>
+<p>External dependencies are abstracted behind adapters and described generically:</p>
+<ul>
+<li><strong>Broker API</strong>: OAuth 2.0-protected trading/brokerage integration (token acquisition, refresh, and scoped access).</li>
+<li><strong>Market Data Provider A/B</strong>: Quote and chart retrieval APIs used with fallback routing.</li>
+<li><strong>News/Sentiment Provider</strong>: News aggregation and sentiment inputs.</li>
+</ul>
+<h3 id="62-mapping-to-the-proposed-architecture">6.2 Mapping to the Proposed Architecture</h3>
+<p>The implementation aligns with the three-layer framework (Section 3):</p>
+<ul>
+<li><strong>Agent orchestration layer</strong>: A single-agent deployment can handle basic tool calling; a multi-agent specialization approach decomposes responsibilities into (i) real-time market data retrieval, (ii) computational strategy analysis/backtesting, (iii) news/research synthesis, and (iv) a coordinator agent for routing and aggregation.</li>
+<li><strong>Integration and adapter layer</strong>: A service layer mediates tool invocations, applies schema validation/translation, enforces authorization checks, and implements caching. Provider-specific logic is isolated into adapters, enabling provider swapping without changing agent prompts or tool schemas.</li>
+<li><strong>Existing services and data layer</strong>: The backend persists user and analysis artifacts in a relational store and uses an in-memory cache for latency-sensitive reads.</li>
+</ul>
+<p>In TradeSignal, this mapping corresponds to (i) a managed agent runtime (cloud-hosted) for orchestration, (ii) a microservice-facing API layer that hosts adapters/facades and caching, and (iii) standard backing services for persistence and low-latency reads. Provider anonymization is handled at the adapter boundary so prompts, tool schemas, and business logic remain stable when providers change.</p>
+<p>Cross-cutting concerns (Section 3) were incorporated as follows:</p>
+<ul>
+<li><strong>Security</strong>: OAuth 2.0 token handling for external calls; enterprise identity integration for platform authentication; and least-privilege authorization checks at tool boundaries (not only at API ingress).</li>
+<li><strong>Performance</strong>: Short time-to-live (TTL) caching for high-frequency reads (quotes/movers), request batching where possible, and model selection strategies (smaller models for retrieval/summarization; larger models for multi-step quantitative reasoning).</li>
+<li><strong>Operations</strong>: Containerized deployment with local orchestration and a Kubernetes (Helm) path for cloud deployment; health probes for readiness/liveness.</li>
+</ul>
+<h3 id="63-evaluation-methodology">6.3 Evaluation Methodology</h3>
+<p>The primary goal of this evaluation is not to claim universal benchmark numbers, but to demonstrate (i) architectural feasibility in a realistic microservices setting and (ii) measurable trade-offs across latency, cost, and correctness under representative workloads.</p>
+<p>We recommend reporting results under two workload classes:</p>
+<ol>
+<li><strong>Retrieval-oriented queries</strong> (single or few tool calls): quote lookups, top movers, simple news summaries.</li>
+<li><strong>Analysis-oriented queries</strong> (multi-step reasoning and/or CPU-bound tasks): backtests, portfolio/risk analysis, multi-signal comparisons.</li>
+</ol>
+<p>Suggested metrics (report medians and tail latency):</p>
+<ul>
+<li><strong>End-to-end latency</strong> (<span class="arithmatex">\(p50\)</span>, <span class="arithmatex">\(p95\)</span>) per workload class</li>
+<li><strong>Tool-call latency</strong> by tool category (internal service vs. external provider adapter)</li>
+<li><strong>Cache hit rate</strong> and impact on latency for retrieval workloads</li>
+<li><strong>Cost per query</strong> (token-based LLM cost + compute cost for CPU-bound analysis)</li>
+<li><strong>Correctness proxies</strong>: schema validation pass rate; tool selection accuracy on a labeled query set; and regression tests for deterministic analytics</li>
+</ul>
+<p><strong>Evaluation Setup (Recommended Reporting Format):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Workload Class</th>
+<th>Representative Queries</th>
+<th>Primary Components Exercised</th>
+<th>Metrics to Report</th>
+<th>Measurement Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Retrieval-oriented</td>
+<td>Quote lookup, top movers, short news summary</td>
+<td>Agent runtime, tool registry, adapter layer, cache, external provider adapter</td>
+<td><span class="arithmatex">\(p50/p95\)</span> latency, tool-call latency, cache hit rate, token usage</td>
+<td>Report cold-cache vs. warm-cache; include provider fallback rate as an operational indicator</td>
+</tr>
+<tr>
+<td>Analysis-oriented</td>
+<td>Backtest, portfolio/risk analysis, multi-signal comparison</td>
+<td>Agent runtime, orchestrator/specialists, deterministic compute service, persistence</td>
+<td><span class="arithmatex">\(p50/p95\)</span> latency, compute time vs. LLM time split, cost per query, error rate</td>
+<td>Separate deterministic compute runtime from LLM inference; include timeout/retry policy configuration</td>
+</tr>
+</tbody>
+</table>
+<p>For both workload classes, collect measurements using end-to-end request tracing (e.g., OpenTelemetry spans) and structured logs with correlation IDs. Report the workload generator characteristics (request rate, concurrency, duration) and deployment conditions (region placement, instance sizes, and model selection policy) to keep results comparable.</p>
+<h3 id="64-evaluation-notes-and-threats-to-validity">6.4 Evaluation Notes and Threats to Validity</h3>
+<p>To keep claims defensible for journal review, the following should be stated explicitly when reporting results:</p>
+<ul>
+<li>Results are <strong>deployment-dependent</strong> (model choice, region placement, network conditions, and provider rate limits materially affect latency and throughput).</li>
+<li>Caching can inflate throughput for retrieval workloads; report both <strong>cold-cache</strong> and <strong>warm-cache</strong> runs.</li>
+<li>For analysis workloads, separate LLM inference time from deterministic compute time (e.g., backtest engine runtime).</li>
+<li>Provider anonymization can reduce reproducibility; mitigate by reporting adapter behavior and interface contracts (schemas) rather than vendor-specific endpoints.</li>
+</ul>
+<hr />
+<h2 id="7-challenges-and-limitations">7. Challenges and Limitations</h2>
+<p>This section summarizes key challenges, limitations, and directions for future work.</p>
+<h3 id="71-technical-challenges">7.1 Technical Challenges</h3>
+<h4 id="711-llm-latency-and-cost-trade-offs">7.1.1 LLM Latency and Cost Trade-offs</h4>
+<p><strong>Challenge</strong>: LLM inference adds latency and cost relative to direct API calls. Multi-step reasoning can feel slow for interactive workflows, and larger models can improve accuracy at higher cost.</p>
+<p><strong>Current Mitigation</strong>: Hybrid orchestration, caching, response streaming, and model selection based on task complexity help but cannot eliminate the fundamental latency floor.</p>
+<p><strong>Future Direction</strong>: Faster inference, distillation, and local deployment may reduce latency; speculative execution can pre-fetch likely data to hide round-trips.</p>
+<h4 id="712-context-window-management">7.1.2 Context Window Management</h4>
+<p><strong>Challenge</strong>: Multi-step conversations can exhaust context windows as history, tool schemas, and tool responses accumulate, forcing summarization or restarts.</p>
+<p><strong>Current Mitigation</strong>: Summarization, selective retention, and response filtering reduce context use but may omit details.</p>
+<p><strong>Future Direction</strong>: Larger-context models and external memory (e.g., vector databases, knowledge graphs) can offload long-term context.</p>
+<h4 id="713-tool-selection-accuracy">7.1.3 Tool Selection Accuracy</h4>
+<p><strong>Challenge</strong>: Tool selection remains imperfect, especially for ambiguous requests or overlapping tools.</p>
+<p><strong>Current Mitigation</strong>: User confirmation for high-stakes operations, fallback to human assistance, and continuous refinement of tool descriptions.</p>
+<p><strong>Future Direction</strong>: Fine-tuning on organization-specific tool usage and reinforcement learning from human feedback (RLHF) can improve selection accuracy.</p>
+<h4 id="714-multi-service-transaction-consistency">7.1.4 Multi-Service Transaction Consistency</h4>
+<p><strong>Challenge</strong>: Consistency across multi-service write workflows is complex, and compensating actions may be imperfect (e.g., reversing trades after market movement).</p>
+<p><strong>Current Mitigation</strong>: Saga pattern with compensating transactions, human approval for high-value operations, and explicit transaction boundaries.</p>
+<p><strong>Future Direction</strong>: Stronger coordination (e.g., two-phase commit) may improve consistency at a performance and availability cost.</p>
+<h4 id="715-real-time-data-requirements">7.1.5 Real-Time Data Requirements</h4>
+<p><strong>Challenge</strong>: For rapidly changing domains, data can become stale between reasoning and execution.</p>
+<p><strong>Current Mitigation</strong>: Refresh data at execution time, not reasoning time. Display timestamps indicating freshness.</p>
+<p><strong>Future Direction</strong>: Event-driven architectures and streaming tool responses can reduce staleness.</p>
+<h3 id="72-organizational-challenges">7.2 Organizational Challenges</h3>
+<h4 id="721-skills-gap-and-training">7.2.1 Skills Gap and Training</h4>
+<p><strong>Challenge</strong>: Many teams lack experience with LLM-based systems (prompting, context management, and hallucination mitigation), slowing delivery.</p>
+<p><strong>Recommendations</strong>: Provide training, seed the team with specialists early, and document internal best practices.</p>
+<h4 id="722-change-management-and-user-adoption">7.2.2 Change Management and User Adoption</h4>
+<p><strong>Challenge</strong>: Users may resist conversational interfaces, and reliability concerns can slow adoption in critical domains.</p>
+<p><strong>Recommendations</strong>: Roll out gradually, measure user outcomes, and offer hybrid interfaces alongside conversational entry points.</p>
+<h4 id="723-governance-and-accountability">7.2.3 Governance and Accountability</h4>
+<p><strong>Challenge</strong>: Accountability for agent errors can be unclear across model, framework, tool, and user responsibilities.</p>
+<p><strong>Recommendations</strong>: Define governance and escalation paths, maintain audit trails, and keep humans in the loop for critical actions.</p>
+<h3 id="73-limitations-and-future-research-directions">7.3 Limitations and Future Research Directions</h3>
+<h4 id="731-framework-generalizability">7.3.1 Framework Generalizability</h4>
+<p><strong>Limitation</strong>: Broader validation across industries and organizational contexts would strengthen generalizability.</p>
+<p><strong>Future Research</strong>: Cross-domain case studies and comparative evaluations could identify industry-specific adaptations.</p>
+<h4 id="732-advanced-reasoning-capabilities">7.3.2 Advanced Reasoning Capabilities</h4>
+<p><strong>Limitation</strong>: Agents excel at orchestration and synthesis but still struggle with deep domain reasoning and mathematical optimization.</p>
+<p><strong>Future Research</strong>: Hybrid designs combining LLMs with specialized models (e.g., optimization engines and predictors) could expand capabilities.</p>
+<h4 id="733-long-running-autonomous-workflows">7.3.3 Long-Running Autonomous Workflows</h4>
+<p><strong>Limitation</strong>: Long-running autonomous agents (hours/days) remain challenging due to error accumulation and context drift.</p>
+<p><strong>Future Research</strong>: Persistent agents with checkpoint/resume, external memory, and multi-day context management are promising directions.</p>
+<h4 id="734-multi-modal-capabilities">7.3.4 Multi-Modal Capabilities</h4>
+<p><strong>Limitation</strong>: The framework primarily targets text interactions; many enterprise artifacts require visual understanding.</p>
+<p><strong>Future Research</strong>: Integration with vision-capable multi-modal models and specialized chart/diagram generation tools could enable richer interactions.</p>
+<h4 id="735-explainability-and-transparency">7.3.5 Explainability and Transparency</h4>
+<p><strong>Limitation</strong>: While decisions can be logged, explaining why an agent made a choice remains challenging due to model opacity.</p>
+<p><strong>Future Research</strong>: Explainable AI techniques adapted to LLM-based agents, counterfactual analysis, and causality-based explanations could improve transparency.</p>
+<h4 id="736-adversarial-robustness">7.3.6 Adversarial Robustness</h4>
+<p><strong>Limitation</strong>: Beyond basic prompt injection, sophisticated adversarial attacks remain a concern.</p>
+<p><strong>Future Research</strong>: Red team exercises with advanced attackers, formal verification methods for agent behaviors, and adversarial training could harden agents.</p>
+<hr />
+<p>These limitations set expectations for adoption and motivate future work.</p>
+<hr />
+<h2 id="8-conclusion">8. Conclusion</h2>
+<h3 id="81-summary-of-contributions">8.1 Summary of Contributions</h3>
+<p>This paper presented an architectural framework for integrating AI agent systems with existing enterprise microservices while preserving established service boundaries and investments.</p>
+<p>Our key contributions include:</p>
+<p><strong>1. Architectural Framework</strong>: A layered, hybrid architecture comprising the Agent Orchestration Layer, Integration and Adapter Layer, and cross-cutting security and observability frameworks. The architecture enables integration between AI agents and microservices while maintaining security boundaries, performance requirements, and compliance standards. Unlike prior work focusing on greenfield agent development, our framework explicitly addresses brownfield integration with existing systems.</p>
+<p><strong>2. Design Pattern Catalog</strong>: Seven reusable design patterns—Service Facade, Tool Registry, Authentication Bridge, Hybrid Orchestration, Circuit Breaker for LLM Providers, Saga for Multi-Step Workflows, and Agent Specialization—provide proven solutions to common integration challenges. Each pattern includes implementation guidance, trade-off analysis, and applicability criteria.</p>
+<p><strong>3. Implementation Guidance</strong>: Systematic guidance on agent framework selection, automated tool generation from OpenAPI specifications, enterprise security integration, and comprehensive observability patterns. Detailed best practices and common pitfalls with solutions enable organizations to accelerate implementation.</p>
+<p><strong>4. Non-Invasive Integration Principles</strong>: The framework preserves existing microservices unchanged, enabling evolutionary adoption without disrupting operations. This de-risks AI integration for enterprises with substantial infrastructure investments.</p>
+<p>Together, these contributions address gaps in brownfield integration patterns, security propagation, observability, schema bridging between natural language and typed APIs, and reusable design guidance.</p>
+<h3 id="82-practical-implications">8.2 Practical Implications</h3>
+<p>Practical implications for enterprise adoption include:</p>
+<p><strong>Accelerated AI Adoption</strong>: Organizations can adopt AI agent technologies without prohibitive cost and risk of wholesale system replacement. Evolutionary integration enables gradual rollout, building confidence before large-scale commitment.</p>
+<p><strong>Reduced Implementation Risk</strong>: Validated patterns and practices reduce trial-and-error experimentation. Organizations can leverage proven approaches, avoiding common pitfalls and accelerating time-to-value.</p>
+<p><strong>Democratized AI Capabilities</strong>: The framework enables organizations without deep AI expertise to deploy agent-based automation. Systematic tool generation from OpenAPI specifications, standardized security integration, and comprehensive observability lower the expertise barrier.</p>
+<p><strong>Enterprise-Grade Quality</strong>: By addressing security, compliance, performance, and observability up front, the framework supports production deployments, including regulated environments.</p>
+<p><strong>Foundation for Innovation</strong>: New capabilities (multi-modal inputs, advanced reasoning, domain-specific models) can be incorporated within the same integration boundaries.</p>
+<p><strong>Industry Applicability</strong>: While technology-agnostic, the patterns generalize across domains with similar integration constraints.</p>
+<h3 id="83-future-work">8.3 Future Work</h3>
+<p>Promising future directions include:</p>
+<p><strong>Multi-Modal Integration</strong>: Support for documents, charts, and images to expand use cases beyond text.</p>
+<p><strong>Federated Agent Architectures</strong>: Specialized agents collaborating across organizational and security boundaries.</p>
+<p><strong>Continuous Learning</strong>: Learning from usage patterns and feedback (including RLHF) to improve tool selection and orchestration.</p>
+<p><strong>Domain-Specific Frameworks</strong>: Industry-specific variants that encode compliance constraints and common workflow patterns.</p>
+<p><strong>Advanced Reasoning Integration</strong>: Combining agents with specialized models (optimization, prediction, causal inference) for decision support.</p>
+<p><strong>Edge and Hybrid Deployments</strong>: Patterns for on-premises/air-gapped deployments and cloud-edge trade-offs.</p>
+<p><strong>Cross-Organizational Agent Collaboration</strong>: B2B collaboration with explicit trust, data sharing, and security boundaries.</p>
+<p><strong>Unified Agent Platforms</strong>: How platform-managed agent stacks can adopt these patterns while preserving portability.</p>
+<p><strong>Empirical Validation</strong>: Cross-domain evaluations to strengthen generalizability claims.</p>
+<h3 id="84-closing-remarks">8.4 Closing Remarks</h3>
+<p>Integrating AI agents with existing microservices provides a pragmatic path to modernization: evolutionary adoption can deliver automation benefits while preserving stability and prior investments.</p>
+<p>As AI capabilities evolve, the core principles—layered integration, security by design, evolutionary adoption, and production-grade operations—remain stable.</p>
+<p>The architecture diagrams, patterns, and implementation guidance provide a concrete starting point for practitioners and a basis for further research.</p>
+<p>Rather than replacing microservices, the goal is to combine reliable services with agent-driven orchestration where it adds value.</p>
+<hr />
+<h2 id="references">References</h2>
+<p>[1] S. Newman, <em>Building Microservices: Designing Fine-Grained Systems</em>, 2<sup>nd</sup> ed. O'Reilly Media, 2021.</p>
+<p>[2] C. Richardson, <em>Microservices Patterns: With Examples in Java</em>. Manning Publications, 2018.</p>
+<p>[3] R. T. Fielding, "Architectural styles and the design of network-based software architectures," Ph.D. dissertation, University of California, Irvine, 2000.</p>
+<p>[4] M. Amundsen, <em>RESTful Web API Patterns and Practices</em>. O'Reilly Media, 2022.</p>
+<p>[5] "Istio: Service Mesh," Istio Authors, 2023. [Online]. Available: https://istio.io. [Accessed: Jan. 2026].</p>
+<p>[6] "Linkerd: Ultralight Service Mesh," Linkerd Authors, 2023. [Online]. Available: https://linkerd.io. [Accessed: Jan. 2026].</p>
+<p>[7] "OpenAPI Specification v3.1.0," OpenAPI Initiative, 2021. [Online]. Available: https://spec.openapis.org/oas/v3.1.0. [Accessed: Jan. 2026].</p>
+<p>[8] H. Chase, "LangChain: Building applications with LLMs through composability," GitHub repository, 2022. [Online]. Available: https://github.com/langchain-ai/langchain. [Accessed: Jan. 2026].</p>
+<p>[9] Q. Wu et al., "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation," <em>arXiv preprint arXiv:2308.08155</em>, 2023.</p>
+<p>[10] Microsoft, "Semantic Kernel: Integrate cutting-edge LLM technology quickly and easily into your apps," GitHub repository, 2023. [Online]. Available: https://github.com/microsoft/semantic-kernel. [Accessed: Jan. 2026].</p>
+<p>[11] Microsoft, "Azure AI Foundry: Agent Service," Microsoft Azure Documentation, 2024. [Online]. Available: https://learn.microsoft.com/azure/ai-studio/. [Accessed: Jan. 2026].</p>
+<p>[12] LangGraph Contributors, "LangGraph: Build stateful, multi-actor applications with LLMs," GitHub repository, 2024. [Online]. Available: https://github.com/langchain-ai/langgraph. [Accessed: Jan. 2026].</p>
+<p>[13] OpenAI, "Function calling and other API updates," OpenAI Blog, Jun. 2023. [Online]. Available: https://openai.com/index/function-calling-and-other-api-updates/. [Accessed: Jan. 2026].</p>
+<p>[14] J. Schick et al., "Toolformer: Language Models Can Teach Themselves to Use Tools," <em>arXiv preprint arXiv:2302.04761</em>, 2023.</p>
+<p>[15] D. Sculley et al., "Hidden Technical Debt in Machine Learning Systems," in <em>Proc. 28<sup>th</sup> Int. Conf. Neural Information Processing Systems (NIPS)</em>, 2015, pp. 2503-2511.</p>
+<p>[16] R. Bellamy et al., "AI Fairness 360: An Extensible Toolkit for Detecting, Understanding, and Mitigating Unwanted Algorithmic Bias," <em>IBM Journal of Research and Development</em>, vol. 63, no. &#8536;, pp. 4:1-4:15, 2019.</p>
+<p>[17] B. Goodman and S. Flaxman, "European Union Regulations on Algorithmic Decision-Making and a 'Right to Explanation'," <em>AI Magazine</em>, vol. 38, no. 3, pp. 50-57, 2017.</p>
+<p>[18] N. Carlini and D. Wagner, "Towards Evaluating the Robustness of Neural Networks," in <em>Proc. IEEE Symposium on Security and Privacy (SP)</em>, 2017, pp. 39-57.</p>
+<p>[19] A. Xu, Z. Liu, Y. Guo, V. Sinha, and R. Akkiraju, "A New Chatbot for Customer Service on Social Media," in <em>Proc. CHI Conference on Human Factors in Computing Systems</em>, 2017, pp. 3506-3510.</p>
+<p>[20] J. Hill, W. R. Ford, and I. G. Farreras, "Real conversations with artificial intelligence: A comparison between human–human online conversations and human–chatbot conversations," <em>Computers in Human Behavior</em>, vol. 49, pp. 245-250, 2015.</p>
+<p>[21] D. Martin, M. Burstein, J. Hobbs, O. Lassila, D. McDermott, S. McIlraith, S. Narayanan, M. Paolucci, B. Parsia, T. Payne, E. Sirin, N. Srinivasan, and K. Sycara, "OWL-S: Semantic Markup for Web Services," W3C Member Submission, Nov. 2004.</p>
+<p>[22] S. Dustdar and W. Schreiner, "A survey on web services composition," <em>International Journal of Web and Grid Services</em>, vol. 1, no. 1, pp. 1-30, 2005.</p>
+<p>[23] J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova, "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding," in <em>Proc. 2019 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL)</em>, 2019, pp. 4171-4186.</p>
+<p>[24] T. Brown et al., "Language Models are Few-Shot Learners," in <em>Advances in Neural Information Processing Systems</em>, vol. 33, 2020, pp. 1877-1901.</p>
+<p>[25] Microsoft, "Azure OpenAI Service Documentation," Microsoft Azure Documentation, 2024. [Online]. Available: https://learn.microsoft.com/azure/ai-services/openai/. [Accessed: Jan. 2026].</p>
+<p>[26] P. Hevner, S. March, J. Park, and S. Ram, "Design Science in Information Systems Research," <em>MIS Quarterly</em>, vol. 28, no. 1, pp. 75-105, 2004.</p>
+<p>[27] G. Hohpe and B. Woolf, <em>Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions</em>. Addison-Wesley Professional, 2003.</p>
+<p>[28] M. Fowler, "Patterns of Enterprise Application Architecture," Addison-Wesley Professional, 2002.</p>
+<p>[29] OpenTelemetry, "Cloud Native Computing Foundation: OpenTelemetry," 2024. [Online]. Available: https://opentelemetry.io. [Accessed: Jan. 2026].</p>
+<p>[30] "General Data Protection Regulation (GDPR)," European Parliament and Council of the European Union, Regulation (EU) 2016/679, Apr. 2016. [Online]. Available: https://eur-lex.europa.eu/eli/reg/2016/679/oj. [Accessed: Jan. 2026].</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Research">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Research
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../awards/" class="md-footer__link md-footer__link--next" aria-label="Next: Awards">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Awards
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; Copyright 2018 <a href="https://anjikeesari.com/"  target="_blank" rel="noopener">Anji Keesari</a> - All Rights Reserved
+
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/akeesari" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/anjikeesari" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://medium.com/@anjkeesari" target="_blank" rel="noopener" title="medium.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M369.4 32c43.4 0 78.6 35.2 78.6 78.6v83.8c-1.9-.1-3.8-.2-5.7-.2h-.4c-10 0-22.3 2.4-31.1 6.8-10 4.6-18.7 11.5-26 20.6-11.8 14.6-18.9 34.3-20.6 56.4-.1.7-.1 1.3-.2 2s-.1 1.2-.1 1.9c-.1 1.2-.1 2.4-.1 3.6 0 1.9-.1 3.8 0 5.8 1.2 50.1 28.2 90.2 76.3 90.2 2.7 0 5.3-.1 7.9-.4v20.4c0 43.4-35.2 78.6-78.6 78.6L78.6 480C35.2 480 0 444.8 0 401.4V110.6C0 67.2 35.2 32 78.6 32zM82.3 138.9l.3.1c13.2 3 19.8 7.4 19.8 23.4v187.2c0 16-6.7 20.4-19.9 23.4l-.3.1v2.8H135v-2.8l-.3-.1c-13.2-3-19.9-7.4-19.9-23.4V173.3l86.1 202.5h4.9l88.6-208.2v186.6c-1.1 12.6-7.8 16.5-19.7 19.2l-.3.1v2.7h91.9v-2.7l-.3-.1c-11.9-2.7-18.7-6.6-19.9-19.2l-.1-191.8h.1c0-16 6.7-20.4 19.9-23.4l.3-.1v-2.7h-72.2l-67 157.4-67-157.4H82.3zM448 340.3c-25.1-7.4-43-35.1-41.2-67.8h41.1v67.8zm-6.4-135.6c2.3 0 4.4.3 6.4.9V263h-40.2c1.5-33.6 13.6-57.9 33.8-58.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/@anji.keesari" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.annotate", "navigation.indexes", "navigation.footer", "content.tooltips", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "header.autohide", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
