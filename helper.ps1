@@ -21,6 +21,8 @@ python -m mkdocs --version
 # Start local development server
 python -m mkdocs serve
 
+python -m mkdocs serve --watch-theme --dirty
+
 # Access the site at:
 # http://127.0.0.1:8000/anjikeesari/
 
