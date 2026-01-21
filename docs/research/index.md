@@ -34,7 +34,7 @@ Novel architectural framework for integrating AI agent systems with existing mic
 
 **Keywords:** AI agents, microservices architecture, enterprise integration, large language models, API gateway, distributed systems, RESTful services, authentication propagation, tool calling, Model Context Protocol, LangChain, Semantic Kernel, financial services, software architecture patterns
 
-[📖 Read Draft Paper](publications/ai-agent-microservices-integration/index.md)
+[Read on Site](publications/ai-agent-microservices-integration/index.md)
 
 ---
 
@@ -55,7 +55,7 @@ Novel integration of supervised machine learning with hybrid technical indicator
 
 **Keywords:** Algorithmic trading, machine learning, momentum trading, technical indicators, risk management, hybrid signals, real-time systems, VWAP, artificial intelligence, quantitative finance
 
-[📖 Read Full Paper](https://ijecs.in/index.php/ijecs/article/view/5335){:target="_blank"} | [📥 Download PDF](https://ijecs.in/index.php/ijecs/article/view/5335/4411){:target="_blank"} | [🔗 View DOI](https://doi.org/10.18535/ijecs.v14i11.5335){:target="_blank"}
+[Read on Site](publications/algo-trading/index.md) | [Read Full Paper](https://ijecs.in/index.php/ijecs/article/view/5335){:target="_blank"} | [Download PDF](https://ijecs.in/index.php/ijecs/article/view/5335/4411){:target="_blank"} | [View DOI](https://doi.org/10.18535/ijecs.v14i11.5335){:target="_blank"}
 
 ---
 
@@ -76,7 +76,7 @@ Comprehensive empirical performance analysis of high-throughput cloud-native mes
 
 **Keywords:** Cloud-Native Architecture, Microservices, Kubernetes, Azure Event Hub, Messaging Architecture, Pub/Sub, Event-Driven Systems, Distributed Systems, High-Throughput Processing
 
-[📖 Read Full Paper](http://ijarcsms.com/V13I11-0001.htm){:target="_blank"} | [📥 Download PDF](http://ijarcsms.com/docs/paper/volume13/issue11/V13I11-0001.pdf){:target="_blank"} | [🔗 View DOI](https://doi.org/10.61161/ijarcsms.v13i11.1){:target="_blank"}
+[Read on Site](publications/messaging-architecture/index.md) | [Read Full Paper](http://ijarcsms.com/V13I11-0001.htm){:target="_blank"} | [Download PDF](http://ijarcsms.com/docs/paper/volume13/issue11/V13I11-0001.pdf){:target="_blank"} | [View DOI](https://doi.org/10.61161/ijarcsms.v13i11.1){:target="_blank"}
 
 ---
 

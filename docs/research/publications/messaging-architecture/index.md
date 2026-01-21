@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 
 # **High-Throughput Cloud-Native Messaging Architectures: Design and Performance Analysis of Pub/Sub Microservices with Kubernetes and Azure Event Hub**
 
