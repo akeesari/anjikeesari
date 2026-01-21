@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Designing Scalable Kubernetes Infrastructure for Enterprise Application 
 
 # Real-Time Observability and Self-Healing in Enterprise Microservices with AI-Driven Automation”

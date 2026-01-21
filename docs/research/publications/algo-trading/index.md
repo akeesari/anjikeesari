@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # AI-Driven Algorithmic Trading: Integrating Machine Learning, Hybrid Technical Indicators, and Risk Management for Momentum Strategies
 ---
 
