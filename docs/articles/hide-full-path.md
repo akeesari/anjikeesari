@@ -54,11 +54,11 @@ Now, when you open a new PowerShell terminal in Visual Studio Code, you will not
 
 before 
 
-![Alt text](images\image-2.png)
+![Alt text](images/image-2.png)
 
 after 
 
-![Alt text](images\image-1.png)
+![Alt text](images/image-1.png)
 
 ## Conclusion
 
