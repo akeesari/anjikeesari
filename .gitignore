@@ -19,3 +19,12 @@ __pycache__/
 # Build and deployment files
 dist/
 *.egg-info/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+.venv/
+venv/
+.env
