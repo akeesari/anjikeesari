@@ -110,8 +110,8 @@ Types: `note` `tip` `warning` `info` `danger` `success`
 | `requirements.txt` | Pinned Python deps (mkdocs, mkdocs-material, pymdown-extensions, Markdown) |
 | `.github/workflows/ci.yml` | Build check on push/PR; deploys on push to main |
 | `helper.ps1` | Quick-reference dev commands |
-| `docs/stylesheets/extra.css` | Custom CSS |
-| `docs/overrides/` | Custom HTML templates (404, home, main) |
+| `docs/stylesheets/extra.css` | Site theme: `--ak-*` color tokens (dark/light), 1280px width, global element styles, home page styles under `.ak-home` |
+| `docs/overrides/` | Custom HTML templates (404, home, main); `home.html` is the landing page |
 
 ## Review Checklist
 
