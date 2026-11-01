@@ -47,7 +47,7 @@ python -m mkdocs gh-deploy --force
 > macOS equivalent: `pip3` / `mkdocs` directly.  
 > Quick-reference commands: `helper.ps1` at project root.
 
-**CI/CD**: `.github/workflows/ci.yml` runs `mkdocs gh-deploy --force` on every push to `main`. No manual deploy needed.
+**CI/CD**: `.github/workflows/ci.yml` runs `mkdocs build --strict` on pushes and PRs to `main`, then deploys with `mkdocs gh-deploy --force` on pushes to `main`. `.github/workflows/checks.yml` runs a gitleaks secret scan on push/PR and a link check weekly and on demand. No manual deploy needed.
 
 ## Content Patterns
 
@@ -107,8 +107,8 @@ Types: `note` `tip` `warning` `info` `danger` `success`
 | File | Purpose |
 |------|---------|
 | `mkdocs.yml` | Main config — theme, nav, plugins, extensions, analytics |
-| `requirements.txt` | Python deps (mkdocs-material, mkdocs-glightbox, pdf plugins) |
-| `.github/workflows/ci.yml` | CI/CD — deploys on push to main |
+| `requirements.txt` | Pinned Python deps (mkdocs, mkdocs-material, pymdown-extensions, Markdown) |
+| `.github/workflows/ci.yml` | Build check on push/PR; deploys on push to main |
 | `helper.ps1` | Quick-reference dev commands |
 | `docs/stylesheets/extra.css` | Custom CSS |
 | `docs/overrides/` | Custom HTML templates (404, home, main) |

@@ -63,7 +63,4 @@ End every development response with **Next steps**: 2–4 numbered suggestions f
 
 ## Known gaps
 
-- No LICENSE file yet; copyright wording differs between README and footer.
-- `.github/copilot-instructions.md` is partly stale (it still lists glightbox/pdf plugins in requirements and describes the old CI).
-- `docs/overrides/` contains an 8 MB book PDF that doesn't belong there.
 - Material for MkDocs reaches end of life on 2027-05-05; a Zensical migration will be needed eventually.
