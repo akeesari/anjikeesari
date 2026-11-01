@@ -497,7 +497,7 @@ choco upgrade mremoteng
 Option 2: Manual Installation
 
 **Download Installer** from the official site:
-    *   [https://mremoteng.org/download](https://mremoteng.org/download)
+    *   [https://mremoteng.org/](https://mremoteng.org/)
         
 ## Install dotnet
 

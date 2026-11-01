@@ -16,5 +16,5 @@ Thank you for your interest, and happy reading!
 
 
 <a href="http://kubernetes.anjikeesari.com/" target="_blank">
-    <img src="../../../images/book-cover-2.png" alt="" />
+    <img src="/assets/images/book-cover-2.png" alt="" />
 </a>

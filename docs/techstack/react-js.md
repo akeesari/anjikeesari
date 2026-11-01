@@ -48,7 +48,7 @@ Here are some recommended books for learning React JS:
 - [TypeScript](https://www.tutorialspoint.com/typescript/typescript_interfaces.htm)
 - [Webpack](https://webpack.js.org/)
 - [Getting started with React Router](https://codeburst.io/getting-started-with-react-router-5c978f70df91) - Router
-- [REACT TRAINING / REACT ROUTER](https://v5.reactrouter.com/web/guides/quick-start) - Router
+- [REACT TRAINING / REACT ROUTER](https://reactrouter.com/start/library/installation) - Router
 - [Redux Fundamentals](https://redux.js.org/tutorials/fundamentals/part-4-store) - Redux
 - [Build and deploy a Node.js API](https://github.com/Huachao/azure-content/blob/master/articles/app-service-api/app-service-api-nodejs-api-app.md) - Node.js API
 - [Getting Started with Redux](https://redux.js.org/)- Redux

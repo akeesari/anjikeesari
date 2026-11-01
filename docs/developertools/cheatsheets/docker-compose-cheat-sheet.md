@@ -933,7 +933,7 @@ docker system prune -a --volumes     # Clean everything
 - [Compose File Reference](https://docs.docker.com/compose/compose-file/)
 - [Docker Commands Cheat Sheet](docker-cheat-sheet.md)
 - [Dockerfile Best Practices](dockerfile-cheat-sheet.md)
-- [Kubernetes vs Docker Compose](https://docs.docker.com/compose/migrate-to-kubernetes/)
+- [Migrating Docker Compose to Kubernetes (Kompose)](https://kompose.io/)
 - [Docker Compose GitHub Repository](https://github.com/docker/compose)
 
 ---

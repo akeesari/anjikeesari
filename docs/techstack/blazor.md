@@ -43,5 +43,4 @@ Here are some recommended books for learning about Blazor, Microsoft's web frame
 - [Introduction to ASP.NET Core Blazor](https://docs.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-6.0) - Blazor Overview MSDN
 - [ASP.NET Core Blazor tutorials](https://docs.microsoft.com/en-us/aspnet/core/blazor/tutorials?view=aspnetcore-6.0) - MSDN
 - [Blazor: Getting Started](https://www.pluralsight.com/courses/getting-started-blazor?aid=701j0000001heIoAAI&promo=&utm_source=non_branded&utm_medium=digital_paid_search_google&utm_campaign=US_Dynamic&utm_content=&cq_cmp=175953558&gclid=EAIaIQobChMI_9nTjPDS9AIVqWtvBB3-eww9EAAYAiAAEgKAj_D_BwE) - Pluralsight Course
-- [Blazor tutorial](https://blazor-tutorial.net/overview)
 - [Blazor Server vs. Blazor WebAssembly](https://www.programmingwithwolfgang.com/blazor-server-vs-blazor-webassembly/) - Article

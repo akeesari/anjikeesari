@@ -125,7 +125,7 @@ Here is essential tools, frameworks, languages, and communities you need to mast
 * 12.5 [mlflow/mlflow](https://github.com/mlflow/mlflow) – ML lifecycle management
 * 12.6 [automl/auto-sklearn](https://github.com/automl/auto-sklearn) – AutoML pipeline builder
 * 12.7 [openai/whisper](https://github.com/openai/whisper) – Speech-to-text model
-* 12.8 [llamaindex/llamaindex](https://github.com/llamaindex/llamaindex) – RAG apps
+* 12.8 [run-llama/llama_index](https://github.com/run-llama/llama_index) – RAG apps
 * 12.9 [langchain-ai/langchain](https://github.com/langchain-ai/langchain) – LLM apps with memory
 * 12.10 [openai/chatgpt-retrieval-plugin](https://github.com/openai/chatgpt-retrieval-plugin) – RAG plugin architecture
 

@@ -12,5 +12,5 @@ To delve into the complete contents of this e-Book, simply download the PDF from
 Thank you for your interest, and happy reading!
 
 <a href="http://microservices.anjikeesari.com/" target="_blank">
-    <img src="../../../images/book-cover-1.png" alt="Building Microservices with Containers (A Practical Guide)" />
+    <img src="/assets/images/book-cover-1.png" alt="Building Microservices with Containers (A Practical Guide)" />
 </a>

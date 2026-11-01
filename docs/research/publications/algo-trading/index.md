@@ -377,7 +377,7 @@ This work presents the first integrated, event-driven momentum trading platform 
 
 [6] T. Fischer and C. Krauss, "Deep learning with long short-term memory networks for financial market predictions," *European Journal of Operational Research*, vol. 270, no. 2, pp. 654–669, 2018. [https://doi.org/10.1016/j.ejor.2017.11.054](https://doi.org/10.1016/j.ejor.2017.11.054)
 
-[7] M. Dixon, D. Klabjan, and J. H. Bang, "Classification-based financial markets prediction using deep neural networks," *Algorithmic Finance*, vol. 6, no. 3–4, pp. 67–77, 2017. [https://doi.org/10.3233/AF-170183](https://doi.org/10.3233/AF-170183)
+[7] M. Dixon, D. Klabjan, and J. H. Bang, "Classification-based financial markets prediction using deep neural networks," *Algorithmic Finance*, vol. 6, no. 3–4, pp. 67–77, 2017. [https://doi.org/10.3233/AF-170176](https://doi.org/10.3233/AF-170176)
 
 [8] J. Bollen, H. Mao, and X. Zeng, "Twitter mood predicts the stock market," *Journal of Computational Science*, vol. 2, no. 1, pp. 1–8, 2011. [https://doi.org/10.1016/j.jocs.2010.12.007](https://doi.org/10.1016/j.jocs.2010.12.007)
 
@@ -385,7 +385,7 @@ This work presents the first integrated, event-driven momentum trading platform 
 
 [10] N. Jegadeesh and S. Titman, "Returns to Buying Winners and Selling Losers: Implications for Stock Market Efficiency," *Journal of Finance*, vol. 48, no. 1, pp. 65–91, 1993. [https://doi.org/10.1111/j.1540-6261.1993.tb04702.x](https://doi.org/10.1111/j.1540-6261.1993.tb04702.x)
 
-[11] M. Grinblatt and T. Moskowitz, "Predicting Stock Price Movements from Past Returns: The Role of Consistency and Tax-Loss Selling," *Journal of Financial Economics*, vol. 71, no. 3, pp. 541–579, 2004. [https://doi.org/10.1016/S0304-405X(03)00182-1](https://doi.org/10.1016/S0304-405X(03)00182-1)
+[11] M. Grinblatt and T. Moskowitz, "Predicting Stock Price Movements from Past Returns: The Role of Consistency and Tax-Loss Selling," *Journal of Financial Economics*, vol. 71, no. 3, pp. 541–579, 2004. [https://doi.org/10.1016/S0304-405X(03)00176-4](https://doi.org/10.1016/S0304-405X(03)00176-4)
 
 [12] Y. Lecun, Y. Bengio, and G. Hinton, "Deep learning," *Nature*, vol. 521, pp. 436–444, 2015. [https://doi.org/10.1038/nature14539](https://doi.org/10.1038/nature14539)
 
