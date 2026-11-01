@@ -153,8 +153,7 @@ copyright: |
 
 # Page tree
 nav:
-  - Home:
-    - Home: index.md        
+  - Home: index.md
   # - Blogs:
   #   - Blogs: blogs.md
   
