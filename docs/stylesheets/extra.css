@@ -577,29 +577,35 @@ body:has(.ak-home) .md-sidebar {
   display: none;
 }
 
-.ak-hero {
+body:has(.ak-home) .md-main {
+  flex-grow: 0;
+}
+
+.ak-home .ak-hero {
   color: #ffffff;
   padding: 3rem 0 3.5rem;
   background: linear-gradient(135deg, #283593, #1976d2);
 }
 
-[data-md-color-scheme="slate"] .ak-hero {
+[data-md-color-scheme="slate"] .ak-home .ak-hero {
   background: linear-gradient(135deg, hsl(210deg, 25%, 18%), hsl(200deg, 30%, 26%));
 }
 
-.ak-hero__inner {
+.ak-home .ak-hero__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+  padding: 0 0.8rem;
 }
 
-.ak-hero__text {
+.ak-home .ak-hero__text {
   flex: 1 1 auto;
+  min-width: 0;
   max-width: 40rem;
 }
 
-.ak-hero h1 {
+.ak-home .ak-hero h1 {
   color: #ffffff !important;
   border: none !important;
   padding: 0 !important;
@@ -608,7 +614,7 @@ body:has(.ak-home) .md-sidebar {
   font-weight: 700;
 }
 
-.ak-eyebrow {
+.ak-home .ak-eyebrow {
   margin: 0 0 0.5rem;
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.8rem;
@@ -617,37 +623,37 @@ body:has(.ak-home) .md-sidebar {
   text-transform: uppercase;
 }
 
-.ak-hero__lead {
+.ak-home .ak-hero__lead {
   color: #ffffff;
   font-size: 1.05rem;
   line-height: 1.7;
 }
 
-.ak-hero__lead b {
+.ak-home .ak-hero__lead b {
   color: #ffffff;
 }
 
-.ak-hero__cta .md-button {
+.ak-home .ak-hero__cta .md-button {
   margin: 0.4rem 0.5rem 0 0;
   color: #ffffff !important;
   border-color: rgba(255, 255, 255, 0.7) !important;
   background: transparent !important;
 }
 
-.ak-hero__cta .md-button--primary {
+.ak-home .ak-hero__cta .md-button--primary {
   color: #0d47a1 !important;
   background: #ffffff !important;
   border-color: #ffffff !important;
 }
 
-.ak-hero__cta .md-button:hover,
-.ak-hero__cta .md-button:focus {
+.ak-home .ak-hero__cta .md-button:hover,
+.ak-home .ak-hero__cta .md-button:focus {
   color: #0d47a1 !important;
   background: #e3f2fd !important;
   border-color: #e3f2fd !important;
 }
 
-.ak-hero__photo img {
+.ak-home .ak-hero__photo img {
   display: block;
   width: 220px;
   height: 220px;
@@ -657,12 +663,12 @@ body:has(.ak-home) .md-sidebar {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.ak-body {
+.ak-home .ak-body {
   padding: 0 0.8rem 2rem;
 }
 
 /* Credibility strip */
-.ak-stats {
+.ak-home ul.ak-stats:not([hidden]) {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
@@ -671,7 +677,7 @@ body:has(.ak-home) .md-sidebar {
   padding: 0;
 }
 
-.ak-stats li {
+.ak-home .ak-stats li {
   margin: 0 !important;
   padding: 0.9rem 1rem;
   text-align: center;
@@ -680,54 +686,54 @@ body:has(.ak-home) .md-sidebar {
   background: var(--ak-surface);
 }
 
-.ak-stats strong {
+.ak-home .ak-stats strong {
   display: block;
   color: var(--ak-blue);
   font-size: 1.25rem;
 }
 
-.ak-stats span {
+.ak-home .ak-stats span {
   font-size: 0.75rem;
   opacity: 0.8;
 }
 
 /* Sections */
-.ak-section {
+.ak-home .ak-section {
   margin-top: 2.5rem;
 }
 
-.ak-section__head {
+.ak-home .ak-section__head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
 
-.ak-section__head h2 {
+.ak-home .ak-section__head h2 {
   margin: 0 !important;
   border: none !important;
   padding: 0 !important;
   font-weight: 600;
 }
 
-.ak-section__head a {
+.ak-home .ak-section__head a {
   font-size: 0.8rem;
   font-weight: 600;
 }
 
 /* Cards */
-.ak-cards {
+.ak-home .ak-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   gap: 1rem;
 }
 
-.ak-cards--two {
+.ak-home .ak-cards--two {
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 }
 
-.ak-card,
-.ak-book {
+.ak-home .ak-card,
+.ak-home .ak-book {
   display: block;
   padding: 1.1rem 1.2rem;
   color: inherit !important;
@@ -737,16 +743,16 @@ body:has(.ak-home) .md-sidebar {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.ak-card:hover,
-.ak-card:focus,
-.ak-book:hover,
-.ak-book:focus {
+.ak-home .ak-card:hover,
+.ak-home .ak-card:focus,
+.ak-home .ak-book:hover,
+.ak-home .ak-book:focus {
   transform: translateY(-3px);
   border-color: var(--ak-blue);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 
-.ak-card__tag {
+.ak-home .ak-card__tag {
   color: var(--ak-blue);
   font-size: 0.7rem;
   font-weight: 700;
@@ -754,15 +760,16 @@ body:has(.ak-home) .md-sidebar {
   text-transform: uppercase;
 }
 
-.ak-card h3,
-.ak-book h3 {
+.ak-home .ak-card h3,
+.ak-home .ak-book h3 {
   margin: 0.4rem 0 0.3rem !important;
   font-size: 1rem;
   line-height: 1.35;
 }
 
-.ak-card p,
-.ak-book p {
+.ak-home .ak-card p,
+.ak-home .ak-book p {
+  color: inherit;
   margin: 0 !important;
   font-size: 0.8rem;
   line-height: 1.6;
@@ -770,13 +777,13 @@ body:has(.ak-home) .md-sidebar {
 }
 
 /* Cheat sheet chips */
-.ak-chips {
+.ak-home .ak-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
 }
 
-.ak-chips a {
+.ak-home .ak-chips a {
   padding: 0.4rem 1rem;
   font-size: 0.8rem;
   font-weight: 600;
@@ -785,27 +792,27 @@ body:has(.ak-home) .md-sidebar {
   background: var(--ak-surface);
 }
 
-.ak-chips a:hover,
-.ak-chips a:focus {
+.ak-home .ak-chips a:hover,
+.ak-home .ak-chips a:focus {
   color: #ffffff;
   background: var(--ak-blue-dark);
   border-color: var(--ak-blue-dark);
 }
 
 /* E-books */
-.ak-books {
+.ak-home .ak-books {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 1rem;
 }
 
-.ak-book {
+.ak-home .ak-book {
   display: flex;
   align-items: center;
   gap: 1.2rem;
 }
 
-.ak-book img {
+.ak-home .ak-book img {
   flex: 0 0 7rem;
   width: 7rem;
   height: auto;
@@ -813,7 +820,7 @@ body:has(.ak-home) .md-sidebar {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-.ak-book__cta {
+.ak-home .ak-book__cta {
   display: inline-block;
   margin-top: 0.6rem;
   color: var(--ak-blue);
@@ -822,27 +829,27 @@ body:has(.ak-home) .md-sidebar {
 }
 
 @media screen and (max-width: 60em) {
-  .ak-hero__inner {
+  .ak-home .ak-hero__inner {
     flex-direction: column-reverse;
     text-align: center;
   }
 
-  .ak-hero__photo img {
+  .ak-home .ak-hero__photo img {
     width: 150px;
     height: 150px;
   }
 
-  .ak-stats {
+  .ak-home .ak-stats {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 30em) {
-  .ak-hero h1 {
+  .ak-home .ak-hero h1 {
     font-size: 1.8rem;
   }
 
-  .ak-book {
+  .ak-home .ak-book {
     flex-direction: column;
     text-align: center;
   }
