@@ -59,4 +59,4 @@ Every push to `main` deploys the live site, so run `python -m mkdocs build --str
 
 ---
 
-*© 2026 Anji Keesari. All rights reserved.*
+*© 2018–2026 Anji Keesari. All rights reserved. See [LICENSE](LICENSE).*
