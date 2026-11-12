@@ -12,4 +12,7 @@ regexes = [
   '''eyJhbGciOiJSUzI1NiIsImtpZCI6IjIwMTYtMDYtMjNUMTY6MDY6MDMuMjA1In0\.eyJleHAiOjE2MDk5NjYxOTcsImF1ZCI6Imh0dHBz''',
   # docs/articles/single-sign-on.md: jwt.io "John Doe" demo token
   '''eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\.eyJzdWIiOiIxMjM0NTY3ODkwMCIsIm5hbWUiOiJK''',
+  # docs/books/: the books' standard placeholders for passwords, keys and Azure IDs
+  '''replaceme''',
+  '''00000000-0000-0000-0000-000000000000''',
 ]
