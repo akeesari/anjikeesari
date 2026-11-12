@@ -1,0 +1,87 @@
+<!-- Custom HTML landing page displayed as the Home chapter. Markup and styles mirror mockups/K-agent-factory-loop.html; styles live in stylesheets/extra.css (.ak-home). -->
+
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+<div class="ak-home">
+
+<section class="hero"><div class="md-grid ak-w">
+<div><span class="eyebrow">Software Factory Architect · AI Agents · Cloud Platforms</span>
+<h1>Building the <em>AI-powered</em> software factory.</h1>
+<p>I help enterprises take software from requirement to production, including the applications themselves, with AI agents, a governed engineering platform and secure cloud infrastructure working together.</p>
+<a class="btn p" href="{{ 'articles/1-article-collection/' | url }}">Read the articles</a><a class="btn o" href="{{ 'contact/' | url }}">Let's talk</a>
+<div class="me"><div class="ring"><img src="{{ 'about/images/anji-pic2.png' | url }}" alt=""></div><span>Anji Keesari · Cloud &amp; AI Architect<br>Published AI researcher · Globee awards judge · San Ramon, CA</span></div>
+<div class="trust"><span><b>Financial services</b>regulated environments</span><span><b>End to end</b>requirement to production</span></div></div>
+<div class="books"><div class="cap"><span>Free e-books</span><i>● read online</i></div>
+<a class="book" href="{{ 'books/microservices/' | url }}"><img src="{{ 'assets/images/book-cover-1.png' | url }}" alt="Book cover"><div><span class="badge free">Free</span><h3>Building Microservices with Containers</h3><p>A practical guide to creating microservices with Docker containers, from hands-on experience.</p><span class="go">Read online →</span></div></a>
+<a class="book" href="{{ 'books/kubernetes/' | url }}"><img src="{{ 'assets/images/book-cover-2.png' | url }}" alt="Book cover"><div><span class="badge free">Free</span><span class="badge wip">In progress</span><h3>Building Scalable Kubernetes Infrastructure for Microservices</h3><p>A practical guide to scalable Kubernetes infrastructure on Azure with Terraform. Chapters are added as they are written.</p><span class="go">Read online →</span></div></a>
+</div>
+</div></section>
+
+<div class="md-grid ak-w"><div class="factory"><div class="kick">The big idea</div><h2>The software factory, in motion.</h2>
+<p class="sub">Business intent goes in. An orchestrated team of specialist AI agents does the work in parallel, inside guardrails, with people approving at the checkpoints that matter. What happens in production feeds the next cycle.</p>
+<div class="mf" aria-label="Software factory flow">
+  <div class="cap"><span>Intent to impact</span><i>&#9679; live</i></div>
+  <div class="row1"><div class="nd in">Business intent<small>goals &middot; requirements</small></div><div class="hw"></div><div class="nd orch">Orchestrator agent<small>plans &middot; assigns &middot; coordinates</small></div></div>
+  <div class="vw"></div>
+  <div class="agents">
+    <div class="ag"><span class="live"></span><b>Plan</b><small>stories &middot; options</small></div>
+    <div class="ag"><span class="live"></span><b>Build</b><small>code &middot; refactor</small></div>
+    <div class="ag"><span class="live"></span><b>Test</b><small>write &middot; run</small></div>
+    <div class="ag"><span class="live"></span><b>Secure</b><small>scan &middot; flag</small></div>
+    <div class="ag"><span class="live"></span><b>Operate</b><small>watch &middot; triage</small></div>
+  </div>
+  <div class="vw"></div>
+  <div class="gate"><div class="gt">Governed pipeline</div>
+    <div class="chips"><span>Policy as code</span><span>Quality gates</span><span>Security scans</span><span>Agent evaluations</span></div>
+    <div class="cps"><span class="cp">Human approves design</span><span class="cp">Human approves release</span></div>
+  </div>
+  <div class="vw"></div>
+  <div class="row1"><div class="nd cl">Azure + Kubernetes<small>services &middot; data &middot; identity</small></div><div class="hw"></div><div class="nd prod">Production<small>observed &amp; secure</small></div></div>
+  <div class="fb"><span>Telemetry &amp; feedback return to intent</span></div>
+</div>
+<div class="prin">
+  <div><b>Agents work in parallel</b><span>Specialists run side by side, coordinated by an orchestrator.</span></div>
+  <div><b>People approve at checkpoints</b><span>Humans own design, risk and release decisions.</span></div>
+  <div><b>Governed by default</b><span>Policy, quality and security are built into the path.</span></div>
+</div></div></div>
+
+<section class="sec"><div class="md-grid ak-w"><div class="kick">What I design for</div><h2>Goals that matter to leaders</h2><p class="sub">Technology choices are only worth making if they move these four things.</p>
+<div class="og">
+<div class="oc"><div class="ic">🚀</div><h3>Faster delivery</h3><p>A shorter, repeatable path from requirement to production through automation and AI assistance.</p></div>
+<div class="oc"><div class="ic">🛡️</div><h3>Trust &amp; governance</h3><p>Security, compliance and human oversight built into how software and AI agents operate.</p></div>
+<div class="oc"><div class="ic">📈</div><h3>Scale &amp; reliability</h3><p>Applications and platforms that grow with demand and stay available when it matters.</p></div>
+<div class="oc"><div class="ic">💡</div><h3>Cost &amp; focus</h3><p>Less undifferentiated toil, so teams spend their time on what moves the business.</p></div>
+</div></div></section>
+
+<section class="sec"><div class="md-grid ak-w"><div class="kick">The four layers</div><h2>Where I go deep</h2><p class="sub">Each layer links to hands-on material for the engineers who build it.</p>
+<div class="pg">
+<a class="pc k0" href="{{ 'resources/webapi/' | url }}"><h3>Application Engineering</h3><p>Requirements turned into working software: designed to be testable and maintainable.</p><span class="pill">.NET / C#</span><span class="pill">Python</span><span class="pill">React</span><span class="pill">Node.js</span><span class="pill">APIs</span><span class="pill">Microservices</span><span class="go">See application work →</span></a>
+<a class="pc k1" href="{{ 'developertools/ai-engineering/ai-concepts/' | url }}"><h3>AI Agents &amp; Agentic Frameworks</h3><p>Enterprise agents that integrate with existing microservices, safely and observably.</p><span class="pill">Agent frameworks</span><span class="pill">MCP</span><span class="pill">Azure AI Foundry</span><span class="pill">LLMs</span><span class="go">Explore agentic AI →</span></a>
+<a class="pc k2" href="{{ 'articles/20240218.1-build-agent/' | url }}"><h3>Software Factory &amp; Platform</h3><p>Delivery platforms with automation, policy and security as code.</p><span class="pill">Azure DevOps</span><span class="pill">GitOps · ArgoCD</span><span class="pill">Terraform</span><span class="pill">DevSecOps</span><span class="go">See the platform →</span></a>
+<a class="pc k3" href="{{ 'resources/azure-cloud/' | url }}"><h3>Cloud Infrastructure</h3><p>Secure, scalable Azure and Kubernetes foundations built to enterprise standards.</p><span class="pill">Azure</span><span class="pill">AKS</span><span class="pill">Identity</span><span class="pill">Observability</span><span class="go">Cloud guides →</span></a>
+</div></div></section>
+
+<section class="sec"><div class="md-grid ak-w"><div class="kick">Working together</div><h2>How I engage</h2><p class="sub">From executive strategy to hands-on proof of concept.</p>
+<div class="eg">
+<div class="ec"><div class="num">01</div><h3>Advise</h3><p>Strategy and roadmap for AI-enabled delivery, translated into language leadership can act on.</p></div>
+<div class="ec"><div class="num">02</div><h3>Architect</h3><p>Reference architectures and proofs of concept that demonstrate business value before you scale.</p></div>
+<div class="ec"><div class="num">03</div><h3>Enable</h3><p>Mentoring teams and bridging dev, ops and security so the capability outlasts the project.</p></div>
+</div></div></section>
+
+<section class="sec"><div class="md-grid ak-w"><div class="kick">Credibility</div><h2>Practitioner and researcher</h2><p class="sub">Hands-on delivery, backed by peer-reviewed work and independent recognition.</p>
+<div class="proof"><div class="pr1"><p class="q">"What excites me most is not just building infrastructure, but reimagining how technology can solve complex business challenges, mentoring teams to reach their full potential."</p><a class="go" href="{{ 'about/' | url }}">Read the full profile →</a></div>
+<div class="pr2"><div class="st"><strong>2025</strong><span>peer-reviewed papers</span></div><div class="st"><strong>Globee</strong><span>awards judge, reviewing enterprise submissions</span></div><div class="st"><strong>SAS · IOASD</strong><span>fellow</span></div><div class="st"><strong>IEEE</strong><span>member</span></div></div></div></div></section>
+
+<section class="sec"><div class="md-grid ak-w"><div class="kick">Perspective</div><h2>Insights &amp; research</h2><p class="sub">Selected thinking, from research to practice.</p>
+<div class="wg">
+<a class="w big" href="{{ 'research/publications/ai-agent-microservices-integration/' | url }}"><small>Research · WIP</small><h3>Integrating AI Agent Frameworks with Existing Microservices</h3><p>An adapter-based architecture for enterprises: how to bring agents into the systems you already run.</p></a>
+<a class="w" href="{{ 'articles/20240218.1-build-agent/' | url }}"><small>Platform</small><h3>Azure DevOps Private Agents in AKS</h3><p>Self-hosted build agents on Kubernetes.</p></a>
+<a class="w" href="{{ 'articles/20251113.1-aks-workload-identity/' | url }}"><small>Security</small><h3>Passwordless Access with Workload Identity</h3><p>AKS pods to PostgreSQL, no secrets.</p></a>
+</div></div></section>
+
+<div class="md-grid ak-w"><div class="cta"><h2>Building an AI-enabled software factory?</h2><p>Let's talk about where you are, what's possible and the shortest path to value.</p><a class="btn p" href="{{ 'contact/' | url }}">Let's talk</a><a class="btn o" href="https://www.linkedin.com/in/anjikeesari" target="_blank" rel="noopener">Connect on LinkedIn</a></div></div>
+
+</div>
+{% endblock %}
+{% block content %}{% endblock %}
