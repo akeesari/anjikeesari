@@ -170,7 +170,78 @@ nav:
       - Research: research/index.md
       - Publications:
         - Integrating AI Agent Frameworks with Existing Microservices : research/publications/ai-agent-microservices-integration/index.md
-  
+
+  - Books:
+      - Building Microservices with Containers:
+        - books/microservices/index.md
+        - Introduction:
+          - Table of Contents: books/microservices/introduction/toc.md
+          - About the Author: books/microservices/introduction/about-author.md
+          - Acknowledgments: books/microservices/introduction/acknowledgments.md
+          - Introduction: books/microservices/introduction/introduction.md
+        - Microservices:
+          - Getting Started with Microservices: books/microservices/microservices/1.getting-started.md
+          - Docker Fundamentals: books/microservices/microservices/2.docker-fundamentals.md
+          - Getting Started with Docker: books/microservices/microservices/3-docker-getting-started.md
+          - Containerize a .NET Core Web API: books/microservices/microservices/4.aspnet-api.md
+          - Containerize a Node.js API: books/microservices/microservices/5.node-api.md
+          - Containerize a .NET Core MVC Application: books/microservices/microservices/6.aspnet-app.md
+          - Containerize a React.js Application: books/microservices/microservices/7.react-app.md
+          - Create Your First Database with SQL server: books/microservices/microservices/8.sqlserver-db.md
+          - Create Your Second Database with PostgreSQL: books/microservices/microservices/9.postgresql-db.md
+          - Running Keycloak application in a Docker Container: books/microservices/microservices/10.keycloak.md
+          - Running Drupal Website in a Docker Container: books/microservices/microservices/11.drupal.md
+        - Appendix:
+          - Git Cheat Sheet: books/microservices/appendix/git-cheat-sheet.md
+          - Docker Cheat Sheet: books/microservices/appendix/docker-cheat-sheet.md
+          - Dockerfile Cheat Sheet: books/microservices/appendix/dockerfile-cheat-sheet.md
+      - Building Scalable Kubernetes Infrastructure:
+        - books/kubernetes/index.md
+        - Getting started:
+          - Table of Contents: books/kubernetes/gettingstarted/toc.md
+          - About the Author: books/kubernetes/gettingstarted/about-author.md
+          - Acknowledgments: books/kubernetes/gettingstarted/acknowledgments.md
+          - Preface: books/kubernetes/gettingstarted/preface.md
+          - Introduction: books/kubernetes/gettingstarted/introduction.md
+          - Lab Format: books/kubernetes/gettingstarted/lab-format.md
+        - Foundations:
+          - Infrastructure as Code (IaC): books/kubernetes/foundations/1-iac.md
+          - Microservices on Kubernetes: books/kubernetes/foundations/2-microservices-on-k8s.md
+          - Setup Terraform Foundation: books/kubernetes/foundations/3-terraform-foundation.md
+          - Getting started with Terraform: books/kubernetes/foundations/4-terraform-gettingstarted.md
+        - Azure (IaC):
+          - Create Log Analytics Workspace using terraform: books/kubernetes/azure/7-log-analytics-workspace.md
+          - Create Virtual Network using terraform: books/kubernetes/azure/8-vnet.md
+          - Create Azure Container Registry (ACR) using terraform: books/kubernetes/azure/9-acr.md
+          - Create Azure Application Gateway using terraform: books/kubernetes/azure/10-app-gateway.md
+          - Create Azure Kubernetes Service (AKS) using terraform: books/kubernetes/azure/11-aks.md
+          - Create Azure PostgreSQL - Flexible Server using terraform: books/kubernetes/azure/12-postgresql.md
+          - Create Azure Key Vault using Terraform: books/kubernetes/azure/13-key-vault.md
+          - Create Azure Cache for Redis using Terraform: books/kubernetes/azure/14-redis-cache.md
+          - Create Storage Account using Terraform: books/kubernetes/azure/15-storage-account.md
+          - Azure Event Hubs Introduction: books/kubernetes/azure/16-event-hubs-part-1.md
+          - Create Azure Event Hubs using Terraform: books/kubernetes/azure/16-event-hubs-part-2.md
+          - Create Front Door and CDN profile using Terraform: books/kubernetes/azure/17-cdn-frontdoor.md
+        - Kubernetes:
+          - Getting Started with Docker Container: books/kubernetes/kubernetes/0.getting-started.md
+          - Prepare an application for Azure Kubernetes Service (AKS): books/kubernetes/kubernetes/1-prepare-app.md
+          - Deploying an .NET Core API to Azure Kubernetes Service (AKS): books/kubernetes/kubernetes/2-deploy-api.md
+          - Deploying an ASP.NET Core MVC to Azure Kubernetes Service (AKS): books/kubernetes/kubernetes/2-deploy-app.md
+          - Working with AKS cluster using kubectl: books/kubernetes/kubernetes/3-working-with-aks.md
+          - Setup NGINX ingress controller in AKS using Terraform: books/kubernetes/kubernetes/4-ingress-controller-nginx.md
+          - Setup Application Gateway ingress controller (AGIC) in AKS using Terraform: books/kubernetes/kubernetes/4.1-ingress-controller-agic.md
+          - Setup Cert-Manager in AKS using Terraform: books/kubernetes/kubernetes/5-cert-manager.md
+          - Issue the Let's Encrypt SSL Certificate to the Website: books/kubernetes/kubernetes/5.1-issue-cert.md
+          - Troubleshooting Problems with Let's Encrypt Certificates: books/kubernetes/kubernetes/5.2-cert-troubleshooting.md
+          - Integrating Azure Key Vault with AKS using Terraform: books/kubernetes/kubernetes/6-aks-kv-integration.md
+          - Kubernetes Pod troubleshooting: books/kubernetes/kubernetes/pod-troubleshooting.md
+          - Create a new user node pool in AKS: books/kubernetes/kubernetes/aks-create-nodepool.md
+          - Upgrade or Resize node pools in AKS: books/kubernetes/kubernetes/aks-upgrade-nodepool.md
+          - Monitoring:
+            - Monitor AKS Cluster Introduction: books/kubernetes/kubernetes/monitoring/introduction.md
+            - Create an Azure Monitoring Workspace Using Terraform: books/kubernetes/kubernetes/monitoring/monitor-workspace.md
+            - Create an Azure Managed Grafana workspace Using Terraform: books/kubernetes/kubernetes/monitoring/grafana-workspace.md
+
   - Awards: awards/index.md
   
   - Articles:
