@@ -9,7 +9,7 @@ To read the content, visit the website. This repository holds the source for the
 
 ## About me
 
-I'm **Anji Keesari**, a Cloud Architect with 20+ years of experience in software architecture, full-stack development and Microsoft Azure.
+I'm **Anji Keesari**, a Cloud Architect specializing in software architecture, full-stack development and Microsoft Azure.
 
 - **Focus**: Azure · Kubernetes · Microservices · Terraform · .NET · DevOps · AI Engineering
 - **Books**:

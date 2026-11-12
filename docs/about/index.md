@@ -1,6 +1,6 @@
 ---
 title: About Me
-description: Cloud Architect, AI/ML specialist, and technology leader with 23+ years experience in Azure, Kubernetes, Infrastructure as Code, and enterprise cloud-native solutions. Published researcher and international awards judge.
+description: Cloud Architect, AI/ML specialist, and technology leader specializing in Azure, Kubernetes, Infrastructure as Code, and enterprise cloud-native solutions. Published researcher and international awards judge.
 hide:
   - navigation
   - toc
@@ -12,7 +12,7 @@ hide:
 
 ## Building the Future of Cloud Computing
 
-I'm **Anji Keesari**, a Cloud Architect and technology leader with over 23 years of experience transforming how organizations build and operate in the cloud. Currently based in San Ramon, California, I combine deep technical expertise in Microsoft Azure, Kubernetes, AI/ML, and Infrastructure as Code with a passion for innovation, team empowerment, and driving industry-wide change through knowledge sharing.
+I'm **Anji Keesari**, a Cloud Architect and technology leader focused on transforming how organizations build and operate in the cloud. Currently based in San Ramon, California, I combine deep technical expertise in Microsoft Azure, Kubernetes, AI/ML, and Infrastructure as Code with a passion for innovation, team empowerment, and driving industry-wide change through knowledge sharing.
 
 What excites me most is not just building infrastructure, but reimagining how technology can solve complex business challenges, mentoring teams to reach their full potential, and exploring emerging paradigms like AI agents and intelligent automation that will shape the next decade of cloud computing.
 
@@ -121,7 +121,56 @@ Infrastructure as Code (IaC) • Terraform • Bicep • ARM Templates • CI/CD
 **Enterprise Solutions:**  
 Cloud-Native Applications • Distributed Systems • High-Throughput Architectures • Security & Compliance (SOC 2, FINRA, SEC)
 
-[![Technical Skills](image-1.png){:style="border: 1px solid #d1d5db; border-radius: 10px; margin-top: 1rem;"}](image-1.png){:target="_blank"}
+<div class="ak-skills">
+  <div class="ak-skills__col">
+    <h3>Cloud Platforms:</h3>
+    <ul>
+      <li>Microsoft Foundry, Open AI</li>
+      <li>Azure Infrastructure (IaaS, PaaS, SaaS)</li>
+      <li>Azure Kubernetes Service (AKS), Container Apps, Container Registry</li>
+      <li>Azure API Management, App Services, Logic Apps, Azure Functions (Serverless)</li>
+      <li>Azure Monitor, Log Analytics, Application Insights</li>
+      <li>Azure Security Center, Microsoft Entra, RBAC, Sentinel, Key vault, Azure firewall</li>
+      <li>Hybrid Cloud (Arc, ExpressRoute, VPN Gateway), Azure VMs &amp; AVDs</li>
+      <li>Application Gateway, Front door, Azure Firewall, LB, WAF, CDN, DNS</li>
+      <li>Cosmos, MongoDB, SQL &amp; PostgreSQL, Redis Cache</li>
+      <li>Azure Fabric</li>
+    </ul>
+  </div>
+  <div class="ak-skills__col">
+    <h3>Architecture &amp; Design:</h3>
+    <ul>
+      <li>Agentic AI with MCP (Model Context Protocol)</li>
+      <li>Multi-Agent Architecture</li>
+      <li>Azure Well-Architected Framework</li>
+      <li>Multi-tenant Architecture</li>
+      <li>Microservices, Event-driven Architecture <small>(Kafka, Event Hubs)</small></li>
+      <li>Enterprise Cloud Migration</li>
+      <li>CI/CD Architecture, GitOps</li>
+      <li>API Gateway, Pub-Sub pattern</li>
+      <li>Cost Management, Auto-scaling</li>
+      <li>Security Architecture, Zero Trust, Security Mgmt, Identity</li>
+      <li>Disaster Recovery, High Availability</li>
+    </ul>
+  </div>
+  <div class="ak-skills__col">
+    <h3>Programming &amp; AI/ML:</h3>
+    <ul>
+      <li>GPT-5, AI Agents, GitHub Copilots, LLM integration, Prompt Engineering, RAG</li>
+      <li>AZ CLI, PowerShell, Bash, ARM/JSON, Terraform</li>
+      <li>C#, .NET, React, Node JS, SQL, PSQL</li>
+      <li>Azure DevOps, GitOps</li>
+      <li>Git, Docker, Kubectl, WSL</li>
+      <li>ArgoCD, Helm Charts</li>
+      <li>YAML Pipelines</li>
+      <li>Prometheus &amp; Grafana</li>
+      <li>Jaeger &amp; OpenTelemetry, Dynatrace, Datadog</li>
+      <li>NGINX Ingress</li>
+      <li>Okta, F5, LDAP, Imperva</li>
+      <li>Cert manager-Let’s Encrypt</li>
+    </ul>
+  </div>
+</div>
 
 ---
 

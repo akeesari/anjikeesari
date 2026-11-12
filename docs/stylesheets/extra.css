@@ -35,34 +35,35 @@ body[data-md-color-scheme="slate"] {
   --md-accent-fg-color--transparent: rgba(88, 166, 255, .12);
 }
 
+/* Light: GitHub's light palette (Primer) */
 body[data-md-color-scheme="default"] {
-  --ak-bg: #f5f7ff;
-  --ak-header: rgba(245, 247, 255, .9);
-  --ak-glass: rgba(255, 255, 255, .85);
-  --ak-glass-strong: #ffffff;
-  --ak-line: rgba(20, 30, 60, .12);
-  --ak-fg: #0f1733;
-  --ak-text: #2c3552;
-  --ak-muted: #55617f;
-  --ak-link: #0b7f70;
-  --ak-link-hover: #075c51;
-  --ak-a: #0066cc;
-  --ak-a-hover: #0052a3;
-  --ak-v: #5b4bd5;
-  --ak-b: #2f7fd8;
-  --ak-o: #d9692a;
-  --ak-tab: rgba(15, 23, 51, .7);
-  --ak-tab-active: #0f1733;
-  --ak-hover: rgba(15, 23, 51, .08);
-  --ak-code: #b8431b;
+  --ak-bg: #ffffff;
+  --ak-header: #f6f8fa;
+  --ak-glass: #ffffff;
+  --ak-glass-strong: #f6f8fa;
+  --ak-line: #d1d9e0;
+  --ak-fg: #1f2328;
+  --ak-text: #1f2328;
+  --ak-muted: #59636e;
+  --ak-link: #1a7f37;
+  --ak-link-hover: #116329;
+  --ak-a: #0969da;
+  --ak-a-hover: #0550ae;
+  --ak-v: #8250df;
+  --ak-b: #0969da;
+  --ak-o: #9a6700;
+  --ak-tab: #59636e;
+  --ak-tab-active: #1f2328;
+  --ak-hover: rgba(129, 139, 152, .15);
+  --ak-code: #1f2328;
   --ak-btn-fg: #ffffff;
-  --ak-g1: rgba(91, 75, 213, .16);
-  --ak-g2: rgba(14, 154, 134, .1);
-  --md-default-fg-color--lighter: rgba(15, 23, 51, .32);
-  --md-default-fg-color--lightest: rgba(15, 23, 51, .07);
-  --md-footer-bg-color: #e6eaf8;
-  --md-footer-bg-color--dark: #dde2f3;
-  --md-accent-fg-color--transparent: rgba(0, 102, 204, .1);
+  --ak-g1: transparent;
+  --ak-g2: transparent;
+  --md-default-fg-color--lighter: rgba(31, 35, 40, .32);
+  --md-default-fg-color--lightest: rgba(31, 35, 40, .08);
+  --md-footer-bg-color: #f6f8fa;
+  --md-footer-bg-color--dark: #eff2f5;
+  --md-accent-fg-color--transparent: rgba(9, 105, 218, .1);
 }
 
 body[data-md-color-scheme] {
@@ -123,15 +124,28 @@ body[data-md-color-scheme] {
 }
 
 .md-footer-meta__inner {
-  padding: 0.2rem 0 !important;
+  padding: 0.3rem 0 !important;
   min-height: auto !important;
+  align-items: center;
 }
 
-.md-footer-social {
+.md-social {
   padding: 0 !important;
+  align-items: center;
 }
 
-.md-footer-copyright {
+.md-social__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.2rem;
+}
+
+.md-social__link svg {
+  vertical-align: middle;
+}
+
+.md-copyright {
   padding: 0 !important;
 }
 
@@ -542,8 +556,8 @@ body:has(.ak-home) .md-main { flex-grow: 0; }
   --fg: #eaf0ff; --muted: #9aa8c7; --v: #8b7bff; --c: #2ee6c5; --o: #ff9d5c; --b: #5aa9ff; --glow: .45;
 }
 [data-md-color-scheme="default"] .ak-home {
-  --bg: #f5f7ff; --glass: rgba(255,255,255,.85); --line: rgba(20,30,60,.12);
-  --fg: #0f1733; --muted: #55617f; --v: #5b4bd5; --c: #0e9a86; --o: #d9692a; --b: #2f7fd8; --glow: .16;
+  --bg: #ffffff; --glass: #f6f8fa; --line: #d1d9e0;
+  --fg: #1f2328; --muted: #59636e; --v: #5b4bd5; --c: #0e9a86; --o: #d9692a; --b: #2f7fd8; --glow: .16;
 }
 
 .ak-home {
@@ -752,10 +766,71 @@ body:has(.ak-home) .md-main { flex-grow: 0; }
   border-color: var(--ak-line);
 }
 
-/* Navigation tabs */
+/* Theme toggle and phone search button: 36px circles, same height as the
+   search box and vertically centered with it. Fixed px because Material's
+   root font size changes with viewport width. */
+.md-header__option {
+  align-items: center;
+}
+
+.md-header__button[for^="__palette"],
+.md-header__button[for="__search"] {
+  width: 36px !important;
+  height: 36px !important;
+  padding: 7px !important;
+  margin: 0 4px !important;
+}
+
+/* Only the visible toggle state; Material hides the other with [hidden] */
+.md-header__button[for^="__palette"]:not([hidden]) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.md-header__button[for^="__palette"] svg,
+.md-header__button[for="__search"] svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Search box (desktop, where it sits inline in the header): 36px pill,
+   icon centered vertically. On phones it opens as a full-width overlay,
+   which keeps Material's default shape. */
+@media screen and (min-width: 60em) {
+  .md-search__form {
+    height: 36px !important;
+    border-radius: 18px !important;
+  }
+
+  .md-search__input {
+    height: 36px !important;
+    border-radius: 18px !important;
+    font-size: 14px !important;
+  }
+
+  .md-search__form .md-search__icon[for="__search"],
+  .md-search__form .md-search__options {
+    top: 50% !important;
+    transform: translateY(-50%);
+  }
+
+  /* While results are open, square the bottom corners so the box joins the list */
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__form,
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__input {
+    border-radius: 18px 18px 0 0 !important;
+  }
+}
+
+/* Navigation tabs: a shorter row than Material's 2.4rem, text centered */
+.md-tabs__item {
+  height: 1.8rem;
+}
+
 .md-tabs__link {
   color: var(--ak-tab) !important;
   opacity: 1 !important;
+  margin-top: 0.45rem;
 }
 
 .md-tabs__link:hover {
@@ -822,4 +897,355 @@ body:has(.ak-home) .md-main { flex-grow: 0; }
   margin-left: 0;
   color: var(--ak-muted);
   font-style: italic;
+}
+
+/* ============================================
+   BOOKS OVERVIEW (docs/books/index.md)
+   Two equal columns across the full content width; each card puts the
+   cover beside the text. One column below 1100px; cover stacks on phones.
+   ============================================ */
+.ak-books {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.ak-book {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  padding: 28px;
+  border: 1px solid var(--ak-line);
+  border-radius: 20px;
+  background: var(--ak-glass);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.ak-book:hover {
+  transform: translateY(-2px);
+  border-color: var(--ak-link);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.ak-book__cover p {
+  margin: 0 !important;
+}
+
+.ak-book__cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+.md-typeset .ak-book__body h3 {
+  margin: 12px 0 12px !important;
+  font-size: 22px !important;
+  line-height: 1.3 !important;
+}
+
+.md-typeset .ak-book__body h3 a {
+  color: var(--ak-fg) !important;
+}
+
+.md-typeset .ak-book__body h3 a:hover {
+  color: var(--ak-link) !important;
+}
+
+.md-typeset .ak-book__body p {
+  margin: 0 0 18px !important;
+  color: var(--ak-text);
+}
+
+.ak-book__badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 1px solid var(--ak-link);
+  border-radius: 999px;
+  color: var(--ak-link);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ak-book__badge--wip {
+  border-color: var(--ak-o);
+  color: var(--ak-o);
+}
+
+@media (max-width: 1100px) {
+  .ak-books {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .ak-book {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 18px;
+  }
+
+  .ak-book__cover {
+    max-width: 200px;
+  }
+}
+
+/* ============================================
+   ABOUT: TECHNICAL SKILLS (docs/about/index.md)
+   Three columns, each with a shaded header band and check-marked items.
+   Stacks to one column on narrow screens.
+   ============================================ */
+.ak-skills {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 1rem 0;
+  border: 1px solid var(--ak-line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--ak-glass);
+}
+
+.ak-skills__col + .ak-skills__col {
+  border-left: 1px solid var(--ak-line);
+}
+
+.md-typeset .ak-skills h3 {
+  margin: 0 !important;
+  padding: 8px 16px !important;
+  background: var(--ak-glass-strong);
+  border-bottom: 1px solid var(--ak-line);
+  color: var(--ak-fg) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+}
+
+.md-typeset .ak-skills ul {
+  margin: 0 !important;
+  padding: 12px 16px 16px !important;
+  list-style: none !important;
+}
+
+.md-typeset .ak-skills li {
+  position: relative;
+  margin: 0 0 6px !important;
+  padding-left: 26px !important;
+  line-height: 1.45;
+  color: var(--ak-text);
+}
+
+.md-typeset .ak-skills li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--ak-link);
+  font-weight: 700;
+}
+
+.md-typeset .ak-skills small {
+  font-size: 0.8em;
+  color: var(--ak-muted);
+}
+
+@media (max-width: 900px) {
+  .ak-skills {
+    grid-template-columns: 1fr;
+  }
+
+  .ak-skills__col + .ak-skills__col {
+    border-left: 0;
+    border-top: 1px solid var(--ak-line);
+  }
+}
+
+/* ============================================
+   LIGHT MODE: GitHub look
+   Fonts, sizes and element styles match GitHub's Markdown rendering
+   (colors are the light tokens at the top). Dark mode is unchanged.
+   Last in the file so it wins over the shared rules above; the home page
+   and book cards keep their own fixed-px layout.
+   ============================================ */
+body[data-md-color-scheme="default"] {
+  --md-text-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+  --md-code-font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  --md-code-bg-color: #f6f8fa;
+  --md-code-fg-color: #1f2328;
+  background-image: none;
+}
+
+/* 16px body at every viewport width (Material scales it up on wide screens) */
+body[data-md-color-scheme="default"] .md-content .md-typeset {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body[data-md-color-scheme="default"] .md-typeset :is(p, li):not(.ak-home *) {
+  line-height: 1.5;
+}
+
+body[data-md-color-scheme="default"] .md-typeset :is(h1, h2, h3, h4, h5, h6):not(.ak-home *, .ak-books *, .ak-skills *) {
+  color: var(--ak-fg);
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  margin: 24px 0 16px !important;
+  padding-top: 0;
+  letter-spacing: normal;
+}
+
+body[data-md-color-scheme="default"] .md-typeset :is(h1, h2):not(.ak-home *, .ak-books *) {
+  padding-bottom: .3em;
+  border-bottom: 1px solid var(--ak-line);
+}
+
+body[data-md-color-scheme="default"] .md-typeset h1:not(.ak-home *, .ak-books *) { font-size: 2em !important; margin-top: 0 !important; }
+body[data-md-color-scheme="default"] .md-typeset h2:not(.ak-home *, .ak-books *) { font-size: 1.5em !important; }
+body[data-md-color-scheme="default"] .md-typeset h3:not(.ak-home *, .ak-books *, .ak-skills *) { font-size: 1.25em !important; }
+body[data-md-color-scheme="default"] .md-typeset h4:not(.ak-home *, .ak-books *) { font-size: 1em !important; color: var(--ak-fg); }
+
+/* Inline code: gray pill in the text color */
+body[data-md-color-scheme="default"] .md-typeset :not(pre) > code {
+  background-color: rgba(129, 139, 152, .12);
+  color: var(--ak-fg);
+  padding: .2em .4em;
+  border-radius: 6px;
+  font-size: 85%;
+}
+
+/* Code blocks: gray panel, no border. The shared `code` rule above is for
+   inline code, so reset the block's <code> to the panel color. */
+body[data-md-color-scheme="default"] .highlight {
+  border: 0;
+}
+
+body[data-md-color-scheme="default"] .md-typeset pre > code {
+  background-color: var(--md-code-bg-color);
+  color: var(--md-code-fg-color);
+  border-radius: 6px;
+}
+
+/* Tables: full grid, striped rows */
+body[data-md-color-scheme="default"] .md-typeset table:not([class]) {
+  font-size: 1em;
+  border: 0;
+  border-radius: 0;
+  border-collapse: collapse;
+}
+
+body[data-md-color-scheme="default"] .md-typeset table:not([class]) :is(th, td) {
+  padding: 6px 13px;
+  border: 1px solid var(--ak-line);
+}
+
+body[data-md-color-scheme="default"] .md-typeset table:not([class]) th {
+  background-color: transparent;
+  color: var(--ak-fg);
+  font-weight: 600;
+}
+
+body[data-md-color-scheme="default"] .md-typeset table:not([class]) tbody tr:nth-child(2n) {
+  background-color: var(--ak-glass-strong);
+}
+
+body[data-md-color-scheme="default"] .md-typeset blockquote {
+  border-left: .25em solid var(--ak-line);
+  padding: 0 1em;
+  color: var(--ak-muted);
+  font-style: normal;
+}
+
+/* Admonitions at body size, like GitHub alerts (Material shrinks them) */
+body[data-md-color-scheme="default"] .md-typeset :is(.admonition, details) {
+  font-size: 1em;
+}
+
+/* Admonitions as GitHub alerts: colored left bar and title, no fill.
+   One color per type; unknown types (e.g. "mac user") use the note blue. */
+body[data-md-color-scheme="default"] .md-typeset :is(.admonition, details) {
+  --ak-adm: #0969da;
+  background-color: transparent;
+  border: 0;
+  border-left: .25em solid var(--ak-adm);
+  border-radius: 0;
+  box-shadow: none;
+  margin: 16px 0;
+  padding: 8px 16px;
+}
+
+body[data-md-color-scheme="default"] .md-typeset :is(.admonition, details):is(.tip, .hint, .success, .check, .done, .best-practice) { --ak-adm: #1a7f37; }
+body[data-md-color-scheme="default"] .md-typeset :is(.admonition, details):is(.important, .question, .help, .faq, .example) { --ak-adm: #8250df; }
+body[data-md-color-scheme="default"] .md-typeset :is(.admonition, details):is(.warning, .caution, .attention) { --ak-adm: #9a6700; }
+body[data-md-color-scheme="default"] .md-typeset :is(.admonition, details):is(.danger, .error, .failure, .fail, .missing, .bug) { --ak-adm: #d1242f; }
+
+body[data-md-color-scheme="default"] .md-typeset :is(.admonition, details) > :is(.admonition-title, summary) {
+  background-color: transparent;
+  color: var(--ak-adm);
+  font-weight: 500;
+  border: 0;
+  margin: 0 0 8px;
+  padding: 0 28px 0 24px;
+}
+
+body[data-md-color-scheme="default"] .md-typeset details:not([open]) > summary {
+  margin-bottom: 0;
+}
+
+body[data-md-color-scheme="default"] .md-typeset :is(.admonition, details) > :is(.admonition-title, summary)::before {
+  background-color: var(--ak-adm);
+  left: 0;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+body[data-md-color-scheme="default"] .md-typeset :is(.admonition, details) > :last-child {
+  margin-bottom: 0;
+}
+
+/* Images: the author's inline 1px black frame becomes GitHub's soft border */
+body[data-md-color-scheme="default"] .md-typeset img[style*="border"] {
+  border-color: var(--ak-line) !important;
+}
+
+/* Tables: grid on every table, also where a page's own <style> removes it */
+body[data-md-color-scheme="default"] .md-typeset table:not([class]) thead {
+  border-bottom: 0;
+}
+
+body[data-md-color-scheme="default"] .md-typeset table:not([class]) :is(th, td) {
+  border: 1px solid var(--ak-line) !important;
+}
+
+/* Code inside a link keeps the link color, as on GitHub */
+body[data-md-color-scheme="default"] .md-typeset a > code {
+  color: inherit;
+}
+
+/* Syntax colors: GitHub light. Material shares the keyword color with
+   tags (YAML keys, HTML tags), so tags get their own rule. */
+body[data-md-color-scheme="default"] {
+  --md-code-hl-keyword-color: #cf222e;
+  --md-code-hl-string-color: #0a3069;
+  --md-code-hl-special-color: #0a3069;
+  --md-code-hl-number-color: #0550ae;
+  --md-code-hl-constant-color: #0550ae;
+  --md-code-hl-function-color: #6639ba;
+  --md-code-hl-name-color: #1f2328;
+  --md-code-hl-variable-color: #953800;
+  --md-code-hl-operator-color: #cf222e;
+  --md-code-hl-punctuation-color: #1f2328;
+  --md-code-hl-comment-color: #59636e;
+  --md-code-hl-generic-color: #59636e;
+}
+
+body[data-md-color-scheme="default"] .highlight .nt { color: #116329; }
+body[data-md-color-scheme="default"] .highlight .kc { color: #0550ae; }
+
+body[data-md-color-scheme="default"] .md-typeset details > summary::after {
+  background-color: var(--ak-adm);
 }

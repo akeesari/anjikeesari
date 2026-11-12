@@ -172,6 +172,7 @@ nav:
         - Integrating AI Agent Frameworks with Existing Microservices : research/publications/ai-agent-microservices-integration/index.md
 
   - Books:
+      - books/index.md
       - Building Microservices with Containers:
         - books/microservices/index.md
         - Introduction:

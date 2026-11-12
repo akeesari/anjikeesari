@@ -1,6 +1,6 @@
 # About the Author
 
-**Anji Keesari** is a software engineer and cloud architect with over 20 years of experience in the technology industry. He has been involved in numerous projects related to cloud computing, microservices architecture, and technologies such as Kubernetes, Terraform, and containers.
+**Anji Keesari** is a software engineer and cloud architect. He has been involved in numerous projects related to cloud computing, microservices architecture, and technologies such as Kubernetes, Terraform, and containers.
 
 Anji has hands-on experience deploying and managing Kubernetes clusters in production environments. He is also proficient in tools like ArgoCD and Helm, utilizing them to deploy microservices applications on Kubernetes. Anji also has extensive knowledge of containers and containerization technologies, including Docker and container orchestration tools such as Kubernetes.
 

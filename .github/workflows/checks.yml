@@ -22,6 +22,28 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  # Blocks new inline style="..." in Markdown; style belongs in extra.css.
+  # Only added lines are checked, so existing inline styles don't fail CI.
+  inline-styles:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: No new inline styles in Markdown
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [ -z "$BASE" ] || ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
+            BASE=$(git rev-parse HEAD~1)
+          fi
+          git diff -U0 "$BASE" HEAD -- 'docs/*.md' | awk '
+            /^\+\+\+ / { file = substr($0, 7); next }
+            /^@@/      { split($3, a, ","); line = substr(a[1], 2); next }
+            /^\+/      { if (/style="/) { printf "::error file=%s,line=%d::Inline style=\"...\" in Markdown; add a rule to docs/stylesheets/extra.css instead\n", file, line; n++ } line++ }
+            END        { exit n > 0 }'
+
   links:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
