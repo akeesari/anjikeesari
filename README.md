@@ -20,6 +20,9 @@ I'm **Anji Keesari**, a Cloud Architect with 20+ years of experience in software
 
 - **Articles**: hands-on guides from real-world Azure and Kubernetes work
 - **Research**: published papers on cloud infrastructure and architecture
+- **Books**: two free e-books, read online
+  - [Building Microservices with Containers](https://anjikeesari.com/books/microservices/)
+  - [Building Scalable Kubernetes Infrastructure for Microservices](https://anjikeesari.com/books/kubernetes/)
 - **Awards and certifications**
 
 ## Connect
