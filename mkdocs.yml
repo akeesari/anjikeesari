@@ -1,0 +1,262 @@
+# Copyright (c) 2018-2026 Anji Keesari
+
+# Project information
+site_name: Anji Keesari
+site_url: https://anjikeesari.com
+
+# edit_uri: edit/main/docs/
+
+# Author details
+site_author: Anji Keesari
+site_description: >-
+  Portfolio and technical blog of Anji Keesari, Cloud Architect: articles on Azure, Kubernetes, DevOps, Terraform and software architecture.
+
+# # Repository details
+# repo_name: akeesari.github.io/mkdocs/
+# repo_url: https://akeesari.github.io/mkdocs/
+
+# Kept in the repo but never published to the site
+exclude_docs: |
+  articles/*.txt
+
+# Configuration
+theme:
+  logo: assets/images/ak-logo.png
+  name: material # readthedocs
+  custom_dir: docs/overrides
+  # 404 page
+  static_templates:
+    - 404.html
+  # nav_style: dark
+  shortcuts:
+      help: 191    # ?
+      next: 78     # n
+      previous: 80 # p
+      search: 83   # s
+  features:
+  - content.code.copy
+  - content.code.annotate
+  # - content.tabs.link
+  # - header.autohide
+  # - navigation.expand
+  - navigation.indexes
+  - navigation.footer
+  - content.tooltips
+  - navigation.tabs
+  # - navigation.tabs.sticky
+  - navigation.sections
+  - navigation.expand
+  # - toc.integrate
+  - navigation.top
+  - navigation.instant
+  - navigation.tracking
+  - header.autohide
+  - search.highlight
+  - search.share
+  - search.suggest
+  - toc.follow
+  
+  language: en
+  
+  use_directory_urls: true
+
+  palette:
+    # Dark is the default; the toggle switches to light.
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+  icon:  # from .icons path. Add to theme override for custom logo.
+    logo: ak-logo  # top left header logo  
+  favicon: assets/images/ak-logo.ico #browser tab logo
+
+extra_javascript:
+  - javascripts/extra.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+    - stylesheets/extra.css
+    
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      check_paths: true
+  - admonition
+  - abbr
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          # format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.mark
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tilde
+  - attr_list
+  - md_in_html
+  - def_list
+  - meta
+  - md_in_html
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - tables
+  - toc:
+      toc_depth: 2
+
+extra:
+  analytics:
+    provider: google
+    property: G-LJDPP0N88G
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/akeesari
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/anjikeesari
+    - icon: fontawesome/brands/medium
+      link: https://medium.com/@anjkeesari
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@anji.keesari
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com
+  generator: false
+plugins:
+  - search
+  # - awesome-pages
+     # Adding the pdf-export plugin
+  # - pdf-export:
+  #     combined: true
+# google_analytics: ["UA-118407822-1", "kubernetes.github.io"]
+
+
+# copyright   
+copyright: |
+  &copy; Copyright 2018–2026 <a href="https://anjikeesari.com/"  target="_blank" rel="noopener">Anji Keesari</a> - All Rights Reserved
+
+
+# Page tree
+nav:
+  - Home: index.md
+  # - Blogs:
+  #   - Blogs: blogs.md
+  
+  - About:
+      - About: about/index.md
+      # - Profile : about/profile.md
+      # - Accomplishments : about/accomplishments.md
+  
+  - Research:
+      - Research: research/index.md
+      - Publications:
+        - Integrating AI Agent Frameworks with Existing Microservices : research/publications/ai-agent-microservices-integration/index.md
+  
+  - Awards: awards/index.md
+  
+  - Articles:
+      # - Article Template :  articles/1-article-template.md
+      - Articles :  articles/1-article-collection.md      
+      - AKS Pod Connection to PostgreSQL :  articles/20251113.1-aks-workload-identity.md
+      - Kubernetes CronJob :  articles/20240325.1-cronjob.md      
+      - Connecting to Azure Cache for Redis :  articles/20240323.1-redis-connection.md
+      - Setup Azure Monitor Alerts for CPU & Memory Spikes :  articles/20240302.1-alerts-cpu-memory.md
+      - Running Azure DevOps Private Agents in AKS :  articles/20240218.1-build-agent.md
+      - Create Website using Material for MkDocs:  articles/mkdocs-setup.md
+      - Azure Application Availability Alerts Setup:  articles/app-availability-alert.md
+      - Azure Log Alerts Setup:  articles/azure-log-alerts.md
+      - Getting Started with Keycloak:  articles/keycloak.md
+      - Getting Started with Drupal:  articles/drupal.md
+      - Exploring Docker Fundamentals:  articles/docker-fundamentals.md
+      - What are Development Containers?:  articles/dev-containers-introduction.md
+      - Developing Applications inside a Dev Containers : articles/dev-containers-local-setup.md
+      - Delete PV and PVC stuck in terminating state: articles/pv-pvc-stuck.md
+      - Kubernetes Namespace Stuck: articles/namespace-stuck.md
+      - Undoing changes with git reset: articles/git-reset.md
+      - Hiding the Full path in VSCode Terminal:  articles/hide-full-path.md
+      - Interacting with Azure App Service:  articles/app-service-publishing-profile.md
+      - Single Sign-On - Introduction:  articles/single-sign-on.md
+      - Single Sign-On - OAuth 2.0 flows:  articles/oatuh2.0-flows.md
+      - Setting up Mac Terminal with Oh-My-Zsh:  articles/mac-terminal-setup.md
+      - Setting up Windows Terminal with Oh-My-Posh:  articles/windows-terminal-setup.md
+  
+  - Tools:
+      - Overview: developertools/index.md
+      - Setup Guides:
+        - Workstation: developertools/software/workstation.md    
+        - Windows: developertools/software/windows.md
+        - macOS: developertools/software/mac.md
+      - Network Tools: developertools/tools/network-tools.md
+      - AI Engineering:
+        - Concepts: developertools/ai-engineering/ai-concepts.md
+        - Learning Roadmap: developertools/ai-engineering/ai-learning-roadmap.md
+        - Tech Stack: developertools/ai-engineering/ai-technology-stack.md
+      - Cheat Sheets:
+        - Git: developertools/cheatsheets/git-cheat-sheet.md
+        - .NET CLI: developertools/cheatsheets/dotnet-cheat-sheet.md
+        - Dockerfile: developertools/cheatsheets/dockerfile-cheat-sheet.md
+        - Docker: developertools/cheatsheets/docker-cheat-sheet.md
+        - Docker Compose: developertools/cheatsheets/docker-compose-cheat-sheet.md
+        - Kubectl: developertools/cheatsheets/kubectl-cheat-sheet.md
+        - Helm: developertools/cheatsheets/helm-cheat-sheet.md
+        - ArgoCD: developertools/cheatsheets/argocd-cheat-sheet.md
+        - Terraform: developertools/cheatsheets/terraform-cheat-sheet.md
+        - Azure CLI: developertools/cheatsheets/az-cli-cheat-sheet.md
+        - Azure ACR: developertools/cheatsheets/az-acr-cheat-sheet.md
+        - PostgreSQL: developertools/cheatsheets/postgresql-cheat-sheet.md
+        - Redis: developertools/cheatsheets/redis-cheat-sheet.md
+        - Dig: developertools/cheatsheets/dig-cheat-sheet.md
+        - Cloud Compare: developertools/cheatsheets/cloud-compare-cheat-sheet.md        
+        
+  # - Technology Stack:        
+  #       - Technology Stack: techstack/tech-stack.md    
+  #       - C# : techstack/c-sharp.md
+  #       - .NET Core Web API : techstack/net-core-web-api.md
+  #       - React JS : techstack/react-js.md
+  #       - Azure DevOps : techstack/azure-devops.md
+  #       - Azure Cloud : techstack/azure-cloud.md
+  #       - Kubernetes : techstack/kubernetes.md
+  #       - Argo CD : techstack/argocd.md
+  #       - Helm : techstack/helm.md
+  #       - Terraform : techstack/terraform.md
+  #       - Blazor : techstack/blazor.md
+  #       - Node JS : techstack/node-js.md
+  #       - QA Automation : techstack/testing.md
+  - Resources:
+      - Overview: resources/index.md
+      - Video Tutorials:
+        - Azure Reference Architecture: resources/azure-cloud.md
+        - .NET Core Web API: resources/webapi.md
+  - Contact:
+      - Contact Us: contact/index.md
+  # - personal:
+  #     - Yosemite Clouds Rest: personal/yosemite-clouds-rest.md
+      # - Breakfast Recipes: personal/breakfast-recipes.md
+  #     - Lunch Recipes: personal/lunch-recipes.md
+  #     - Dinner Recipes: personal/dinner-recipes.md
+        # - F1 Visa Processing: f1-visa.md
+  # - Terraform:
+  #     - Table of Contents: terraform/1-toc.md
+  #     - Chapter-1: terraform/chapter-1.md
+  #     - Chapter-2: terraform/chapter-2.md
+  #     - Chapter-3: terraform/chapter-3.md
+        # - F1 Visa Processing: f1-visa.md
