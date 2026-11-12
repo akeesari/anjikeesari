@@ -1,0 +1,15 @@
+# Gitleaks config: default rules plus an allowlist for sample tokens used in articles.
+# Add an entry here only for a value confirmed to be fake (decode it first).
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Sample JWTs in tutorials (example.com / jwt.io demo values, not real credentials)"
+regexes = [
+  # docs/articles/oatuh2.0-flows.md: ADFS id_token and access_token for https://example.com, expired 2021
+  '''eyJhbGciOiJSUzI1NiIsImtpZCI6IjIwMTYtMDYtMjNUMTY6MDY6MDMuMjA1In0\.eyJzdWIiOiIxMDAxMjM0NTY3ODkwMTIzNDU2Nzg5''',
+  '''eyJhbGciOiJSUzI1NiIsImtpZCI6IjIwMTYtMDYtMjNUMTY6MDY6MDMuMjA1In0\.eyJleHAiOjE2MDk5NjYxOTcsImF1ZCI6Imh0dHBz''',
+  # docs/articles/single-sign-on.md: jwt.io "John Doe" demo token
+  '''eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\.eyJzdWIiOiIxMjM0NTY3ODkwMCIsIm5hbWUiOiJK''',
+]
